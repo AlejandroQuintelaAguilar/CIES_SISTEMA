@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prerregistro de Participación - CIES</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased min-h-screen flex flex-col justify-between py-6 px-4 sm:px-6">
+
+  <!-- Contenedor Principal (Uso público para preinscripción de participantes antes del evento) -->
+  <main class="w-full max-w-2xl mx-auto space-y-6">
+
+    <!-- Encabezado Institucional CIES -->
+    <header class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+      <div class="bg-gradient-to-r from-amber-600 via-orange-600 to-indigo-800 text-white p-6 text-center">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white text-amber-700 font-black text-xl mb-2.5 shadow-sm">
+          CIES
+        </div>
+        <h1 class="text-lg font-black tracking-tight uppercase">CIES Salud Sexual – Salud Reproductiva</h1>
+        <p class="text-xs text-amber-100 mt-0.5">Formulario Oficial de Prerregistro y Control Previo al Evento</p>
+        
+        <div class="mt-3 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/15 text-white text-xs font-semibold backdrop-blur-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Inscripción Previa de Participantes</span>
+          <span class="opacity-60">•</span>
+          <span class="font-mono text-[11px] opacity-90">SGC-Apoyo-ABS-1-pr1</span>
+        </div>
+      </div>
+
+      <!-- Ficha Informativa de la Actividad -->
+      <div class="p-4 bg-slate-50 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+        <div>
+          <span class="text-[10px] uppercase font-bold text-slate-500 tracking-wider block">Evento / Actividad Programada:</span>
+          <h2 id="info-prereg-titulo" class="font-bold text-slate-900 text-sm">Capacitación Institucional CIES</h2>
+          <p id="info-prereg-responsable" class="text-slate-500 text-[11px] mt-0.5">Responsable: Facilitador/a CIES</p>
+        </div>
+        <div class="sm:text-right">
+          <span class="text-[10px] uppercase font-bold text-slate-500 tracking-wider block">Fecha & Sede:</span>
+          <span id="info-prereg-fecha" class="font-mono font-bold text-indigo-700 block">Fecha por definir</span>
+          <span id="info-prereg-sede" class="font-medium text-slate-700">Comunidad Educativa (CBBA)</span>
+        </div>
+      </div>
+
+      <!-- Barra de Aforo y Preinscritos en Vivo -->
+      <div class="px-4 py-2.5 bg-amber-50/80 border-t border-amber-200/60 flex items-center justify-between text-xs">
+        <span class="text-amber-900 font-bold flex items-center gap-1.5">
+          <span>👥</span> Preinscritos registrados hasta el momento:
+        </span>
+        <span id="badge-total-preinscritos" class="px-2.5 py-0.5 rounded-full text-xs font-black bg-amber-200 text-amber-950 border border-amber-300">
+          0 participantes
+        </span>
+      </div>
+    </header>
+
+    <!-- VISTA 1: FORMULARIO DE PRERREGISTRO -->
+    <section id="seccion-formulario-prereg" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 space-y-6">
+      
+      <div class="border-b border-slate-100 pb-3">
+        <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+          <span>✍️</span> Ficha de Preinscripción Individual
+        </h3>
+        <p class="text-xs text-slate-500 mt-1">
+          Completa tus datos para confirmar tu participación y asegurar tu material y acreditación antes del inicio de la sesión.
+        </p>
+      </div>
+
+      <form id="form-preregistro-publico" onsubmit="enviarPreregistroPublico(event)" class="space-y-4 text-xs">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div>
+            <label for="pre-nombre" class="block font-semibold text-slate-700 mb-1">Nombres y Apellidos Completos *</label>
+            <input type="text" id="pre-nombre" required placeholder="Ej: Patricia Morales Vaca" 
+              class="w-full text-xs p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 bg-white font-medium">
+          </div>
+          <div>
+            <label for="pre-ci" class="block font-semibold text-slate-700 mb-1">Cédula de Identidad (CI) *</label>
+            <input type="text" id="pre-ci" required placeholder="Ej: 5928190 CB" 
+              class="w-full text-xs p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 bg-white font-mono">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+          <div>
+            <label for="pre-celular" class="block font-semibold text-slate-700 mb-1">Celular / WhatsApp *</label>
+            <input type="tel" id="pre-celular" required placeholder="Ej: 71234567" 
+              class="w-full text-xs p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 bg-white font-mono">
+          </div>
+          <div>
+            <label for="pre-edad" class="block font-semibold text-slate-700 mb-1">Edad (Años)</label>
+            <input type="number" id="pre-edad" min="10" max="99" placeholder="Ej: 24" 
+              class="w-full text-xs p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 bg-white">
+          </div>
+          <div>
+            <label for="pre-genero" class="block font-semibold text-slate-700 mb-1">Género</label>
+            <select id="pre-genero" class="w-full text-xs p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 bg-white">
+              <option value="F">Femenino</option>
+              <option value="M">Masculino</option>
+              <option value="Otro">No binario / Otro</option>
+              <option value="Prefiero no decir">Prefiero no decir</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div>
+            <label for="pre-rol" class="block font-semibold text-slate-700 mb-1">Rol / Ocupación *</label>
+            <select id="pre-rol" required class="w-full text-xs p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 bg-white font-medium">
+              <option value="Estudiante de Secundaria">Estudiante de Secundaria</option>
+              <option value="Estudiante Universitario/a">Estudiante Universitario/a</option>
+              <option value="Docente / Profesor/a">Docente / Profesor/a</option>
+              <option value="Líder Juvenil / Red Tú Decides">Líder Juvenil / Red Tú Decides</option>
+              <option value="Padre / Madre de Familia">Padre / Madre de Familia</option>
+              <option value="Personal de Salud / Orientador/a">Personal de Salud / Orientador/a</option>
+              <option value="Representante Comunitario">Representante Comunitario</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+          <div>
+            <label for="pre-institucion" class="block font-semibold text-slate-700 mb-1">Unidad Educativa / Institución *</label>
+            <input type="text" id="pre-institucion" required placeholder="Ej: Colegio San Agustín" 
+              class="w-full text-xs p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 bg-white">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Confirmación de Asistencia *</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <label class="flex items-center gap-2.5 p-3 bg-emerald-50/70 rounded-xl border border-emerald-200 cursor-pointer hover:bg-emerald-100/60 transition-colors">
+              <input type="radio" name="pre-confirmado" value="true" checked class="text-emerald-600 focus:ring-emerald-500">
+              <div>
+                <span class="font-bold text-emerald-950 block">✓ Sí, confirmo mi asistencia</span>
+                <span class="text-[10px] text-emerald-700">Asistiré puntualmente al taller</span>
+              </div>
+            </label>
+            <label class="flex items-center gap-2.5 p-3 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition-colors">
+              <input type="radio" name="pre-confirmado" value="false" class="text-amber-600 focus:ring-amber-500">
+              <div>
+                <span class="font-bold text-slate-800 block">⏳ Asistencia por confirmar</span>
+                <span class="text-[10px] text-slate-500">Pendiente de confirmación</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label for="pre-comentarios" class="block font-semibold text-slate-700 mb-1">Comentarios o requerimientos específicos (Opcional)</label>
+          <textarea id="pre-comentarios" rows="2" placeholder="Requerimientos de accesibilidad, refrigerio o consulta sobre la temática..." 
+            class="w-full text-xs p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 bg-white"></textarea>
+        </div>
+
+        <!-- Botón de Envío -->
+        <div class="pt-2">
+          <button type="submit" 
+            class="w-full py-3.5 px-4 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white font-extrabold text-sm rounded-xl shadow-md transition-all cursor-pointer flex items-center justify-center gap-2">
+            <span>✓ Confirmar mi Prerregistro para la Actividad</span>
+          </button>
+          <p class="text-[11px] text-center text-slate-400 mt-2">
+            Tus datos serán resguardados conforme al Código de Ética y Confidencialidad de CIES.
+          </p>
+        </div>
+      </form>
+    </section>
+
+    <!-- VISTA 2: CONFIRMACIÓN Y COMPROBANTE DIGITAL (Al finalizar el prerregistro) -->
+    <section id="seccion-confirmacion-prereg" class="hidden bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 space-y-6">
+      
+      <div class="text-center space-y-3">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-emerald-100 text-emerald-700 text-3xl mx-auto shadow-xs">
+          ✓
+        </div>
+        <h3 class="text-xl font-black text-slate-900">¡Prerregistro Exitoso!</h3>
+        <p class="text-xs text-slate-600 max-w-md mx-auto" id="ticket-mensaje-exito">
+          Tu participación ha sido agendada con éxito para la actividad formativa.
+        </p>
+      </div>
+
+      <!-- Ticket Digital Institucional -->
+      <div class="p-5 rounded-2xl border-2 border-dashed border-amber-300 bg-amber-50/50 space-y-3 text-xs">
+        <div class="flex items-center justify-between pb-2 border-b border-amber-200">
+          <span class="font-mono text-[10px] text-amber-800 uppercase tracking-widest font-bold">Comprobante de Preinscripción CIES</span>
+          <span id="ticket-num-cupo" class="px-2.5 py-0.5 rounded-full text-xs font-black bg-amber-200 text-amber-950 font-mono">Cupo #0</span>
+        </div>
+
+        <div class="space-y-1.5">
+          <p class="text-slate-500">Participante:</p>
+          <p id="ticket-nombre-participante" class="text-sm font-bold text-slate-900">Nombre</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 text-slate-700 pt-1">
+          <div>
+            <span class="text-slate-400 block text-[10px]">Cédula de Identidad:</span>
+            <span id="ticket-ci" class="font-mono font-bold">-</span>
+          </div>
+          <div>
+            <span class="text-slate-400 block text-[10px]">Contacto:</span>
+            <span id="ticket-celular" class="font-mono font-bold">-</span>
+          </div>
+          <div>
+            <span class="text-slate-400 block text-[10px]">Rol / Institución:</span>
+            <span id="ticket-rol" class="font-medium">-</span>
+          </div>
+          <div>
+            <span class="text-slate-400 block text-[10px]">Estado:</span>
+            <span id="ticket-estado" class="font-bold text-emerald-700">✓ Confirmado</span>
+          </div>
+        </div>
+
+        <div class="pt-2 border-t border-amber-200/80 flex items-center justify-between text-[11px] text-amber-900">
+          <span>Evento: <strong id="ticket-evento-nombre">-</strong></span>
+          <span id="ticket-fecha-registro" class="font-mono text-[10px] text-amber-800">Fecha</span>
+        </div>
+      </div>
+
+      <!-- Resumen de Participantes Preinscritos hasta el momento -->
+      <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs">
+        <div class="flex items-center justify-between">
+          <span class="font-bold text-slate-800">Total de Participantes Preinscritos:</span>
+          <span id="res-conteo-total-pre" class="font-black text-indigo-700 text-sm">0 personas</span>
+        </div>
+        <p class="text-[11px] text-slate-500">
+          El equipo facilitador de CIES utilizará esta lista para preparar los materiales pedagógicos y las acreditaciones oficiales antes de iniciar la actividad.
+        </p>
+      </div>
+
+      <!-- Acciones Finales -->
+      <div class="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs border-t border-slate-100">
+        <button type="button" onclick="reiniciarPreregistroParaOtro()" 
+          class="px-4 py-2.5 bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold rounded-xl border border-amber-300 cursor-pointer transition-colors flex items-center justify-center gap-1.5">
+          <span>➕ Inscribir a otro participante</span>
+        </button>
+        <div class="text-[11px] text-slate-400 text-center sm:text-right">
+          CIES Salud Sexual y Reproductiva • Gestión Operativa 2026
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pie de página institucional simple -->
+  <footer class="text-center text-[11px] text-slate-400 mt-8">
+    <p>CIES Salud Sexual – Salud Reproductiva • Todos los derechos reservados &copy; 2026</p>
+  </footer>
+
+  <!-- Lógica de Prerregistro -->
+  <script>
+    const STORAGE_KEY = "CIES_DEMO_DB_V10";
+    let actividadId = 1;
+
+    function getDB() {
+      const data = localStorage.getItem(STORAGE_KEY);
+      if (!data) return { actividades: [], preregistros: [], participantes: [] };
+      try {
+        return JSON.parse(data);
+      } catch (e) {
+        return { actividades: [], preregistros: [], participantes: [] };
+      }
+    }
+
+    function saveDB(db) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(db));
+    }
+
+    function initPage() {
+      const params = new URLSearchParams(window.location.search);
+      const actParam = params.get("actId");
+
+      const db = getDB();
+      if (actParam && !isNaN(parseInt(actParam))) {
+        actividadId = parseInt(actParam);
+      } else if (db.actividades && db.actividades.length > 0) {
+        actividadId = db.actividades[0].id;
+      }
+
+      const act = (db.actividades || []).find(a => a.id === actividadId) || {
+        titulo: "Capacitación en Derechos Sexuales y Reproductivos",
+        unidadEducativa: "Unidad Educativa Central",
+        regional: "CBBA",
+        fecha: new Date().toISOString().split("T")[0],
+        responsable: "Facilitador/a CIES"
+      };
+
+      document.getElementById("info-prereg-titulo").textContent = act.titulo;
+      document.getElementById("info-prereg-responsable").textContent = `Responsable: ${act.responsable || 'Facilitador/a CIES'}`;
+      document.getElementById("info-prereg-fecha").textContent = act.fecha || "Fecha programada";
+      document.getElementById("info-prereg-sede").textContent = `${act.unidadEducativa} (${act.regional || 'CBBA'})`;
+
+      actualizarConteoPreinscritos();
+    }
+
+    function actualizarConteoPreinscritos() {
+      const db = getDB();
+      const list = (db.preregistros || []).filter(p => p.actividadId === actividadId);
+      const total = list.length;
+      const badge = document.getElementById("badge-total-preinscritos");
+      if (badge) badge.textContent = `${total} participante${total === 1 ? '' : 's'}`;
+      const resCount = document.getElementById("res-conteo-total-pre");
+      if (resCount) resCount.textContent = `${total} persona${total === 1 ? '' : 's'}`;
+    }
+
+    function enviarPreregistroPublico(e) {
+      e.preventDefault();
+      const nombre = document.getElementById("pre-nombre").value.trim();
+      const ci = document.getElementById("pre-ci").value.trim();
+      const celular = document.getElementById("pre-celular").value.trim();
+      const edad = parseInt(document.getElementById("pre-edad").value) || null;
+      const genero = document.getElementById("pre-genero").value;
+      const rol = document.getElementById("pre-rol").value;
+      const institucion = document.getElementById("pre-institucion").value.trim();
+      const radios = document.getElementsByName("pre-confirmado");
+      let confirmado = true;
+      for (const r of radios) {
+        if (r.checked) confirmado = r.value === "true";
+      }
+      const comentarios = document.getElementById("pre-comentarios").value.trim();
+
+      if (!nombre || !ci || !celular) {
+        alert("Por favor completa los campos obligatorios (*).");
+        return;
+      }
+
+      const db = getDB();
+      if (!db.preregistros) db.preregistros = [];
+
+      const nuevoId = Date.now() + Math.random();
+      const ahora = new Date();
+      const fechaHora = ahora.toLocaleDateString() + " " + ahora.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+      // Verificar si ya existe por CI en esta actividad
+      const idx = db.preregistros.findIndex(p => p.actividadId === actividadId && p.ci.toLowerCase() === ci.toLowerCase());
+      
+      let itemFinal;
+      if (idx !== -1) {
+        db.preregistros[idx].nombre = nombre;
+        db.preregistros[idx].celular = celular;
+        db.preregistros[idx].edad = edad;
+        db.preregistros[idx].genero = genero;
+        db.preregistros[idx].rol = rol;
+        db.preregistros[idx].institucion = institucion;
+        db.preregistros[idx].confirmado = confirmado;
+        db.preregistros[idx].comentarios = comentarios;
+        itemFinal = db.preregistros[idx];
+      } else {
+        itemFinal = {
+          id: nuevoId,
+          actividadId: actividadId,
+          nombre: nombre,
+          ci: ci,
+          celular: celular,
+          edad: edad,
+          genero: genero,
+          rol: rol,
+          institucion: institucion,
+          confirmado: confirmado,
+          comentarios: comentarios,
+          fecha: fechaHora
+        };
+        db.preregistros.push(itemFinal);
+      }
+
+      saveDB(db);
+
+      // Mostrar pantalla de confirmación y ticket digital
+      mostrarTicketConfirmacion(itemFinal);
+    }
+
+    function mostrarTicketConfirmacion(item) {
+      const db = getDB();
+      const act = (db.actividades || []).find(a => a.id === actividadId);
+      const preList = (db.preregistros || []).filter(p => p.actividadId === actividadId);
+      const posCupo = preList.findIndex(p => p.id === item.id) + 1;
+
+      document.getElementById("ticket-nombre-participante").textContent = item.nombre;
+      document.getElementById("ticket-ci").textContent = item.ci;
+      document.getElementById("ticket-celular").textContent = item.celular;
+      document.getElementById("ticket-rol").textContent = `${item.rol} (${item.institucion})`;
+      document.getElementById("ticket-estado").textContent = item.confirmado ? "✓ Asistencia Confirmada" : "⏳ Por Confirmar";
+      document.getElementById("ticket-estado").className = item.confirmado ? "font-bold text-emerald-700" : "font-bold text-amber-700";
+      document.getElementById("ticket-evento-nombre").textContent = act ? act.titulo : "Capacitación CIES";
+      document.getElementById("ticket-fecha-registro").textContent = item.fecha;
+      document.getElementById("ticket-num-cupo").textContent = `Cupo #${posCupo > 0 ? posCupo : preList.length}`;
+
+      actualizarConteoPreinscritos();
+
+      document.getElementById("seccion-formulario-prereg").classList.add("hidden");
+      document.getElementById("seccion-confirmacion-prereg").classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function reiniciarPreregistroParaOtro() {
+      document.getElementById("form-preregistro-publico").reset();
+      document.getElementById("seccion-confirmacion-prereg").classList.add("hidden");
+      document.getElementById("seccion-formulario-prereg").classList.remove("hidden");
+      actualizarConteoPreinscritos();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.addEventListener("DOMContentLoaded", initPage);
+  </script>
+</body>
+</html>

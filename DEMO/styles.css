@@ -1,0 +1,115 @@
+/* Estilos complementarios para la Demo del Sistema Educativo CIES */
+
+:root {
+  --primary-color: #0284c7;
+  --primary-dark: #0369a1;
+  --sidebar-bg: #0f172a;
+  --sidebar-hover: #1e293b;
+  --sidebar-active: #2563eb;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f8fafc;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Transiciones suaves */
+.transition-all {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Toast flotante */
+.toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.toast {
+  animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Modal overlay */
+.modal-backdrop {
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(2px);
+}
+
+/* Animaciones para pantalla de login */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.login-card-animate {
+  animation: fadeInScale 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Animación de línea láser para el escáner de cámara QR */
+@keyframes scanLaser {
+  0% { top: 8%; opacity: 0.8; }
+  50% { top: 92%; opacity: 1; }
+  100% { top: 8%; opacity: 0.8; }
+}
+
+.scanner-laser {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(168, 85, 247, 0) 0%, rgba(168, 85, 247, 0.95) 50%, rgba(168, 85, 247, 0) 100%);
+  box-shadow: 0 0 14px rgba(168, 85, 247, 0.9), 0 0 4px #c084fc;
+  animation: scanLaser 2.2s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Animación suave para botón flotante móvil (FAB) */
+@keyframes fabBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.animate-fab-subtle {
+  animation: fabBounce 3s ease-in-out infinite;
+}
+
+
+

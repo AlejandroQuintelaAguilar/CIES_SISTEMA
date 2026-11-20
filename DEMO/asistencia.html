@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Auto-Registro de Asistencia por Taller - CIES</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
+    canvas { touch-action: none; }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased min-h-screen flex flex-col justify-between py-5 px-3 sm:px-6">
+
+  <!-- Contenedor Principal (Portal Móvil de Asistencia para Estudiantes) -->
+  <main class="w-full max-w-xl mx-auto space-y-5">
+
+    <!-- Encabezado Institucional CIES -->
+    <header class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+      <div class="bg-gradient-to-r from-emerald-600 via-teal-700 to-indigo-800 text-white p-5 sm:p-6 text-center">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white text-emerald-700 font-black text-xl mb-2 shadow-sm">
+          CIES
+        </div>
+        <h1 class="text-base sm:text-lg font-black tracking-tight uppercase">CIES Salud Sexual – Salud Reproductiva</h1>
+        <p class="text-xs text-emerald-100 mt-0.5">Control Oficial de Asistencia en Aula por Taller • Estado Plurinacional de Bolivia</p>
+        
+        <div class="mt-3 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/15 text-white text-xs font-semibold backdrop-blur-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-300 animate-pulse"></span>
+          <span>Auto-Registro Estudiantil</span>
+          <span class="opacity-60">•</span>
+          <span class="font-mono text-[11px] opacity-90">SGC-Apoyo-ABS-3-pp3</span>
+        </div>
+      </div>
+
+      <!-- Ficha Informativa del Taller Actual -->
+      <div class="p-4 bg-slate-50 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+        <div>
+          <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">Sesión / Taller en Curso:</span>
+          <h2 id="info-taller-titulo" class="font-bold text-slate-900 text-sm sm:text-base">Taller de Capacitación CIES</h2>
+          <p id="info-taller-proceso" class="text-indigo-700 text-xs font-semibold mt-0.5">Proceso Educativo (Meta: 33 Horas)</p>
+        </div>
+        <div class="sm:text-right shrink-0 border-t sm:border-t-0 pt-2 sm:pt-0 border-slate-200">
+          <div class="flex items-center sm:justify-end gap-1.5 font-mono text-emerald-800 font-bold">
+            <span id="info-taller-horas" class="px-2 py-0.5 rounded bg-emerald-100 text-[11px]">3 hrs</span>
+            <span id="info-taller-fecha" class="text-slate-600 text-xs">Fecha</span>
+          </div>
+          <span id="info-taller-sede" class="font-medium text-slate-600 block text-[11px] mt-0.5">Sede CIES</span>
+          <span id="info-taller-resp" class="text-slate-400 text-[10px] block">Facilitador/a CIES</span>
+        </div>
+      </div>
+
+      <!-- Barra de Asistencias en Vivo en el Aula -->
+      <div class="px-4 py-2.5 bg-emerald-50/80 border-t border-emerald-200/60 flex items-center justify-between text-xs">
+        <span class="text-emerald-900 font-bold flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span>Asistencias registradas en esta sesión:</span>
+        </span>
+        <span id="badge-total-asistencias-aula" class="px-2.5 py-0.5 rounded-full text-xs font-black bg-emerald-200 text-emerald-950 border border-emerald-300 font-mono">
+          0 presentes
+        </span>
+      </div>
+    </header>
+
+    <!-- VISTA 1: FORMULARIO DE AUTO-REGISTRO Y FIRMA -->
+    <section id="seccion-formulario-asistencia" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 sm:p-7 space-y-5">
+      
+      <!-- Paso 1: Identificación Rápida por Cédula de Identidad -->
+      <div class="space-y-3">
+        <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+          <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-800 text-xs flex items-center justify-center font-black">1</span>
+            <span>Identificación del Estudiante / Participante</span>
+          </h3>
+          <span class="text-[10px] text-slate-400 font-medium">Búsqueda rápida por CI</span>
+        </div>
+
+        <div>
+          <label for="asist-ci" class="block font-bold text-slate-700 mb-1 text-xs">
+            Ingresa tu Cédula de Identidad (CI) *
+          </label>
+          <div class="flex gap-2">
+            <input type="text" id="asist-ci" required placeholder="Ej: 4829102 LP o 6910293 CB" 
+              oninput="buscarParticipantePorCI(this.value)"
+              class="w-full text-sm font-mono font-bold p-3 border-2 border-slate-300 rounded-xl focus:border-emerald-600 focus:ring-2 focus:ring-emerald-200 bg-white tracking-wide uppercase transition-all">
+            <button type="button" onclick="buscarParticipantePorCI(document.getElementById('asist-ci').value)" 
+              class="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-xs transition-colors shrink-0 flex items-center gap-1.5 cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              <span class="hidden sm:inline">Buscar</span>
+            </button>
+          </div>
+          <p class="text-[11px] text-slate-400 mt-1">
+            Si ya participaste en un taller anterior o te preinscribiste, tus datos se cargarán automáticamente.
+          </p>
+        </div>
+
+        <!-- Banner de Estudiante Reconocido -->
+        <div id="banner-estudiante-reconocido" class="hidden p-3.5 rounded-xl border border-emerald-300 bg-emerald-50/90 text-xs space-y-2 transition-all">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-base">🎉</span>
+              <div>
+                <span class="text-[10px] uppercase font-bold text-emerald-800 tracking-wider block">¡Participante Reconocido en el Sistema!</span>
+                <h4 id="rec-nombre-completo" class="font-extrabold text-slate-900 text-sm">María Elena Quispe Mamani</h4>
+              </div>
+            </div>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black bg-emerald-200 text-emerald-900 border border-emerald-300 font-mono">
+              En Padrón
+            </span>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-1 border-t border-emerald-200/80 text-[11px] text-slate-700">
+            <div>
+              <span class="text-slate-400 block text-[10px]">Rol / Ocupación:</span>
+              <strong id="rec-rol" class="text-slate-800">-</strong>
+            </div>
+            <div>
+              <span class="text-slate-400 block text-[10px]">Unidad Educativa:</span>
+              <strong id="rec-institucion" class="text-slate-800 truncate block">-</strong>
+            </div>
+            <div class="col-span-2 sm:col-span-1">
+              <span class="text-slate-400 block text-[10px]">Historial de Talleres:</span>
+              <span id="rec-talleres-badge" class="font-bold text-indigo-700 font-mono text-[10px] bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-200">1 taller asistido</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque de Datos Personales (Visible o editable si es nuevo) -->
+        <div id="bloque-datos-personales" class="space-y-3 pt-2">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label for="asist-nombre" class="block font-semibold text-slate-700 mb-1 text-xs">Nombres y Apellidos *</label>
+              <input type="text" id="asist-nombre" required placeholder="Ej: Patricia Morales Vaca" 
+                class="w-full text-xs p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 bg-white font-medium">
+            </div>
+            <div>
+              <label for="asist-celular" class="block font-semibold text-slate-700 mb-1 text-xs">Celular / WhatsApp *</label>
+              <input type="tel" id="asist-celular" required placeholder="Ej: 71234567" 
+                class="w-full text-xs p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 bg-white font-mono">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div>
+              <label for="asist-edad" class="block font-semibold text-slate-700 mb-1 text-xs">Edad (Años)</label>
+              <input type="number" id="asist-edad" min="10" max="99" placeholder="Ej: 19" 
+                class="w-full text-xs p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 bg-white">
+            </div>
+            <div>
+              <label for="asist-genero" class="block font-semibold text-slate-700 mb-1 text-xs">Identidad de Género</label>
+              <select id="asist-genero" class="w-full text-xs p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 bg-white">
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Trans femenino">Trans femenino</option>
+                <option value="Trans masculino">Trans masculino</option>
+                <option value="Otros">Otros</option>
+              </select>
+            </div>
+            <div>
+              <label for="asist-rol" class="block font-semibold text-slate-700 mb-1 text-xs">Rol / Ocupación *</label>
+              <select id="asist-rol" class="w-full text-xs p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 bg-white font-medium">
+                <option value="Estudiante de Secundaria">Estudiante Secundaria</option>
+                <option value="Estudiante Universitario/a">Estudiante Universitario</option>
+                <option value="Líder Juvenil / Red Tú Decides">Líder Red Tú Decides</option>
+                <option value="Docente / Maestro/a">Docente / Maestro</option>
+                <option value="Padre / Madre de Familia">Padre / Madre</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="asist-institucion" class="block font-semibold text-slate-700 mb-1 text-xs">Unidad Educativa / Comunidad *</label>
+            <input type="text" id="asist-institucion" placeholder="Ej: U.E. Simón Bolívar" 
+              class="w-full text-xs p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 bg-white">
+          </div>
+        </div>
+      </div>
+
+      <!-- Paso 2: Firma Táctil en Pantalla (Touch Signature Canvas) -->
+      <div class="space-y-2 pt-3 border-t border-slate-100">
+        <div class="flex items-center justify-between pb-1">
+          <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-800 text-xs flex items-center justify-center font-black">2</span>
+            <span>Firma de Asistencia en Pantalla (Con el dedo)</span>
+          </h3>
+          <span class="text-[10px] text-emerald-700 font-mono font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+            Validez SGC
+          </span>
+        </div>
+        <p class="text-[11px] text-slate-500 leading-tight">
+          Por favor dibuja tu firma con tu dedo o puntero sobre el recuadro. Esta firma se imprimirá en la planilla oficial de respaldo de CIES.
+        </p>
+
+        <!-- Canvas de Firma -->
+        <div class="border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 p-2 relative overflow-hidden focus-within:border-emerald-500 transition-colors">
+          <canvas id="canvas-firma" width="500" height="180" class="w-full h-36 bg-white rounded-xl shadow-inner cursor-crosshair touch-none"></canvas>
+          
+          <div class="flex items-center justify-between px-2 pt-2 text-[11px]">
+            <span id="label-estado-firma" class="text-slate-400 font-medium flex items-center gap-1">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+              <span>Espacio para firmar</span>
+            </span>
+            <button type="button" onclick="limpiarCanvasFirma()" class="px-3 py-1 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold rounded-lg transition-colors cursor-pointer text-xs flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+              <span>Borrar / Repetir</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paso 3: Botón de Envío Oficial -->
+      <div class="pt-3">
+        <button type="button" onclick="enviarAutoAsistencia(event)" 
+          class="w-full py-4 px-4 bg-gradient-to-r from-emerald-600 via-teal-600 to-indigo-700 hover:from-emerald-700 hover:to-indigo-800 text-white font-black text-sm rounded-xl shadow-md transition-all cursor-pointer flex items-center justify-center gap-2 transform active:scale-[0.99]">
+          <svg class="w-5 h-5 text-emerald-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span>✓ Registrar mi Asistencia Oficial a este Taller</span>
+        </button>
+        <p class="text-[11px] text-center text-slate-400 mt-2">
+          Al registrarte, confirmas tu asistencia activa a la sesión pedagógica y los servicios de apoyo del evento.
+        </p>
+      </div>
+    </section>
+
+    <!-- VISTA 2: TICKET DIGITAL DE ASISTENCIA CONFIRMADA -->
+    <section id="seccion-ticket-asistencia" class="hidden bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 space-y-5">
+      <div class="text-center space-y-2">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-emerald-100 text-emerald-700 text-3xl mx-auto shadow-xs animate-bounce">
+          ✓
+        </div>
+        <h3 class="text-xl font-black text-slate-900">¡Asistencia Confirmada!</h3>
+        <p class="text-xs text-slate-600 max-w-md mx-auto" id="ticket-mensaje-cabecera">
+          Tu presencia ha sido registrada satisfactoriamente en la planilla oficial del taller.
+        </p>
+      </div>
+
+      <!-- Ticket Digital Institucional -->
+      <div class="p-5 rounded-2xl border-2 border-dashed border-emerald-300 bg-emerald-50/60 space-y-3.5 text-xs">
+        <div class="flex items-center justify-between pb-2 border-b border-emerald-200">
+          <span class="font-mono text-[10px] text-emerald-800 uppercase tracking-widest font-extrabold">Comprobante de Asistencia en Aula</span>
+          <span id="ticket-hora-exacta" class="px-2.5 py-0.5 rounded-full text-[11px] font-black bg-emerald-200 text-emerald-950 font-mono">
+            10:30 a. m.
+          </span>
+        </div>
+
+        <div class="space-y-1">
+          <span class="text-slate-400 text-[10px] uppercase font-bold tracking-wider">Participante Acreditado/a:</span>
+          <h4 id="ticket-nombre" class="text-base font-extrabold text-slate-900">-</h4>
+          <p id="ticket-ci-cel" class="text-slate-600 font-mono text-xs">CI: - • Cel: -</p>
+        </div>
+
+        <div class="p-3 bg-white/80 rounded-xl border border-emerald-200/80 space-y-1">
+          <span class="text-slate-400 text-[10px] uppercase font-bold tracking-wider block">Taller Formativo:</span>
+          <p id="ticket-taller-nombre" class="font-bold text-slate-900 text-xs">-</p>
+          <div class="flex items-center justify-between text-[11px] text-slate-600 pt-1">
+            <span>Carga: <strong id="ticket-horas" class="text-emerald-800 font-mono font-bold">-</strong></span>
+            <span>Fecha: <strong id="ticket-fecha" class="font-mono">-</strong></span>
+          </div>
+        </div>
+
+        <!-- Muestra de la Firma Digital Registrada -->
+        <div class="pt-1">
+          <span class="text-slate-400 text-[10px] uppercase font-bold tracking-wider block mb-1">Firma Digital Registrada:</span>
+          <div class="bg-white border border-emerald-200 rounded-xl p-2 flex items-center justify-center h-20 overflow-hidden shadow-2xs">
+            <img id="ticket-firma-preview" alt="Firma del estudiante" class="max-h-16 object-contain">
+          </div>
+        </div>
+
+        <!-- Horas acumuladas en el proceso formativo hacia 33 horas -->
+        <div class="pt-2 border-t border-emerald-200 flex items-center justify-between">
+          <span class="text-[11px] font-bold text-slate-700">Avance hacia las 33 Horas:</span>
+          <span id="ticket-progreso-horas-badge" class="px-2.5 py-1 rounded-lg text-xs font-black bg-indigo-100 text-indigo-900 border border-indigo-200 font-mono">
+            3 / 33 hrs
+          </span>
+        </div>
+      </div>
+
+      <!-- Acciones de Cierre -->
+      <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs border-t border-slate-100">
+        <button type="button" onclick="reiniciarParaOtroEstudiante()" 
+          class="w-full sm:w-auto px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-xs cursor-pointer transition-colors flex items-center justify-center gap-2">
+          <span>👥 Registrar a otro compañero</span>
+        </button>
+        <span class="text-[11px] text-slate-400 text-center">
+          CIES • Sistema de Gestión de Calidad ISO 9001:2015
+        </span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="text-center text-[11px] text-slate-400 mt-6 pb-2">
+    <p>CIES Salud Sexual – Salud Reproductiva • Formato SGC-Apoyo-ABS-3-pp3 • Gestión 2026</p>
+  </footer>
+
+  <!-- Lógica Interactiva del Formulario -->
+  <script>
+    const STORAGE_KEY = "CIES_DEMO_DB_V10";
+    let currentActId = 10;
+    let currentTallerId = 101;
+    let canvasFirma = null;
+    let ctxFirma = null;
+    let isDrawing = false;
+    let hasDrawn = false;
+    let estudianteEncontrado = null;
+
+    function getDB() {
+      const data = localStorage.getItem(STORAGE_KEY);
+      if (!data) return { actividades: [], participantes: [], preregistros: [], asistenciasTalleres: [] };
+      try {
+        const parsed = JSON.parse(data);
+        if (!parsed.asistenciasTalleres) parsed.asistenciasTalleres = [];
+        return parsed;
+      } catch (e) {
+        return { actividades: [], participantes: [], preregistros: [], asistenciasTalleres: [] };
+      }
+    }
+
+    function saveDB(db) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(db));
+    }
+
+    function initPage() {
+      const params = new URLSearchParams(window.location.search);
+      const actParam = parseInt(params.get("actId"));
+      const tallerParam = parseInt(params.get("tallerId"));
+
+      const db = getDB();
+      if (!isNaN(actParam)) currentActId = actParam;
+      else if (db.actividades && db.actividades.length > 0) currentActId = db.actividades[0].id;
+
+      const act = (db.actividades || []).find(a => a.id === currentActId) || (db.actividades && db.actividades[0]);
+      
+      let taller = null;
+      if (act && act.talleres && act.talleres.length > 0) {
+        if (!isNaN(tallerParam)) taller = act.talleres.find(t => t.id === tallerParam);
+        if (!taller) taller = act.talleres[0];
+      }
+
+      if (taller) {
+        currentTallerId = taller.id;
+        document.getElementById("info-taller-titulo").textContent = taller.titulo;
+        document.getElementById("info-taller-proceso").textContent = act ? act.titulo : "Proceso Educativo Integral";
+        document.getElementById("info-taller-horas").textContent = `${taller.horas || 3} hrs`;
+        document.getElementById("info-taller-fecha").textContent = taller.fecha || act.fecha || "Fecha de sesión";
+        document.getElementById("info-taller-sede").textContent = `${taller.lugar || act.unidadEducativa || 'Sede CIES'} (${act.regional || 'EA'})`;
+        document.getElementById("info-taller-resp").textContent = `Facilitador/a: ${taller.facilitador || act.responsable || 'Equipo CIES'}`;
+      } else if (act) {
+        document.getElementById("info-taller-titulo").textContent = act.titulo;
+        document.getElementById("info-taller-proceso").textContent = act.categoriaPlanilla || "Planilla de Asistencia";
+        document.getElementById("info-taller-horas").textContent = `${act.totalHoras || 3} hrs`;
+        document.getElementById("info-taller-fecha").textContent = act.fecha || "Fecha de sesión";
+        document.getElementById("info-taller-sede").textContent = `${act.unidadEducativa || 'Sede CIES'} (${act.regional || 'EA'})`;
+        document.getElementById("info-taller-resp").textContent = `Responsable: ${act.responsable || 'Equipo CIES'}`;
+      }
+
+      actualizarConteoAsistenciasAula();
+      initCanvasFirma();
+    }
+
+    function actualizarConteoAsistenciasAula() {
+      const db = getDB();
+      const list = (db.asistenciasTalleres || []).filter(a => a.actividadId === currentActId && a.tallerId === currentTallerId);
+      const total = list.length;
+      const badge = document.getElementById("badge-total-asistencias-aula");
+      if (badge) badge.textContent = `${total} presente${total === 1 ? '' : 's'}`;
+    }
+
+    // Buscador predictivo por CI
+    function buscarParticipantePorCI(ciVal) {
+      const clean = (ciVal || "").trim().toLowerCase();
+      const banner = document.getElementById("banner-estudiante-reconocido");
+      const nombreInput = document.getElementById("asist-nombre");
+      const celInput = document.getElementById("asist-celular");
+      const edadInput = document.getElementById("asist-edad");
+      const genInput = document.getElementById("asist-genero");
+      const rolInput = document.getElementById("asist-rol");
+      const instInput = document.getElementById("asist-institucion");
+
+      if (!clean || clean.length < 3) {
+        if (banner) banner.classList.add("hidden");
+        estudianteEncontrado = null;
+        return;
+      }
+
+      const db = getDB();
+      // 1. Buscar en padrón de participantes
+      let match = (db.participantes || []).find(p => (p.ci || "").toLowerCase().includes(clean));
+      
+      // 2. Si no, buscar en prerregistros
+      if (!match) {
+        const preMatch = (db.preregistros || []).find(p => (p.ci || "").toLowerCase().includes(clean));
+        if (preMatch) {
+          match = {
+            nombres: preMatch.nombre,
+            ci: preMatch.ci,
+            telefono: preMatch.celular,
+            edad: preMatch.edad,
+            genero: preMatch.genero,
+            cargoOcupacion: preMatch.rol,
+            procedencia: preMatch.institucion
+          };
+        }
+      }
+
+      if (match) {
+        estudianteEncontrado = match;
+        const nombreCompleto = `${match.nombres || ''} ${match.apellidos || ''}`.trim() || match.nombre;
+        
+        document.getElementById("rec-nombre-completo").textContent = nombreCompleto;
+        document.getElementById("rec-rol").textContent = match.cargoOcupacion || match.rol || "Participante";
+        document.getElementById("rec-institucion").textContent = match.procedencia || match.institucion || "Comunidad";
+
+        // Contar asistencias previas en este proceso
+        const asistPrevias = (db.asistenciasTalleres || []).filter(a => (a.ci || "").toLowerCase() === (match.ci || "").toLowerCase() && a.actividadId === currentActId).length;
+        document.getElementById("rec-talleres-badge").textContent = asistPrevias > 0 ? `${asistPrevias} taller(es) completado(s)` : "Inicia hoy este proceso";
+
+        if (nombreInput) nombreInput.value = nombreCompleto;
+        if (celInput) celInput.value = match.telefono || match.celular || "";
+        if (edadInput && match.edad) edadInput.value = match.edad;
+        if (genInput && match.genero) {
+          for (let opt of genInput.options) {
+            if (opt.value.toLowerCase().startsWith(match.genero.toLowerCase().slice(0, 3))) {
+              genInput.value = opt.value;
+              break;
+            }
+          }
+        }
+        if (rolInput && match.cargoOcupacion) {
+          for (let opt of rolInput.options) {
+            if (opt.value.toLowerCase().includes((match.cargoOcupacion || '').toLowerCase())) {
+              rolInput.value = opt.value;
+              break;
+            }
+          }
+        }
+        if (instInput) instInput.value = match.procedencia || match.institucion || "";
+
+        if (banner) banner.classList.remove("hidden");
+      } else {
+        estudianteEncontrado = null;
+        if (banner) banner.classList.add("hidden");
+      }
+    }
+
+    // Inicializar Canvas de Firma Touch
+    function initCanvasFirma() {
+      canvasFirma = document.getElementById("canvas-firma");
+      if (!canvasFirma) return;
+      ctxFirma = canvasFirma.getContext("2d");
+
+      // Ajustar resolución retina
+      const rect = canvasFirma.getBoundingClientRect();
+      canvasFirma.width = rect.width * 2;
+      canvasFirma.height = rect.height * 2;
+      ctxFirma.scale(2, 2);
+
+      ctxFirma.strokeStyle = "#0f172a"; // slate-900
+      ctxFirma.lineWidth = 2.5;
+      ctxFirma.lineCap = "round";
+      ctxFirma.lineJoin = "round";
+
+      // Eventos mouse
+      canvasFirma.addEventListener("mousedown", startDraw);
+      canvasFirma.addEventListener("mousemove", draw);
+      canvasFirma.addEventListener("mouseup", stopDraw);
+      canvasFirma.addEventListener("mouseleave", stopDraw);
+
+      // Eventos touch para celulares
+      canvasFirma.addEventListener("touchstart", (e) => {
+        e.preventDefault();
+        const touch = e.touches[0];
+        const rect = canvasFirma.getBoundingClientRect();
+        startDraw({ clientX: touch.clientX, clientY: touch.clientY, rect });
+      }, { passive: false });
+
+      canvasFirma.addEventListener("touchmove", (e) => {
+        e.preventDefault();
+        const touch = e.touches[0];
+        const rect = canvasFirma.getBoundingClientRect();
+        draw({ clientX: touch.clientX, clientY: touch.clientY, rect });
+      }, { passive: false });
+
+      canvasFirma.addEventListener("touchend", stopDraw);
+    }
+
+    function getCanvasCoordinates(e) {
+      const rect = e.rect || canvasFirma.getBoundingClientRect();
+      return {
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+      };
+    }
+
+    function startDraw(e) {
+      isDrawing = true;
+      hasDrawn = true;
+      const coords = getCanvasCoordinates(e);
+      ctxFirma.beginPath();
+      ctxFirma.moveTo(coords.x, coords.y);
+      actualizarEstadoFirmaLabel();
+    }
+
+    function draw(e) {
+      if (!isDrawing) return;
+      const coords = getCanvasCoordinates(e);
+      ctxFirma.lineTo(coords.x, coords.y);
+      ctxFirma.stroke();
+    }
+
+    function stopDraw() {
+      if (isDrawing) {
+        ctxFirma.closePath();
+        isDrawing = false;
+        actualizarEstadoFirmaLabel();
+      }
+    }
+
+    function limpiarCanvasFirma() {
+      if (!ctxFirma || !canvasFirma) return;
+      const rect = canvasFirma.getBoundingClientRect();
+      ctxFirma.clearRect(0, 0, rect.width, rect.height);
+      hasDrawn = false;
+      actualizarEstadoFirmaLabel();
+    }
+
+    function actualizarEstadoFirmaLabel() {
+      const lbl = document.getElementById("label-estado-firma");
+      if (!lbl) return;
+      if (hasDrawn) {
+        lbl.innerHTML = `<span class="text-emerald-600 font-bold flex items-center gap-1">✓ Firma capturada</span>`;
+      } else {
+        lbl.innerHTML = `<span class="text-slate-400 font-medium">Espacio para firmar</span>`;
+      }
+    }
+
+    // Envío del Auto-Registro de Asistencia
+    function enviarAutoAsistencia(e) {
+      if (e) e.preventDefault();
+
+      const ci = document.getElementById("asist-ci").value.trim();
+      const nombre = document.getElementById("asist-nombre").value.trim();
+      const celular = document.getElementById("asist-celular").value.trim();
+      const edad = parseInt(document.getElementById("asist-edad").value) || 18;
+      const genero = document.getElementById("asist-genero").value;
+      const rol = document.getElementById("asist-rol").value;
+      const institucion = document.getElementById("asist-institucion").value.trim();
+
+      if (!ci) {
+        alert("Por favor ingresa tu número de Cédula de Identidad (CI).");
+        document.getElementById("asist-ci").focus();
+        return;
+      }
+      if (!nombre) {
+        alert("Por favor ingresa tus Nombres y Apellidos completos.");
+        document.getElementById("asist-nombre").focus();
+        return;
+      }
+      if (!celular) {
+        alert("Por favor ingresa tu Celular o WhatsApp de contacto.");
+        document.getElementById("asist-celular").focus();
+        return;
+      }
+      if (!hasDrawn) {
+        alert("Es obligatorio firmar en el recuadro para validar tu asistencia según normativa institucional CIES.");
+        return;
+      }
+
+      const firmaDataUrl = canvasFirma.toDataURL("image/png");
+      const ahora = new Date();
+      const fechaHoraTexto = ahora.toLocaleDateString() + " " + ahora.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      const horaExactaTexto = ahora.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+      const db = getDB();
+      if (!db.asistenciasTalleres) db.asistenciasTalleres = [];
+
+      // Verificar si ya registró asistencia en este taller
+      const yaRegistro = db.asistenciasTalleres.some(a => 
+        a.actividadId === currentActId && 
+        a.tallerId === currentTallerId && 
+        (a.ci || "").toLowerCase() === ci.toLowerCase()
+      );
+
+      if (yaRegistro) {
+        if (!confirm("Ya tienes una asistencia registrada para este taller. ¿Deseas actualizar tu firma y datos de registro?")) {
+          return;
+        }
+      }
+
+      // Eliminar registro anterior si ya existía en este taller
+      db.asistenciasTalleres = db.asistenciasTalleres.filter(a => 
+        !(a.actividadId === currentActId && a.tallerId === currentTallerId && (a.ci || "").toLowerCase() === ci.toLowerCase())
+      );
+
+      // Crear nuevo registro de asistencia
+      const nuevoRegistro = {
+        id: Date.now() + Math.random(),
+        actividadId: currentActId,
+        tallerId: currentTallerId,
+        ci: ci,
+        nombre: nombre,
+        nombres: nombre,
+        celular: celular,
+        telefono: celular,
+        edad: edad,
+        genero: genero,
+        rol: rol,
+        institucion: institucion,
+        fechaHora: fechaHoraTexto,
+        horaExacta: horaExactaTexto,
+        firmaDataUrl: firmaDataUrl
+      };
+
+      db.asistenciasTalleres.push(nuevoRegistro);
+
+      // Actualizar conteo de asistentes en el taller correspondiente de la actividad
+      const act = (db.actividades || []).find(a => a.id === currentActId);
+      if (act) {
+        const taller = (act.talleres || []).find(t => t.id === currentTallerId);
+        if (taller) {
+          const totalTaller = db.asistenciasTalleres.filter(a => a.actividadId === currentActId && a.tallerId === currentTallerId).length;
+          taller.participantes = totalTaller;
+          if (!taller.ejecucion) taller.ejecucion = {};
+          taller.ejecucion.participantesAsistentes = totalTaller;
+          if (!taller.asistencias) taller.asistencias = [];
+          
+          taller.asistencias = taller.asistencias.filter(a => (a.ci || "").toLowerCase() !== ci.toLowerCase());
+          taller.asistencias.push(nuevoRegistro);
+        }
+      }
+
+      // Incorporar al padrón general si no existía
+      if (!db.participantes) db.participantes = [];
+      const existeEnPadron = db.participantes.some(p => (p.ci || "").toLowerCase() === ci.toLowerCase());
+      if (!existeEnPadron) {
+        db.participantes.unshift({
+          id: Date.now() + Math.floor(Math.random() * 1000),
+          nombres: nombre,
+          apellidos: "",
+          ci: ci,
+          telefono: celular,
+          edad: edad,
+          rangoEdad: edad <= 14 ? "10 a 14" : (edad <= 19 ? "15 a 19" : (edad <= 24 ? "20 a 24" : "> 24")),
+          genero: genero,
+          procedencia: institucion || (act ? act.regional : "CBBA"),
+          regional: act ? act.regional : "CBBA",
+          cargoOcupacion: rol,
+          estadoFormacion: "Iniciado",
+          activoEnAula: true,
+          fechaRegistro: ahora.toISOString().split("T")[0]
+        });
+      }
+
+      saveDB(db);
+
+      // Mostrar Ticket Digital
+      mostrarTicketAsistencia(nuevoRegistro, act);
+    }
+
+    function mostrarTicketAsistencia(reg, act) {
+      document.getElementById("seccion-formulario-asistencia").classList.add("hidden");
+      const ticketSec = document.getElementById("seccion-ticket-asistencia");
+      ticketSec.classList.remove("hidden");
+
+      document.getElementById("ticket-nombre").textContent = reg.nombre;
+      document.getElementById("ticket-ci-cel").textContent = `CI: ${reg.ci} • WhatsApp: ${reg.celular}`;
+      
+      const taller = (act?.talleres || []).find(t => t.id === currentTallerId);
+      document.getElementById("ticket-taller-nombre").textContent = taller ? taller.titulo : (act ? act.titulo : "Taller CIES");
+      document.getElementById("ticket-horas").textContent = `${taller?.horas || 3} hrs pedagógicas`;
+      document.getElementById("ticket-fecha").textContent = taller?.fecha || act?.fecha || "Hoy";
+      document.getElementById("ticket-hora-exacta").textContent = reg.horaExacta || "Registrado";
+
+      // Renderizar vista previa de la firma
+      const imgFirma = document.getElementById("ticket-firma-preview");
+      if (imgFirma && reg.firmaDataUrl) {
+        imgFirma.src = reg.firmaDataUrl;
+      }
+
+      // Calcular acumulado de horas del participante en esta actividad
+      const db = getDB();
+      const asistenciasEsteEstudiante = (db.asistenciasTalleres || []).filter(a => 
+        (a.ci || "").toLowerCase() === (reg.ci || "").toLowerCase() && 
+        a.actividadId === currentActId
+      );
+
+      let horasAcumuladas = 0;
+      (act?.talleres || []).forEach(t => {
+        if (asistenciasEsteEstudiante.some(a => a.tallerId === t.id)) {
+          horasAcumuladas += (parseFloat(t.horas) || 3);
+        }
+      });
+      if (horasAcumuladas === 0) horasAcumuladas = parseFloat(taller?.horas || 3);
+
+      const badgeProgreso = document.getElementById("ticket-progreso-horas-badge");
+      if (badgeProgreso) {
+        badgeProgreso.textContent = `${horasAcumuladas} / 33 hrs (${Math.round((horasAcumuladas / 33) * 100)}%)`;
+      }
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function reiniciarParaOtroEstudiante() {
+      limpiarCanvasFirma();
+      document.getElementById("asist-ci").value = "";
+      document.getElementById("asist-nombre").value = "";
+      document.getElementById("asist-celular").value = "";
+      document.getElementById("asist-edad").value = "";
+      document.getElementById("asist-institucion").value = "";
+      document.getElementById("banner-estudiante-reconocido").classList.add("hidden");
+      estudianteEncontrado = null;
+
+      document.getElementById("seccion-ticket-asistencia").classList.add("hidden");
+      document.getElementById("seccion-formulario-asistencia").classList.remove("hidden");
+      actualizarConteoAsistenciasAula();
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    window.addEventListener("DOMContentLoaded", initPage);
+  </script>
+</body>
+</html>

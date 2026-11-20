@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluación Educativa CIES - Portal del Estudiante</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased min-h-screen flex flex-col justify-between py-6 px-4 sm:px-6">
+
+  <!-- Contenedor Principal (Uso exclusivo de estudiantes sin opciones administrativas) -->
+  <main class="w-full max-w-2xl mx-auto space-y-6">
+
+    <!-- Encabezado Institucional Formal CIES -->
+    <header class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+      <div id="header-banner" class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white p-6 text-center transition-all duration-300">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white text-blue-700 font-black text-xl mb-2.5 shadow-sm">
+          CIES
+        </div>
+        <h1 class="text-lg font-black tracking-tight uppercase">CIES Salud Sexual – Salud Reproductiva</h1>
+        <p class="text-xs text-blue-100 mt-0.5">Sistema Oficial de Evaluación Educativa • Estado Plurinacional de Bolivia</p>
+        
+        <div class="mt-3 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-white text-xs font-semibold backdrop-blur-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span id="badge-tipo-test">Formulario Oficial de Evaluación</span>
+          <span class="opacity-60">•</span>
+          <span class="font-mono text-[11px] opacity-90">SGC-Misional-E-3</span>
+        </div>
+      </div>
+
+      <!-- Ficha Informativa del Taller / Actividad -->
+      <div class="p-4 bg-slate-50 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+        <div>
+          <span class="text-[10px] uppercase font-bold text-slate-500 tracking-wider block">Taller o Proceso Formativo:</span>
+          <h2 id="info-taller-titulo" class="font-bold text-slate-900 text-sm">Capacitación Institucional CIES</h2>
+        </div>
+        <div class="sm:text-right">
+          <span class="text-[10px] uppercase font-bold text-slate-500 tracking-wider block">Sede & Unidad Educativa:</span>
+          <span id="info-taller-sede" class="font-medium text-slate-700">Comunidad Educativa (CBBA)</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- VISTA 1: FORMULARIO DEL ESTUDIANTE (Solo el test, sin opciones extras) -->
+    <section id="seccion-formulario" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 space-y-6">
+      
+      <div class="border-b border-slate-100 pb-3">
+        <h3 id="form-titulo-prueba" class="text-base font-bold text-slate-900 flex items-center gap-2">
+          <span>📝</span> Cuestionario de Evaluación de Conocimientos
+        </h3>
+        <p class="text-xs text-slate-500 mt-1">
+          Por favor ingresa tus datos personales y responde a las 5 preguntas. Tu calificación se registrará automáticamente en el sistema del taller.
+        </p>
+      </div>
+
+      <form id="form-evaluacion-estudiante" onsubmit="enviarEvaluacionEstudiante(event)" class="space-y-6 text-xs">
+        
+        <!-- Datos de Identificación del Estudiante -->
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3">
+          <h4 class="font-bold text-slate-800 text-xs uppercase tracking-wide flex items-center gap-1.5">
+            <span>👤</span> Tus Datos Personales
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div>
+              <label for="est-nombre" class="block font-semibold text-slate-700 mb-1">Nombre Completo *</label>
+              <input type="text" id="est-nombre" required placeholder="Ej: Rosario Quispe Mamani" 
+                class="w-full text-xs p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white font-medium">
+            </div>
+            <div>
+              <label for="est-ci" class="block font-semibold text-slate-700 mb-1">Cédula de Identidad (CI) *</label>
+              <input type="text" id="est-ci" required placeholder="Ej: 7182910 LP" 
+                class="w-full text-xs p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 bg-white font-mono">
+            </div>
+          </div>
+        </div>
+
+        <!-- Cuestionario de 5 Preguntas Temáticas CIES (20 pts cada una = 100 pts) -->
+        <div class="space-y-4">
+          <div class="flex items-center justify-between pb-1 border-b border-slate-100">
+            <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wide flex items-center gap-1.5">
+              <span>📋</span> Preguntas del Test (100 Puntos en Total)
+            </h4>
+            <span class="text-[11px] text-slate-500 font-semibold">20 puntos por respuesta correcta</span>
+          </div>
+
+          <!-- Pregunta 1 -->
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+            <p class="font-bold text-slate-900 text-xs">
+              1. ¿Cuál es el único método anticonceptivo que brinda doble protección frente a infecciones de transmisión sexual (ITS/VIH) y embarazos no planificados?
+            </p>
+            <div class="space-y-1.5 text-xs">
+              <label class="flex items-center gap-2.5 p-2 bg-white rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer transition-colors">
+                <input type="radio" name="p1" value="correcta" required class="text-blue-600 focus:ring-blue-500">
+                <span class="font-medium text-slate-700">Preservativo (Condón masculino o femenino)</span>
+              </label>
+              <label class="flex items-center gap-2.5 p-2 bg-white rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer transition-colors">
+                <input type="radio" name="p1" value="incorrecta" class="text-blue-600 focus:ring-blue-500">
+                <span class="font-medium text-slate-700">Dispositivo Intrauterino (DIU de cobre)</span>
+              </label>
+              <label class="flex items-center gap-2.5 p-2 bg-white rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer transition-colors">
+                <input type="radio" name="p1" value="incorrecta" class="text-blue-600 focus:ring-blue-500">
+                <span class="font-medium text-slate-700">Implante subdérmico de larga duración</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+            <p class="font-bold text-slate-900 text-xs">
+              2. ¿Qué ley boliviana garantiza a las mujeres y adolescentes el derecho a una vida libre de violencia y atención confidencial en servicios de salud?
+            </p>
+            <div class="space-y-1.5 text-xs">
+              <label class="flex items-center gap-2.5 p-2 bg-white rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer transition-colors">
+                <input type="radio" name="p2" value="correcta" required class="text-blue-600 focus:ring-blue-500">
+                <span class="font-medium text-slate-700">Ley 348 (Ley Integral para Garantizar a las Mujeres una Vida Libre de Violencia)</span>
+              </label>
+              <label class="flex items-center gap-2.5 p-2 bg-white rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer transition-colors">
+                <input type="radio" name="p2" value="incorrecta" class="text-blue-600 focus:ring-blue-500">
+                <span class="font-medium text-slate-700">Ley General del Trabajo y Empleo</span>
+              </label>
+              <label class="flex items-center gap-2.5 p-2 bg-white rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer transition-colors">
+                <input type="radio" name="p2" value="incorrecta" class="text-blue-600 focus:ring-blue-500">
+                <span class="font-medium text-slate-700">Ley de Telecomunicaciones y Medios Digitales</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+            <p class="font-bold text-slate-900 text-xs">
+              3. ¿Cuál es el plazo máximo de horas posteriores a una relación sexual no protegida para que la Pastilla Anticonceptiva de Emergencia (PAE) sea efectiva?
+            </p>
+            <div class="space-y-1.5 text-xs">
+              <label class="flex items-center gap-2.5 p-2 bg-white rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer transition-colors">
+                <input type="radio" name="p3" value="correcta" required class="text-blue-600 focus:ring-blue-500">
+                <span class="font-medium text-slate-700">Hasta 72 horas (3 días), con mayor efectividad en las primeras 24 horas</span>
+              </label>
+              <label class="flex items-center gap-2.5 p-2 bg-white rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer transition-colors">
+                <input type="radio" name="p3" value="incorrecta" class="text-blue-600 focus:ring-blue-500">
+                <span class="font-medium text-slate-700">Hasta 15 días posteriores</span>
+              </label>
+              <label class="flex items-center gap-2.5 p-2 bg-white rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer transition-colors">
+                <input type="radio" name="p3" value="incorrecta" class="text-blue-600 focus:ring-blue-500">
+                <span class="font-medium text-slate-700">Solo en los primeros 30 minutos sin excepción</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 4 -->
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+            <p class="font-bold text-slate-900 text-xs">
+              4. Según la Ley Nacional 3729, ¿cuáles son los principios fundamentales para la realización de una prueba rápida de VIH en Bolivia?
+            </p>
+            <div class="space-y-1.5 text-xs">
+              <label class="flex items-center gap-2.5 p-2 bg-white rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer transition-colors">
+                <input type="radio" name="p4" value="correcta" required class="text-blue-600 focus:ring-blue-500">
+                <span class="font-medium text-slate-700">Voluntaria, estrictamente confidencial y con consejería pre/post prueba</span>
+              </label>
+              <label class="flex items-center gap-2.5 p-2 bg-white rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer transition-colors">
+                <input type="radio" name="p4" value="incorrecta" class="text-blue-600 focus:ring-blue-500">
+                <span class="font-medium text-slate-700">Obligatoria para trámites escolares sin consejería</span>
+              </label>
+              <label class="flex items-center gap-2.5 p-2 bg-white rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer transition-colors">
+                <input type="radio" name="p4" value="incorrecta" class="text-blue-600 focus:ring-blue-500">
+                <span class="font-medium text-slate-700">De publicación pública en el periódico mural</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Pregunta 5 -->
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+            <p class="font-bold text-slate-900 text-xs">
+              5. ¿Qué pilar sustenta la Educación Integral en Sexualidad (EIS) según los lineamientos de CIES e IPPF?
+            </p>
+            <div class="space-y-1.5 text-xs">
+              <label class="flex items-center gap-2.5 p-2 bg-white rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer transition-colors">
+                <input type="radio" name="p5" value="correcta" required class="text-blue-600 focus:ring-blue-500">
+                <span class="font-medium text-slate-700">Enfoque de derechos humanos, igualdad de género, base científica y toma de decisiones informada</span>
+              </label>
+              <label class="flex items-center gap-2.5 p-2 bg-white rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer transition-colors">
+                <input type="radio" name="p5" value="incorrecta" class="text-blue-600 focus:ring-blue-500">
+                <span class="font-medium text-slate-700">Enfoque exclusivo de temor y prohibición sin diálogo</span>
+              </label>
+              <label class="flex items-center gap-2.5 p-2 bg-white rounded-lg border border-slate-200 hover:bg-slate-100 cursor-pointer transition-colors">
+                <input type="radio" name="p5" value="incorrecta" class="text-blue-600 focus:ring-blue-500">
+                <span class="font-medium text-slate-700">Charlas sin respaldo metodológico ni seguimiento</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botón de Envío del Formulario -->
+        <div class="pt-2">
+          <button type="submit" id="btn-enviar-test" 
+            class="w-full py-3.5 px-4 bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-sm rounded-xl shadow-md transition-all cursor-pointer flex items-center justify-center gap-2">
+            <span>✓ Enviar mi Evaluación (Finalizar Test)</span>
+          </button>
+          <p class="text-[11px] text-center text-slate-400 mt-2">
+            Al enviar tu evaluación verás tu nota obtenida y la lista de calificaciones del taller.
+          </p>
+        </div>
+      </form>
+    </section>
+
+    <!-- VISTA 2: RESULTADOS Y LISTA DE NOTAS (Se muestra al finalizar el test) -->
+    <section id="seccion-resultados" class="hidden bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 space-y-6">
+      
+      <!-- Tarjeta de Confirmación de Calificación del Estudiante Actual -->
+      <div id="card-nota-estudiante" class="p-5 rounded-2xl border text-center space-y-2 bg-blue-50/80 border-blue-200">
+        <span class="text-3xl">🎉</span>
+        <h3 class="text-lg font-black text-slate-900" id="res-estudiante-saludo">¡Evaluación Finalizada con Éxito!</h3>
+        <p class="text-xs text-slate-600" id="res-estudiante-detalle">Tu calificación ha sido registrada en el sistema del taller.</p>
+        
+        <div class="pt-2 inline-flex flex-col items-center">
+          <div class="inline-flex items-baseline gap-1 text-4xl font-black text-blue-700 font-mono">
+            <span id="res-estudiante-nota">0</span>
+            <span class="text-base text-slate-400 font-normal">/ 100 pts</span>
+          </div>
+          <span id="res-estudiante-badge" class="mt-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+            ✓ Aprobado / Competente
+          </span>
+        </div>
+      </div>
+
+      <!-- Resumen Estadístico del Taller -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-xs">
+        <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl">
+          <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Participantes</span>
+          <span id="res-total-part" class="text-xl font-black text-slate-800 mt-0.5 block">0</span>
+        </div>
+        <div class="p-3 bg-indigo-50 border border-indigo-200 rounded-xl">
+          <span class="text-[10px] font-bold text-indigo-600 uppercase tracking-wider block">Promedio Curso</span>
+          <span id="res-promedio-curso" class="text-xl font-black text-indigo-900 mt-0.5 block">0 pts</span>
+        </div>
+        <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-xl">
+          <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider block">Aprobados (≥70)</span>
+          <span id="res-total-aprobados" class="text-xl font-black text-emerald-800 mt-0.5 block">0</span>
+        </div>
+        <div class="p-3 bg-amber-50 border border-amber-200 rounded-xl">
+          <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider block">En Refuerzo (&lt;70)</span>
+          <span id="res-total-refuerzo" class="text-xl font-black text-amber-800 mt-0.5 block">0</span>
+        </div>
+      </div>
+
+      <!-- Lista Oficial de Participantes y sus Calificaciones -->
+      <div class="space-y-3">
+        <div class="flex items-center justify-between pb-1 border-b border-slate-100">
+          <h4 class="font-bold text-xs text-slate-900 uppercase tracking-wide flex items-center gap-1.5">
+            <span>📋</span> Lista de Participantes y sus Notas
+          </h4>
+          <span id="res-subtitulo-lista" class="text-[11px] font-mono text-slate-500">Acta de Calificaciones</span>
+        </div>
+
+        <div class="border border-slate-200 rounded-xl overflow-hidden shadow-2xs">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-slate-100 text-slate-600 text-[10px] uppercase font-bold border-b border-slate-200">
+              <tr>
+                <th class="py-2.5 px-3 w-10 text-center">#</th>
+                <th class="py-2.5 px-3">Estudiante / Participante</th>
+                <th class="py-2.5 px-3 font-mono">CI</th>
+                <th class="py-2.5 px-3 text-center">Nota</th>
+                <th class="py-2.5 px-3 text-center">Desempeño</th>
+              </tr>
+            </thead>
+            <tbody id="res-tabla-estudiantes" class="divide-y divide-slate-100 bg-white">
+              <!-- Se llena dinámicamente con cada participante y su nota -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Acciones Finales -->
+      <div class="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs border-t border-slate-100">
+        <button type="button" onclick="reiniciarFormularioParaOtroEstudiante()" 
+          class="px-4 py-2.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold rounded-xl border border-indigo-200 cursor-pointer transition-colors flex items-center justify-center gap-1.5">
+          <span>➕ Realizar test para otro participante</span>
+        </button>
+        <div class="text-[11px] text-slate-400 text-center sm:text-right">
+          Calificaciones registradas bajo protocolo CIES ISO 9001:2015
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pie de página institucional simple -->
+  <footer class="text-center text-[11px] text-slate-400 mt-8">
+    <p>CIES Salud Sexual – Salud Reproductiva • Todos los derechos reservados &copy; 2026</p>
+  </footer>
+
+  <!-- Script de la página independiente de evaluación -->
+  <script>
+    // Clave de base de datos local compartida
+    const STORAGE_KEY = "CIES_DEMO_DB_V10";
+    let tipoTest = "pre"; // 'pre' o 'post'
+    let actividadId = 1;
+    let ultimoEstudianteNombre = "";
+
+    function getDB() {
+      const data = localStorage.getItem(STORAGE_KEY);
+      if (!data) return { actividades: [], evaluacionesPrePost: [] };
+      try {
+        return JSON.parse(data);
+      } catch (e) {
+        return { actividades: [], evaluacionesPrePost: [] };
+      }
+    }
+
+    function saveDB(db) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(db));
+    }
+
+    function initPage() {
+      // Leer parámetros URL (ej: evaluacion.html?tipo=pre&actId=1)
+      const params = new URLSearchParams(window.location.search);
+      const tipoParam = params.get("tipo");
+      const actParam = params.get("actId");
+
+      if (tipoParam && (tipoParam.toLowerCase() === "post" || tipoParam.toLowerCase() === "pre")) {
+        tipoTest = tipoParam.toLowerCase();
+      }
+
+      const db = getDB();
+      if (actParam && !isNaN(parseInt(actParam))) {
+        actividadId = parseInt(actParam);
+      } else if (db.actividades && db.actividades.length > 0) {
+        actividadId = db.actividades[0].id;
+      }
+
+      // Cargar información de la actividad
+      const act = (db.actividades || []).find(a => a.id === actividadId) || {
+        titulo: "Proceso Educativo Integral en Derechos Sexuales y Reproductivos",
+        unidadEducativa: "Unidad Educativa Central",
+        regional: "CBBA"
+      };
+
+      document.getElementById("info-taller-titulo").textContent = act.titulo;
+      document.getElementById("info-taller-sede").textContent = `${act.unidadEducativa} (${act.regional || 'CBBA'})`;
+
+      // Adaptar colores y textos según si es Pre-Test o Post-Test
+      const headerBanner = document.getElementById("header-banner");
+      const badgeTipo = document.getElementById("badge-tipo-test");
+      const formTitulo = document.getElementById("form-titulo-prueba");
+      const btnEnviar = document.getElementById("btn-enviar-test");
+
+      if (tipoTest === "post") {
+        document.title = "Post-Test (Evaluación Final) - CIES";
+        if (headerBanner) headerBanner.className = "bg-gradient-to-r from-emerald-700 to-teal-800 text-white p-6 text-center transition-all duration-300";
+        if (badgeTipo) badgeTipo.textContent = "🎯 Post-Test: Evaluación de Salida";
+        if (formTitulo) formTitulo.innerHTML = "<span>🎯</span> Evaluación Final de Conocimientos (Post-Test)";
+        if (btnEnviar) {
+          btnEnviar.className = "w-full py-3.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm rounded-xl shadow-md transition-all cursor-pointer flex items-center justify-center gap-2";
+          btnEnviar.innerHTML = "<span>✓ Enviar mi Evaluación Post-Test</span>";
+        }
+      } else {
+        document.title = "Pre-Test (Línea Base) - CIES";
+        if (headerBanner) headerBanner.className = "bg-gradient-to-r from-blue-700 to-indigo-800 text-white p-6 text-center transition-all duration-300";
+        if (badgeTipo) badgeTipo.textContent = "📋 Pre-Test: Diagnóstico Inicial (Línea Base)";
+        if (formTitulo) formTitulo.innerHTML = "<span>📋</span> Evaluación Inicial de Conocimientos (Pre-Test)";
+        if (btnEnviar) {
+          btnEnviar.className = "w-full py-3.5 px-4 bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-sm rounded-xl shadow-md transition-all cursor-pointer flex items-center justify-center gap-2";
+          btnEnviar.innerHTML = "<span>✓ Enviar mi Evaluación Pre-Test</span>";
+        }
+      }
+    }
+
+    function calcularNotaCuestionario() {
+      let nota = 0;
+      for (let i = 1; i <= 5; i++) {
+        const radios = document.getElementsByName(`p${i}`);
+        for (const r of radios) {
+          if (r.checked && r.value === "correcta") {
+            nota += 20;
+          }
+        }
+      }
+      return nota;
+    }
+
+    function enviarEvaluacionEstudiante(e) {
+      e.preventDefault();
+      const nombre = document.getElementById("est-nombre").value.trim();
+      const ci = document.getElementById("est-ci").value.trim();
+
+      if (!nombre || !ci) {
+        alert("Por favor completa tu nombre y cédula de identidad.");
+        return;
+      }
+
+      ultimoEstudianteNombre = nombre;
+      const nota = calcularNotaCuestionario();
+
+      const db = getDB();
+      if (!db.evaluacionesPrePost) db.evaluacionesPrePost = [];
+
+      // Buscar si el estudiante ya tenía un registro en esta actividad
+      const idx = db.evaluacionesPrePost.findIndex(ev => 
+        ev.actividadId === actividadId && 
+        ev.participanteNombre.toLowerCase() === nombre.toLowerCase()
+      );
+
+      if (idx !== -1) {
+        if (tipoTest === "pre") {
+          db.evaluacionesPrePost[idx].preTest = nota;
+        } else {
+          db.evaluacionesPrePost[idx].postTest = nota;
+          db.evaluacionesPrePost[idx].estado = nota >= 70 ? "Culminado" : "En Proceso";
+        }
+        db.evaluacionesPrePost[idx].ci = ci;
+      } else {
+        const nuevo = {
+          id: Date.now() + Math.random(),
+          actividadId: actividadId,
+          participanteNombre: nombre,
+          ci: ci,
+          preTest: tipoTest === "pre" ? nota : null,
+          postTest: tipoTest === "post" ? nota : null,
+          satisfaccion: 95,
+          estado: tipoTest === "post" ? (nota >= 70 ? "Culminado" : "En Proceso") : "En Proceso"
+        };
+        db.evaluacionesPrePost.push(nuevo);
+      }
+
+      saveDB(db);
+
+      // Mostrar pantalla de resultados y lista de notas
+      mostrarResultados(nombre, nota);
+    }
+
+    function mostrarResultados(nombreEstudiante, notaObtenida) {
+      const db = getDB();
+      const evals = (db.evaluacionesPrePost || []).filter(e => e.actividadId === actividadId);
+
+      // Filtrar participantes con nota en este tipo de test
+      const conNota = evals.filter(e => {
+        const n = tipoTest === "pre" ? e.preTest : e.postTest;
+        return n !== null && n !== undefined && n !== "";
+      });
+
+      const total = conNota.length;
+      const notas = conNota.map(e => tipoTest === "pre" ? e.preTest : e.postTest);
+      const promedio = total > 0 ? Math.round(notas.reduce((s, n) => s + n, 0) / total) : 0;
+      const aprobados = conNota.filter(e => (tipoTest === "pre" ? e.preTest : e.postTest) >= 70).length;
+      const refuerzo = total - aprobados;
+
+      // Actualizar tarjeta del estudiante
+      const saludoEl = document.getElementById("res-estudiante-saludo");
+      const detalleEl = document.getElementById("res-estudiante-detalle");
+      const notaEl = document.getElementById("res-estudiante-nota");
+      const badgeEl = document.getElementById("res-estudiante-badge");
+      const cardEstudiante = document.getElementById("card-nota-estudiante");
+
+      if (saludoEl) saludoEl.textContent = `¡Felicitaciones, ${nombreEstudiante}!`;
+      if (detalleEl) detalleEl.textContent = `Tu evaluación de ${tipoTest === 'pre' ? 'Pre-Test' : 'Post-Test'} ha sido calificada y guardada.`;
+      if (notaEl) notaEl.textContent = notaObtenida;
+
+      if (badgeEl) {
+        if (notaObtenida >= 70) {
+          badgeEl.textContent = "✓ Aprobado / Nivel Competente";
+          badgeEl.className = "mt-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300";
+        } else {
+          badgeEl.textContent = "⏳ En Refuerzo Pedagógico";
+          badgeEl.className = "mt-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300";
+        }
+      }
+
+      if (cardEstudiante) {
+        cardEstudiante.className = tipoTest === 'post' 
+          ? "p-5 rounded-2xl border text-center space-y-2 bg-emerald-50/80 border-emerald-200"
+          : "p-5 rounded-2xl border text-center space-y-2 bg-blue-50/80 border-blue-200";
+      }
+
+      // Actualizar métricas del grupo
+      document.getElementById("res-total-part").textContent = total;
+      document.getElementById("res-promedio-curso").textContent = `${promedio} pts`;
+      document.getElementById("res-total-aprobados").textContent = aprobados;
+      document.getElementById("res-total-refuerzo").textContent = refuerzo;
+      document.getElementById("res-subtitulo-lista").textContent = `${tipoTest === 'pre' ? 'Pre-Test' : 'Post-Test'} (${total} estudiantes)`;
+
+      // Renderizar tabla con cada participante y su respectiva nota
+      const tbody = document.getElementById("res-tabla-estudiantes");
+      if (tbody) {
+        tbody.innerHTML = conNota.map((e, idx) => {
+          const n = tipoTest === "pre" ? e.preTest : e.postTest;
+          const esActual = e.participanteNombre.toLowerCase() === nombreEstudiante.toLowerCase();
+          const esAprobado = n >= 70;
+          const colorBarra = esAprobado ? "bg-emerald-500" : "bg-amber-500";
+          const badgeClass = esAprobado 
+            ? "bg-emerald-100 text-emerald-800 border-emerald-300" 
+            : "bg-amber-100 text-amber-800 border-amber-300";
+
+          return `
+            <tr class="${esActual ? 'bg-blue-50/70 font-semibold' : 'hover:bg-slate-50'} transition-colors">
+              <td class="py-2.5 px-3 text-center text-slate-400 font-bold">${idx + 1}</td>
+              <td class="py-2.5 px-3">
+                <span class="text-slate-800">${escapeHtml(e.participanteNombre)}</span>
+                ${esActual ? '<span class="ml-1.5 px-1.5 py-0.2 rounded text-[9px] font-bold bg-blue-600 text-white">Tú</span>' : ''}
+              </td>
+              <td class="py-2.5 px-3 text-slate-500 font-mono text-[11px] whitespace-nowrap">${escapeHtml(e.ci || '-')}</td>
+              <td class="py-2.5 px-3 text-center whitespace-nowrap">
+                <span class="font-black text-sm ${esAprobado ? 'text-emerald-700' : 'text-amber-700'}">${n}</span>
+                <span class="text-[10px] text-slate-400 font-normal">/ 100</span>
+                <div class="w-16 mx-auto bg-slate-200 h-1 rounded-full overflow-hidden mt-0.5">
+                  <div class="${colorBarra} h-full rounded-full" style="width: ${n}%"></div>
+                </div>
+              </td>
+              <td class="py-2.5 px-3 text-center whitespace-nowrap">
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold border ${badgeClass}">
+                  ${esAprobado ? '✓ Aprobado' : '⏳ Refuerzo'}
+                </span>
+              </td>
+            </tr>
+          `;
+        }).join("");
+      }
+
+      // Ocultar formulario y mostrar resultados
+      document.getElementById("seccion-formulario").classList.add("hidden");
+      document.getElementById("seccion-resultados").classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function reiniciarFormularioParaOtroEstudiante() {
+      document.getElementById("form-evaluacion-estudiante").reset();
+      document.getElementById("seccion-resultados").classList.add("hidden");
+      document.getElementById("seccion-formulario").classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function escapeHtml(str) {
+      if (!str) return "";
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    // Inicializar al cargar el DOM
+    document.addEventListener("DOMContentLoaded", initPage);
+  </script>
+</body>
+</html>
