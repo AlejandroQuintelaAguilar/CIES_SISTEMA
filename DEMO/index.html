@@ -7,6 +7,7 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="qrcode.min.js"></script>
+  <script src="exceljs.min.js"></script>
   <link rel="stylesheet" href="styles.css">
   <!-- Microsoft Clarity -->
   <script type="text/javascript">
@@ -758,6 +759,97 @@
       </div>
     </div>
 
+    <!-- ============================================================== -->
+    <!-- NAVEGACIÓN DEDICADA DE PASOS: INCIDENCIA POLÍTICA              -->
+    <!-- ============================================================== -->
+    <div id="sidebar-nav-incidencia" class="hidden flex-1 overflow-y-auto px-3 py-3 space-y-3">
+      <!-- Botón para volver al menú general -->
+      <button type="button" onclick="cerrarInscripcionIncidencia()" class="w-full flex items-center justify-between px-3 py-2 text-xs font-bold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-800 rounded-xl transition-colors border border-slate-700/60 cursor-pointer shadow-2xs">
+        <span class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          <span>Menú General</span>
+        </span>
+        <span class="text-[10px] text-slate-400 font-mono">&larr; Volver</span>
+      </button>
+
+      <!-- Mini-tarjeta de la Inscripción de Incidencia Activa -->
+      <div class="p-3 rounded-xl bg-slate-800/80 border border-slate-700/70 space-y-1.5 shadow-2xs">
+        <div class="flex items-center justify-between gap-1">
+          <span id="sb-inc-codigo" class="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-900/60 text-blue-300 border border-blue-700/60">NUEVO</span>
+          <span id="sb-inc-estado" class="px-1.5 py-0.5 rounded text-[9px] font-black bg-emerald-900/60 text-emerald-300 border border-emerald-700/60">Inscripción</span>
+        </div>
+        <h3 id="sb-inc-titulo" class="text-xs font-bold text-white line-clamp-2 leading-snug">Inscripción a Taller de Incidencia Política</h3>
+        <div class="flex items-center justify-between text-[10px] text-slate-400 pt-0.5">
+          <span id="sb-inc-count" class="text-indigo-300 font-semibold">0 participantes</span>
+          <span id="sb-inc-regional" class="font-bold text-slate-300">LP</span>
+        </div>
+      </div>
+
+      <!-- Cabecera de Pasos -->
+      <div class="px-1 text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between pt-1">
+        <span>Flujo del Taller</span>
+        <span class="text-emerald-400 font-mono font-bold">4 pasos</span>
+      </div>
+
+      <!-- Pasos en Barra Lateral Izquierda -->
+      <div class="space-y-2">
+        <button type="button" id="sb-inc-btn-paso-1" onclick="irAPasoIncidencia(1)" class="w-full flex items-center gap-2.5 p-2.5 rounded-xl text-left transition-all border cursor-pointer bg-blue-600/20 border-blue-500 text-white shadow-2xs">
+          <span id="sb-inc-num-1" class="w-6 h-6 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center shrink-0">1</span>
+          <div class="min-w-0 flex-1">
+            <span class="text-xs font-bold block truncate">1. Participantes</span>
+            <span id="sb-inc-sub-1" class="text-[10px] text-blue-300 block truncate">0 inscritos en nómina</span>
+          </div>
+        </button>
+
+        <button type="button" id="sb-inc-btn-paso-2" onclick="irAPasoIncidencia(2)" class="w-full flex items-center gap-2.5 p-2.5 rounded-xl text-left transition-all border cursor-pointer bg-slate-800/60 hover:bg-slate-800 border-slate-700/50 text-slate-300">
+          <span id="sb-inc-num-2" class="w-6 h-6 rounded-lg bg-slate-700 text-slate-300 font-bold text-xs flex items-center justify-center shrink-0">2</span>
+          <div class="min-w-0 flex-1">
+            <span class="text-xs font-bold block truncate">2. Planificación</span>
+            <span id="sb-inc-sub-2" class="text-[10px] text-slate-400 block truncate">Datos del taller y logística</span>
+          </div>
+        </button>
+
+        <button type="button" id="sb-inc-btn-paso-3" onclick="irAPasoIncidencia(3)" class="w-full flex items-center gap-2.5 p-2.5 rounded-xl text-left transition-all border cursor-pointer bg-slate-800/60 hover:bg-slate-800 border-slate-700/50 text-slate-300">
+          <span id="sb-inc-num-3" class="w-6 h-6 rounded-lg bg-slate-700 text-slate-300 font-bold text-xs flex items-center justify-center shrink-0">3</span>
+          <div class="min-w-0 flex-1">
+            <span class="text-xs font-bold block truncate">3. Asistencia QR</span>
+            <span id="sb-inc-sub-3" class="text-[10px] text-slate-400 block truncate">0 escaneados</span>
+          </div>
+        </button>
+
+        <button type="button" id="sb-inc-btn-paso-4" onclick="irAPasoIncidencia(4)" class="w-full flex items-center gap-2.5 p-2.5 rounded-xl text-left transition-all border cursor-pointer bg-slate-800/60 hover:bg-slate-800 border-slate-700/50 text-slate-300">
+          <span id="sb-inc-num-4" class="w-6 h-6 rounded-lg bg-slate-700 text-slate-300 font-bold text-xs flex items-center justify-center shrink-0">4</span>
+          <div class="min-w-0 flex-1">
+            <span class="text-xs font-bold block truncate">4. Conclusión y Docs</span>
+            <span id="sb-inc-sub-4" class="text-[10px] text-slate-400 block truncate">Cierre y espacio documental</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Pestaña Independiente: Árbol de Problemas (Accesible en cualquier momento) -->
+      <div class="pt-2 border-t border-slate-800 space-y-2">
+        <div class="px-1 text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
+          <span>Pestaña Libre</span>
+          <span class="text-amber-400 font-mono text-[9px]">Siempre visible</span>
+        </div>
+        <button type="button" id="sb-inc-btn-arbol" onclick="abrirTabArbolProblemas()" class="w-full flex items-center gap-2.5 p-2.5 rounded-xl text-left transition-all border cursor-pointer bg-slate-800/60 hover:bg-slate-800 border-slate-700/50 text-slate-300">
+          <span id="sb-inc-num-arbol" class="w-6 h-6 rounded-lg bg-amber-900/60 text-amber-300 font-bold text-xs flex items-center justify-center shrink-0">🌳</span>
+          <div class="min-w-0 flex-1">
+            <span class="text-xs font-bold block truncate">Árbol de Problemas</span>
+            <span id="sb-inc-sub-arbol" class="text-[10px] text-slate-400 block truncate">0 causas &bull; 0 efectos</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Volver a Incidencia Política -->
+      <div class="pt-2 border-t border-slate-800 space-y-1">
+        <button type="button" onclick="cerrarInscripcionIncidencia()" class="w-full text-left px-2.5 py-1.5 rounded-lg text-[11px] text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 transition-colors flex items-center gap-2 cursor-pointer">
+          <span>&larr;</span>
+          <span>Volver a Incidencia Política</span>
+        </button>
+      </div>
+    </div>
+
     <!-- Pie del sidebar -->
     <div class="p-4 border-t border-slate-800 bg-slate-950/40 text-xs text-slate-400 flex flex-col gap-2.5">
       <div class="flex items-center justify-between">
@@ -885,159 +977,566 @@
       <!-- ========================================================== -->
       <!-- PANEL 1: TABLERO OFICIAL DE MONITOREO PROGRAMÁTICO 2026 -->
       <!-- ========================================================== -->
+      <!-- ========================================================== -->
+      <!-- PANEL 1: TABLERO OFICIAL DE MONITOREO PROGRAMÁTICO 2026 -->
+      <!-- ========================================================== -->
+      <!-- ========================================================== -->
+      <!-- PANEL 1: TABLERO OFICIAL DE MONITOREO PROGRAMÁTICO 2026 -->
+      <!-- ========================================================== -->
       <section id="panel-dashboard" class="content-panel space-y-6">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div>
-            <div class="flex items-center gap-2">
-              <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Tablero de Monitoreo Programático</h2>
-              <span class="text-xs font-mono bg-blue-100 text-blue-800 px-2 py-0.5 rounded font-bold">SGC-Visional-MAM-6 o11</span>
+        <!-- VISTA OPERATIVA SGC (TABLERO ESTÁNDAR) -->
+        <div id="dashboard-standard-view" class="space-y-6">
+          <!-- Cabecera Superior del Tablero -->
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-slate-200">
+            <div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h2 class="text-2xl font-black text-slate-900 tracking-tight">Tablero de Monitoreo Programático</h2>
+                <span class="text-xs font-mono bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full font-bold border border-blue-200">SGC-Visional-MAM-6 o11</span>
+                <span class="text-[11px] font-semibold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded border border-emerald-200">Vigencia Oficial 2026</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-500 mt-1">Consolidación de metas anuales POA, mensualización y porcentaje de cumplimiento normativo SGC CIES.</p>
             </div>
-            <p class="text-sm text-slate-500">Consolidación de metas anuales, avances mensuales y porcentaje de cumplimiento normativo CIES.</p>
-          </div>
-          <button onclick="window.print()" class="self-start sm:self-auto px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg shadow-sm flex items-center gap-2">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
-            Imprimir Reporte
-          </button>
-        </div>
 
-        <!-- Tarjetas KPI Resumen -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          <div class="bg-white p-5 rounded-xl border border-slate-200/80 shadow-sm">
-            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Participantes Únicos</p>
-            <div class="mt-2 flex items-baseline justify-between">
-              <span id="kpi-participantes" class="text-3xl font-extrabold text-blue-600">0</span>
-              <span class="text-xs text-blue-600 font-medium font-mono">Planilla SGC</span>
+            <!-- Controles de Región / Ciudad y Exportación -->
+            <div class="flex items-center gap-2.5 flex-wrap">
+              <!-- Selector Dinámico de Región / Ciudad -->
+              <div id="tablero-region-controls" class="flex items-center gap-1.5">
+                <!-- Renderizado dinámicamente por JS según rol (Selector para Nacional, Badge fijo para Regional) -->
+              </div>
+
+              <!-- Botones de Acción -->
+              <button type="button" onclick="exportarTableroExcel()" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg shadow-xs flex items-center gap-1.5 transition-colors cursor-pointer" title="Descargar matriz en Excel oficial">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                Exportar Excel
+              </button>
+              <button type="button" onclick="window.print()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-900 text-white text-xs font-bold rounded-lg shadow-xs flex items-center gap-1.5 transition-colors cursor-pointer">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                Imprimir
+              </button>
             </div>
           </div>
-          <div class="bg-white p-5 rounded-xl border border-slate-200/80 shadow-sm">
-            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Talleres / Eventos</p>
-            <div class="mt-2 flex items-baseline justify-between">
-              <span id="kpi-actividades" class="text-3xl font-extrabold text-indigo-600">0</span>
-              <span class="text-xs text-indigo-600 font-medium">Ejecutados</span>
+
+          <!-- Banner de Contexto Regional y Selector Rápido de Ciudades -->
+          <div id="tablero-regional-banner" class="bg-gradient-to-r from-slate-900 via-slate-800 to-blue-950 text-white p-4 sm:p-5 rounded-2xl shadow-sm border border-slate-700/60 relative overflow-hidden">
+            <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="text-xl">📍</span>
+                  <span class="text-xs uppercase tracking-widest font-black text-blue-300">Jurisdicción de Monitoreo</span>
+                  <span id="tablero-banner-region-badge" class="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-blue-500/20 text-blue-200 border border-blue-400/30">Nacional</span>
+                </div>
+                <h3 id="tablero-banner-region-titulo" class="text-xl sm:text-2xl font-black text-white tracking-tight">Consolidado Nacional (Bolivia)</h3>
+                <p id="tablero-banner-region-desc" class="text-xs text-slate-300 max-w-2xl leading-relaxed">
+                  Supervisión institucional que agrupa y consolida los 20 indicadores oficiales de desempeño de las 9 oficinas regionales del país.
+                </p>
+              </div>
+
+              <!-- Pastillas Rápidas para Responsable Nacional / Administradores -->
+              <div id="tablero-quick-regions" class="flex flex-wrap items-center gap-1.5 shrink-0">
+                <!-- Insertado por JS: Pastillas La Paz, Oruro, Potosí, etc. -->
+              </div>
             </div>
           </div>
-          <div class="bg-white p-5 rounded-xl border border-slate-200/80 shadow-sm">
-            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Orientaciones SSSR</p>
-            <div class="mt-2 flex items-baseline justify-between">
-              <span id="kpi-orientadores" class="text-3xl font-extrabold text-pink-600">0</span>
-              <span class="text-xs text-pink-600 font-medium">Clínicas</span>
+
+          <!-- Tarjetas KPI Resumen de la Región Activa -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs hover:border-blue-300 transition-colors">
+              <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Participantes</p>
+              <div class="mt-1.5 flex items-baseline justify-between">
+                <span id="kpi-participantes" class="text-2xl font-black text-blue-600">0</span>
+                <span class="text-[10px] text-blue-600 font-mono font-semibold">Padrón</span>
+              </div>
+              <p class="text-[10px] text-slate-400 mt-1">Beneficiarios únicos</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs hover:border-indigo-300 transition-colors">
+              <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Talleres / Eventos</p>
+              <div class="mt-1.5 flex items-baseline justify-between">
+                <span id="kpi-actividades" class="text-2xl font-black text-indigo-600">0</span>
+                <span class="text-[10px] text-indigo-600 font-semibold">Planillas</span>
+              </div>
+              <p class="text-[10px] text-slate-400 mt-1">Sesiones formativas</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs hover:border-pink-300 transition-colors">
+              <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Orientaciones SSSR</p>
+              <div class="mt-1.5 flex items-baseline justify-between">
+                <span id="kpi-orientadores" class="text-2xl font-black text-pink-600">0</span>
+                <span class="text-[10px] text-pink-600 font-semibold">Atenciones</span>
+              </div>
+              <p class="text-[10px] text-slate-400 mt-1">Clínicas y salas</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs hover:border-emerald-300 transition-colors">
+              <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Pruebas VIH Tira</p>
+              <div class="mt-1.5 flex items-baseline justify-between">
+                <span id="kpi-vih" class="text-2xl font-black text-emerald-600">0</span>
+                <span class="text-[10px] text-emerald-600 font-semibold">Ind. 3</span>
+              </div>
+              <p class="text-[10px] text-slate-400 mt-1">Meta con área médica</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs hover:border-amber-300 transition-colors">
+              <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Evidencias SGC</p>
+              <div class="mt-1.5 flex items-baseline justify-between">
+                <span id="kpi-archivos" class="text-2xl font-black text-amber-600">0</span>
+                <span class="text-[10px] text-amber-600 font-semibold">Archivos</span>
+              </div>
+              <p class="text-[10px] text-slate-400 mt-1">Respaldos auditables</p>
+            </div>
+
+            <div class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white p-4 rounded-xl shadow-xs">
+              <p class="text-[11px] font-bold text-blue-100 uppercase tracking-wider">% Avance Global</p>
+              <div class="mt-1.5 flex items-baseline justify-between">
+                <span id="kpi-cumplimiento-global" class="text-2xl font-black text-white">0%</span>
+                <span id="kpi-cumplimiento-estado" class="text-[10px] bg-white/20 px-1.5 py-0.5 rounded font-bold">En curso</span>
+              </div>
+              <p class="text-[10px] text-blue-100/80 mt-1">Promedio 20 metas POA</p>
             </div>
           </div>
-          <div class="bg-white p-5 rounded-xl border border-slate-200/80 shadow-sm">
-            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Pruebas VIH Tira</p>
-            <div class="mt-2 flex items-baseline justify-between">
-              <span id="kpi-vih" class="text-3xl font-extrabold text-emerald-600">0</span>
-              <span class="text-xs text-emerald-600 font-medium">Consentidas</span>
+
+          <!-- Widgets de Eficacia Formativa de la Región (Maestros y Estudiantes) -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <!-- Widget: Seguimiento a Docentes -->
+            <div class="bg-slate-900 text-white p-4 sm:p-5 rounded-2xl shadow-sm border border-slate-800">
+              <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-2xl">🧑‍🏫</span>
+                  <div>
+                    <h4 class="font-bold text-sm text-white">Seguimiento a Maestras y Maestros (EIS)</h4>
+                    <p class="text-[11px] text-blue-300">Educación Integral en Sexualidad en Unidades Educativas • Ind. 8 y 9</p>
+                  </div>
+                </div>
+                <span id="kpi-docentes-tasa" class="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">0% Activos</span>
+              </div>
+              <div class="grid grid-cols-2 gap-3 mt-4">
+                <div class="bg-white/10 p-3.5 rounded-xl border border-white/5 backdrop-blur-sm">
+                  <p class="text-xs text-blue-200 font-medium">Docentes Capacitados (Ind. 8)</p>
+                  <div class="flex items-baseline gap-2 mt-1">
+                    <span id="kpi-docentes-capacitados" class="text-2xl font-black text-white">0</span>
+                    <span class="text-[11px] text-blue-300">En talleres</span>
+                  </div>
+                  <p class="text-[10px] text-slate-400 mt-1">Proceso concluido formal</p>
+                </div>
+                <div class="bg-white/10 p-3.5 rounded-xl border border-white/5 backdrop-blur-sm">
+                  <p class="text-xs text-emerald-200 font-medium">Docentes Activos en Aula (Ind. 9)</p>
+                  <div class="flex items-baseline gap-2 mt-1">
+                    <span id="kpi-docentes-activos" class="text-2xl font-black text-emerald-400">0</span>
+                    <span class="text-[11px] text-emerald-200">Replicando</span>
+                  </div>
+                  <p class="text-[10px] text-slate-400 mt-1">Promedio 9 meses escolares</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Widget: Seguimiento a Estudiantes -->
+            <div class="bg-slate-900 text-white p-4 sm:p-5 rounded-2xl shadow-sm border border-slate-800">
+              <div class="flex items-center justify-between pb-3 border-b border-purple-800/60">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-2xl">🎓</span>
+                  <div>
+                    <h4 class="font-bold text-sm text-white">Ciclos Formativos de Estudiantes y Jóvenes</h4>
+                    <p class="text-[11px] text-purple-300">Sensibilización SSSR (3 Sesiones) y Red Tú Decides • Ind. 10</p>
+                  </div>
+                </div>
+                <span id="kpi-estudiantes-tasa" class="text-xs font-bold px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">0% Culminados</span>
+              </div>
+              <div class="grid grid-cols-2 gap-3 mt-4">
+                <div class="bg-white/10 p-3.5 rounded-xl border border-white/5 backdrop-blur-sm">
+                  <p class="text-xs text-purple-200 font-medium">Iniciaron Formación (Ind. 10A)</p>
+                  <div class="flex items-baseline gap-2 mt-1">
+                    <span id="kpi-estudiantes-iniciados" class="text-2xl font-black text-white">0</span>
+                    <span class="text-[11px] text-purple-300">Sesión 1</span>
+                  </div>
+                  <p class="text-[10px] text-slate-400 mt-1">Línea base / Pre-test registrado</p>
+                </div>
+                <div class="bg-white/10 p-3.5 rounded-xl border border-white/5 backdrop-blur-sm">
+                  <p class="text-xs text-pink-200 font-medium">Culminaron Formación (Ind. 10B)</p>
+                  <div class="flex items-baseline gap-2 mt-1">
+                    <span id="kpi-estudiantes-culminados" class="text-2xl font-black text-pink-400">0</span>
+                    <span class="text-[11px] text-pink-200">3 Sesiones</span>
+                  </div>
+                  <p class="text-[10px] text-slate-400 mt-1">Post-test aprobado / Certificados</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="bg-white p-5 rounded-xl border border-slate-200/80 shadow-sm">
-            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Evidencias en Servidor</p>
-            <div class="mt-2 flex items-baseline justify-between">
-              <span id="kpi-archivos" class="text-3xl font-extrabold text-amber-600">0</span>
-              <span class="text-xs text-amber-600 font-medium">Archivos</span>
+
+          <!-- ========================================================== -->
+          <!-- MATRIZ OFICIAL COMPLETA DE LOS 20 INDICADORES (SGC CIES) -->
+          <!-- ========================================================== -->
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <!-- Cabecera de la Tabla con Pestañas y Filtros -->
+            <div class="p-4 sm:p-5 border-b border-slate-200 bg-slate-50/80 flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-2">
+                  <h3 class="font-black text-slate-900 text-base">Matriz Oficial de Indicadores Programáticos (20 Metas SGC)</h3>
+                  <span id="tablero-conteo-indicadores" class="text-xs bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full font-bold">20 de 20</span>
+                </div>
+                <p class="text-xs text-slate-500 mt-0.5">Desglose según instrumento oficial <code class="font-mono text-slate-700 font-bold">SGC-Visional-MAM-6 o11</code> (Mensual, Proceso y Promedio).</p>
+              </div>
+
+              <!-- Buscador y Filtro por Tipo de Cumplimiento -->
+              <div class="flex items-center gap-2.5 flex-wrap">
+                <div class="relative">
+                  <input type="text" id="search-tablero" oninput="filtrarBusquedaTablero(this.value)" placeholder="Buscar indicador o código..." class="text-xs pl-8 pr-3 py-1.5 bg-white border border-slate-300 rounded-lg shadow-2xs focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-52">
+                  <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </div>
+
+                <!-- Pestañas de Clasificación Oficial -->
+                <div class="inline-flex p-1 bg-slate-200/80 rounded-xl text-xs font-semibold text-slate-600">
+                  <button type="button" onclick="filtrarTipoTablero('todos')" id="tab-tipo-todos" class="px-2.5 py-1 rounded-lg bg-white text-slate-900 shadow-2xs font-bold transition-all">Todos (20)</button>
+                  <button type="button" onclick="filtrarTipoTablero('Mensual')" id="tab-tipo-mensual" class="px-2.5 py-1 rounded-lg hover:text-slate-900 transition-all flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-slate-400"></span> Mensual
+                  </button>
+                  <button type="button" onclick="filtrarTipoTablero('De proceso')" id="tab-tipo-proceso" class="px-2.5 py-1 rounded-lg hover:text-slate-900 transition-all flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-sky-500"></span> De Proceso
+                  </button>
+                  <button type="button" onclick="filtrarTipoTablero('Promedio')" id="tab-tipo-promedio" class="px-2.5 py-1 rounded-lg hover:text-slate-900 transition-all flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-amber-500"></span> Promedio
+                  </button>
+                </div>
+              </div>
             </div>
+
+            <!-- Leyenda Informativa de Colores SGC -->
+            <div class="px-4 py-2 bg-slate-100/70 border-b border-slate-200 text-[11px] text-slate-600 flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center gap-4 flex-wrap">
+                <span class="font-bold text-slate-700">Tipos normativos SGC:</span>
+                <span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-slate-400"></span> <strong>Gris:</strong> Cumplimiento Mensual (Suma 12 meses)</span>
+                <span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-sky-500"></span> <strong>Celeste:</strong> De Proceso (Registro al culminar ciclo)</span>
+                <span class="inline-flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-amber-500"></span> <strong>Naranja:</strong> Promedio (Excluye meses sin actividad)</span>
+              </div>
+              <div class="text-[11px] text-slate-500">
+                Fórmula general: <code class="font-mono bg-white px-1.5 py-0.5 rounded border border-slate-200 text-slate-700">% = (Logro Actual / Meta Anual) * 100</code>
+              </div>
+            </div>
+
+            <!-- Tabla con Desplazamiento Horizontal para Tablas Grandes (Matriz Mes a Mes SGC) -->
+            <div class="overflow-x-auto shadow-inner rounded-xl border border-slate-200">
+              <table class="w-full text-left text-xs text-slate-700 border-collapse whitespace-nowrap">
+                <thead class="bg-slate-100/95 text-slate-700 uppercase text-[10px] font-black tracking-wider border-b border-slate-200 sticky top-0 z-10 shadow-2xs">
+                  <tr>
+                    <th class="py-3 px-2 w-10 text-center sticky left-0 bg-slate-100 z-20">#</th>
+                    <th class="py-3 px-2.5 w-24 text-center">Tipo SGC</th>
+                    <th class="py-3 px-3 min-w-[260px] sticky left-10 bg-slate-100 z-20">Indicador Oficial y Desagregación</th>
+                    <th class="py-3 px-2.5 text-right w-20">Meta Anual</th>
+                    <th class="py-3 px-2.5 text-right w-20">Meta Mens/Proc</th>
+                    <th class="py-3 px-1 text-center w-11 bg-slate-200/70 text-slate-800">Ene</th>
+                    <th class="py-3 px-1 text-center w-11 bg-slate-200/70 text-slate-800">Feb</th>
+                    <th class="py-3 px-1 text-center w-11 bg-slate-200/70 text-slate-800">Mar</th>
+                    <th class="py-3 px-1 text-center w-11 bg-slate-200/70 text-slate-800">Abr</th>
+                    <th class="py-3 px-1 text-center w-11 bg-slate-200/70 text-slate-800">May</th>
+                    <th class="py-3 px-1 text-center w-11 bg-slate-200/70 text-slate-800">Jun</th>
+                    <th class="py-3 px-1 text-center w-11 bg-slate-200/70 text-slate-800">Jul</th>
+                    <th class="py-3 px-1 text-center w-11 bg-slate-200/70 text-slate-800">Ago</th>
+                    <th class="py-3 px-1 text-center w-11 bg-slate-200/70 text-slate-800">Sep</th>
+                    <th class="py-3 px-1 text-center w-11 bg-slate-200/70 text-slate-800">Oct</th>
+                    <th class="py-3 px-1 text-center w-11 bg-slate-200/70 text-slate-800">Nov</th>
+                    <th class="py-3 px-1 text-center w-11 bg-slate-200/70 text-slate-800">Dic</th>
+                    <th class="py-3 px-3 text-right w-24 bg-blue-50/80 text-blue-950 font-black">Logro Actual</th>
+                    <th class="py-3 px-2.5 text-right w-20">Avance</th>
+                    <th class="py-3 px-2.5 text-center w-20">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="table-tablero-oficial" class="divide-y divide-slate-100 font-medium">
+                  <!-- Filas renderizadas dinámicamente por app.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Resumen de Actividades Recientes de la Región -->
+          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+              <div>
+                <h3 class="font-black text-slate-900 text-sm">Últimos Talleres y Planillas de Asistencia</h3>
+                <p class="text-xs text-slate-500">Actividades vinculadas con la ejecución de metas institucionales en la región activa.</p>
+              </div>
+              <button type="button" onclick="navigateTo('actividades')" class="text-xs text-blue-600 hover:text-blue-800 font-bold flex items-center gap-1">
+                Ver todas las planillas &rarr;
+              </button>
+            </div>
+            <div id="dashboard-recent-activities" class="mt-3 space-y-2"></div>
           </div>
         </div>
 
         <!-- ========================================================== -->
-        <!-- WIDGETS DE EFICACIA FORMATIVA (MAESTROS Y ESTUDIANTES) -->
+        <!-- VISTA EJECUTIVA: GERENCIA NACIONAL (GENERAL NIVEL BOLIVIA) -->
         <!-- ========================================================== -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <!-- Widget: Seguimiento a Docentes -->
-          <div class="bg-slate-900 text-white p-5 rounded-xl shadow-sm border border-slate-800">
-            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-              <div class="flex items-center gap-2">
-                <span class="text-2xl">🧑‍🏫</span>
+        <div id="dashboard-gerente-nacional-view" class="space-y-6 hidden">
+          <!-- Cabecera Superior Gerente Nacional y Selector de Modo -->
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-slate-200">
+            <div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-2xl">🇧🇴</span>
+                <h2 class="text-2xl font-black text-slate-900 tracking-tight">Tablero de Mando • Gerencia Nacional</h2>
+                <span class="text-xs font-mono bg-blue-100 text-blue-900 px-2.5 py-0.5 rounded-full font-bold border border-blue-200">Gestión Institucional 2026</span>
+                <span class="text-[11px] font-semibold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded border border-emerald-200">SGC ISO 9001</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-500 mt-1">Monitoreo consolidado nacional de metas desglosadas y auditoría aislada de avance mes a mes e informes por regional.</p>
+            </div>
+
+            <!-- Selector de Modos de la Gerencia Nacional -->
+            <div class="flex items-center gap-2.5 flex-wrap">
+              <div class="inline-flex p-1 bg-slate-200/90 rounded-xl text-xs font-bold text-slate-700 shadow-2xs">
+                <button type="button" id="gn-btn-modo-bolivia" onclick="setGNModoVista('bolivia')" class="px-3 py-1.5 rounded-lg bg-blue-900 text-white shadow-xs transition-all flex items-center gap-1.5 cursor-pointer">
+                  <span>🇧🇴</span> Consolidado Nivel Bolivia
+                </button>
+                <button type="button" id="gn-btn-modo-aislado" onclick="setGNModoVista('regional_aislada')" class="px-3 py-1.5 rounded-lg text-slate-700 hover:text-slate-900 transition-all flex items-center gap-1.5 cursor-pointer">
+                  <span>🏢</span> Auditoría Regional Aislada
+                </button>
+              </div>
+
+              <!-- Alternador de vista para usuario Administrador -->
+              <div id="gn-admin-toggle-slot"></div>
+            </div>
+          </div>
+
+          <!-- ============================================================== -->
+          <!-- MODO 1: CONSOLIDADO GENERAL NIVEL BOLIVIA (METAS DESGLOSADAS)   -->
+          <!-- ============================================================== -->
+          <div id="gn-seccion-bolivia" class="space-y-6">
+            <!-- HERO MACRO CARD: META ANUAL (GENERAL NIVEL BOLIVIA) -->
+            <div class="bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 text-white p-6 sm:p-7 rounded-2xl shadow-sm border border-slate-700/80 relative overflow-hidden">
+              <div class="relative z-10 space-y-6">
+                <div class="flex items-center justify-between pb-4 border-b border-white/10 flex-wrap gap-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-11 h-11 rounded-xl bg-blue-500/20 text-blue-300 border border-blue-400/30 flex items-center justify-center font-bold text-xl shadow-xs">
+                      🇧🇴
+                    </div>
+                    <div>
+                      <span class="text-[11px] uppercase font-mono tracking-widest text-blue-300 font-black">Plan Operativo Anual • Gestión 2026</span>
+                      <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight">META ANUAL (GENERAL NIVEL BOLIVIA)</h3>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span id="gn-badge-cumplimiento" class="px-3.5 py-1 rounded-full text-xs font-black bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-mono">0% Avance País</span>
+                  </div>
+                </div>
+
+                <!-- Tres Métricas Ejecutivas Macro -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div class="bg-white/5 p-4 rounded-xl border border-white/10 backdrop-blur-xs">
+                    <span class="text-[11px] uppercase font-bold text-slate-300 tracking-wider">Meta Anual (General Nivel Bolivia)</span>
+                    <div class="mt-2 flex items-baseline gap-2">
+                      <span id="gn-meta-bolivia" class="text-3xl font-black text-white">0</span>
+                      <span class="text-xs text-blue-300 font-semibold">Total País</span>
+                    </div>
+                    <p class="text-[10px] text-slate-400 mt-1">Suma consolidada de las 9 oficinas regionales</p>
+                  </div>
+
+                  <div class="bg-white/5 p-4 rounded-xl border border-white/10 backdrop-blur-xs">
+                    <span class="text-[11px] uppercase font-bold text-slate-300 tracking-wider">Logro Acumulado (Nivel Bolivia)</span>
+                    <div class="mt-2 flex items-baseline gap-2">
+                      <span id="gn-logro-bolivia" class="text-3xl font-black text-emerald-400">0</span>
+                      <span class="text-xs text-emerald-200 font-semibold">Alcanzado</span>
+                    </div>
+                    <p class="text-[10px] text-slate-400 mt-1">Total ejecutado a nivel nacional a la fecha</p>
+                  </div>
+
+                  <div class="bg-white/5 p-4 rounded-xl border border-white/10 backdrop-blur-xs">
+                    <span class="text-[11px] uppercase font-bold text-slate-300 tracking-wider">Porcentaje de Avance General</span>
+                    <div class="mt-2 flex items-baseline gap-2">
+                      <span id="gn-pct-bolivia" class="text-3xl font-black text-amber-300">0%</span>
+                      <span class="text-xs text-amber-200 font-semibold">Ponderado</span>
+                    </div>
+                    <div class="w-full bg-white/10 rounded-full h-2 mt-2 overflow-hidden">
+                      <div id="gn-bar-pct-bolivia" class="bg-amber-400 h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TABLA PRINCIPAL: METAS DESGLOSADAS A NIVEL BOLIVIA -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+              <div class="p-5 border-b border-slate-200 bg-slate-50/80 flex flex-col md:flex-row md:items-center justify-between gap-3">
                 <div>
-                  <h4 class="font-bold text-sm text-white">Seguimiento a Maestras y Maestros (EIS)</h4>
-                  <p class="text-[11px] text-blue-300">Educación Integral en Sexualidad en Unidades Educativas</p>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-black text-slate-900 text-base">Metas e Indicadores Institucionales Desglosados • Nivel Bolivia</h3>
+                    <span class="text-xs font-mono font-bold px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-900 border border-blue-200">73 Metas Desglosadas</span>
+                  </div>
+                  <p class="text-xs text-slate-500 mt-0.5">Cada indicador presenta sus metas desglosadas por área (Urbana/Rural), tipo de participante y el TOTAL respectivo comparados con su logro y porcentaje.</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs text-slate-500 font-semibold">Columnas:</span>
+                  <span class="text-xs bg-slate-200 text-slate-800 px-2 py-0.5 rounded font-mono font-bold">Meta Anual</span>
+                  <span class="text-xs bg-slate-200 text-slate-800 px-2 py-0.5 rounded font-mono font-bold">Logro</span>
+                  <span class="text-xs bg-slate-200 text-slate-800 px-2 py-0.5 rounded font-mono font-bold">% Avance</span>
                 </div>
               </div>
-              <span id="kpi-docentes-tasa" class="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">0% Activos</span>
-            </div>
-            <div class="grid grid-cols-2 gap-3 mt-4">
-              <div class="bg-white/10 p-3.5 rounded-lg border border-white/5 backdrop-blur-sm">
-                <p class="text-xs text-blue-200 font-medium">Docentes Capacitados</p>
-                <div class="flex items-baseline gap-2 mt-1">
-                  <span id="kpi-docentes-capacitados" class="text-2xl font-black text-white">0</span>
-                  <span class="text-[11px] text-blue-300">En talleres</span>
-                </div>
-                <p class="text-[10px] text-slate-400 mt-1">Formación pedagógica CIES</p>
-              </div>
-              <div class="bg-white/10 p-3.5 rounded-lg border border-white/5 backdrop-blur-sm">
-                <p class="text-xs text-emerald-200 font-medium">Docentes Activos en Aula</p>
-                <div class="flex items-baseline gap-2 mt-1">
-                  <span id="kpi-docentes-activos" class="text-2xl font-black text-emerald-400">0</span>
-                  <span class="text-[11px] text-emerald-200">Replicando</span>
-                </div>
-                <p class="text-[10px] text-slate-400 mt-1">Aplicando EIS en sus cursos</p>
-              </div>
-            </div>
-          </div>
 
-          <!-- Widget: Seguimiento a Estudiantes -->
-          <div class="bg-slate-900 text-white p-5 rounded-xl shadow-sm border border-slate-800">
-            <div class="flex items-center justify-between pb-3 border-b border-purple-800/60">
-              <div class="flex items-center gap-2">
-                <span class="text-2xl">🎓</span>
+              <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs text-slate-700 border-collapse">
+                  <thead class="bg-slate-100/90 text-slate-700 uppercase text-[10px] font-black tracking-wider border-b border-slate-200">
+                    <tr>
+                      <th class="py-3.5 px-4 w-16 text-center">Código</th>
+                      <th class="py-3.5 px-5">Indicador y Metas Desglosadas (Nivel General Bolivia)</th>
+                      <th class="py-3.5 px-5 text-right w-40">Meta Anual (Bolivia)</th>
+                      <th class="py-3.5 px-5 text-right w-40">Logro (Bolivia)</th>
+                      <th class="py-3.5 px-5 text-right w-36">Porcentaje de Avance</th>
+                      <th class="py-3.5 px-5 w-44">Avance Visual</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-gerente-nacional-body" class="divide-y divide-slate-100 font-medium">
+                    <!-- Renderizado dinámicamente con todas las subfilas y totales -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- TABLA COMPARATIVA: DISTRIBUCIÓN DEPARTAMENTAL DEL PAÍS CON DESGLOSE -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+              <div class="p-5 border-b border-slate-200 bg-slate-50/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div>
-                  <h4 class="font-bold text-sm text-white">Ciclos Formativos de Estudiantes y Jóvenes</h4>
-                  <p class="text-[11px] text-purple-300">Sensibilización SSSR (3 Sesiones) y Red Tú Decides</p>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-black text-slate-900 text-base">Distribución Departamental del País • Metas Desglosadas por Región</h3>
+                    <span class="text-xs font-bold text-blue-900 bg-blue-100 px-2 py-0.5 rounded-full font-mono border border-blue-200">9 Departamentos</span>
+                  </div>
+                  <p class="text-xs text-slate-500 mt-0.5">Avance consolidado y desglose específico de metas por sede (Líderes activos urbanos/rurales, docentes, estudiantes, etc.).</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" onclick="toggleAllGNDeptDesglose()" id="btn-toggle-all-dept-desglose" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl border border-slate-300 transition-all flex items-center gap-1.5 cursor-pointer shadow-2xs">
+                    <span id="icon-toggle-all-dept">▼</span> <span id="text-toggle-all-dept">Expandir Todas las Regiones</span>
+                  </button>
                 </div>
               </div>
-              <span id="kpi-estudiantes-tasa" class="text-xs font-bold px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">0% Culminados</span>
-            </div>
-            <div class="grid grid-cols-2 gap-3 mt-4">
-              <div class="bg-white/10 p-3.5 rounded-lg border border-white/5 backdrop-blur-sm">
-                <p class="text-xs text-purple-200 font-medium">Iniciaron Formación</p>
-                <div class="flex items-baseline gap-2 mt-1">
-                  <span id="kpi-estudiantes-iniciados" class="text-2xl font-black text-white">0</span>
-                  <span class="text-[11px] text-purple-300">Sesión 1</span>
-                </div>
-                <p class="text-[10px] text-slate-400 mt-1">Ingreso a ciclo / Pre-test</p>
-              </div>
-              <div class="bg-white/10 p-3.5 rounded-lg border border-white/5 backdrop-blur-sm">
-                <p class="text-xs text-pink-200 font-medium">Culminaron Formación</p>
-                <div class="flex items-baseline gap-2 mt-1">
-                  <span id="kpi-estudiantes-culminados" class="text-2xl font-black text-pink-400">0</span>
-                  <span class="text-[11px] text-pink-200">3 Sesiones</span>
-                </div>
-                <p class="text-[10px] text-slate-400 mt-1">Post-test aprobado / Certificados</p>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Tabla de Indicadores del Tablero Oficial 2026 -->
-        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
-          <div class="p-4 border-b border-slate-100 bg-slate-50/70 flex items-center justify-between">
-            <h3 class="font-bold text-slate-800 text-sm">Metas e Indicadores Programáticos Anuales (Vigencia 2026)</h3>
-            <span class="text-xs text-slate-500">Fórmula oficial: % Cumplimiento = (Logro Actual / Meta Anual) * 100</span>
+              <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs text-slate-700 border-collapse">
+                  <thead class="bg-slate-100 text-slate-700 uppercase text-[10px] font-black tracking-wider border-b border-slate-200">
+                    <tr>
+                      <th class="py-3 px-3 w-14 text-center">Código</th>
+                      <th class="py-3 px-4">Departamento / Desagregación de Metas</th>
+                      <th class="py-3 px-3 text-right w-32">Meta Anual</th>
+                      <th class="py-3 px-3 text-right w-32">Logro</th>
+                      <th class="py-3 px-3 text-right w-28">% Avance</th>
+                      <th class="py-3 px-4 w-36">Cumplimiento</th>
+                      <th class="py-3 px-3 text-center w-28">Acción</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-gerente-departamental-body" class="divide-y divide-slate-100 font-medium">
+                    <!-- Renderizado por JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
-          <div class="overflow-x-auto">
-            <table class="w-full text-left text-sm text-slate-700">
-              <thead class="bg-slate-100 text-slate-600 uppercase text-[11px] font-bold tracking-wider">
-                <tr>
-                  <th class="py-3 px-4">Código</th>
-                  <th class="py-3 px-4">Indicador Institucional CIES</th>
-                  <th class="py-3 px-4 text-right">Meta Anual</th>
-                  <th class="py-3 px-4 text-right">Logro Acumulado</th>
-                  <th class="py-3 px-4 text-right">% Cumplimiento</th>
-                  <th class="py-3 px-4">Avance Visual</th>
-                </tr>
-              </thead>
-              <tbody id="table-tablero-oficial"></tbody>
-            </table>
-          </div>
-        </div>
 
-        <!-- Resumen de Actividades Recientes -->
-        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
-            <h3 class="font-bold text-slate-800 text-sm">Últimos Talleres y Planillas de Asistencia</h3>
-            <button onclick="navigateTo('actividades')" class="text-xs text-blue-600 hover:underline">Ver todas las planillas</button>
+          <!-- ============================================================== -->
+          <!-- MODO 2: AUDITORÍA REGIONAL AISLADA (AVANCE MES A MES E INFORMES) -->
+          <!-- ============================================================== -->
+          <div id="gn-seccion-aislada" class="space-y-6 hidden">
+            <!-- Barra de Selección Aislada de Región -->
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-100">
+                <div>
+                  <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Auditoría Territorial Focalizada</span>
+                  <h3 class="text-base font-black text-slate-900">Seleccionar Regional a Auditar de Forma Aislada</h3>
+                </div>
+                <span class="text-xs text-blue-700 font-bold bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-200">Vista Aislada Sin Cruces</span>
+              </div>
+
+              <!-- Pastillas de las 9 Regionales -->
+              <div class="flex items-center gap-2 flex-wrap" id="gn-pills-regiones-aisladas">
+                <!-- Generado por JS: Botones La Paz, Oruro, Potosí, Cochabamba, etc. -->
+              </div>
+            </div>
+
+            <!-- Ficha Ejecutiva de la Regional Aislada -->
+            <div class="bg-gradient-to-r from-slate-900 to-blue-950 text-white p-5 sm:p-6 rounded-2xl shadow-sm border border-slate-800">
+              <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div class="space-y-1">
+                  <div class="flex items-center gap-2">
+                    <span class="text-lg">📍</span>
+                    <span class="text-xs uppercase tracking-wider font-bold text-blue-300">Jurisdicción Departamental Auditada</span>
+                  </div>
+                  <h3 id="gn-aislada-titulo" class="text-xl sm:text-2xl font-black text-white">Regional La Paz</h3>
+                  <p id="gn-aislada-desc" class="text-xs text-slate-300">Sede Central de CIES • Supervisión directa de actividades e informes.</p>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="bg-white/10 px-4 py-2.5 rounded-xl border border-white/10 text-right">
+                    <span class="text-[10px] uppercase font-bold text-blue-200 block">Meta Anual Regional</span>
+                    <span id="gn-aislada-meta" class="text-xl font-black text-white">0</span>
+                  </div>
+                  <div class="bg-white/10 px-4 py-2.5 rounded-xl border border-white/10 text-right">
+                    <span class="text-[10px] uppercase font-bold text-emerald-200 block">Logro Alcanzado</span>
+                    <span id="gn-aislada-logro" class="text-xl font-black text-emerald-400">0</span>
+                  </div>
+                  <div class="bg-white/10 px-4 py-2.5 rounded-xl border border-white/10 text-right">
+                    <span class="text-[10px] uppercase font-bold text-amber-200 block">% Cumplimiento</span>
+                    <span id="gn-aislada-pct" class="text-xl font-black text-amber-300">0%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sub-pestañas: Avance Mes a Mes vs Informes de la Regional -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+              <div class="p-4 sm:p-5 border-b border-slate-200 bg-slate-50/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <span class="text-sm">🔍</span>
+                  <h4 class="font-bold text-slate-900 text-sm">Contenido Específico de la Regional</h4>
+                </div>
+
+                <div class="inline-flex p-1 bg-slate-200 rounded-xl text-xs font-bold">
+                  <button type="button" id="gn-subtab-meses-btn" onclick="setGNSubtab('meses')" class="px-4 py-2 rounded-xl bg-blue-900 text-white text-xs font-bold shadow-xs transition-all flex items-center gap-1.5 cursor-pointer">
+                    <span>📅</span> Matriz de Avance Mes a Mes
+                  </button>
+                  <button type="button" id="gn-subtab-informes-btn" onclick="setGNSubtab('informes')" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer">
+                    <span>📑</span> Expediente de Informes Oficiales (<span id="gn-aislada-informes-count">0</span>)
+                  </button>
+                </div>
+              </div>
+
+              <!-- Subsección 1: Matriz de Avance Mes a Mes -->
+              <div id="gn-subseccion-meses" class="p-4 sm:p-6 space-y-4">
+                <div class="overflow-x-auto border border-slate-200 rounded-xl">
+                  <table class="w-full text-left text-xs text-slate-700 border-collapse">
+                    <thead class="bg-slate-100 text-slate-700 uppercase text-[10px] font-black tracking-wider border-b border-slate-200">
+                      <tr>
+                        <th class="py-3 px-3 w-14 text-center">Código</th>
+                        <th class="py-3 px-4 min-w-[220px]">Indicador y Subcategoría</th>
+                        <th class="py-3 px-2 text-right w-16">Meta</th>
+                        <th class="py-3 px-1 text-center w-10">Ene</th>
+                        <th class="py-3 px-1 text-center w-10">Feb</th>
+                        <th class="py-3 px-1 text-center w-10">Mar</th>
+                        <th class="py-3 px-1 text-center w-10">Abr</th>
+                        <th class="py-3 px-1 text-center w-10">May</th>
+                        <th class="py-3 px-1 text-center w-10">Jun</th>
+                        <th class="py-3 px-1 text-center w-10">Jul</th>
+                        <th class="py-3 px-1 text-center w-10">Ago</th>
+                        <th class="py-3 px-1 text-center w-10">Sep</th>
+                        <th class="py-3 px-1 text-center w-10">Oct</th>
+                        <th class="py-3 px-1 text-center w-10">Nov</th>
+                        <th class="py-3 px-1 text-center w-10">Dic</th>
+                        <th class="py-3 px-2 text-right w-16 bg-blue-50 font-bold text-blue-900">Logro</th>
+                        <th class="py-3 px-2 text-right w-14">%</th>
+                      </tr>
+                    </thead>
+                    <tbody id="table-gn-aislada-meses-body" class="divide-y divide-slate-100 font-medium font-mono text-[11px]">
+                      <!-- Renderizado por JS con los 12 meses de esa regional -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Subsección 2: Expediente de Informes Oficiales -->
+              <div id="gn-subseccion-informes" class="p-4 sm:p-6 hidden space-y-4">
+                <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                  <p class="text-xs text-slate-600">Informes narrativos mensuales y semestrales radicados en el SGC por esta regional.</p>
+                  <button type="button" onclick="navigateTo('informes')" class="text-xs text-blue-600 font-bold hover:underline">
+                    Ver repositorio documental &rarr;
+                  </button>
+                </div>
+
+                <div id="gn-aislada-informes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <!-- Renderizado por JS -->
+                </div>
+              </div>
+            </div>
           </div>
-          <div id="dashboard-recent-activities" class="mt-3 space-y-2"></div>
         </div>
       </section>
 
@@ -1765,139 +2264,10 @@
             </button>
           </div>
 
-          <!-- SELECTOR DE MODALIDADES DE ASISTENCIA EN AULA (DEMO DE ALTERNATIVAS CIES 2026) -->
-          <div class="bg-white rounded-2xl border border-slate-200 p-3 sm:p-3.5 shadow-xs space-y-2.5">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-              <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-                <span>⚙️ Alternativas de Asistencia en Aula (Evaluación Demo):</span>
-              </span>
-              <span class="text-[10px] text-indigo-700 font-bold bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200 self-start sm:self-auto">
-                Selecciona la modalidad operativa
-              </span>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
-              <!-- Botón Pestaña 1: Móvil QR (Opción A) -->
-              <button type="button" id="tab-modo-asist-movil" onclick="cambiarModoAsistenciaWs('movil')" 
-                class="p-3 rounded-xl border-2 transition-all text-left flex items-start gap-3 bg-emerald-50 border-emerald-500 text-emerald-950 shadow-2xs cursor-pointer">
-                <span class="w-8 h-8 rounded-lg bg-emerald-600 text-white font-bold flex items-center justify-center shrink-0 text-sm shadow-2xs">📱</span>
-                <div>
-                  <div class="flex items-center gap-1.5 font-extrabold text-xs">
-                    <span>Opción A: Móvil QR</span>
-                    <span class="px-1.5 py-0.2 rounded text-[9px] bg-emerald-200 text-emerald-900 font-black">PAPERLESS</span>
-                  </div>
-                  <p class="text-[11px] text-emerald-800 mt-0.5 leading-tight">Estudiantes escanean con su celular y firman con el dedo en pantalla.</p>
-                </div>
-              </button>
-
-              <!-- Botón Pestaña 2: Carnet QR & Escáner Educador (Opción B) -->
-              <button type="button" id="tab-modo-asist-scanner" onclick="cambiarModoAsistenciaWs('scanner')" 
-                class="p-3 rounded-xl border-2 transition-all text-left flex items-start gap-3 bg-slate-50 border-slate-200 text-slate-700 hover:bg-violet-50/60 hover:border-violet-300 cursor-pointer">
-                <span class="w-8 h-8 rounded-lg bg-violet-600 text-white font-bold flex items-center justify-center shrink-0 text-sm shadow-2xs">🪪</span>
-                <div>
-                  <div class="flex items-center gap-1.5 font-extrabold text-xs text-slate-900">
-                    <span>Opción B: Carnet QR & Escáner</span>
-                    <span class="px-1.5 py-0.2 rounded text-[9px] bg-violet-100 text-violet-900 font-black">CREDENCIAL</span>
-                  </div>
-                  <p class="text-[11px] text-slate-500 mt-0.5 leading-tight">PDF de carnets con QR por estudiante; el educador escanea con cámara en aula.</p>
-                </div>
-              </button>
-
-              <!-- Botón Pestaña 3: Visor Dual Físico (Opción C) -->
-              <button type="button" id="tab-modo-asist-dual" onclick="cambiarModoAsistenciaWs('dual')" 
-                class="p-3 rounded-xl border-2 transition-all text-left flex items-start gap-3 bg-slate-50 border-slate-200 text-slate-700 hover:bg-indigo-50/60 hover:border-indigo-300 cursor-pointer">
-                <span class="w-8 h-8 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center shrink-0 text-sm shadow-2xs">📋</span>
-                <div>
-                  <div class="flex items-center gap-1.5 font-extrabold text-xs text-slate-900">
-                    <span>Opción C: Planilla a Mano</span>
-                    <span class="px-1.5 py-0.2 rounded text-[9px] bg-indigo-100 text-indigo-900 font-black">VISOR DUAL</span>
-                  </div>
-                  <p class="text-[11px] text-slate-500 mt-0.5 leading-tight">Firma tradicional con bolígrafo + digitalización y cotejo en pantalla dividida.</p>
-                </div>
-              </button>
-            </div>
-          </div>
-
-          <!-- CONTENEDOR MODO 1: AUTO-REGISTRO MÓVIL (OPCIÓN A) -->
-          <div id="sec-modo-asist-movil" class="space-y-4">
-            <!-- 2.1 Auto-Registro de Asistencia Móvil por Taller & Firma Táctil (Alternativa 1) -->
-            <div class="bg-gradient-to-r from-emerald-50/90 via-teal-50/50 to-white rounded-xl border-2 border-emerald-300 p-4 shadow-sm space-y-3.5">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2.5 border-b border-emerald-200">
-                <div class="flex items-center gap-2.5">
-                  <span class="w-9 h-9 rounded-xl bg-emerald-600 text-white font-black text-base flex items-center justify-center shrink-0 shadow-xs">📱</span>
-                  <div>
-                    <h4 class="font-extrabold text-emerald-950 text-xs uppercase tracking-wider flex items-center gap-2">
-                      <span>Auto-Registro Móvil con Firma Táctil por Taller</span>
-                      <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-emerald-200 text-emerald-900 border border-emerald-300">DEMO ACTIVA</span>
-                    </h4>
-                    <p class="text-[11px] text-emerald-800">Los estudiantes escanean el QR con su celular, buscan su CI y firman con el dedo en pantalla en esta sesión.</p>
-                  </div>
-                </div>
-                <span class="text-[10px] text-emerald-800 font-mono bg-white px-2.5 py-1 rounded-lg border border-emerald-300 shadow-2xs shrink-0">
-                  asistencia.html?actId=...&tallerId=...
-                </span>
-              </div>
-
-              <!-- Caja de Enlace y Botones de Acción -->
-              <div class="flex flex-col sm:flex-row items-center gap-2">
-                <input id="ws-asist-link-input" type="text" readonly class="w-full text-xs font-mono p-2.5 bg-white border border-emerald-300 rounded-lg text-emerald-950 select-all font-semibold">
-                <div class="flex items-center gap-2 shrink-0 w-full sm:w-auto">
-                  <button type="button" onclick="copiarEnlaceAsistenciaWs()" class="flex-1 sm:flex-initial px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg shadow-2xs flex items-center justify-center gap-1.5 transition-colors cursor-pointer">
-                    <span>📋 Copiar Enlace</span>
-                  </button>
-                  <button type="button" onclick="abrirEnlaceAsistenciaWs()" class="flex-1 sm:flex-initial px-3.5 py-2 bg-white hover:bg-emerald-50 text-emerald-800 text-xs font-bold rounded-lg border border-emerald-300 flex items-center justify-center gap-1.5 transition-colors cursor-pointer">
-                    <span>📱 Abrir Móvil ↗</span>
-                  </button>
-                  <button type="button" onclick="abrirModalQrAsistenciaWs()" class="flex-1 sm:flex-initial px-3.5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-lg shadow-2xs flex items-center justify-center gap-1.5 transition-colors cursor-pointer">
-                    <span>🔳 Proyectar QR</span>
-                  </button>
-                </div>
-              </div>
-
-              <!-- Métricas de Asistencias en Vivo del Taller -->
-              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-1">
-                <div class="bg-white p-3 rounded-xl border border-emerald-200 shadow-2xs">
-                  <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Presentes en este Taller</span>
-                  <span id="ws-stat-asist-total" class="text-xl font-black text-emerald-800 font-mono mt-0.5 block">0</span>
-                </div>
-                <div class="bg-white p-3 rounded-xl border border-emerald-200 shadow-2xs">
-                  <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Con Firma Digital Touch</span>
-                  <span id="ws-stat-asist-firmados" class="text-xl font-black text-teal-800 font-mono mt-0.5 block">0</span>
-                </div>
-                <div class="bg-white p-3 rounded-xl border border-emerald-200 shadow-2xs col-span-2 sm:col-span-1">
-                  <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Aforo Previsto Sesión</span>
-                  <span id="ws-stat-asist-aforo" class="text-xl font-black text-slate-800 font-mono mt-0.5 block">25</span>
-                </div>
-              </div>
-
-              <!-- Tabla de Asistencias Registradas por Estudiantes en este Taller -->
-              <div class="space-y-1.5 pt-1">
-                <div class="flex items-center justify-between">
-                  <h5 class="text-[11px] font-bold text-slate-700 uppercase tracking-wider">Nómina en Vivo del Taller (Check-in con Firma Móvil):</h5>
-                  <span id="ws-conteo-asistencias-taller" class="text-[10px] font-mono text-emerald-700 font-bold bg-white px-2 py-0.5 rounded border border-emerald-200">0 registrados</span>
-                </div>
-                <div class="overflow-x-auto border border-emerald-200 rounded-lg max-h-56 overflow-y-auto">
-                  <table class="w-full text-left text-xs">
-                    <thead class="bg-emerald-50 text-emerald-900 text-[10px] uppercase font-bold border-b border-emerald-200 sticky top-0">
-                      <tr>
-                        <th class="py-2 px-3">#</th>
-                        <th class="py-2 px-3">Estudiante & CI</th>
-                        <th class="py-2 px-3">Contacto / Procedencia</th>
-                        <th class="py-2 px-3 text-center">Hora Check-in</th>
-                        <th class="py-2 px-3 text-center">Firma Táctil</th>
-                        <th class="py-2 px-3 text-right">Acción</th>
-                      </tr>
-                    </thead>
-                    <tbody id="ws-tabla-asistencias-taller-body" class="divide-y divide-slate-100 bg-white">
-                      <!-- Llenado dinámico -->
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div><!-- Fin sec-modo-asist-movil -->
-
-          <!-- CONTENEDOR MODO 2: CREDENCIALES / CARNETS CON QR & ESCÁNER EDUCADOR (OPCIÓN B) -->
-          <div id="sec-modo-asist-scanner" class="hidden space-y-4">
+          <!-- ============================================================== -->
+          <!-- CONTROL OFICIAL DE ASISTENCIA: CARNETS CON QR & ESCÁNER EDUCADOR -->
+          <!-- ============================================================== -->
+          <div id="sec-modo-asist-scanner" class="space-y-4">
             <div class="bg-gradient-to-r from-violet-50/90 via-purple-50/40 to-white rounded-xl border-2 border-violet-300 p-4 shadow-sm space-y-3.5">
               
               <!-- Cabecera de la Sección -->
@@ -1906,10 +2276,10 @@
                   <span class="w-9 h-9 rounded-xl bg-violet-600 text-white font-black text-base flex items-center justify-center shrink-0 shadow-xs">🪪</span>
                   <div>
                     <h4 class="font-extrabold text-violet-950 text-xs uppercase tracking-wider flex items-center gap-2">
-                      <span>Carnets con QR por Estudiante & Escáner del Educador</span>
-                      <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-violet-200 text-violet-900 border border-violet-300">OPCIÓN B</span>
+                      <span>Control de Asistencia: Carnets con QR & Escáner del Educador</span>
+                      <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-violet-200 text-violet-900 border border-violet-300">OFICIAL SGC</span>
                     </h4>
-                    <p class="text-[11px] text-violet-800">Genera credenciales en PDF con QR personal; el facilitador escanea el carnet al ingreso con cámara web o pistola USB.</p>
+                    <p class="text-[11px] text-violet-800">Genera e imprime credenciales en PDF con QR individual por estudiante; el educador registra la asistencia en 1 segundo escaneando el carnet con la cámara del celular/laptop o lector USB.</p>
                   </div>
                 </div>
                 <span class="text-[10px] text-violet-800 font-mono bg-white px-2.5 py-1 rounded-lg border border-violet-300 shadow-2xs shrink-0">
@@ -2024,85 +2394,6 @@
 
             </div>
           </div><!-- Fin sec-modo-asist-scanner -->
-
-          <!-- CONTENEDOR MODO 2: DIGITALIZACIÓN DE PLANILLA FÍSICA (OPCIÓN C) -->
-          <div id="sec-modo-asist-dual" class="hidden space-y-4">
-            <div class="bg-gradient-to-r from-indigo-50/90 via-slate-50 to-white rounded-xl border-2 border-indigo-300 p-4 shadow-sm space-y-3.5">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2.5 border-b border-indigo-200">
-                <div class="flex items-center gap-2.5">
-                  <span class="w-9 h-9 rounded-xl bg-indigo-600 text-white font-black text-base flex items-center justify-center shrink-0 shadow-xs">📋</span>
-                  <div>
-                    <h4 class="font-extrabold text-indigo-950 text-xs uppercase tracking-wider flex items-center gap-2">
-                      <span>Digitalización Asistida de Firmas Físicas (Visor Dual)</span>
-                      <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-indigo-200 text-indigo-900 border border-indigo-300">OPCIÓN C</span>
-                    </h4>
-                    <p class="text-[11px] text-indigo-800">Coteja visualmente la foto/escaneo de la planilla con firmas a mano contra la nómina del taller y archiva el respaldo SGC.</p>
-                  </div>
-                </div>
-                <span class="text-[10px] text-indigo-800 font-mono bg-white px-2.5 py-1 rounded-lg border border-indigo-300 shadow-2xs shrink-0">
-                  SGC-Apoyo-ABS-3-pp3
-                </span>
-              </div>
-
-              <!-- Botones Principales de Digitalización -->
-              <div class="flex flex-col sm:flex-row items-center gap-2.5">
-                <button type="button" onclick="abrirVisorDualDigitalizacion()" 
-                  class="w-full sm:w-auto px-5 py-3 bg-gradient-to-r from-indigo-600 to-indigo-800 hover:from-indigo-700 hover:to-indigo-900 text-white font-black text-xs rounded-xl shadow-md flex items-center justify-center gap-2 transition-all cursor-pointer">
-                  <svg class="w-4 h-4 text-indigo-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-                  <span>🔍 Abrir Visor Dual de Digitalización (Pantalla Dividida)</span>
-                </button>
-                <button type="button" onclick="descargarPlanillaFisicaEnBlancoPDF()" 
-                  class="w-full sm:w-auto px-4 py-3 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs rounded-xl border border-slate-300 flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-2xs">
-                  <span>📄 Descargar Planilla en Blanco para Imprimir</span>
-                </button>
-              </div>
-
-              <!-- Métricas de Firmas Físicas Cotejadas -->
-              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-1">
-                <div class="bg-white p-3 rounded-xl border border-indigo-200 shadow-2xs">
-                  <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Firmas Físicas Cotejadas</span>
-                  <span id="ws-stat-dual-total" class="text-xl font-black text-indigo-900 font-mono mt-0.5 block">25</span>
-                </div>
-                <div class="bg-white p-3 rounded-xl border border-indigo-200 shadow-2xs">
-                  <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Respaldo Custodiado SGC</span>
-                  <span id="ws-stat-dual-archivo" class="text-xs font-bold text-slate-800 font-mono mt-1.5 block truncate" title="Planilla_Firmas_Lideres_5_4_24.pdf">
-                    Planilla_Firmas_Lideres_5_4_24.pdf
-                  </span>
-                </div>
-                <div class="bg-white p-3 rounded-xl border border-indigo-200 shadow-2xs col-span-2 sm:col-span-1">
-                  <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Estado de Auditoría</span>
-                  <span id="ws-stat-dual-estado" class="inline-flex items-center gap-1 px-2 py-0.5 mt-1 rounded text-[11px] font-black bg-emerald-100 text-emerald-800 border border-emerald-200">
-                    ✓ Validado Orientador
-                  </span>
-                </div>
-              </div>
-
-              <!-- Tabla de Participantes con Asistencia Física Cotejada -->
-              <div class="space-y-1.5 pt-1">
-                <div class="flex items-center justify-between">
-                  <h5 class="text-[11px] font-bold text-slate-700 uppercase tracking-wider">Nómina Cotejada desde la Planilla Física Manuscrita:</h5>
-                  <span id="ws-conteo-dual-taller" class="text-[10px] font-mono text-indigo-700 font-bold bg-white px-2 py-0.5 rounded border border-indigo-200">25 cotejados</span>
-                </div>
-                <div class="overflow-x-auto border border-indigo-200 rounded-lg max-h-56 overflow-y-auto">
-                  <table class="w-full text-left text-xs">
-                    <thead class="bg-indigo-50 text-indigo-950 text-[10px] uppercase font-bold border-b border-indigo-200 sticky top-0">
-                      <tr>
-                        <th class="py-2 px-3">#</th>
-                        <th class="py-2 px-3">Estudiante & CI</th>
-                        <th class="py-2 px-3">Rol / Procedencia</th>
-                        <th class="py-2 px-3 text-center">Alimentación</th>
-                        <th class="py-2 px-3 text-center">Firma Manuscrita</th>
-                        <th class="py-2 px-3 text-right">Estado</th>
-                      </tr>
-                    </thead>
-                    <tbody id="ws-tabla-dual-taller-body" class="divide-y divide-slate-100 bg-white">
-                      <!-- Llenado dinámico -->
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div><!-- Fin sec-modo-asist-dual -->
 
           <!-- 2.2 Pre-registro de Participantes (Opcional) -->
           <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm space-y-3">
@@ -2667,9 +2958,9 @@
             </div>
             <p class="text-sm text-slate-500">Registro digital con tamizaje de violencia (Ley 348), pruebas rápidas de VIH (Ley 3729) y códigos temáticos.</p>
           </div>
-          <button onclick="openModalOrientador()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg shadow-sm flex items-center gap-2">
+          <button onclick="openModalOrientador()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg shadow-sm flex items-center gap-2 cursor-pointer">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-            Nueva Sesión de Orientación
+            Crear Nueva Orientación
           </button>
         </div>
 
@@ -2707,22 +2998,25 @@
         </div>
 
         <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
-          <div class="p-4 border-b border-slate-100 bg-slate-50/50 flex items-center justify-between">
+          <div class="p-4 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div class="relative w-full max-w-sm">
-              <input id="search-orientadores" type="text" placeholder="Buscar orientador, participante o tema..." class="w-full pl-9 pr-4 py-2 text-sm bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <input id="search-orientadores" type="text" placeholder="Buscar orientador, participante, CI o tema..." class="w-full pl-9 pr-4 py-2 text-sm bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
               <svg class="w-4 h-4 text-slate-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
             </div>
+            <button type="button" onclick="exportarOrientacionesExcel()" class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-lg shadow-sm flex items-center gap-2 cursor-pointer transition-colors shrink-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <span id="btn-export-ori-label">Exportar a Excel</span>
+            </button>
           </div>
           <div class="overflow-x-auto">
             <table class="w-full text-left text-sm text-slate-700">
               <thead class="bg-slate-100 text-slate-600 uppercase text-[11px] font-bold tracking-wider">
                 <tr>
-                  <th class="py-3 px-4">Orientador/a</th>
-                  <th class="py-3 px-4">Participante & Segmento</th>
-                  <th class="py-3 px-4">Código / Consulta</th>
-                  <th class="py-3 px-4">Prueba Rápida VIH</th>
-                  <th class="py-3 px-4">Tamizaje Violencia (Ley 348)</th>
-                  <th class="py-3 px-4">Fecha</th>
+                  <th class="py-3 px-4">Regional & Fecha</th>
+                  <th class="py-3 px-4">Datos Personales</th>
+                  <th class="py-3 px-4">Sesión & Usuario</th>
+                  <th class="py-3 px-4">Costos / Proyecto</th>
+                  <th class="py-3 px-4">Tema & Proceso</th>
                   <th class="py-3 px-4 text-right">Acciones</th>
                 </tr>
               </thead>
@@ -2739,12 +3033,45 @@
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Incidencia Política y Auditoría Social</h2>
-            <p class="text-sm text-slate-500">Seguimiento de líderes/as de la Red Tú Decides, normativas y acciones interinstitucionales.</p>
+            <p class="text-sm text-slate-500">Inscripción de participantes, talleres de incidencia y seguimiento de normativas.</p>
           </div>
-          <button onclick="openModalIncidencia()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg shadow-sm flex items-center gap-2">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-            Nueva Acción de Incidencia
-          </button>
+          <div class="flex items-center gap-2 flex-wrap">
+            <button onclick="abrirNuevaInscripcionIncidencia()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold rounded-lg shadow-sm flex items-center gap-2 cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+              Nueva Inscripción (4 Pasos)
+            </button>
+            <button onclick="openModalIncidencia()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg shadow-sm flex items-center gap-2 cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              Nueva Acción de Incidencia
+            </button>
+          </div>
+        </div>
+
+        <!-- Tabla de Procesos de Inscripción y Talleres de Incidencia Política -->
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+          <div class="p-4 border-b border-slate-100 bg-emerald-50/40 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <h3 class="text-sm font-bold text-slate-900">Inscripciones y Talleres de Incidencia Política</h3>
+              <p class="text-xs text-slate-500">Flujo por pasos: Paso 1 (Participantes), Paso 2 (Planificación), Paso 3 (Asistencia QR), Paso 4 (Conclusión y Docs) + pestaña libre de Árbol de Problemas.</p>
+            </div>
+            <span id="inc-inscripciones-count" class="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800">0 registros</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm text-slate-700">
+              <thead class="bg-slate-100 text-slate-600 uppercase text-[11px] font-bold tracking-wider">
+                <tr>
+                  <th class="py-3 px-4">Código</th>
+                  <th class="py-3 px-4">Taller / Proceso</th>
+                  <th class="py-3 px-4">Participantes</th>
+                  <th class="py-3 px-4">Regional / Área</th>
+                  <th class="py-3 px-4">Fecha & Carga</th>
+                  <th class="py-3 px-4">Estado</th>
+                  <th class="py-3 px-4 text-right">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="table-incidencia-inscripciones"></tbody>
+            </table>
+          </div>
         </div>
 
         <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
@@ -2769,6 +3096,762 @@
               </thead>
               <tbody id="table-incidencia"></tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================== -->
+      <!-- PANEL 5B: MÓDULO DE INSCRIPCIÓN POR PASOS (INCIDENCIA POLÍTICA) -->
+      <!-- ========================================================== -->
+      <section id="panel-incidencia-inscripcion" class="content-panel hidden space-y-5">
+        <!-- Encabezado y Contexto -->
+        <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm space-y-3">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex items-center gap-2 flex-wrap text-xs text-slate-500">
+              <button type="button" onclick="cerrarInscripcionIncidencia()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold transition-colors cursor-pointer border border-slate-300">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Volver a Incidencia Política</span>
+              </button>
+              <span class="text-slate-300">/</span>
+              <span class="font-bold text-slate-700">Módulo de Inscripción</span>
+              <span class="text-slate-300">/</span>
+              <span id="inc-ws-breadcrumb" class="text-slate-500">Flujo en 4 Pasos + Árbol de Problemas</span>
+            </div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <span id="inc-ws-badge-codigo" class="px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-blue-100 text-blue-800 border border-blue-200">NUEVO</span>
+              <span id="inc-ws-badge-paso" class="px-2.5 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">Paso 1 de 4</span>
+              <span id="inc-ws-badge-count" class="px-2.5 py-0.5 rounded text-xs font-bold bg-indigo-100 text-indigo-800 border border-indigo-200">0 participantes</span>
+            </div>
+          </div>
+
+          <div>
+            <h2 id="inc-ws-titulo" class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+              Inscripción a Taller de Incidencia Política
+            </h2>
+            <p class="text-xs text-slate-500 mt-1">Paso 1: Participantes &bull; Paso 2: Planificación &bull; Paso 3: Asistencia QR &bull; Paso 4: Conclusión y Docs &bull; Pestaña libre: Árbol de Problemas.</p>
+          </div>
+
+          <!-- Stepper de 4 Pasos + Pestaña Libre de Árbol de Problemas -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2.5 pt-2 border-t border-slate-100">
+            <button type="button" id="inc-ws-pill-1" onclick="irAPasoIncidencia(1)" class="flex items-center gap-2.5 p-2.5 rounded-xl border-2 border-blue-500 bg-blue-50 text-blue-900 text-left transition-all cursor-pointer">
+              <span id="inc-ws-pill-num-1" class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center shrink-0">1</span>
+              <div class="min-w-0 flex-1">
+                <span class="text-xs font-black block truncate">1. Participantes</span>
+                <span id="inc-ws-pill-sub-1" class="text-[10px] text-blue-700 font-medium block truncate">Inscripción</span>
+              </div>
+            </button>
+            <button type="button" id="inc-ws-pill-2" onclick="irAPasoIncidencia(2)" class="flex items-center gap-2.5 p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100 text-left transition-all cursor-pointer">
+              <span id="inc-ws-pill-num-2" class="w-7 h-7 rounded-lg bg-slate-300 text-slate-700 font-bold text-xs flex items-center justify-center shrink-0">2</span>
+              <div class="min-w-0 flex-1">
+                <span class="text-xs font-black block truncate">2. Planificación</span>
+                <span id="inc-ws-pill-sub-2" class="text-[10px] text-slate-500 font-medium block truncate">Datos y logística</span>
+              </div>
+            </button>
+            <button type="button" id="inc-ws-pill-3" onclick="irAPasoIncidencia(3)" class="flex items-center gap-2.5 p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100 text-left transition-all cursor-pointer">
+              <span id="inc-ws-pill-num-3" class="w-7 h-7 rounded-lg bg-slate-300 text-slate-700 font-bold text-xs flex items-center justify-center shrink-0">3</span>
+              <div class="min-w-0 flex-1">
+                <span class="text-xs font-black block truncate">3. Asistencia QR</span>
+                <span id="inc-ws-pill-sub-3" class="text-[10px] text-slate-500 font-medium block truncate">Escáner y carnets</span>
+              </div>
+            </button>
+            <button type="button" id="inc-ws-pill-4" onclick="irAPasoIncidencia(4)" class="flex items-center gap-2.5 p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100 text-left transition-all cursor-pointer">
+              <span id="inc-ws-pill-num-4" class="w-7 h-7 rounded-lg bg-slate-300 text-slate-700 font-bold text-xs flex items-center justify-center shrink-0">4</span>
+              <div class="min-w-0 flex-1">
+                <span class="text-xs font-black block truncate">4. Conclusión</span>
+                <span id="inc-ws-pill-sub-4" class="text-[10px] text-slate-500 font-medium block truncate">Cierre y docs</span>
+              </div>
+            </button>
+            <button type="button" id="inc-ws-pill-arbol" onclick="abrirTabArbolProblemas()" class="flex items-center gap-2.5 p-2.5 rounded-xl border border-amber-200 bg-amber-50/60 text-amber-900 hover:bg-amber-100/70 text-left transition-all cursor-pointer">
+              <span id="inc-ws-pill-num-arbol" class="w-7 h-7 rounded-lg bg-amber-500 text-white font-bold text-xs flex items-center justify-center shrink-0">🌳</span>
+              <div class="min-w-0 flex-1">
+                <span class="text-xs font-black block truncate">Árbol Problemas</span>
+                <span id="inc-ws-pill-sub-arbol" class="text-[10px] text-amber-700 font-medium block truncate">Pestaña libre</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- PASO 1: FORMULARIO Y NÓMINA DE PARTICIPANTES (VOLUNTARIOS Y FINANCIADORES EXTERNOS) -->
+        <div id="inc-ws-paso-1" class="space-y-5">
+          <!-- Selector de Tipo de Participante -->
+          <div class="bg-white rounded-xl border border-slate-200 p-2 shadow-2xs grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <button type="button" id="inc-part-tab-voluntarios" onclick="cambiarSubTabParticipantesIncidencia('voluntarios')" class="flex items-center justify-between px-4 py-2.5 rounded-lg text-xs font-bold border-2 border-blue-500 bg-blue-50 text-blue-900 cursor-pointer transition-all">
+              <span>👥 Participantes Voluntarios</span>
+              <span id="inc-part-tab-vol-badge" class="px-2 py-0.5 rounded-full bg-blue-600 text-white font-mono text-[10px]">0</span>
+            </button>
+            <button type="button" id="inc-part-tab-financiadores" onclick="cambiarSubTabParticipantesIncidencia('financiadores')" class="flex items-center justify-between px-4 py-2.5 rounded-lg text-xs font-bold border border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100 cursor-pointer transition-all">
+              <span>🤝 Financiadores Externos</span>
+              <span id="inc-part-tab-fin-badge" class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 font-mono text-[10px]">0</span>
+            </button>
+          </div>
+
+          <!-- SUB-PANEL 1A: PARTICIPANTES VOLUNTARIOS -->
+          <div id="inc-part-panel-voluntarios" class="space-y-5">
+          <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="p-4 border-b border-slate-100 bg-slate-50 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <h3 class="font-bold text-slate-800 text-sm">1.1 Formulario de Participantes Voluntarios</h3>
+                <p class="text-[11px] text-slate-500">Agrega participantes voluntarios o impórtalos desde el padrón CIES.</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <select id="inc-part-import-select" class="text-xs p-2 border border-slate-300 rounded-lg bg-white max-w-[220px]">
+                  <option value="">-- Importar del padrón CIES --</option>
+                </select>
+                <button type="button" onclick="importarParticipantePadronIncidencia()" class="px-3 py-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 text-xs font-bold rounded-lg cursor-pointer shrink-0">
+                  + Importar
+                </button>
+              </div>
+            </div>
+
+            <form id="form-inc-participante" onsubmit="agregarParticipanteIncidencia(event)" class="p-5 space-y-4 text-xs">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Nombres *</label>
+                  <input id="inc-part-nombres" type="text" required placeholder="Ej: Valeria" class="w-full text-sm p-2 border border-slate-300 rounded-md">
+                </div>
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Apellidos *</label>
+                  <input id="inc-part-apellidos" type="text" required placeholder="Ej: Quispe Mamani" class="w-full text-sm p-2 border border-slate-300 rounded-md">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Cédula de Identidad (CI) *</label>
+                  <input id="inc-part-ci" type="text" required placeholder="Ej: 4829102 LP" class="w-full text-sm p-2 border border-slate-300 rounded-md">
+                </div>
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Edad exacta *</label>
+                  <input id="inc-part-edad" type="number" min="10" max="95" required oninput="actualizarRangoEtarioIncidencia()" class="w-full text-sm p-2 border border-slate-300 rounded-md">
+                </div>
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Rango Etario CIES</label>
+                  <select id="inc-part-rango" class="w-full text-sm p-2 border border-slate-300 rounded-md bg-white">
+                    <option value="10 a 14">10 a 14</option>
+                    <option value="15 a 19" selected>15 a 19</option>
+                    <option value="20 a 24">20 a 24</option>
+                    <option value="> 24">&gt; 24</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Género (Oficial CIES) *</label>
+                  <select id="inc-part-genero" class="w-full text-sm p-2 border border-slate-300 rounded-md bg-white">
+                    <option value="Femenino">Femenino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Trans femenino">Trans femenino</option>
+                    <option value="Trans masculino">Trans masculino</option>
+                    <option value="Otros">Otros</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Cargo / Rol / Colectivo *</label>
+                  <input id="inc-part-cargo" type="text" required placeholder="Ej: Lideresa Red Tú Decides" class="w-full text-sm p-2 border border-slate-300 rounded-md">
+                </div>
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Teléfono / Celular</label>
+                  <input id="inc-part-telefono" type="text" placeholder="Ej: 71234567" class="w-full text-sm p-2 border border-slate-300 rounded-md">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+                <div class="sm:col-span-2">
+                  <label class="block font-semibold text-slate-700 mb-1">Procedencia (Comunidad / Municipio / U.E.) *</label>
+                  <input id="inc-part-procedencia" type="text" required placeholder="Ej: Distrito 4 - El Alto" class="w-full text-sm p-2 border border-slate-300 rounded-md">
+                </div>
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Regional CIES</label>
+                  <select id="inc-part-regional" class="w-full text-sm p-2 border border-slate-300 rounded-md bg-white">
+                    <option value="LP">La Paz (LP)</option>
+                    <option value="EA">El Alto (EA)</option>
+                    <option value="CBBA">Cochabamba (CBBA)</option>
+                    <option value="SCZ">Santa Cruz (SCZ)</option>
+                    <option value="SU">Sucre (SU)</option>
+                    <option value="TJA">Tarija (TJA)</option>
+                    <option value="PTS">Potosí (PTS)</option>
+                    <option value="OR">Oruro (OR)</option>
+                    <option value="BENI">Beni (BENI)</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Área Geográfica</label>
+                  <select id="inc-part-area" class="w-full text-sm p-2 border border-slate-300 rounded-md bg-white">
+                    <option value="Urbana">Urbana</option>
+                    <option value="Rural">Rural</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between pt-2 border-t border-slate-100">
+                <label class="flex items-center gap-2 text-xs text-slate-600 cursor-pointer">
+                  <input id="inc-part-sync-padron" type="checkbox" checked class="rounded text-blue-600 w-4 h-4">
+                  <span>Sincronizar también en el padrón general de Participantes</span>
+                </label>
+                <button type="submit" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg shadow-sm cursor-pointer">
+                  + Agregar Participante a la Inscripción
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Lista de Participantes Inscritos en este Proceso -->
+          <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="p-4 border-b border-slate-100 bg-slate-50 flex items-center justify-between">
+              <h3 class="font-bold text-slate-800 text-sm">1.2 Nómina de Participantes Inscritos</h3>
+              <span id="inc-ws-part-resumen" class="text-xs font-semibold text-slate-600">0 inscritos (0 Urbana / 0 Rural)</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs text-slate-700">
+                <thead class="bg-slate-100 text-slate-600 uppercase text-[10px] font-bold tracking-wider">
+                  <tr>
+                    <th class="py-2.5 px-4">#</th>
+                    <th class="py-2.5 px-4">Participante</th>
+                    <th class="py-2.5 px-4">CI</th>
+                    <th class="py-2.5 px-4">Edad / Género</th>
+                    <th class="py-2.5 px-4">Cargo / Colectivo</th>
+                    <th class="py-2.5 px-4">Regional / Área</th>
+                    <th class="py-2.5 px-4 text-right">Acción</th>
+                  </tr>
+                </thead>
+                <tbody id="table-inc-ws-participantes"></tbody>
+              </table>
+            </div>
+          </div>
+          </div>
+
+          <!-- SUB-PANEL 1B: FINANCIADORES EXTERNOS -->
+          <div id="inc-part-panel-financiadores" class="hidden space-y-5">
+            <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+              <div class="p-4 border-b border-slate-100 bg-emerald-50/40">
+                <h3 class="font-bold text-slate-800 text-sm">1.1 Formulario de Financiadores Externos</h3>
+                <p class="text-[11px] text-slate-500">Registra representantes de organizaciones, instituciones o cooperantes externos vinculados al taller.</p>
+              </div>
+
+              <form id="form-inc-financiador" onsubmit="agregarFinanciadorIncidencia(event)" class="p-5 space-y-4 text-xs">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Nombre completo *</label>
+                    <input id="inc-fin-nombre" type="text" required placeholder="Ej: Lic. Mariana Torres" class="w-full text-sm p-2 border border-slate-300 rounded-md">
+                  </div>
+                  <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Municipio *</label>
+                    <input id="inc-fin-municipio" type="text" required placeholder="Ej: El Alto / La Paz" class="w-full text-sm p-2 border border-slate-300 rounded-md">
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Organización o Institución *</label>
+                    <input id="inc-fin-organizacion" type="text" required placeholder="Ej: UNFPA / Fundación / GAM" class="w-full text-sm p-2 border border-slate-300 rounded-md">
+                  </div>
+                  <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Cargo *</label>
+                    <input id="inc-fin-cargo" type="text" required placeholder="Ej: Oficial de Programas / Director/a" class="w-full text-sm p-2 border border-slate-300 rounded-md">
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Edad *</label>
+                    <input id="inc-fin-edad" type="number" min="18" max="95" required placeholder="Ej: 34" class="w-full text-sm p-2 border border-slate-300 rounded-md">
+                  </div>
+                  <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Teléfono *</label>
+                    <input id="inc-fin-telefono" type="text" required placeholder="Ej: 71234567" class="w-full text-sm p-2 border border-slate-300 rounded-md">
+                  </div>
+                  <div>
+                    <label class="block font-semibold text-slate-700 mb-1">Sexo *</label>
+                    <select id="inc-fin-sexo" required class="w-full text-sm p-2 border border-slate-300 rounded-md bg-white">
+                      <option value="Femenino">Femenino</option>
+                      <option value="Masculino">Masculino</option>
+                      <option value="Trans femenino">Trans femenino</option>
+                      <option value="Trans masculino">Trans masculino</option>
+                      <option value="Otros">Otros</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="flex justify-end pt-2 border-t border-slate-100">
+                  <button type="submit" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg shadow-sm cursor-pointer">
+                    + Agregar Financiador Externo
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Lista de Financiadores Externos -->
+            <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+              <div class="p-4 border-b border-slate-100 bg-slate-50 flex items-center justify-between">
+                <h3 class="font-bold text-slate-800 text-sm">1.2 Nómina de Financiadores Externos</h3>
+                <span id="inc-ws-fin-resumen" class="text-xs font-semibold text-slate-600">0 financiadores registrados</span>
+              </div>
+              <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs text-slate-700">
+                  <thead class="bg-slate-100 text-slate-600 uppercase text-[10px] font-bold tracking-wider">
+                    <tr>
+                      <th class="py-2.5 px-4">#</th>
+                      <th class="py-2.5 px-4">Nombre</th>
+                      <th class="py-2.5 px-4">Organización / Cargo</th>
+                      <th class="py-2.5 px-4">Municipio</th>
+                      <th class="py-2.5 px-4">Edad / Sexo</th>
+                      <th class="py-2.5 px-4">Teléfono</th>
+                      <th class="py-2.5 px-4 text-right">Acción</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-inc-ws-financiadores"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+            <button type="button" onclick="cerrarInscripcionIncidencia()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg cursor-pointer">
+              Cancelar y Volver
+            </button>
+            <button type="button" onclick="irAPasoIncidencia(2)" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg shadow-sm cursor-pointer">
+              Siguiente: Paso 2 (Planificación) &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- PASO 2: FORMULARIO DEL TALLER DE INCIDENCIA POLÍTICA -->
+        <div id="inc-ws-paso-2" class="hidden space-y-5">
+          <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+            <div class="flex items-center gap-2 text-emerald-900">
+              <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center">&check;</span>
+              <span><strong>Participantes listos:</strong> <span id="inc-ws-paso2-part-info">0 participantes inscritos en el Paso 1</span></span>
+            </div>
+            <button type="button" onclick="irAPasoIncidencia(1)" class="text-emerald-800 hover:underline font-bold cursor-pointer text-left sm:text-right">
+              Editar lista de participantes
+            </button>
+          </div>
+
+          <form id="form-inc-taller" onsubmit="guardarInscripcionTallerIncidencia(event)" class="bg-white rounded-xl border border-slate-200 shadow-sm p-5 space-y-4 text-xs">
+            <div class="border-b border-slate-100 pb-3">
+              <h3 class="font-bold text-slate-800 text-sm">2.1 Planificación del Taller de Incidencia Política</h3>
+              <p class="text-[11px] text-slate-500">Define la planificación, normativa, sede y logística asociada a los participantes inscritos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div class="sm:col-span-2">
+                <label class="block font-semibold text-slate-700 mb-1">Título del Taller / Sesión de Incidencia *</label>
+                <input id="inc-taller-titulo" type="text" required placeholder="Ej: Taller de Incidencia Política y Ley Municipal de Juventudes" class="w-full text-sm p-2 border border-slate-300 rounded-md">
+              </div>
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1">Tipo de Proceso SGC *</label>
+                <select id="inc-taller-tipo-sgc" class="w-full text-sm p-2 border border-slate-300 rounded-md bg-white">
+                  <option value="Formación en Incidencia Política (Ind. 13)">Formación en Incidencia Política (Ind. 13)</option>
+                  <option value="Ejecución de Estrategia de Incidencia (Ind. 14)">Ejecución de Estrategia (Ind. 14)</option>
+                  <option value="Elaboración de Plan de Incidencia (Ind. 15)">Plan de Incidencia Política (Ind. 15)</option>
+                  <option value="Formación en Auditoría Social (Ind. 17)">Formación en Auditoría Social (Ind. 17)</option>
+                  <option value="Ejecución de Auditoría Social (Ind. 18)">Ejecución de Auditoría Social (Ind. 18)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1">Fecha de Ejecución *</label>
+                <input id="inc-taller-fecha" type="date" required class="w-full text-sm p-2 border border-slate-300 rounded-md">
+              </div>
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1">Carga Horaria (hrs) *</label>
+                <input id="inc-taller-horas" type="number" min="1" max="40" value="3" required class="w-full text-sm p-2 border border-slate-300 rounded-md">
+              </div>
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1">Modalidad</label>
+                <select id="inc-taller-modalidad" class="w-full text-sm p-2 border border-slate-300 rounded-md bg-white">
+                  <option value="Presencial">Presencial</option>
+                  <option value="Virtual (Zoom/Meet)">Virtual (Zoom/Meet)</option>
+                  <option value="Mixta">Mixta</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1">Ámbito de Incidencia</label>
+                <select id="inc-taller-ambito" class="w-full text-sm p-2 border border-slate-300 rounded-md bg-white">
+                  <option value="Municipal">Municipal</option>
+                  <option value="Departamental">Departamental</option>
+                  <option value="Red de Salud Local">Red de Salud Local</option>
+                  <option value="Nacional">Nacional</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1">Regional CIES</label>
+                <select id="inc-taller-regional" class="w-full text-sm p-2 border border-slate-300 rounded-md bg-white">
+                  <option value="LP">La Paz (LP)</option>
+                  <option value="EA">El Alto (EA)</option>
+                  <option value="CBBA">Cochabamba (CBBA)</option>
+                  <option value="SCZ">Santa Cruz (SCZ)</option>
+                  <option value="SU">Sucre (SU)</option>
+                  <option value="TJA">Tarija (TJA)</option>
+                  <option value="PTS">Potosí (PTS)</option>
+                  <option value="OR">Oruro (OR)</option>
+                  <option value="BENI">Beni (BENI)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1">Área Geográfica</label>
+                <select id="inc-taller-area" class="w-full text-sm p-2 border border-slate-300 rounded-md bg-white">
+                  <option value="Urbana">Urbana</option>
+                  <option value="Rural">Rural</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1">Lugar / Sede / Municipio *</label>
+                <input id="inc-taller-lugar" type="text" required placeholder="Ej: Casa de la Juventud / Salón Municipal" class="w-full text-sm p-2 border border-slate-300 rounded-md">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1">Facilitador/a Responsable *</label>
+                <input id="inc-taller-facilitador" type="text" required placeholder="Ej: Lic. Viviana Segales" class="w-full text-sm p-2 border border-slate-300 rounded-md">
+              </div>
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1">Normativa o Política Vinculada</label>
+                <input id="inc-taller-normativa" type="text" placeholder="Ej: Ley Municipal de Juventudes 045 / Ley 348" class="w-full text-sm p-2 border border-slate-300 rounded-md">
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-semibold text-slate-700 mb-1">Objetivo del Taller y Problemática Identificada</label>
+              <textarea id="inc-taller-objetivo" rows="3" placeholder="Describe el objetivo pedagógico, la problemática local priorizada y acuerdos esperados..." class="w-full text-sm p-2 border border-slate-300 rounded-md"></textarea>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 bg-slate-50 border border-slate-200 rounded-lg">
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1">Material Didáctico Distribuido</label>
+                <input id="inc-taller-material" type="text" placeholder="Ej: Cartillas de incidencia, papelógrafos, marcadores" class="w-full text-sm p-2 border border-slate-300 rounded-md bg-white">
+              </div>
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1.5">Control de Alimentación (SGC-Apoyo-ABS-3-pp3)</label>
+                <div class="flex flex-wrap gap-3 text-xs pt-1">
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="inc-taller-rm" type="checkbox" class="rounded text-blue-600"> RM (Ref. Mañana)</label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="inc-taller-al" type="checkbox" class="rounded text-blue-600"> AL (Almuerzo)</label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="inc-taller-rt" type="checkbox" class="rounded text-blue-600"> RT (Ref. Tarde)</label>
+                  <label class="flex items-center gap-1.5 cursor-pointer"><input id="inc-taller-ce" type="checkbox" class="rounded text-blue-600"> CE (Cena)</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-3 border-t border-slate-100 flex-wrap gap-2">
+              <button type="button" onclick="irAPasoIncidencia(1)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg cursor-pointer">
+                &larr; Volver a Paso 1 (Participantes)
+              </button>
+              <div class="flex items-center gap-2">
+                <button type="button" onclick="abrirTabArbolProblemas()" class="px-4 py-2 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-300 text-xs font-bold rounded-lg cursor-pointer">
+                  🌳 Ir a Árbol de Problemas
+                </button>
+                <button type="submit" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg shadow-sm cursor-pointer">
+                  Siguiente: Paso 3 (Asistencia QR) &rarr;
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- PASO 3: ASISTENCIA CON ESCÁNER QR (BASADO EN OPCIÓN B DE ACTIVIDADES) -->
+        <div id="inc-ws-paso-3" class="hidden space-y-5">
+          <div class="bg-gradient-to-r from-violet-50/90 via-purple-50/40 to-white rounded-xl border-2 border-violet-300 p-4 sm:p-5 shadow-sm space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-violet-200">
+              <div class="flex items-center gap-2.5">
+                <span class="w-9 h-9 rounded-xl bg-violet-600 text-white font-black text-base flex items-center justify-center shrink-0 shadow-xs">🪪</span>
+                <div>
+                  <h4 class="font-extrabold text-violet-950 text-xs uppercase tracking-wider flex items-center gap-2">
+                    <span>3.1 Control de Asistencia: Carnets con QR &amp; Escáner del Educador</span>
+                    <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-violet-200 text-violet-900 border border-violet-300">OPCIÓN 2</span>
+                  </h4>
+                  <p class="text-[11px] text-violet-800">Genera credenciales en PDF con QR por participante y escanea su ingreso con cámara web, pistola USB o simulación.</p>
+                </div>
+              </div>
+              <span class="text-[10px] text-violet-800 font-mono bg-white px-2.5 py-1 rounded-lg border border-violet-300 shadow-2xs shrink-0">
+                SGC-Apoyo-ABS-3-pp3 • SCANNER
+              </span>
+            </div>
+
+            <!-- Botones Principales de Acción -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+              <button type="button" onclick="abrirModalEscanerQrIncidencia()" class="px-4 py-2.5 bg-gradient-to-r from-violet-600 to-indigo-700 hover:from-violet-700 hover:to-indigo-800 text-white font-black text-xs rounded-xl shadow-md flex items-center justify-center gap-2 transition-all cursor-pointer">
+                <svg class="w-4 h-4 text-violet-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span>📷 Iniciar Escáner de Cámara QR (Educador)</span>
+              </button>
+
+              <button type="button" onclick="descargarCredencialesQrIncidenciaPDF()" class="px-4 py-2.5 bg-white hover:bg-violet-50 text-violet-900 font-bold text-xs rounded-xl border border-violet-300 flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-2xs">
+                <span>🖨️ Descargar PDF de Carnets con QR</span>
+              </button>
+
+              <div class="flex-1 flex items-center gap-1.5 min-w-[200px]">
+                <input type="text" id="inc-scanner-manual-input" onkeydown="if(event.key==='Enter'){event.preventDefault();procesarInputScannerManualIncidencia();}" placeholder="Lector USB o ingresar CI..." class="w-full text-xs font-mono p-2 bg-white border border-violet-300 rounded-lg text-slate-800 focus:ring-2 focus:ring-violet-500 font-medium">
+                <button type="button" onclick="procesarInputScannerManualIncidencia()" class="px-3 py-2 bg-slate-800 hover:bg-slate-900 text-white font-bold text-xs rounded-lg transition-colors cursor-pointer shrink-0">
+                  Check-in
+                </button>
+              </div>
+            </div>
+
+            <!-- Barra de Simulación Interactiva -->
+            <div class="p-2.5 bg-white/90 rounded-xl border border-violet-200 text-xs space-y-1.5">
+              <div class="flex items-center justify-between flex-wrap gap-1">
+                <span class="font-bold text-violet-950 text-[11px] flex items-center gap-1.5">
+                  <span>⚡ Simulación rápida de escaneo QR:</span>
+                  <span class="text-[10px] text-slate-500 font-normal hidden sm:inline">(haz clic en un participante para registrar su ingreso QR)</span>
+                </span>
+                <button type="button" onclick="simularEscaneoRafagaIncidencia()" class="text-[10px] font-black text-white bg-violet-600 hover:bg-violet-700 px-2.5 py-1 rounded cursor-pointer transition-colors shadow-2xs">
+                  ⚡ Simular Ráfaga (Todos)
+                </button>
+              </div>
+              <div class="flex items-center gap-1.5 flex-wrap" id="inc-scanner-pills-simulacion"></div>
+            </div>
+
+            <!-- Métricas en Vivo -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
+              <div class="bg-white p-3 rounded-xl border border-violet-200 shadow-2xs">
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Presentes Escaneados</span>
+                <span id="inc-stat-scan-total" class="text-xl font-black text-violet-900 font-mono mt-0.5 block">0</span>
+              </div>
+              <div class="bg-white p-3 rounded-xl border border-violet-200 shadow-2xs">
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Inscritos (Paso 1)</span>
+                <span id="inc-stat-scan-aforo" class="text-xl font-black text-slate-800 font-mono mt-0.5 block">0</span>
+              </div>
+              <div class="bg-white p-3 rounded-xl border border-violet-200 shadow-2xs">
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Refrigerios Asignados</span>
+                <span id="inc-stat-scan-refrigerios" class="text-xl font-black text-emerald-700 font-mono mt-0.5 block">0</span>
+              </div>
+              <div class="bg-white p-3 rounded-xl border border-violet-200 shadow-2xs">
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Último Check-in QR</span>
+                <span id="inc-stat-scan-ultimo" class="text-xs font-bold text-slate-700 font-mono mt-1.5 block truncate">Ninguno aún</span>
+              </div>
+            </div>
+
+            <!-- Tabla de Asistencias por Carnet QR -->
+            <div class="space-y-1.5 pt-1">
+              <div class="flex items-center justify-between">
+                <h5 class="text-[11px] font-bold text-slate-700 uppercase tracking-wider">Nómina del Taller (Check-in mediante Credencial QR):</h5>
+                <span id="inc-conteo-scan-badge" class="text-[10px] font-mono text-violet-700 font-bold bg-white px-2 py-0.5 rounded border border-violet-200">0 escaneados</span>
+              </div>
+              <div class="overflow-x-auto border border-violet-200 rounded-lg max-h-64 overflow-y-auto bg-white">
+                <table class="w-full text-left text-xs">
+                  <thead class="bg-violet-50 text-violet-950 text-[10px] uppercase font-bold border-b border-violet-200 sticky top-0">
+                    <tr>
+                      <th class="py-2 px-3">#</th>
+                      <th class="py-2 px-3">Participante &amp; CI</th>
+                      <th class="py-2 px-3">Código Carnet</th>
+                      <th class="py-2 px-3 text-center">Check-in QR</th>
+                      <th class="py-2 px-3 text-center">Alimentación</th>
+                      <th class="py-2 px-3 text-right">Acción</th>
+                    </tr>
+                  </thead>
+                  <tbody id="inc-tabla-scan-body"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between bg-white rounded-xl border border-slate-200 p-4 shadow-sm flex-wrap gap-2">
+            <button type="button" onclick="irAPasoIncidencia(3)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg cursor-pointer">
+              &larr; Volver a Paso 3 (Asistencia QR)
+            </button>
+            <button type="button" onclick="irAPasoIncidencia(4)" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg shadow-sm cursor-pointer">
+              Siguiente: Paso 4 (Conclusión y Documentos) &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- PASO 4: CONCLUSIÓN Y ESPACIO DOCUMENTAL DEL TALLER -->
+        <div id="inc-ws-paso-4" class="hidden space-y-5">
+          <!-- Bloque 4.1: Conclusión y Acuerdos -->
+          <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5 space-y-4 text-xs">
+            <div class="border-b border-slate-100 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h3 class="font-bold text-slate-800 text-sm">4.1 Conclusión del Taller y Acuerdos</h3>
+                <p class="text-[11px] text-slate-500">Registra las conclusiones finales, compromisos alcanzados y el estado de cierre del taller.</p>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-indigo-100 text-indigo-800 font-bold text-[11px]">Cierre del Taller</span>
+            </div>
+
+            <div>
+              <label for="inc-conc-resumen" class="block font-semibold text-slate-700 mb-1">Conclusiones Generales del Taller *</label>
+              <textarea id="inc-conc-resumen" rows="3" placeholder="Resume los resultados obtenidos, participación de actores y principales conclusiones de la jornada..." class="w-full text-sm p-2.5 border border-slate-300 rounded-md"></textarea>
+            </div>
+
+            <div>
+              <label for="inc-conc-acuerdos" class="block font-semibold text-slate-700 mb-1">Acuerdos, Compromisos y Próximos Pasos</label>
+              <textarea id="inc-conc-acuerdos" rows="2" placeholder="Ej: Conformación de mesa técnica juvenil, entrega de propuesta al Concejo Municipal el próximo viernes..." class="w-full text-sm p-2.5 border border-slate-300 rounded-md"></textarea>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label for="inc-conc-estado" class="block font-semibold text-slate-700 mb-1">Estado de Cierre</label>
+                <select id="inc-conc-estado" class="w-full text-sm p-2 border border-slate-300 rounded-md bg-white">
+                  <option value="Concluido">Concluido</option>
+                  <option value="Concluido con Seguimiento">Concluido con Seguimiento</option>
+                  <option value="En Ejecución">En Ejecución (Pendiente de Cierre)</option>
+                </select>
+              </div>
+              <div>
+                <label for="inc-conc-fecha" class="block font-semibold text-slate-700 mb-1">Fecha de Conclusión</label>
+                <input id="inc-conc-fecha" type="date" class="w-full text-sm p-2 border border-slate-300 rounded-md">
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloque 3.2: Espacio Documental -->
+          <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden text-xs">
+            <div class="p-4 border-b border-slate-100 bg-slate-50 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h3 class="font-bold text-slate-800 text-sm">4.2 Espacio Documental del Taller</h3>
+                <p class="text-[11px] text-slate-500">Adjunta las planillas firmadas, actas de acuerdos, fotografías y respaldos documentales.</p>
+              </div>
+              <span id="inc-conc-docs-count" class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[11px]">0 documentos</span>
+            </div>
+
+            <div class="p-5 space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Tipo de Documento</label>
+                  <select id="inc-conc-doc-tipo" class="w-full text-xs p-2 border border-slate-300 rounded-md bg-white">
+                    <option value="Planilla de Asistencia Firmada (SGC-Apoyo-ABS-3-pp3)">Planilla de Asistencia Firmada</option>
+                    <option value="Acta / Minuta de Acuerdos">Acta / Minuta de Acuerdos</option>
+                    <option value="Evidencia Fotográfica">Evidencia Fotográfica</option>
+                    <option value="Propuesta / Pronunciamiento / Proyecto">Propuesta / Proyecto de Norma</option>
+                    <option value="Informe Técnico de Taller">Informe Técnico de Taller</option>
+                    <option value="Otro Respaldo Documental">Otro Respaldo Documental</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Archivo (PDF, Word, Imagen, Excel)</label>
+                  <input id="inc-conc-doc-file" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" onchange="autocompletarNombreDocConclusion()" class="w-full text-xs p-1.5 border border-slate-300 rounded-md bg-white">
+                </div>
+                <div>
+                  <label class="block font-semibold text-slate-700 mb-1">Nombre / Descripción del Documento *</label>
+                  <div class="flex gap-2">
+                    <input id="inc-conc-doc-nombre" type="text" placeholder="Ej: Acta_Acuerdos_Taller.pdf" class="flex-1 text-xs p-2 border border-slate-300 rounded-md bg-white">
+                    <button type="button" onclick="agregarDocumentoConclusionIncidencia()" class="px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-md cursor-pointer shrink-0">+ Adjuntar</button>
+                  </div>
+                </div>
+              </div>
+
+              <label class="flex items-center gap-2 text-xs text-slate-600 cursor-pointer">
+                <input id="inc-conc-sync-dig" type="checkbox" checked class="rounded text-blue-600 w-4 h-4">
+                <span>Registrar también estos respaldos en el módulo central de Digitalización SGC</span>
+              </label>
+
+              <div class="overflow-x-auto border border-slate-200 rounded-lg">
+                <table class="w-full text-left text-xs text-slate-700">
+                  <thead class="bg-slate-100 text-slate-600 uppercase text-[10px] font-bold tracking-wider">
+                    <tr>
+                      <th class="py-2.5 px-3">Documento</th>
+                      <th class="py-2.5 px-3">Categoría</th>
+                      <th class="py-2.5 px-3">Tamaño</th>
+                      <th class="py-2.5 px-3">Fecha</th>
+                      <th class="py-2.5 px-3 text-right">Acción</th>
+                    </tr>
+                  </thead>
+                  <tbody id="inc-conc-docs-list"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between bg-white rounded-xl border border-slate-200 p-4 shadow-sm flex-wrap gap-2">
+            <button type="button" onclick="irAPasoIncidencia(3)" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg cursor-pointer">
+              &larr; Volver a Paso 3 (Asistencia QR)
+            </button>
+            <div class="flex items-center gap-2">
+              <button type="button" onclick="abrirTabArbolProblemas()" class="px-4 py-2 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-300 text-xs font-bold rounded-lg cursor-pointer">
+                🌳 Ver Árbol de Problemas
+              </button>
+              <button type="button" onclick="guardarProcesoCompletoIncidencia(false, true)" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg shadow-sm cursor-pointer">
+                &check; Guardar y Concluir Taller
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PESTAÑA INDEPENDIENTE: ÁRBOL DE PROBLEMAS -->
+        <div id="inc-ws-tab-arbol" class="hidden space-y-5">
+          <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5 space-y-5 text-xs">
+            <div class="border-b border-slate-100 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h3 class="font-bold text-slate-800 text-sm">🌳 Construcción del Árbol de Problemas</h3>
+                <p class="text-[11px] text-slate-500">Pestaña de diagnóstico accesible en cualquier momento: identifica efectos (copa), problema central (tronco) y causas (raíces).</p>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-amber-100 text-amber-800 font-bold text-[11px]">Acceso Libre en Cualquier Momento</span>
+            </div>
+
+            <!-- Problema Central (Tronco) -->
+            <div class="p-4 rounded-xl bg-blue-50/70 border border-blue-200 space-y-2">
+              <label for="inc-arbol-problema" class="block font-black text-blue-900 text-xs uppercase tracking-wider">
+                🎯 Problema Central (Tronco del Árbol) *
+              </label>
+              <textarea id="inc-arbol-problema" rows="2" oninput="actualizarProblemaCentralArbol()" placeholder="Ej: Limitado acceso a servicios de SSSR amigables y educación integral en sexualidad para adolescentes en el municipio..." class="w-full text-sm p-2.5 border border-blue-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500"></textarea>
+            </div>
+
+            <!-- Efectos y Causas en 2 columnas -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              <!-- Efectos / Consecuencias (Copa) -->
+              <div class="p-4 rounded-xl bg-rose-50/50 border border-rose-200 space-y-3">
+                <div class="flex items-center justify-between">
+                  <h4 class="font-black text-rose-900 text-xs uppercase tracking-wider">🌿 Efectos / Consecuencias (Copa)</h4>
+                  <span id="inc-arbol-efectos-count" class="px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 font-bold text-[10px]">0 efectos</span>
+                </div>
+                <div class="flex gap-2">
+                  <input id="inc-arbol-nuevo-efecto" type="text" placeholder="Ej: Incremento de embarazos no intencionales..." class="flex-1 text-xs p-2 border border-rose-200 rounded-lg bg-white">
+                  <button type="button" onclick="agregarEfectoArbol()" class="px-3 py-2 bg-rose-600 hover:bg-rose-700 text-white font-bold rounded-lg cursor-pointer shrink-0">+ Agregar</button>
+                </div>
+                <ul id="inc-arbol-efectos-list" class="space-y-1.5"></ul>
+              </div>
+
+              <!-- Causas (Raíces) -->
+              <div class="p-4 rounded-xl bg-emerald-50/50 border border-emerald-200 space-y-3">
+                <div class="flex items-center justify-between">
+                  <h4 class="font-black text-emerald-900 text-xs uppercase tracking-wider">🌱 Causas (Raíces)</h4>
+                  <span id="inc-arbol-causas-count" class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[10px]">0 causas</span>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-2">
+                  <input id="inc-arbol-nueva-causa" type="text" placeholder="Ej: Falta de presupuesto municipal asignado a SSSR..." class="flex-1 text-xs p-2 border border-emerald-200 rounded-lg bg-white">
+                  <select id="inc-arbol-tipo-causa" class="text-xs p-2 border border-emerald-200 rounded-lg bg-white">
+                    <option value="Causa Directa">Directa</option>
+                    <option value="Causa Indirecta">Indirecta</option>
+                  </select>
+                  <button type="button" onclick="agregarCausaArbol()" class="px-3 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg cursor-pointer shrink-0">+ Agregar</button>
+                </div>
+                <ul id="inc-arbol-causas-list" class="space-y-1.5"></ul>
+              </div>
+            </div>
+
+            <!-- Vista Previa Visual del Árbol de Problemas -->
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+              <div class="flex items-center justify-between">
+                <h4 class="font-bold text-slate-800 text-xs uppercase tracking-wider">🌳 Diagrama Visual del Árbol de Problemas</h4>
+                <span class="text-[11px] text-slate-500">Se actualiza en tiempo real</span>
+              </div>
+              <div id="inc-arbol-visual-preview" class="space-y-3"></div>
+            </div>
+
+            <div class="flex items-center justify-between pt-3 border-t border-slate-100 flex-wrap gap-2">
+              <div class="flex items-center gap-2">
+                <button type="button" onclick="irAPasoIncidencia(1, true)" class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg cursor-pointer">
+                  &larr; Paso 1: Participantes
+                </button>
+                <button type="button" onclick="irAPasoIncidencia(2)" class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg cursor-pointer">
+                  Paso 2: Planificación
+                </button>
+                <button type="button" onclick="irAPasoIncidencia(3)" class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg cursor-pointer">
+                  Paso 3: Asistencia QR
+                </button>
+                <button type="button" onclick="irAPasoIncidencia(4)" class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg cursor-pointer">
+                  Paso 4: Conclusión y Docs
+                </button>
+              </div>
+              <button type="button" onclick="guardarProcesoCompletoIncidencia()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg shadow-sm cursor-pointer">
+                &check; Guardar Proceso de Incidencia
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -4229,105 +5312,258 @@
     </div>
   </div>
 
-  <!-- Modal: Orientación SSSR con Ley 348 y Pruebas VIH -->
+  <!-- Modal: Orientación SSSR (Formulario Estructurado por Secciones) -->
   <div id="modal-orientador" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
-    <div class="bg-white rounded-xl shadow-2xl max-w-xl w-full overflow-hidden border border-slate-200">
-      <div class="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+    <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full max-h-[92vh] flex flex-col overflow-hidden border border-slate-200">
+      <div class="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50 shrink-0">
         <div>
-          <h3 id="modal-ori-title" class="font-bold text-slate-800 text-base">Sesión de Orientación SSSR</h3>
+          <h3 id="modal-ori-title" class="font-bold text-slate-800 text-base">Crear Nueva Orientación</h3>
           <p class="text-[11px] text-slate-500 font-mono">Registro Clínico / Educativo (SGC-Misional-E-4)</p>
         </div>
-        <button onclick="closeModal('modal-orientador')" class="text-slate-400 hover:text-slate-600 text-lg font-bold">&times;</button>
+        <button type="button" onclick="closeModal('modal-orientador')" class="text-slate-400 hover:text-slate-600 text-xl font-bold leading-none px-2">&times;</button>
       </div>
-      <form id="form-orientador" onsubmit="saveOrientador(event)" class="p-5 space-y-3.5 text-xs">
+
+      <form id="form-orientador" onsubmit="saveOrientador(event)" class="flex-1 overflow-y-auto p-5 space-y-5 text-xs">
         <input type="hidden" id="ori-id">
-        <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label class="block font-semibold text-slate-700 mb-1">Orientador/a Responsable *</label>
-            <input id="ori-orientador" type="text" required class="w-full text-sm p-2 border border-slate-300 rounded-md">
+
+        <!-- 1. SUBTÍTULO: ORIENTACIÓN -->
+        <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-3">
+          <div class="flex items-center gap-2 border-b border-slate-200 pb-2">
+            <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold">1</span>
+            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Orientación</h4>
           </div>
-          <div>
-            <label class="block font-semibold text-slate-700 mb-1">Participante Atendido/a *</label>
-            <input id="ori-participante" type="text" required class="w-full text-sm p-2 border border-slate-300 rounded-md">
-          </div>
-        </div>
-        <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label class="block font-semibold text-slate-700 mb-1">Área de Atención</label>
-            <select id="ori-area" class="w-full text-sm p-2 border border-slate-300 rounded-md bg-white">
-              <option value="Urbana">Área Urbana</option>
-              <option value="Rural">Área Rural</option>
-            </select>
-          </div>
-          <div>
-            <label class="block font-semibold text-slate-700 mb-1">Tipo de Usuario (Indicador IPPF)</label>
-            <select id="ori-usuario-tipo" class="w-full text-sm p-2 border border-slate-300 rounded-md bg-white">
-              <option value="Nuevo">Usuario Nuevo</option>
-              <option value="Antiguo">Usuario Antiguo (Recurrente)</option>
-            </select>
-          </div>
-        </div>
-        <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label class="block font-semibold text-slate-700 mb-1">Código / Tema Oficial SSSR *</label>
-            <select id="ori-tema" class="w-full text-sm p-2 border border-slate-300 rounded-md bg-white font-medium">
-              <option value="PF">PF - Planificación Familiar</option>
-              <option value="VIH-SIDA">VIH-SIDA - Prevención y Detección</option>
-              <option value="ITS">ITS - Infecciones de Transmisión Sexual</option>
-              <option value="VBG">VBG - Violencia Basada en Género</option>
-              <option value="DS y DR">DS y DR - Derechos Sexuales y Reproductivos</option>
-              <option value="SXL">SXL - Sexualidad Integral</option>
-              <option value="APA">APA - Atención Post Aborto / ILE</option>
-              <option value="PAP/CA">PAP/CA - Prevención Cáncer Uterino</option>
-              <option value="SMI">SMI - Salud Materno Infantil</option>
-            </select>
-          </div>
-          <div>
-            <label class="block font-semibold text-slate-700 mb-1">Modalidad de Atención</label>
-            <select id="ori-modalidad" class="w-full text-sm p-2 border border-slate-300 rounded-md bg-white">
-              <option value="Presencial">Presencial (Clínica)</option>
-              <option value="Virtual">Virtual (Tele-orientación)</option>
-              <option value="Telefónica">Telefónica</option>
-            </select>
-          </div>
-        </div>
-        <!-- Reglas normativas específicas CIES -->
-        <div class="p-3 bg-pink-50/60 border border-pink-200 rounded-lg space-y-2">
-          <div class="grid grid-cols-2 gap-3">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label class="block font-semibold text-slate-800 mb-1">Prueba Rápida VIH (Ley 3729)</label>
-              <select id="ori-vih" class="w-full text-sm p-2 border border-pink-300 rounded-md bg-white">
-                <option value="No realizada">No realizada</option>
-                <option value="Sí - Tira reactiva (No reactiva)">Sí - Tira reactiva (No reactiva)</option>
-                <option value="Sí - Tira reactiva (Reactiva)">Sí - Tira reactiva (Reactiva)</option>
+              <label for="ori-regional" class="block font-semibold text-slate-700 mb-1">Regional *</label>
+              <select id="ori-regional" required class="w-full text-sm p-2 border border-slate-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                <option value="Clínica La Paz">Clínica La Paz</option>
+                <option value="Clínica Oruro">Clínica Oruro</option>
+                <option value="UMOSAS Santa Cruz">UMOSAS Santa Cruz</option>
               </select>
             </div>
             <div>
-              <label class="block font-semibold text-slate-800 mb-1">Tamizaje Violencia (Ley 348)</label>
-              <select id="ori-violencia" class="w-full text-sm p-2 border border-pink-300 rounded-md bg-white font-medium">
-                <option value="Negativo">Negativo (Sin indicios)</option>
-                <option value="Positivo (Activada Ley 348)">Positivo (Activar Ruta Ley 348)</option>
-                <option value="No aplica">No aplica</option>
+              <label for="ori-fecha" class="block font-semibold text-slate-700 mb-1">Fecha *</label>
+              <input id="ori-fecha" type="date" required class="w-full text-sm p-2 border border-slate-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. SUBTÍTULO: DATOS PERSONALES -->
+        <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-3">
+          <div class="flex items-center gap-2 border-b border-slate-200 pb-2">
+            <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold">2</span>
+            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Datos Personales</h4>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="sm:col-span-2">
+              <label for="ori-participante" class="block font-semibold text-slate-700 mb-1">Nombre Completo *</label>
+              <input id="ori-participante" type="text" required placeholder="Ej. María Elena Quispe Mamani" class="w-full text-sm p-2 border border-slate-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+              <label for="ori-ci" class="block font-semibold text-slate-700 mb-1">CI (Cédula de Identidad)</label>
+              <input id="ori-ci" type="text" placeholder="Ej. 4829102 LP" class="w-full text-sm p-2 border border-slate-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div>
+              <label for="ori-celular" class="block font-semibold text-slate-700 mb-1">Celular</label>
+              <input id="ori-celular" type="tel" placeholder="Ej. 71234567" class="w-full text-sm p-2 border border-slate-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+              <label for="ori-edad" class="block font-semibold text-slate-700 mb-1">Edad</label>
+              <input id="ori-edad" type="number" min="0" max="120" placeholder="Ej. 22" class="w-full text-sm p-2 border border-slate-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+              <label for="ori-expediente" class="block font-semibold text-slate-700 mb-1">Expediente Clínico</label>
+              <input id="ori-expediente" type="text" placeholder="Ej. EXP-2026-0041" class="w-full text-sm p-2 border border-slate-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div>
+              <label for="ori-sexo" class="block font-semibold text-slate-700 mb-1">Sexo</label>
+              <select id="ori-sexo" class="w-full text-sm p-2 border border-slate-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500">
+                <option value="">Seleccionar...</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="No responde">No responde</option>
+              </select>
+            </div>
+            <div>
+              <label for="ori-identidad-genero" class="block font-semibold text-slate-700 mb-1">Identidad de Género</label>
+              <select id="ori-identidad-genero" class="w-full text-sm p-2 border border-slate-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500">
+                <option value="">Seleccionar...</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Fem a Masc">Fem a Masc</option>
+                <option value="Masc a Fem">Masc a Fem</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+            <div>
+              <label for="ori-orientacion-sexual" class="block font-semibold text-slate-700 mb-1">Orientación Sexual</label>
+              <select id="ori-orientacion-sexual" class="w-full text-sm p-2 border border-slate-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500">
+                <option value="">Seleccionar...</option>
+                <option value="Heterosexual">Heterosexual</option>
+                <option value="Gay">Gay</option>
+                <option value="Lesbiana">Lesbiana</option>
+                <option value="Bisexual">Bisexual</option>
+                <option value="Pansexual">Pansexual</option>
+                <option value="Asexual">Asexual</option>
+                <option value="Otro">Otro</option>
+                <option value="No responde">No responde</option>
               </select>
             </div>
           </div>
-          <p class="text-[10px] text-pink-700">Tamizaje obligatorio de 3 preguntas a mujeres y usuarias nuevas de acuerdo al protocolo CIES.</p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label for="ori-estado-civil" class="block font-semibold text-slate-700 mb-1">Estado Civil</label>
+              <select id="ori-estado-civil" class="w-full text-sm p-2 border border-slate-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500">
+                <option value="">Seleccionar...</option>
+                <option value="Soltero/a">Soltero/a</option>
+                <option value="Casado/a">Casado/a</option>
+                <option value="Concubinato / Unión libre">Concubinato / Unión libre</option>
+                <option value="Divorciado/a">Divorciado/a</option>
+                <option value="Viudo/a">Viudo/a</option>
+                <option value="No responde">No responde</option>
+              </select>
+            </div>
+            <div>
+              <label for="ori-instruccion" class="block font-semibold text-slate-700 mb-1">Instrucción</label>
+              <select id="ori-instruccion" class="w-full text-sm p-2 border border-slate-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500">
+                <option value="">Seleccionar...</option>
+                <option value="Primaria">Primaria</option>
+                <option value="Secundaria">Secundaria</option>
+                <option value="Técnico">Técnico</option>
+                <option value="Universitario">Universitario</option>
+                <option value="Ninguno / Otro">Ninguno / Otro</option>
+              </select>
+            </div>
+          </div>
         </div>
-        <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label class="block font-semibold text-slate-700 mb-1">Fecha</label>
-            <input id="ori-fecha" type="date" required class="w-full text-sm p-2 border border-slate-300 rounded-md">
+
+        <!-- 3. SUBTÍTULO: DATOS DE LA SESIÓN -->
+        <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-3">
+          <div class="flex items-center gap-2 border-b border-slate-200 pb-2">
+            <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold">3</span>
+            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Datos de la Sesión</h4>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label for="ori-tipo-sesion" class="block font-semibold text-slate-700 mb-1">Tipo de la Sesión</label>
+              <select id="ori-tipo-sesion" class="w-full text-sm p-2 border border-slate-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500">
+                <option value="">(Vacío)</option>
+                <option value="Individual">Individual</option>
+                <option value="Pareja">Pareja</option>
+              </select>
+            </div>
+            <div>
+              <label for="ori-usuario-tipo" class="block font-semibold text-slate-700 mb-1">Tipo de Usuario</label>
+              <select id="ori-usuario-tipo" class="w-full text-sm p-2 border border-slate-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500">
+                <option value="">(Vacío)</option>
+                <option value="Nuevo">Nuevo</option>
+                <option value="Continuo">Continuo</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. SUBTÍTULO: COSTOS -->
+        <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-3">
+          <div class="flex items-center gap-2 border-b border-slate-200 pb-2">
+            <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold">4</span>
+            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Costos</h4>
+          </div>
+          <div class="space-y-3">
+            <label class="flex items-center gap-2.5 p-2.5 rounded-lg border border-slate-200 bg-white cursor-pointer hover:bg-blue-50/40 transition-colors">
+              <input id="ori-con-costo" type="checkbox" onchange="toggleCostoOrientacion()" class="w-4 h-4 rounded text-blue-600 border-slate-300 focus:ring-blue-500">
+              <div>
+                <span class="text-sm font-semibold text-slate-800">Con costo</span>
+                <p class="text-[11px] text-slate-500">Marcar esta casilla si la orientación corresponde a atención regular con arancel institucional (no vinculada a campaña o proyecto gratuito).</p>
+              </div>
+            </label>
+
+            <div id="ori-proyecto-wrapper" class="space-y-1.5">
+              <label for="ori-proyecto" class="block font-semibold text-slate-700">Sin costo — Vinculado a Campaña / Proyecto</label>
+              <select id="ori-proyecto" class="w-full text-sm p-2 border border-slate-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500">
+                <option value="">Seleccionar proyecto o campaña (Sin costo)...</option>
+                <option value="Proyecto Jóvenes Sin Límites 2026">Proyecto Jóvenes Sin Límites 2026</option>
+                <option value="Campaña Nacional Prevención VIH / ITS">Campaña Nacional Prevención VIH / ITS</option>
+                <option value="Programa Ruta Segura (Ley 348)">Programa Ruta Segura (Ley 348)</option>
+                <option value="Convenio Unidades Educativas - EIS">Convenio Unidades Educativas - EIS</option>
+                <option value="Feria Comunitaria de Salud Sexual y Reproductiva">Feria Comunitaria de Salud Sexual y Reproductiva</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. SUBTÍTULO: TEMAS -->
+        <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-3">
+          <div class="flex items-center gap-2 border-b border-slate-200 pb-2">
+            <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold">5</span>
+            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Temas</h4>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label for="ori-tema" class="block font-semibold text-slate-700 mb-1">Tema</label>
+              <select id="ori-tema" onchange="actualizarProcesoOrientacion()" class="w-full text-sm p-2 border border-slate-300 rounded-lg bg-white font-medium focus:ring-2 focus:ring-blue-500">
+                <option value="">(Vacío)</option>
+                <option value="Planificación Familiar">Planificación Familiar</option>
+                <option value="Sexualidad">Sexualidad</option>
+                <option value="Salud Hombres">Salud Hombres</option>
+                <option value="Atención Aborto">Atención Aborto</option>
+                <option value="No SSH">No SSH</option>
+                <option value="Ginecobstetricia y Pediatría">Ginecobstetricia y Pediatría</option>
+                <option value="ITS/VIH">ITS/VIH</option>
+                <option value="Violencia">Violencia</option>
+              </select>
+            </div>
+            <div>
+              <label for="ori-proceso" class="block font-semibold text-slate-700 mb-1">Proceso</label>
+              <select id="ori-proceso" class="w-full text-sm p-2 border border-slate-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500">
+                <option value="">Seleccione primero un tema...</option>
+              </select>
+            </div>
           </div>
           <div>
-            <label class="block font-semibold text-slate-700 mb-1">Notas / Referencia Clínica</label>
-            <input id="ori-notas" type="text" placeholder="Observaciones, referencia médica o derivación" class="w-full text-sm p-2 border border-slate-300 rounded-md">
+            <label for="ori-notas" class="block font-semibold text-slate-700 mb-1">Observaciones</label>
+            <textarea id="ori-notas" rows="3" placeholder="Observaciones clínicas, derivación o seguimiento de la sesión..." class="w-full text-sm p-2 border border-slate-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500"></textarea>
           </div>
         </div>
-        <div class="pt-3 border-t border-slate-100 flex justify-end gap-2">
-          <button type="button" onclick="closeModal('modal-orientador')" class="px-4 py-2 bg-slate-100 text-slate-700 font-semibold rounded-md">Cancelar</button>
-          <button type="submit" class="px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700">Guardar Sesión</button>
+
+        <div class="pt-3 border-t border-slate-200 flex justify-end gap-2 sticky bottom-0 bg-white pb-1">
+          <button type="button" onclick="closeModal('modal-orientador')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-lg transition-colors">Cancelar</button>
+          <button type="submit" class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-sm transition-colors">Guardar Orientación</button>
         </div>
       </form>
+    </div>
+  </div>
+
+  <!-- Modal: Detalle de Orientación SSSR (Solo Lectura) -->
+  <div id="modal-orientador-detalle" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
+    <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full max-h-[92vh] flex flex-col overflow-hidden border border-slate-200">
+      <div class="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50 shrink-0">
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 class="font-bold text-slate-800 text-base">Detalle de Sesión de Orientación</h3>
+            <span class="px-2 py-0.5 text-[10px] font-mono font-bold bg-blue-100 text-blue-800 rounded">SGC-Misional-E-4</span>
+          </div>
+          <p id="det-ori-subtitulo" class="text-[11px] text-slate-500 mt-0.5">Vista completa del registro clínico / educativo</p>
+        </div>
+        <button type="button" onclick="closeModal('modal-orientador-detalle')" class="text-slate-400 hover:text-slate-600 text-xl font-bold leading-none px-2">&times;</button>
+      </div>
+
+      <div id="det-ori-body" class="flex-1 overflow-y-auto p-5 space-y-4 text-xs"></div>
+
+      <div class="p-4 border-t border-slate-200 bg-slate-50 shrink-0 flex items-center justify-between gap-2">
+        <span class="text-[11px] text-slate-400">Haz clic en "Editar" si necesitas modificar algún campo.</span>
+        <div class="flex items-center gap-2">
+          <button type="button" onclick="closeModal('modal-orientador-detalle')" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold rounded-lg transition-colors">Cerrar</button>
+          <button type="button" id="det-ori-btn-editar" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-sm transition-colors">Editar Registro</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -4382,6 +5618,100 @@
           <button type="submit" class="px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700">Guardar</button>
         </div>
       </form>
+    </div>
+  </div>
+
+  <!-- Modal: Ver Líderes Juveniles Participantes por Incidencia -->
+  <div id="modal-ver-lideres-incidencia" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col overflow-hidden border border-slate-200">
+      <div class="p-4 sm:p-5 border-b border-slate-100 flex items-start justify-between gap-3 bg-slate-50">
+        <div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <span id="modal-lideres-codigo" class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-blue-100 text-blue-800 border border-blue-200">INC-01</span>
+            <span id="modal-lideres-regional" class="px-2 py-0.5 rounded text-xs font-bold bg-teal-100 text-teal-800">LP</span>
+            <span id="modal-lideres-fecha" class="text-xs font-mono text-slate-500">-</span>
+          </div>
+          <h3 id="modal-lideres-titulo" class="font-black text-slate-900 text-base sm:text-lg mt-1">Líderes Juveniles Participantes</h3>
+          <p class="text-xs text-slate-500">Nómina de líderes juveniles y actores que participaron en esta incidencia política.</p>
+        </div>
+        <button type="button" onclick="closeModal('modal-ver-lideres-incidencia')" class="text-slate-400 hover:text-slate-600 text-xl font-bold leading-none cursor-pointer">&times;</button>
+      </div>
+
+      <div class="p-4 sm:p-5 overflow-y-auto space-y-4 text-xs flex-1">
+        <!-- Tarjetas KPI -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="p-3 rounded-xl bg-indigo-50 border border-indigo-200">
+            <span class="text-[10px] font-bold uppercase text-indigo-700 block">Líderes Juveniles</span>
+            <span id="modal-lideres-kpi-total" class="text-xl font-black text-indigo-950 font-mono">0</span>
+          </div>
+          <div class="p-3 rounded-xl bg-violet-50 border border-violet-200">
+            <span class="text-[10px] font-bold uppercase text-violet-700 block">Asistencia QR</span>
+            <span id="modal-lideres-kpi-qr" class="text-xl font-black text-violet-950 font-mono">0</span>
+          </div>
+          <div class="p-3 rounded-xl bg-sky-50 border border-sky-200">
+            <span class="text-[10px] font-bold uppercase text-sky-700 block">Urbana / Rural</span>
+            <span id="modal-lideres-kpi-area" class="text-sm font-black text-sky-950 font-mono mt-1 block">0 / 0</span>
+          </div>
+          <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200">
+            <span class="text-[10px] font-bold uppercase text-emerald-700 block">Financiadores Ext.</span>
+            <span id="modal-lideres-kpi-fin" class="text-xl font-black text-emerald-950 font-mono">0</span>
+          </div>
+        </div>
+
+        <!-- Buscador -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div class="relative w-full sm:max-w-sm">
+            <input id="modal-lideres-inc-search" type="text" oninput="renderTablaModalLideresIncidencia(this.value)" placeholder="Buscar líder por nombre, CI, cargo o procedencia..." class="w-full pl-8 pr-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+          <span id="modal-lideres-filtro-info" class="text-[11px] text-slate-500 font-medium">Mostrando todos los líderes</span>
+        </div>
+
+        <!-- Tabla de Líderes Juveniles -->
+        <div class="overflow-x-auto border border-slate-200 rounded-xl">
+          <table class="w-full text-left text-xs text-slate-700">
+            <thead class="bg-slate-100 text-slate-600 uppercase text-[10px] font-bold tracking-wider">
+              <tr>
+                <th class="py-2.5 px-3">#</th>
+                <th class="py-2.5 px-3">Líder Juvenil / Participante</th>
+                <th class="py-2.5 px-3">CI</th>
+                <th class="py-2.5 px-3">Edad / Género</th>
+                <th class="py-2.5 px-3">Cargo / Colectivo</th>
+                <th class="py-2.5 px-3">Procedencia / Área</th>
+                <th class="py-2.5 px-3 text-center">Asistencia QR</th>
+              </tr>
+            </thead>
+            <tbody id="modal-lideres-inc-tbody"></tbody>
+          </table>
+        </div>
+
+        <!-- Financiadores Externos vinculados (si existen) -->
+        <div id="modal-lideres-fin-section" class="hidden space-y-2 pt-2">
+          <h4 class="font-bold text-slate-800 text-xs uppercase tracking-wider">🤝 Financiadores Externos Participantes</h4>
+          <div class="overflow-x-auto border border-emerald-200 rounded-xl">
+            <table class="w-full text-left text-xs text-slate-700">
+              <thead class="bg-emerald-50 text-emerald-900 uppercase text-[10px] font-bold tracking-wider">
+                <tr>
+                  <th class="py-2 px-3">Nombre</th>
+                  <th class="py-2 px-3">Organización / Cargo</th>
+                  <th class="py-2 px-3">Municipio</th>
+                  <th class="py-2 px-3">Teléfono</th>
+                </tr>
+              </thead>
+              <tbody id="modal-lideres-fin-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-slate-100 bg-slate-50 flex items-center justify-between">
+        <button type="button" onclick="closeModal('modal-ver-lideres-incidencia')" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold rounded-lg text-xs cursor-pointer">
+          Cerrar
+        </button>
+        <button type="button" id="modal-lideres-btn-editar" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg text-xs cursor-pointer">
+          Abrir en Pasos / Editar
+        </button>
+      </div>
     </div>
   </div>
 
@@ -5502,44 +6832,6 @@
     </div>
   </div>
 
-  <!-- Modal: Código QR de Asistencia para Pizarra / Proyector -->
-  <div id="modal-qr-asistencia-taller" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
-    <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden border border-slate-200 text-center">
-      <div class="bg-gradient-to-r from-emerald-600 to-teal-700 text-white p-5 text-center relative">
-        <button onclick="closeModal('modal-qr-asistencia-taller')" class="absolute top-4 right-4 text-white/80 hover:text-white text-xl font-bold cursor-pointer">&times;</button>
-        <span class="px-3 py-1 rounded-full bg-white/20 text-white text-[11px] font-bold uppercase tracking-wider inline-block mb-1">
-          Auto-Registro en Aula
-        </span>
-        <h3 class="font-extrabold text-base tracking-tight" id="modal-qr-taller-tit">Taller 1: Toma de Decisiones</h3>
-        <p class="text-xs text-emerald-100" id="modal-qr-taller-sub">Proceso Educativo CIES (Meta: 33 Horas)</p>
-      </div>
-
-      <div class="p-6 space-y-4 text-xs">
-        <p class="text-slate-600 font-medium leading-relaxed">
-          Escanea el código con la cámara de tu celular, busca tu <strong>C.I.</strong> y dibuja tu firma con el dedo para confirmar tu asistencia:
-        </p>
-
-        <!-- Contenedor del QR (Generación offline 100% garantizada) -->
-        <div class="p-4 bg-slate-50 border-2 border-dashed border-emerald-300 rounded-2xl inline-block shadow-inner">
-          <div id="modal-qr-container" class="w-60 h-60 mx-auto rounded-xl bg-white p-2 flex items-center justify-center overflow-hidden shadow-sm"></div>
-        </div>
-
-        <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200 text-[11px] text-emerald-900 font-mono select-all break-all" id="modal-qr-url-txt">
-          asistencia.html?actId=...
-        </div>
-
-        <div class="flex items-center justify-center gap-2 pt-1">
-          <button type="button" onclick="copiarEnlaceAsistenciaWs()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-xs transition-colors cursor-pointer flex items-center gap-1.5">
-            <span>📋 Copiar Enlace</span>
-          </button>
-          <button type="button" onclick="closeModal('modal-qr-asistencia-taller')" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold rounded-xl transition-colors cursor-pointer">
-            Cerrar
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Modal: Vista Previa de Firma Digital -->
   <div id="modal-vista-previa-firma" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
     <div class="bg-white rounded-2xl shadow-2xl max-w-sm w-full overflow-hidden border border-slate-200 text-center">
@@ -5559,136 +6851,6 @@
           Cerrar
         </button>
       </div>
-    </div>
-  </div>
-
-  <!-- Modal: Visor Dual de Digitalización de Firmas Físicas (Opción C) -->
-  <div id="modal-visor-dual-digitalizacion" class="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 modal-backdrop hidden">
-    <div class="bg-white rounded-2xl sm:rounded-3xl shadow-2xl max-w-6xl w-full max-h-[94vh] flex flex-col overflow-hidden border border-slate-200">
-      
-      <!-- Cabecera Institucional del Visor Dual -->
-      <div class="p-4 sm:p-5 border-b border-slate-100 flex items-center justify-between bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white shrink-0">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-lg font-black shadow-sm">
-            📋
-          </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <h3 class="font-extrabold text-sm sm:text-base tracking-tight">Visor Dual de Digitalización de Firmas Físicas</h3>
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-indigo-500/30 text-indigo-200 border border-indigo-400/40">SGC-Apoyo-ABS-3-pp3</span>
-            </div>
-            <p id="vd-subtitulo-taller" class="text-xs text-indigo-200/90 mt-0.5">Cotejo visual de la planilla física escaneada con la nómina del taller</p>
-          </div>
-        </div>
-        <button onclick="cerrarVisorDual()" class="text-slate-400 hover:text-white text-2xl font-bold cursor-pointer p-1">&times;</button>
-      </div>
-
-      <!-- Cuerpo del Visor Dual: 2 Columnas (Panel Escaneado + Panel Cotejo) -->
-      <div class="flex-1 overflow-hidden p-3 sm:p-4 bg-slate-100">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-3 h-full overflow-hidden">
-          
-          <!-- COLUMNA IZQUIERDA: Visor de la Planilla Física Escaneada -->
-          <div class="lg:col-span-7 bg-slate-900 rounded-2xl flex flex-col h-full border border-slate-800 overflow-hidden shadow-inner">
-            <!-- Barra de Controles de la Hoja -->
-            <div class="px-3 py-2 bg-slate-800/90 border-b border-slate-700/80 flex items-center justify-between text-xs text-slate-200 shrink-0 flex-wrap gap-2">
-              <div class="flex items-center gap-2">
-                <span class="text-amber-400 font-bold flex items-center gap-1">
-                  <span>📸</span>
-                  <span id="vd-nombre-archivo-hoja">Planilla_Firmas_Lideres_5_4_24.pdf</span>
-                </span>
-                <span class="text-[10px] text-slate-400 font-mono hidden sm:inline">• Hoja 1 de 1</span>
-              </div>
-              <div class="flex items-center gap-1.5">
-                <button type="button" onclick="ajustarZoomHojaFisica(-0.15)" class="px-2 py-1 bg-slate-700 hover:bg-slate-600 rounded text-[11px] font-bold text-white transition-colors cursor-pointer" title="Alejar zoom">🔍 -</button>
-                <span id="vd-zoom-porcentaje" class="text-[11px] font-mono font-bold text-slate-300 w-11 text-center">100%</span>
-                <button type="button" onclick="ajustarZoomHojaFisica(0.15)" class="px-2 py-1 bg-slate-700 hover:bg-slate-600 rounded text-[11px] font-bold text-white transition-colors cursor-pointer" title="Acercar zoom">🔍 +</button>
-                <button type="button" onclick="resetZoomHojaFisica()" class="px-2 py-1 bg-slate-700 hover:bg-slate-600 rounded text-[11px] font-semibold text-slate-300 transition-colors cursor-pointer" title="Restablecer">1:1</button>
-                <label class="px-2.5 py-1 bg-indigo-600 hover:bg-indigo-700 rounded text-[11px] font-bold text-white transition-colors cursor-pointer flex items-center gap-1">
-                  <span>Subir otra foto</span>
-                  <input type="file" id="vd-input-subir-hoja" accept=".pdf,image/*" class="hidden" onchange="handleSubirFotoHojaFisica(this)">
-                </label>
-              </div>
-            </div>
-
-            <!-- Contenedor con Scroll de la Hoja Física -->
-            <div id="vd-hoja-container" class="flex-1 overflow-auto p-4 flex items-start justify-center relative select-none bg-slate-950">
-              <div id="vd-hoja-canvas-wrapper" class="transition-transform origin-top duration-150 shadow-2xl rounded-sm">
-                <!-- Se llena con la imagen/SVG vectorial de la planilla física escaneada con firmas reales -->
-              </div>
-            </div>
-            
-            <div class="px-3 py-1.5 bg-slate-800/90 border-t border-slate-700/80 text-[10px] text-slate-400 flex items-center justify-between shrink-0">
-              <span>Desplaza con el ratón o dedos para explorar las firmas manuscritas</span>
-              <span class="text-emerald-400 font-mono">✓ Resolución de alta fidelidad SGC</span>
-            </div>
-          </div>
-
-          <!-- COLUMNA DERECHA: Lista de Cotejo y Punteo Rápido -->
-          <div class="lg:col-span-5 bg-white rounded-2xl flex flex-col h-full border border-slate-200 shadow-sm overflow-hidden">
-            <!-- Encabezado de Cotejo -->
-            <div class="p-3 bg-slate-50 border-b border-slate-200 space-y-2 shrink-0">
-              <div class="flex items-center justify-between">
-                <div>
-                  <h4 class="font-extrabold text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5">
-                    <span>✓ Lista de Cotejo y Validación</span>
-                  </h4>
-                  <p class="text-[10px] text-slate-500">Puntúa a los estudiantes cuya firma física verificas en la hoja</p>
-                </div>
-                <button type="button" onclick="toggleSeleccionarTodosVisorDual()" id="vd-btn-toggle-todos" 
-                  class="px-2.5 py-1 text-[11px] font-bold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 rounded-lg transition-colors cursor-pointer">
-                  Marcar Todos
-                </button>
-              </div>
-
-              <!-- Buscador Rápido -->
-              <div class="relative">
-                <input type="text" id="vd-filtro-participante" oninput="filtrarListaVisorDual(this.value)" placeholder="Buscar por nombre o CI..." 
-                  class="w-full text-xs p-2 pl-7 bg-white border border-slate-300 rounded-lg font-medium focus:ring-2 focus:ring-indigo-500">
-                <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-              </div>
-            </div>
-
-            <!-- Lista de Estudiantes con Checkbox y Comidas -->
-            <div class="flex-1 overflow-y-auto divide-y divide-slate-100 p-2 space-y-1" id="vd-lista-cotejo-body">
-              <!-- Se llena dinámicamente -->
-            </div>
-
-            <!-- Barra inferior con resumen y agregar nuevo alumno -->
-            <div class="p-3 bg-indigo-50/80 border-t border-indigo-100 space-y-2 shrink-0 text-xs">
-              <div class="flex items-center justify-between text-[11px]">
-                <span class="font-bold text-slate-700">Firmas Físicas Cotejadas:</span>
-                <span id="vd-conteo-cotejados-badge" class="px-2 py-0.5 rounded-full font-black text-indigo-900 bg-indigo-200 font-mono text-xs">
-                  0 de 0 presentes
-                </span>
-              </div>
-              <button type="button" onclick="agregarParticipanteManualDesdeVisorDual()" 
-                class="w-full py-1.5 px-2 bg-white hover:bg-slate-50 text-indigo-700 border border-indigo-300 font-bold rounded-lg text-[11px] transition-colors cursor-pointer flex items-center justify-center gap-1.5 shadow-2xs">
-                <span>+ Agregar alumno no listado que firmó en la hoja</span>
-              </button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Pie del Modal: Acciones de Guardado y Descarga -->
-      <div class="p-3 sm:p-4 bg-white border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0 text-xs">
-        <div class="flex items-center gap-2">
-          <button type="button" onclick="descargarPlanillaFisicaEnBlancoPDF()" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl border border-slate-300 transition-colors cursor-pointer flex items-center gap-1.5">
-            <span>📄 Descargar Planilla para Imprimir</span>
-          </button>
-        </div>
-        <div class="flex items-center gap-2 w-full sm:w-auto">
-          <button type="button" onclick="cerrarVisorDual()" class="flex-1 sm:flex-initial px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl transition-colors cursor-pointer">
-            Cancelar
-          </button>
-          <button type="button" onclick="guardarDigitalizacionVisorDual()" class="flex-1 sm:flex-initial px-5 py-2.5 bg-gradient-to-r from-indigo-600 via-indigo-700 to-emerald-700 hover:from-indigo-700 hover:to-emerald-800 text-white font-extrabold rounded-xl shadow-md transition-all cursor-pointer flex items-center justify-center gap-2">
-            <svg class="w-4 h-4 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            <span>💾 Guardar Asistencias Cotejadas y Archivar en SGC</span>
-          </button>
-        </div>
-      </div>
-
     </div>
   </div>
 
@@ -5766,6 +6928,238 @@
         </button>
       </div>
 
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- MODAL: FICHA TÉCNICA OFICIAL SGC DEL INDICADOR (ISO 9001:2015) -->
+  <!-- ============================================================== -->
+  <div id="modal-ficha-tecnica-indicador" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden border border-slate-200 animate-in fade-in zoom-in duration-150">
+      <div class="p-5 bg-gradient-to-r from-slate-900 to-blue-950 text-white flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-300 border border-blue-400/30 flex items-center justify-center font-mono font-bold text-sm" id="modal-ficha-codigo">IND-01</span>
+          <div>
+            <h3 class="font-black text-base text-white" id="modal-ficha-titulo">Ficha Técnica Oficial del Indicador</h3>
+            <p class="text-xs text-blue-200 font-mono">Normativa CIES: SGC-Visional-MAM-6 o11 • Vigencia 2026</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeModal('modal-ficha-tecnica-indicador')" class="text-slate-400 hover:text-white p-1 rounded-lg transition-colors cursor-pointer text-lg font-bold">&times;</button>
+      </div>
+
+      <div class="p-6 space-y-4 text-xs text-slate-700 max-h-[75vh] overflow-y-auto">
+        <div class="grid grid-cols-2 gap-3">
+          <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+            <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Tipo de Cumplimiento SGC</span>
+            <p class="text-sm font-bold text-slate-900 mt-0.5" id="modal-ficha-tipo">Mensual</p>
+          </div>
+          <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+            <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Metodología de Cálculo</span>
+            <p class="text-sm font-bold text-slate-900 mt-0.5" id="modal-ficha-metodologia">Suma acumulativa de Enero a Diciembre</p>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 uppercase tracking-wider text-[11px] mb-1">Descripción y Directriz Oficial de Llenado</h4>
+          <div class="p-3.5 bg-blue-50/50 rounded-xl border border-blue-100 text-slate-700 leading-relaxed" id="modal-ficha-descripcion">
+            Descripción normativa institucional...
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 uppercase tracking-wider text-[11px] mb-1">Regla de Meses Computados y Exclusiones</h4>
+          <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-amber-900 leading-relaxed" id="modal-ficha-meses-regla">
+            Meses considerados para la evaluación...
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 uppercase tracking-wider text-[11px] mb-1">Desagregación Territorial y de Proyecto</h4>
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-slate-700 leading-relaxed" id="modal-ficha-desagregacion">
+            Desagregaciones urbanas, rurales y por tipo de participante...
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 uppercase tracking-wider text-[11px] mb-1">Respaldos y Evidencias Exigidas en Auditoría ISO 9001</h4>
+          <ul class="list-disc pl-5 space-y-1 text-slate-600" id="modal-ficha-respaldos">
+            <li>Planillas de asistencia oficiales firmadas en físico (SGC-Apoyo-ABS-3-pp3).</li>
+            <li>Consentimientos informados para pruebas de VIH (Ley 3729).</li>
+            <li>Actas de coordinación y convenios institucionales con unidades educativas.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="p-4 bg-slate-50 border-t border-slate-200 flex justify-end">
+        <button type="button" onclick="closeModal('modal-ficha-tecnica-indicador')" class="px-4 py-2 bg-slate-800 hover:bg-slate-900 text-white font-bold rounded-xl text-xs transition-colors cursor-pointer">
+          Entendido / Cerrar Ficha
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- MODAL: REGISTRAR / EDITAR LOGROS MENSUALES POR INDICADOR        -->
+  <!-- ============================================================== -->
+  <div id="modal-editar-logro-mes" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-3xl w-full overflow-hidden border border-slate-200 animate-in fade-in zoom-in duration-150">
+      <div class="p-5 bg-gradient-to-r from-blue-700 to-indigo-800 text-white flex items-center justify-between">
+        <div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-blue-200">Registro Mensual SGC • Vigencia 2026</span>
+          <h3 class="font-black text-base text-white" id="modal-edit-titulo">Registrar Avance Mensual</h3>
+          <p class="text-xs text-blue-100" id="modal-edit-subtitulo">Regional: La Paz • Indicador: IND-01</p>
+        </div>
+        <button type="button" onclick="closeModal('modal-editar-logro-mes')" class="text-white/80 hover:text-white p-1 rounded-lg transition-colors cursor-pointer text-lg font-bold">&times;</button>
+      </div>
+
+      <form id="form-editar-logro-mes" onsubmit="guardarLogroMesesForm(event)" class="p-6 space-y-4">
+        <input type="hidden" id="edit-ind-correlativo">
+        <input type="hidden" id="edit-ind-subidx">
+
+        <div class="flex items-center justify-between p-3.5 bg-slate-50 rounded-xl border border-slate-200">
+          <div>
+            <span class="text-xs text-slate-500 font-semibold">Meta Anual Asignada (POA):</span>
+            <span class="text-base font-black text-slate-900 ml-1.5" id="edit-meta-anual-badge">0</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-slate-500 font-semibold">Logro Proyectado:</span>
+            <span class="text-base font-black text-blue-700" id="edit-logro-calculado">0</span>
+            <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-800" id="edit-pct-calculado">0%</span>
+          </div>
+        </div>
+
+        <p class="text-xs font-bold text-slate-700 uppercase tracking-wider">Ingrese los valores mensuales alcanzados con respaldo documental:</p>
+
+        <!-- Matriz de 12 Meses en Cuadrícula -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3 text-xs">
+          <div>
+            <label class="block font-bold text-slate-600 mb-1" id="lbl-mes-enero">Enero</label>
+            <input type="number" id="edit-val-enero" min="0" step="any" oninput="recalcularLogroModal()" class="w-full px-2.5 py-1.5 border border-slate-300 rounded-lg text-slate-900 font-bold focus:ring-2 focus:ring-blue-500 text-center">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-600 mb-1" id="lbl-mes-febrero">Febrero</label>
+            <input type="number" id="edit-val-febrero" min="0" step="any" oninput="recalcularLogroModal()" class="w-full px-2.5 py-1.5 border border-slate-300 rounded-lg text-slate-900 font-bold focus:ring-2 focus:ring-blue-500 text-center">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-600 mb-1" id="lbl-mes-marzo">Marzo</label>
+            <input type="number" id="edit-val-marzo" min="0" step="any" oninput="recalcularLogroModal()" class="w-full px-2.5 py-1.5 border border-slate-300 rounded-lg text-slate-900 font-bold focus:ring-2 focus:ring-blue-500 text-center">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-600 mb-1" id="lbl-mes-abril">Abril</label>
+            <input type="number" id="edit-val-abril" min="0" step="any" oninput="recalcularLogroModal()" class="w-full px-2.5 py-1.5 border border-slate-300 rounded-lg text-slate-900 font-bold focus:ring-2 focus:ring-blue-500 text-center">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-600 mb-1" id="lbl-mes-mayo">Mayo</label>
+            <input type="number" id="edit-val-mayo" min="0" step="any" oninput="recalcularLogroModal()" class="w-full px-2.5 py-1.5 border border-slate-300 rounded-lg text-slate-900 font-bold focus:ring-2 focus:ring-blue-500 text-center">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-600 mb-1" id="lbl-mes-junio">Junio</label>
+            <input type="number" id="edit-val-junio" min="0" step="any" oninput="recalcularLogroModal()" class="w-full px-2.5 py-1.5 border border-slate-300 rounded-lg text-slate-900 font-bold focus:ring-2 focus:ring-blue-500 text-center">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-600 mb-1" id="lbl-mes-julio">Julio</label>
+            <input type="number" id="edit-val-julio" min="0" step="any" oninput="recalcularLogroModal()" class="w-full px-2.5 py-1.5 border border-slate-300 rounded-lg text-slate-900 font-bold focus:ring-2 focus:ring-blue-500 text-center">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-600 mb-1" id="lbl-mes-agosto">Agosto</label>
+            <input type="number" id="edit-val-agosto" min="0" step="any" oninput="recalcularLogroModal()" class="w-full px-2.5 py-1.5 border border-slate-300 rounded-lg text-slate-900 font-bold focus:ring-2 focus:ring-blue-500 text-center">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-600 mb-1" id="lbl-mes-septiembre">Septiembre</label>
+            <input type="number" id="edit-val-septiembre" min="0" step="any" oninput="recalcularLogroModal()" class="w-full px-2.5 py-1.5 border border-slate-300 rounded-lg text-slate-900 font-bold focus:ring-2 focus:ring-blue-500 text-center">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-600 mb-1" id="lbl-mes-octubre">Octubre</label>
+            <input type="number" id="edit-val-octubre" min="0" step="any" oninput="recalcularLogroModal()" class="w-full px-2.5 py-1.5 border border-slate-300 rounded-lg text-slate-900 font-bold focus:ring-2 focus:ring-blue-500 text-center">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-600 mb-1" id="lbl-mes-noviembre">Noviembre</label>
+            <input type="number" id="edit-val-noviembre" min="0" step="any" oninput="recalcularLogroModal()" class="w-full px-2.5 py-1.5 border border-slate-300 rounded-lg text-slate-900 font-bold focus:ring-2 focus:ring-blue-500 text-center">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-600 mb-1" id="lbl-mes-diciembre">Diciembre</label>
+            <input type="number" id="edit-val-diciembre" min="0" step="any" oninput="recalcularLogroModal()" class="w-full px-2.5 py-1.5 border border-slate-300 rounded-lg text-slate-900 font-bold focus:ring-2 focus:ring-blue-500 text-center">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 text-xs mb-1">Comentarios / Justificación Oficial SGC:</label>
+          <input type="text" id="edit-val-obs" placeholder="Ej: Cumplimiento conforme a POA; atenciones reforzadas en ferias..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs text-slate-800">
+        </div>
+
+        <div class="pt-3 border-t border-slate-200 flex items-center justify-end gap-2.5">
+          <button type="button" onclick="closeModal('modal-editar-logro-mes')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl text-xs transition-colors cursor-pointer">
+            Cancelar
+          </button>
+          <button type="submit" class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs shadow-xs transition-colors cursor-pointer flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            Guardar Logros SGC
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- MODAL: VISOR DE DESGLOSE DE 12 MESES (ENERO A DICIEMBRE)       -->
+  <!-- ============================================================== -->
+  <div id="modal-ver-meses-indicador" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full overflow-hidden border border-slate-200 animate-in fade-in zoom-in duration-150">
+      <div class="p-5 bg-slate-900 text-white flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="w-9 h-9 rounded-xl bg-blue-500/20 text-blue-300 border border-blue-400/30 flex items-center justify-center font-mono font-bold text-sm" id="modal-meses-codigo">IND-01</span>
+          <div>
+            <h3 class="font-black text-base text-white" id="modal-meses-titulo">Desglose Mensualizado de Enero a Diciembre</h3>
+            <p class="text-xs text-slate-400" id="modal-meses-subtitulo">Regional: La Paz • Meta Anual: 20000</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeModal('modal-ver-meses-indicador')" class="text-slate-400 hover:text-white p-1 rounded-lg transition-colors cursor-pointer text-lg font-bold">&times;</button>
+      </div>
+
+      <div class="p-6 space-y-4">
+        <!-- Tabla Horizontal de los 12 Meses -->
+        <div class="overflow-x-auto border border-slate-200 rounded-xl">
+          <table class="w-full text-center text-xs">
+            <thead class="bg-slate-100 text-slate-600 font-black uppercase text-[10px]">
+              <tr>
+                <th class="py-2.5 px-2">Ene</th>
+                <th class="py-2.5 px-2">Feb</th>
+                <th class="py-2.5 px-2">Mar</th>
+                <th class="py-2.5 px-2">Abr</th>
+                <th class="py-2.5 px-2">May</th>
+                <th class="py-2.5 px-2">Jun</th>
+                <th class="py-2.5 px-2">Jul</th>
+                <th class="py-2.5 px-2">Ago</th>
+                <th class="py-2.5 px-2">Sep</th>
+                <th class="py-2.5 px-2">Oct</th>
+                <th class="py-2.5 px-2">Nov</th>
+                <th class="py-2.5 px-2">Dic</th>
+                <th class="py-2.5 px-3 bg-blue-50 text-blue-900 font-black">Total</th>
+              </tr>
+            </thead>
+            <tbody id="modal-meses-table-body" class="divide-y divide-slate-100 font-mono text-slate-800">
+              <!-- Celdas renderizadas dinámicamente -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-600 flex items-center justify-between">
+          <div>
+            <span class="font-bold text-slate-800">Fórmula de cálculo oficial:</span>
+            <span id="modal-meses-formula" class="font-mono text-blue-700 ml-1">Suma acumulativa (Ene - Dic)</span>
+          </div>
+          <div>
+            <span class="font-bold text-slate-800">% Cumplimiento actual:</span>
+            <span id="modal-meses-pct" class="font-bold ml-1 px-2 py-0.5 rounded-full bg-blue-100 text-blue-800">0%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 bg-slate-50 border-t border-slate-200 flex justify-end">
+        <button type="button" onclick="closeModal('modal-ver-meses-indicador')" class="px-4 py-2 bg-slate-800 hover:bg-slate-900 text-white font-bold rounded-xl text-xs transition-colors cursor-pointer">
+          Cerrar Vista Mensual
+        </button>
+      </div>
     </div>
   </div>
 

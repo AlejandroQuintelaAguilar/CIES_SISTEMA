@@ -331,14 +331,299 @@ const INITIAL_DATA = {
     }
   ],
   orientadores: [
-    { id: 1, orientador: "Lic. Miriam Morales", participante: "María Elena Quispe Mamani", area: "Urbana", tipoUsuario: "Nuevo", codigoTema: "PF", tipoConsulta: "Planificación Familiar (PF)", pruebaVIH: "No realizada", tamizajeViolencia: "Negativo", modalidad: "Presencial", fecha: "2026-09-21", notas: "Orientación en métodos modernos y entrega de preservativos." },
-    { id: 2, orientador: "Lic. Miriam Morales", participante: "Carlos Andrés Mendoza", area: "Urbana", tipoUsuario: "Antiguo", codigoTema: "VIH-SIDA", tipoConsulta: "Prevención ITS / VIH", pruebaVIH: "Sí - Tira reactiva (No reactiva)", tamizajeViolencia: "Negativo", modalidad: "Presencial", fecha: "2026-09-24", notas: "Consejería pre y post prueba consentida bajo Ley 3729." },
-    { id: 3, orientador: "Lic. Pedro Guzmán", participante: "Luciana Aruquipa Torrez", area: "Rural", tipoUsuario: "Nuevo", codigoTema: "VBG", tipoConsulta: "Violencia Basada en Género (VBG)", pruebaVIH: "No realizada", tamizajeViolencia: "Positivo (Activada Ley 348)", modalidad: "Presencial", fecha: "2026-09-29", notas: "Detección temprana de violencia psicológica. Se deriva a defensoría conforme a Ley 348." }
+    {
+      id: 1,
+      orientador: "Lic. Miriam Morales",
+      regional: "Clínica La Paz",
+      fecha: "2026-09-21",
+      participante: "María Elena Quispe Mamani",
+      ci: "4829102 LP",
+      celular: "71234567",
+      edad: 21,
+      sexo: "Femenino",
+      identidadGenero: "Femenino",
+      orientacionSexual: "Heterosexual",
+      estadoCivil: "Soltero/a",
+      instruccion: "Universitario",
+      expedienteClinico: "EXP-LP-2026-014",
+      tipoSesion: "Individual",
+      tipoUsuario: "Nuevo",
+      conCosto: false,
+      proyecto: "Proyecto Jóvenes Sin Límites 2026",
+      tema: "Planificación Familiar",
+      proceso: "Implante Subdérmico (Jadelle / Implanon)",
+      notas: "Orientación en métodos modernos de larga duración y entrega de preservativos."
+    },
+    {
+      id: 2,
+      orientador: "Lic. Miriam Morales",
+      regional: "Clínica Oruro",
+      fecha: "2026-09-24",
+      participante: "Carlos Andrés Mendoza",
+      ci: "6712390 OR",
+      celular: "72345678",
+      edad: 24,
+      sexo: "Masculino",
+      identidadGenero: "Masculino",
+      orientacionSexual: "Gay",
+      estadoCivil: "Soltero/a",
+      instruccion: "Técnico",
+      expedienteClinico: "EXP-OR-2026-089",
+      tipoSesion: "Individual",
+      tipoUsuario: "Continuo",
+      conCosto: false,
+      proyecto: "Campaña Nacional Prevención VIH / ITS",
+      tema: "ITS/VIH",
+      proceso: "Consejería Pre-Prueba Rápida VIH (Ley 3729)",
+      notas: "Consejería pre y post prueba consentida bajo Ley 3729."
+    },
+    {
+      id: 3,
+      orientador: "Lic. Pedro Guzmán",
+      regional: "UMOSAS Santa Cruz",
+      fecha: "2026-09-29",
+      participante: "Luciana Aruquipa Torrez",
+      ci: "8934120 SC",
+      celular: "73456789",
+      edad: 19,
+      sexo: "Femenino",
+      identidadGenero: "Femenino",
+      orientacionSexual: "Heterosexual",
+      estadoCivil: "Concubinato / Unión libre",
+      instruccion: "Secundaria",
+      expedienteClinico: "EXP-SC-2026-203",
+      tipoSesion: "Pareja",
+      tipoUsuario: "Nuevo",
+      conCosto: true,
+      proyecto: "",
+      tema: "Violencia",
+      proceso: "Tamizaje de Violencia (Ley 348)",
+      notas: "Detección temprana de violencia psicológica. Se deriva a defensoría conforme a Ley 348."
+    },
+    {
+      id: 4,
+      orientador: "Lic. Miriam Morales",
+      regional: "Clínica La Paz",
+      fecha: "2026-10-02",
+      participante: "Valeria Sofía Condori Huanca",
+      ci: "7045123 LP",
+      celular: "76543210",
+      edad: 26,
+      sexo: "Femenino",
+      identidadGenero: "Femenino",
+      orientacionSexual: "Bisexual",
+      estadoCivil: "Soltero/a",
+      instruccion: "Universitario",
+      expedienteClinico: "EXP-LP-2026-042",
+      tipoSesion: "Individual",
+      tipoUsuario: "Nuevo",
+      conCosto: true,
+      proyecto: "",
+      tema: "Atención Aborto",
+      proceso: "Interrupción Legal del Embarazo (ILE - Sentencia 0206/2014)",
+      notas: "Consejería integral sobre causales vigentes y derivación a consulta médica."
+    },
+    {
+      id: 5,
+      orientador: "Lic. Pedro Guzmán",
+      regional: "UMOSAS Santa Cruz",
+      fecha: "2026-10-05",
+      participante: "Rodrigo Alejandro Suárez Vaca",
+      ci: "6234891 SC",
+      celular: "78901234",
+      edad: 32,
+      sexo: "Masculino",
+      identidadGenero: "Masculino",
+      orientacionSexual: "Heterosexual",
+      estadoCivil: "Casado/a",
+      instruccion: "Técnico",
+      expedienteClinico: "EXP-SC-2026-218",
+      tipoSesion: "Pareja",
+      tipoUsuario: "Continuo",
+      conCosto: false,
+      proyecto: "Feria Comunitaria de Salud Sexual y Reproductiva",
+      tema: "Salud Hombres",
+      proceso: "Vasectomía y Paternidad Responsable",
+      notas: "Sesión conjunta con cónyuge; información sobre procedimiento ambulatorio sin bisturí."
+    },
+    {
+      id: 6,
+      orientador: "Lic. Miriam Morales",
+      regional: "Clínica Oruro",
+      fecha: "2026-10-08",
+      participante: "Mateo Gabriel Choque Nina",
+      ci: "5512904 OR",
+      celular: "74125896",
+      edad: 17,
+      sexo: "Femenino",
+      identidadGenero: "Fem a Masc",
+      orientacionSexual: "Pansexual",
+      estadoCivil: "Soltero/a",
+      instruccion: "Secundaria",
+      expedienteClinico: "EXP-OR-2026-112",
+      tipoSesion: "Individual",
+      tipoUsuario: "Nuevo",
+      conCosto: false,
+      proyecto: "Convenio Unidades Educativas - EIS",
+      tema: "Sexualidad",
+      proceso: "Identidad y Diversidad Sexual",
+      notas: "Acompañamiento afirmativo, confidencialidad garantizada y entrega de material EIS."
+    },
+    {
+      id: 7,
+      orientador: "Lic. Pedro Guzmán",
+      regional: "Clínica La Paz",
+      fecha: "2026-10-11",
+      participante: "Paola Andrea Mamani Flores",
+      ci: "9120345 LP",
+      celular: "70112233",
+      edad: 29,
+      sexo: "Femenino",
+      identidadGenero: "Femenino",
+      orientacionSexual: "Heterosexual",
+      estadoCivil: "Casado/a",
+      instruccion: "Universitario",
+      expedienteClinico: "EXP-LP-2026-077",
+      tipoSesion: "Individual",
+      tipoUsuario: "Continuo",
+      conCosto: true,
+      proyecto: "",
+      tema: "Ginecobstetricia y Pediatría",
+      proceso: "Control Ginecológico / PAP / IVAA",
+      notas: "Orientación previa a toma de Papanicolaou e inspección visual con ácido acético."
+    },
+    {
+      id: 8,
+      orientador: "Lic. Miriam Morales",
+      regional: "UMOSAS Santa Cruz",
+      fecha: "2026-10-14",
+      participante: "Camila Fernanda Rojas Justiniano",
+      ci: "8845120 SC",
+      celular: "77665544",
+      edad: 23,
+      sexo: "Masculino",
+      identidadGenero: "Masc a Fem",
+      orientacionSexual: "Heterosexual",
+      estadoCivil: "Soltero/a",
+      instruccion: "Técnico",
+      expedienteClinico: "EXP-SC-2026-245",
+      tipoSesion: "Individual",
+      tipoUsuario: "Nuevo",
+      conCosto: false,
+      proyecto: "Campaña Nacional Prevención VIH / ITS",
+      tema: "ITS/VIH",
+      proceso: "Entrega de Preservativos y PrEP/PEP",
+      notas: "Sesión informativa sobre prevención combinada y adherencia a profilaxis."
+    },
+    {
+      id: 9,
+      orientador: "Lic. Pedro Guzmán",
+      regional: "Clínica Oruro",
+      fecha: "2026-10-17",
+      participante: "Daniela Beatriz Ticona Apaza",
+      ci: "4901238 OR",
+      celular: "75234561",
+      edad: 35,
+      sexo: "Femenino",
+      identidadGenero: "Femenino",
+      orientacionSexual: "Lesbiana",
+      estadoCivil: "Divorciado/a",
+      instruccion: "Universitario",
+      expedienteClinico: "EXP-OR-2026-130",
+      tipoSesion: "Individual",
+      tipoUsuario: "Nuevo",
+      conCosto: true,
+      proyecto: "",
+      tema: "No SSH",
+      proceso: "Orientación Psicológica General",
+      notas: "Contención emocional y derivación interna a consulta psicológica institucional."
+    },
+    {
+      id: 10,
+      orientador: "Lic. Miriam Morales",
+      regional: "Clínica La Paz",
+      fecha: "2026-10-20",
+      participante: "Nayra Alejandra Poma Alanoca",
+      ci: "9876543 LP",
+      celular: "79887766",
+      edad: 20,
+      sexo: "Femenino",
+      identidadGenero: "Femenino",
+      orientacionSexual: "Heterosexual",
+      estadoCivil: "Soltero/a",
+      instruccion: "Universitario",
+      expedienteClinico: "EXP-LP-2026-095",
+      tipoSesion: "Pareja",
+      tipoUsuario: "Nuevo",
+      conCosto: false,
+      proyecto: "Programa Ruta Segura (Ley 348)",
+      tema: "Planificación Familiar",
+      proceso: "DIU (T de Cobre / Hormonal)",
+      notas: "Orientación en doble protección, resolución de dudas sobre inserción y seguimiento."
+    }
   ],
   incidencia: [
     { id: 1, estrategia: "Mesa Técnica Interinstitucional para la Ley de Juventudes", lider: "Red Jóvenes Tú Decides", ambito: "Municipal", normativa: "Ley Municipal de Juventudes 045", estado: "En Proceso", fecha: "2026-09-28" },
     { id: 2, estrategia: "Auditoría Social de Calidad en Servicios de SSR Amigables", lider: "Comité de Auditoría CIES", ambito: "Red de Salud Local", normativa: "Norma Técnica de Calidad CIES", estado: "Concluida", fecha: "2026-09-10" },
     { id: 3, estrategia: "Incorporación de ESI en la Planificación Anual Escolar", lider: "Comité de Maestros CIES", ambito: "Departamental", normativa: "Resolución Ministerial SSR", estado: "Propuesta enviada", fecha: "2026-09-30" }
+  ],
+  incidenciaInscripciones: [
+    {
+      id: 1,
+      codigo: "INC-01",
+      estado: "Registrado",
+      participantes: [
+        { id: 1, nombres: "María Elena", apellidos: "Quispe Mamani", ci: "4829102 LP", edad: 19, rangoEdad: "15 a 19", genero: "Femenino", cargoOcupacion: "Lideresa Red Tú Decides", procedencia: "Distrito 4 - El Alto", regional: "EA", area: "Urbana", telefono: "71234567" },
+        { id: 3, nombres: "Alex", apellidos: "Flores Choque", ci: "5829103 SC", edad: 17, rangoEdad: "15 a 19", genero: "Trans masculino", cargoOcupacion: "Líder Comunitario", procedencia: "Plan 3000", regional: "SCZ", area: "Urbana", telefono: "73456789" }
+      ],
+      taller: {
+        titulo: "Taller de Formación en Incidencia Política y Ley Municipal de Juventudes",
+        tipoSGC: "Formación en Incidencia Política (Ind. 13)",
+        fecha: "2026-10-15",
+        horas: 4,
+        modalidad: "Presencial",
+        ambito: "Municipal",
+        regional: "EA",
+        area: "Urbana",
+        lugar: "CIES El Alto - Rincón Juvenil",
+        facilitador: "Lic. Viviana Segales",
+        normativa: "Ley Municipal de Juventudes 045",
+        objetivo: "Fortalecer capacidades de vocería y construcción de propuestas de política pública juvenil en SSSR.",
+        materialDistribuido: "Cartillas de incidencia, papelógrafos, marcadores",
+        refManana: false,
+        almuerzo: false,
+        refTarde: true,
+        cena: false
+      },
+      arbolProblemas: {
+        problemaCentral: "Limitado acceso a servicios de SSSR amigables y educación integral en sexualidad para jóvenes en el municipio.",
+        efectos: [
+          "Incremento de embarazos no intencionales en adolescentes",
+          "Deserción escolar y vulnerabilidad ante ITS/VIH"
+        ],
+        causas: [
+          { texto: "Insuficiente presupuesto municipal asignado a programas juveniles de SSSR", tipo: "Causa Directa" },
+          { texto: "Personal de salud sin capacitación en atención diferenciada para jóvenes", tipo: "Causa Directa" },
+          { texto: "Escasa participación juvenil en mesas de decisión municipal", tipo: "Causa Indirecta" }
+        ]
+      },
+      conclusion: {
+        resumen: "Se conformó la Mesa Técnica Juvenil con 2 líderes acreditados para dar seguimiento a la Ley Municipal de Juventudes 045.",
+        acuerdos: "Presentación de propuesta presupuestaria ante el Concejo Municipal de El Alto en la próxima sesión ordinaria.",
+        estadoCierre: "Concluido con Seguimiento",
+        fechaCierre: "2026-10-15",
+        documentos: [
+          { id: 1001, nombre: "Acta_Acuerdo_Mesa_Tecnica_Juventudes.pdf", tipo: "Acta / Minuta de Acuerdos", peso: "850 KB", fecha: "2026-10-15" },
+          { id: 1002, nombre: "Planilla_Asistencia_Incidencia_EA.pdf", tipo: "Planilla de Asistencia Firmada (SGC-Apoyo-ABS-3-pp3)", peso: "620 KB", fecha: "2026-10-15" }
+        ]
+      },
+      asistenciasQR: [
+        { participanteId: 1, nombre: "María Elena Quispe Mamani", ci: "4829102 LP", horaExacta: "15:05", metodo: "Escaner QR Credencial", qrCodigo: "CIES-PART:1:4829102 LP", refTarde: true }
+      ],
+      financiadores: [
+        { id: 2001, nombre: "Lic. Mariana Torres", municipio: "El Alto", organizacion: "UNFPA Bolivia", cargo: "Oficial de Programas Juveniles", edad: 34, telefono: "71543210", sexo: "Femenino" }
+      ]
+    }
   ],
   tableroMetas2026: [
     { id: 1, codigo: "IND-01", indicador: "Sensibilización al entorno del adolescente y joven", metaAnual: 1200, enero: 95, febrero: 110, marzo: 130, abril: 105, mayo: 125, junio: 140, julio: 90, agosto: 115, septiembre: 130, octubre: 0, noviembre: 0, diciembre: 0 },
@@ -449,6 +734,76 @@ const INITIAL_DATA = {
       archivo: "3 Informe técnico encuentro profesores 2026.doc", 
       peso: "820 KB",
       resumen: "Evaluación de réplicas en aula de los 25 maestros capacitados."
+    },
+    { 
+      id: 8, 
+      codigo: "INF-2026-M09-OR", 
+      titulo: "Informe Narrativo Mensual - Septiembre 2026 (Regional Oruro)", 
+      periodicidad: "Mensual", 
+      periodo: "Septiembre 2026", 
+      regional: "OR", 
+      autor: "Lic. Claudia Choque", 
+      tipo: "Informe Narrativo Mensual (18 Hojas Técnicas)", 
+      estado: "Aprobado", 
+      archivo: "Informe_Mensual_Oruro_Sep2026.xlsx", 
+      peso: "1.1 MB",
+      resumen: "Ejecución al 95% en réplicas de EIS urbana, 38 pruebas rápidas de VIH aplicadas y fortalecimiento de centro AIDA."
+    },
+    { 
+      id: 9, 
+      codigo: "INF-2026-M09-PTS", 
+      titulo: "Informe Narrativo Mensual - Septiembre 2026 (Regional Potosí)", 
+      periodicidad: "Mensual", 
+      periodo: "Septiembre 2026", 
+      regional: "PTS", 
+      autor: "Lic. Jaime Mendoza", 
+      tipo: "Informe Narrativo Mensual (18 Hojas Técnicas)", 
+      estado: "Aprobado", 
+      archivo: "Informe_Mensual_Potosi_Sep2026.xlsx", 
+      peso: "1.3 MB",
+      resumen: "Cobertura en colegios mineros y talleres de prevención de embarazo adolescente."
+    },
+    { 
+      id: 10, 
+      codigo: "INF-2026-M09-SCZ", 
+      titulo: "Informe Narrativo Mensual - Septiembre 2026 (Regional Santa Cruz)", 
+      periodicidad: "Mensual", 
+      periodo: "Septiembre 2026", 
+      regional: "SCZ", 
+      autor: "Lic. Carmen Ortiz", 
+      tipo: "Informe Narrativo Mensual (18 Hojas Técnicas)", 
+      estado: "Aprobado", 
+      archivo: "Informe_Mensual_SantaCruz_Sep2026.xlsx", 
+      peso: "1.6 MB",
+      resumen: "Superación de meta en atenciones de orientación juvenil en unidades móviles y clínicas."
+    },
+    { 
+      id: 11, 
+      codigo: "INF-2026-M09-TJA", 
+      titulo: "Informe Narrativo Mensual - Septiembre 2026 (Regional Tarija)", 
+      periodicidad: "Mensual", 
+      periodo: "Septiembre 2026", 
+      regional: "TJA", 
+      autor: "Lic. Rodrigo Vega", 
+      tipo: "Informe Narrativo Mensual (18 Hojas Técnicas)", 
+      estado: "Aprobado", 
+      archivo: "Informe_Mensual_Tarija_Sep2026.xlsx", 
+      peso: "980 KB",
+      resumen: "Mesas de incidencia política municipal y comités de vigilancia juvenil."
+    },
+    { 
+      id: 12, 
+      codigo: "INF-2026-M09-BENI", 
+      titulo: "Informe Narrativo Mensual - Septiembre 2026 (Regional Beni)", 
+      periodicidad: "Mensual", 
+      periodo: "Septiembre 2026", 
+      regional: "BENI", 
+      autor: "Lic. Gary Rivero", 
+      tipo: "Informe Narrativo Mensual (18 Hojas Técnicas)", 
+      estado: "Aprobado", 
+      archivo: "Informe_Mensual_Beni_Sep2026.xlsx", 
+      peso: "850 KB",
+      resumen: "Brigadas móviles fluviales en comunidades de la Amazonía beniana."
     }
   ],
   digitalizacion: [
@@ -542,8 +897,10 @@ const INITIAL_DATA = {
     { id: 7, nombre: "Lic. Gabriela Rojas", username: "grojas", email: "grojas@cies.org.bo", password: "cies2026", ci: "5829103 SCZ", procedencia: "Santa Cruz de la Sierra", regional: "SCZ", roles: ["Investigadora Educadora"], rol: "Investigadora Educadora", cargo: "Investigadora Educadora", estado: "Activo" },
     { id: 8, nombre: "Lic. Fernando Soto", username: "fsoto", email: "fsoto@cies.org.bo", password: "cies2026", ci: "7102938 LP", procedencia: "La Paz", regional: "LP", roles: ["Responsable del Programa"], rol: "Responsable del Programa", cargo: "Responsable del Programa EIS", estado: "Activo" },
     { id: 9, nombre: "Lic. Carlos Méndez", username: "cmendez", email: "cmendez@cies.org.bo", password: "cies2026", ci: "4920194 TJA", procedencia: "Tarija", regional: "TJA", roles: ["Asistente Educador"], rol: "Asistente Educador", cargo: "Asistente Educador", estado: "Activo" },
-    { id: 10, nombre: "Lic. Beatriz Linares", username: "blinares", email: "blinares@cies.org.bo", password: "cies2026", ci: "3920194 LP", procedencia: "La Paz", regional: "Nacional", roles: ["Responsable Nacional"], rol: "Responsable Nacional", cargo: "Responsable Nacional Educativo", modulos: ["Participantes", "Actividades"], permisosAdicionales: ["exportar", "validar_sgc", "supervisar"], estado: "Activo" },
-    { id: 11, nombre: "Lic. Marcelo Suárez", username: "msuarez", email: "gerencia@cies.org.bo", password: "cies2026", ci: "6102938 LP", procedencia: "La Paz", regional: "Nacional", roles: ["Gerencia"], rol: "Gerencia", cargo: "Supervisor Gerencial", estado: "Activo" }
+    { id: 10, nombre: "Lic. Beatriz Linares", username: "blinares", email: "blinares@cies.org.bo", password: "cies2026", ci: "3920194 LP", procedencia: "La Paz", regional: "Nacional", roles: ["Responsable Nacional"], rol: "Responsable Nacional", cargo: "Responsable Nacional Educativo", modulos: ["Dashboard", "Participantes", "Actividades"], permisosAdicionales: ["exportar", "validar_sgc", "supervisar"], estado: "Activo" },
+    { id: 11, nombre: "Lic. Marcelo Suárez", username: "msuarez", email: "gerencia@cies.org.bo", password: "cies2026", ci: "6102938 LP", procedencia: "La Paz", regional: "Nacional", roles: ["Gerencia"], rol: "Gerencia", cargo: "Supervisor Gerencial", estado: "Activo" },
+    { id: 12, nombre: "Lic. Claudia Choque", username: "cchoque", email: "oruro@cies.org.bo", password: "cies2026", ci: "5129301 OR", procedencia: "Oruro", regional: "OR", roles: ["Responsable Regional"], rol: "Responsable Regional", cargo: "Responsable Regional Educativo - Oruro", modulos: ["Dashboard", "Participantes", "Actividades"], permisosAdicionales: ["exportar"], estado: "Activo" },
+    { id: 13, nombre: "Lic. Jaime Mendoza", username: "jmendoza", email: "potosi@cies.org.bo", password: "cies2026", ci: "4192019 PTS", procedencia: "Potosí", regional: "PTS", roles: ["Responsable Regional"], rol: "Responsable Regional", cargo: "Responsable Regional Educativo - Potosí", modulos: ["Dashboard", "Participantes", "Actividades"], permisosAdicionales: ["exportar"], estado: "Activo" }
   ]
 };
 
@@ -691,6 +1048,16 @@ function getDB() {
   }
 
   // Sincronizar asistencias de talleres con firmas touch
+  if (!db.incidenciaInscripciones || !Array.isArray(db.incidenciaInscripciones)) {
+    db.incidenciaInscripciones = JSON.parse(JSON.stringify(INITIAL_DATA.incidenciaInscripciones));
+    updated = true;
+  }
+
+  if (!db.tableroPorRegional2026 || Object.keys(db.tableroPorRegional2026).length === 0) {
+    db.tableroPorRegional2026 = JSON.parse(JSON.stringify(INITIAL_TABLERO_REGIONALES_2026));
+    updated = true;
+  }
+
   if (!db.asistenciasTalleres || !Array.isArray(db.asistenciasTalleres)) {
     db.asistenciasTalleres = INITIAL_DATA.asistenciasTalleres ? JSON.parse(JSON.stringify(INITIAL_DATA.asistenciasTalleres)) : [];
     updated = true;
@@ -934,7 +1301,7 @@ function getCombinedRoleModules(roles) {
     return lr.includes("responsable nacional") || lr.includes("responsable regional") || lr.includes("responsable educativo");
   });
   if (onlyRespEducativo) {
-    return ["Participantes", "Actividades"];
+    return ["Dashboard", "Participantes", "Actividades"];
   }
 
   const modulesSet = new Set();
@@ -1010,6 +1377,7 @@ function isModuleAllowedForUser(panelId, user) {
     "actividades": "Actividades",
     "orientadores": "Orientadores",
     "incidencia": "Incidencia",
+    "incidencia-inscripcion": "Incidencia",
     "informes": "Informes",
     "digitalizacion": "Digitalizacion",
     "administracion": "Administracion"
@@ -2163,6 +2531,9 @@ function renderCurrentView() {
     case "incidencia":
       renderIncidencia();
       break;
+    case "incidencia-inscripcion":
+      renderIncidenciaInscripcionWorkspace();
+      break;
     case "orientadores":
       renderOrientadores();
       break;
@@ -2179,57 +2550,1131 @@ function renderCurrentView() {
 }
 
 // -------------------------------------------------------------
-// PANEL 1: TABLERO / MONITOREO PROGRAMÁTICO 2026
+// PANEL 1: TABLERO OFICIAL DE MONITOREO PROGRAMÁTICO (SGC CIES)
 // -------------------------------------------------------------
+
+const CATALOGO_INDICADORES_SGC_2026 = [
+  {
+    "correlativo": 1,
+    "codigo": "IND-01",
+    "indicador": "N° de Orientaciones realizadas",
+    "tipo": "Mensual",
+    "descripcion": "Orientación es un indicador de cumplimiento mensual. Los datos incluidos en esta sección deben registrarse de acuerdo con los resultados de las atenciones brindadas en cada mes incluyendo las atenciones en SSSR y NO SSSR.",
+    "mesesExcluidos": [],
+    "divisorPromedio": 12
+  },
+  {
+    "correlativo": 2,
+    "codigo": "IND-02",
+    "indicador": "N° de participantes en actividades informativas en sala de espera de las clínicas CIES",
+    "tipo": "Mensual",
+    "descripcion": "Información en sala es un indicador de cumplimiento mensua. Los datos incluidos en esta sección deben registrarse de acuerdo con el procedimiento de información en SSSR, contando con los registros de planificación y reporte correspondientes.\nEl cumplimiento de este indicador puede ser apoyado por el equipo educativo, la Red de Jóvenes, así como por el equipo médico o de enfermería, en el marco de la organización interna de cada regional.",
+    "mesesExcluidos": [],
+    "divisorPromedio": 12
+  },
+  {
+    "correlativo": 3,
+    "codigo": "IND-03",
+    "indicador": "N° de pruebas de VIH realizadas con tira reactiva",
+    "tipo": "Mensual",
+    "descripcion": "N° de pruebas de VIH realizadas con tira reactiva es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador es responsabilidad del equipo educativo, como parte de su rol de promoción y captación de usuarios/as para la realización de pruebas.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información que a ser registrada.",
+    "mesesExcluidos": [],
+    "divisorPromedio": 12
+  },
+  {
+    "correlativo": 4,
+    "codigo": "IND-04",
+    "indicador": "N° de consultas jóvenes",
+    "tipo": "Mensual",
+    "descripcion": "Es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador corresponde al equipo educativo, como parte de su rol de promoción y captación de usuarios/as, incluyendo también las atenciones realizadas en campañas en comunidad.",
+    "mesesExcluidos": [],
+    "divisorPromedio": 12
+  },
+  {
+    "correlativo": 5,
+    "codigo": "IND-05",
+    "indicador": "N° de jóvenes líderes/as capacitados/as",
+    "tipo": "De proceso",
+    "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de la Red de Jóvenes, según los lineamientos de cada gestión. Los datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación y acompañarse de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.",
+    "mesesExcluidos": [],
+    "divisorPromedio": 12
+  },
+  {
+    "correlativo": 6,
+    "codigo": "IND-06",
+    "indicador": "N° jóvenes líderes/as activos/as",
+    "tipo": "Promedio",
+    "descripcion": "El valor del indicador se calcula como el promedio del cumplimiento mensual respecto a la meta anual, considerando el reglamento de la Red y el cumplimiento mínimo de cuatro actividades por líder/esa. Para obtener este promedio, se debe registrar mes a mes cuántos líderes y lideresas han sido activos/as. Este cálculo se realiza de manera automática, tomando en cuenta solo los 11 meses en los que las y los jóvenes asisten con mayor frecuencia a la Red (de febrero a diciembre).\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.",
+    "mesesExcluidos": [
+      "enero"
+    ],
+    "divisorPromedio": 11
+  },
+  {
+    "correlativo": 7,
+    "codigo": "IND-07",
+    "indicador": "N° de adolescentes y jóvenes informados par a par",
+    "tipo": "Mensual",
+    "descripcion": "Es un indicador de cumplimiento mensual. Para su registro se deben considerar todas las actividades realizadas a través de la autogestión de las lideresas y líderes, las actividades en los frontis de las clínicas y policonsultorios, así como las invitaciones realizadas por otras instituciones u organizaciones.\nEl registro corresponde al equipo educativo, a partir de la planificación y seguimiento de las actividades. \nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registgrada.",
+    "mesesExcluidos": [],
+    "divisorPromedio": 12
+  },
+  {
+    "correlativo": 8,
+    "codigo": "IND-08",
+    "indicador": "N° de maestros/as capacitados/as",
+    "tipo": "De proceso",
+    "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de maestras y maestros, según los lineamientos de cada gestión.\nLos datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación, acompañados de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.",
+    "mesesExcluidos": [],
+    "divisorPromedio": 12
+  },
+  {
+    "correlativo": 9,
+    "codigo": "IND-09",
+    "indicador": "N° maestros/as líderes activos/as",
+    "tipo": "Promedio",
+    "descripcion": "En este indicador se debe registrar, mes a mes, cuántas maestras y maestros han sido activos/as, considerando su participación en las reuniones de fortalecimiento y, especialmente, en la implementación de EIS en sus unidades educativas.\nEl cálculo se realiza de manera automática, considerando solo los meses de febrero a mayo y de julio a noviembre, excluyendo diciembre, enero y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.",
+    "mesesExcluidos": [
+      "enero",
+      "junio",
+      "diciembre"
+    ],
+    "divisorPromedio": 9
+  },
+  {
+    "correlativo": 10,
+    "codigo": "IND-10",
+    "indicador": "N° de niñas/os, adolescentes y jóvenes que INICIAN procesos de EIS en aula",
+    "tipo": "De proceso",
+    "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada unidad educativa, indicando las personas que inician procesos EIS a partir de la gestión de las maestras y maestros activos.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial, tomando como base los reportes de los/as maestros/as líderes y sus registros internos.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada, por ejemplo, los pre test.",
+    "mesesExcluidos": [],
+    "divisorPromedio": 12
+  },
+  {
+    "correlativo": 11,
+    "codigo": "IND-11",
+    "indicador": "Sensibilización al entorno del adolescente y joven",
+    "tipo": "De proceso",
+    "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada grupo de padres, madres y/o cuidadores con quien se logre concluir el proceso., los cuales deben orientarse prioritariamente a las unidades educativas donde se realiza la intervención en EIS, o a los padres y madres de las lideresas y líderes juveniles.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial.\nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registrada.",
+    "mesesExcluidos": [],
+    "divisorPromedio": 12
+  },
+  {
+    "correlativo": 12,
+    "codigo": "IND-12",
+    "indicador": "N° de Unidades Educativas intervenidas",
+    "tipo": "Promedio",
+    "descripcion": "El valor del indicador se calcula como el promedio mensual de unidades educativas intervenidas, considerando únicamente aquellas donde maestras y maestros activos implementan procesos de EIS. \nEn este indicador se debe registrar, mes a mes, cuántas unidades educativas han sido intervenidas, excluyendo los meses de enero, diciembre y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada.",
+    "mesesExcluidos": [
+      "enero",
+      "junio",
+      "diciembre"
+    ],
+    "divisorPromedio": 9
+  },
+  {
+    "correlativo": 13,
+    "codigo": "IND-13",
+    "indicador": "N° de líderes/as formados/as en Incidencia Política.",
+    "tipo": "De proceso",
+    "descripcion": "El indicador reporta la cantidad de adolescentes y jóvenes capacitados/as, desagregadas según el área geográfica (urbana y rural) y el tipo de participación (participantes antiguas/os y nuevas/os). \nUna vez concluido el proceso de capacitación, y de acuerdo con los lineamientos establecidos para la gestión, se deberá reportar el número de lideresas y líderes capacitadas/os, también desagregado por área geográfica. En este sentido, el área rural se refiere principalmente a los proyectos REACH – Alianza por la Solidaridad.\nEsta información deberá registrarse una sola vez en la gestión.",
+    "mesesExcluidos": [],
+    "divisorPromedio": 12
+  },
+  {
+    "correlativo": 14,
+    "codigo": "IND-14",
+    "indicador": "N° de líderes/as que realizan procesos de Incidencia Política",
+    "tipo": "De proceso",
+    "descripcion": "El indicador debe ser reportado de manera mensual, una vez concluido el proceso de capacitación y elaborada la Estrategia de Incidencia Política. Este registro refleja la cantidad de líderes y lideresas que se encuentran ejecutando acciones de Incidencia Política, diferenciados por área geográfica (urbana y rural). \nEs importante precisar que este indicador considera únicamente a adolescentes y jóvenes que efectivamente implementan la estrategia, diferencia del número total de personas capacitadas, permitiendo así evidenciar el nivel involucramiento en Incidencia Política.",
+    "mesesExcluidos": [],
+    "divisorPromedio": 12
+  },
+  {
+    "correlativo": 15,
+    "codigo": "IND-15",
+    "indicador": "N° de Planes de Incidencia Política elaborados",
+    "tipo": "De proceso",
+    "descripcion": "Se debe registrar la cantidad de Estrategias de Incidencia Política desarrolladas como resultado del proceso de capacitación, por área geográfica (urbana y rural). Este indicador debe reportarse una vez al año, considerando únicamente las estrategias efectivamente elaboradas por los y las adolescentes y jóvenes, con el apoyo del equipo educativo. Asimismo, es importante asegurar que cada estrategia reportada cuente con los elementos básicos de planificación y responda a una problemática identificada.",
+    "mesesExcluidos": [],
+    "divisorPromedio": 12
+  },
+  {
+    "correlativo": 16,
+    "codigo": "IND-16",
+    "indicador": "N° de políticas públicas aprobadas",
+    "tipo": "De proceso",
+    "descripcion": "El valor refleja el número de iniciativas que han sido aprobadas como resultado de las acciones de Incidencia Política desarrolladas. La información debe desagregarse por área geográfica. La meta anual es de 3 políticas públicas aprobadas, de las cuales 1 corresponde al área urbana y 2 al área rural, haciendo un total de 3. En aquellas regionales que no cuentan con intervención en el área rural, como Oruro y Potosí, la meta de 3 políticas públicas aprobadas corresponde al área urbana, pueden ser políticas de alcance departamental y/o municipal. Este indicador permite evidenciar los resultados concretos de los procesos de incidencia, considerando exclusivamente aquellas políticas que cuentan con aprobación formal por parte de las instancias competentes.",
+    "mesesExcluidos": [],
+    "divisorPromedio": 12
+  },
+  {
+    "correlativo": 17,
+    "codigo": "IND-17",
+    "indicador": "N° de lideres/as formados/as en Auditoría Social",
+    "tipo": "De proceso",
+    "descripcion": "El indicador reporta líderes y lideresas capacitadas en Auditoría Social en base a la Guía de Auditoría Social desagregados por área geográfica (urbana y rural). El registro se realiza una sola vez en la gestión, considerando que el área rural corresponde principalmente a proyectos REACH – Alianza por la Solidaridad.",
+    "mesesExcluidos": [],
+    "divisorPromedio": 12
+  },
+  {
+    "correlativo": 18,
+    "codigo": "IND-18",
+    "indicador": "N° de lideres/as que realizan procesos de Auditoría Social",
+    "tipo": "De proceso",
+    "descripcion": "El indicador se reporta mensualmente, luego de la capacitación y elaboración del Plan de Auditoría Social,  a líderes y lideresas que implementan acciones, desagregados por área. Considera solo a quienes ejecutan la estrategia, evidenciando su nivel de involucramiento.",
+    "mesesExcluidos": [],
+    "divisorPromedio": 12
+  },
+  {
+    "correlativo": 19,
+    "codigo": "IND-19",
+    "indicador": "N° de planes de Auditoría Social elaborados",
+    "tipo": "De proceso",
+    "descripcion": "Ea un indicador que anualmente reporta los Planes de Auditoría Social elaborados por adolescentes y jóvenes, desagregados por área (urbana y rural), las accionescorrespondena Auditorías a la implementación del modelo AIDA en los centros de Salud y/o a la implementación de la EIS en Unidades Educativas.",
+    "mesesExcluidos": [],
+    "divisorPromedio": 12
+  },
+  {
+    "correlativo": 20,
+    "codigo": "IND-20",
+    "indicador": "N° de planes de fortalecimiento aprobados y/o centros certificados",
+    "tipo": "De proceso",
+    "descripcion": "El indicador reporta el número de planes de fortalecimiento aprobados/en implementación, resultado de los procesos de Auditoría Social realizados a los servicios de salud,  educación o protección. Asimismo, puede registrarse el resultado final de las acciones realizadas que puede ser la certificación o recertificación de centros AIDA, mayor implenetación de procesos de EIS en Unidades Educatvas o procesos realizados en la atención de víctimas de violencia en DNAs, SLIMs y FELCVs, diferenciadas por área geográfica (urbana o rural).",
+    "mesesExcluidos": [],
+    "divisorPromedio": 12
+  }
+];
+
+const INITIAL_TABLERO_REGIONALES_2026 = {"LP": [{"correlativo": 1, "codigo": "IND-01", "indicador": "N° de Orientaciones realizadas", "tipo": "Mensual", "descripcion": "Orientación es un indicador de cumplimiento mensual. Los datos incluidos en esta sección deben registrarse de acuerdo con los resultados de las atenciones brindadas en cada mes incluyendo las atenciones en SSSR y NO SSSR.", "filas": [{"subcategoria": "", "meta_anual": 24000.0, "meses": {"enero": 24.0, "febrero": 60.0, "marzo": 96.0, "abril": 42.0, "mayo": 108.0, "junio": 12.0, "julio": 30.0, "agosto": 36.0, "septiembre": 1200.0, "octubre": 24.0, "noviembre": 60.0, "diciembre": 12.0}, "observaciones": ""}]}, {"correlativo": 2, "codigo": "IND-02", "indicador": "N° de participantes en actividades informativas en sala de espera de las clínicas CIES", "tipo": "Mensual", "descripcion": "Información en sala es un indicador de cumplimiento mensua. Los datos incluidos en esta sección deben registrarse de acuerdo con el procedimiento de información en SSSR, contando con los registros de planificación y reporte correspondientes.\nEl cumplimiento de este indicador puede ser apoyado por el equipo educativo, la Red de Jóvenes, así como por el equipo médico o de enfermería, en el marco de la organización interna de cada regional.", "filas": [{"subcategoria": "", "meta_anual": 120.0, "meses": {"enero": 30.0, "febrero": 30.0, "marzo": 30.0, "abril": 30.0, "mayo": 360.0, "junio": 48.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 3, "codigo": "IND-03", "indicador": "N° de pruebas de VIH realizadas con tira reactiva", "tipo": "Mensual", "descripcion": "N° de pruebas de VIH realizadas con tira reactiva es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador es responsabilidad del equipo educativo, como parte de su rol de promoción y captación de usuarios/as para la realización de pruebas.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información que a ser registrada.", "filas": [{"subcategoria": "", "meta_anual": 240.0, "meses": {"enero": 12.0, "febrero": 24.0, "marzo": 36.0, "abril": 48.0, "mayo": 60.0, "junio": 72.0, "julio": 96.0, "agosto": 120.0, "septiembre": 24.0, "octubre": 48.0, "noviembre": 24.0, "diciembre": 60.0}, "observaciones": ""}]}, {"correlativo": 4, "codigo": "IND-04", "indicador": "N° de consultas jóvenes", "tipo": "Mensual", "descripcion": "Es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador corresponde al equipo educativo, como parte de su rol de promoción y captación de usuarios/as, incluyendo también las atenciones realizadas en campañas en comunidad.", "filas": [{"subcategoria": "Clínicas/policonsultorios", "meta_anual": 4200.0, "meses": {"enero": 0.0, "febrero": 1680.0, "marzo": 600.0, "abril": 692.0, "mayo": 360.0, "junio": 240.0, "julio": 840.0, "agosto": 720.0, "septiembre": 840.0, "octubre": 1578.0, "noviembre": 450.0, "diciembre": 900.0}, "observaciones": ""}, {"subcategoria": "Unidades Móviles", "meta_anual": 600.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 450.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 4800.0, "meses": {"enero": 0.0, "febrero": 1680.0, "marzo": 600.0, "abril": 692.0, "mayo": 360.0, "junio": 240.0, "julio": 840.0, "agosto": 720.0, "septiembre": 840.0, "octubre": 1578.0, "noviembre": 900.0, "diciembre": 900.0}, "observaciones": ""}]}, {"correlativo": 5, "codigo": "IND-05", "indicador": "N° de jóvenes líderes/as capacitados/as", "tipo": "De proceso", "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de la Red de Jóvenes, según los lineamientos de cada gestión. Los datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación y acompañarse de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 18.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 30.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 10.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 52.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 46.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 32.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 19.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 112.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 104.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 6, "codigo": "IND-06", "indicador": "N° jóvenes líderes/as activos/as", "tipo": "Promedio", "descripcion": "El valor del indicador se calcula como el promedio del cumplimiento mensual respecto a la meta anual, considerando el reglamento de la Red y el cumplimiento mínimo de cuatro actividades por líder/esa. Para obtener este promedio, se debe registrar mes a mes cuántos líderes y lideresas han sido activos/as. Este cálculo se realiza de manera automática, tomando en cuenta solo los 11 meses en los que las y los jóvenes asisten con mayor frecuencia a la Red (de febrero a diciembre).\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 18.0, "meses": {"enero": 0.0, "febrero": 10.0, "marzo": 18.0, "abril": 18.0, "mayo": 18.0, "junio": 24.0, "julio": 18.0, "agosto": 18.0, "septiembre": 18.0, "octubre": 18.0, "noviembre": 18.0, "diciembre": 11.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 18.0, "meses": {"enero": 0.0, "febrero": 18.0, "marzo": 18.0, "abril": 18.0, "mayo": 18.0, "junio": 18.0, "julio": 18.0, "agosto": 18.0, "septiembre": 18.0, "octubre": 18.0, "noviembre": 18.0, "diciembre": 18.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 24.0, "meses": {"enero": 0.0, "febrero": 19.0, "marzo": 19.0, "abril": 19.0, "mayo": 19.0, "junio": 19.0, "julio": 19.0, "agosto": 19.0, "septiembre": 19.0, "octubre": 19.0, "noviembre": 22.0, "diciembre": 24.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 24.0, "meses": {"enero": 0.0, "febrero": 24.0, "marzo": 24.0, "abril": 24.0, "mayo": 20.0, "junio": 24.0, "julio": 20.0, "agosto": 24.0, "septiembre": 24.0, "octubre": 18.0, "noviembre": 7.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 84.0, "meses": {"enero": 0.0, "febrero": 71.0, "marzo": 79.0, "abril": 79.0, "mayo": 76.0, "junio": 85.0, "julio": 76.0, "agosto": 79.0, "septiembre": 79.0, "octubre": 73.0, "noviembre": 65.0, "diciembre": 53.0}, "observaciones": ""}]}, {"correlativo": 7, "codigo": "IND-07", "indicador": "N° de adolescentes y jóvenes informados par a par", "tipo": "Mensual", "descripcion": "Es un indicador de cumplimiento mensual. Para su registro se deben considerar todas las actividades realizadas a través de la autogestión de las lideresas y líderes, las actividades en los frontis de las clínicas y policonsultorios, así como las invitaciones realizadas por otras instituciones u organizaciones.\nEl registro corresponde al equipo educativo, a partir de la planificación y seguimiento de las actividades. \nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registgrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 6000.0, "meses": {"enero": 0.0, "febrero": 1680.0, "marzo": 600.0, "abril": 692.0, "mayo": 360.0, "junio": 240.0, "julio": 840.0, "agosto": 720.0, "septiembre": 840.0, "octubre": 1578.0, "noviembre": 450.0, "diciembre": 900.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 3600.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 450.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 9600.0, "meses": {"enero": 0.0, "febrero": 1680.0, "marzo": 600.0, "abril": 692.0, "mayo": 360.0, "junio": 240.0, "julio": 840.0, "agosto": 720.0, "septiembre": 840.0, "octubre": 1578.0, "noviembre": 900.0, "diciembre": 900.0}, "observaciones": ""}]}, {"correlativo": 8, "codigo": "IND-08", "indicador": "N° de maestros/as capacitados/as", "tipo": "De proceso", "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de maestras y maestros, según los lineamientos de cada gestión.\nLos datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación, acompañados de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 30.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 30.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 6.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 36.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 36.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 24.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 24.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 96.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 30.0, "mayo": 66.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 9, "codigo": "IND-09", "indicador": "N° maestros/as líderes activos/as", "tipo": "Promedio", "descripcion": "En este indicador se debe registrar, mes a mes, cuántas maestras y maestros han sido activos/as, considerando su participación en las reuniones de fortalecimiento y, especialmente, en la implementación de EIS en sus unidades educativas.\nEl cálculo se realiza de manera automática, considerando solo los meses de febrero a mayo y de julio a noviembre, excluyendo diciembre, enero y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.", "filas": [{"subcategoria": "Primaria (urbana)", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 6.0, "marzo": 6.0, "abril": 6.0, "mayo": 6.0, "junio": 0.0, "julio": 6.0, "agosto": 6.0, "septiembre": 6.0, "octubre": 6.0, "noviembre": 6.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 30.0, "meses": {"enero": 0.0, "febrero": 24.0, "marzo": 30.0, "abril": 30.0, "mayo": 30.0, "junio": 0.0, "julio": 30.0, "agosto": 24.0, "septiembre": 30.0, "octubre": 30.0, "noviembre": 30.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 12.0, "meses": {"enero": 0.0, "febrero": 10.0, "marzo": 10.0, "abril": 10.0, "mayo": 10.0, "junio": 0.0, "julio": 10.0, "agosto": 10.0, "septiembre": 10.0, "octubre": 10.0, "noviembre": 12.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 36.0, "meses": {"enero": 0.0, "febrero": 30.0, "marzo": 30.0, "abril": 36.0, "mayo": 36.0, "junio": 0.0, "julio": 30.0, "agosto": 36.0, "septiembre": 36.0, "octubre": 36.0, "noviembre": 36.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 84.0, "meses": {"enero": 0.0, "febrero": 70.0, "marzo": 76.0, "abril": 82.0, "mayo": 82.0, "junio": 0.0, "julio": 76.0, "agosto": 76.0, "septiembre": 82.0, "octubre": 82.0, "noviembre": 84.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 10, "codigo": "IND-10", "indicador": "N° de niñas/os, adolescentes y jóvenes que INICIAN procesos de EIS en aula", "tipo": "De proceso", "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada unidad educativa, indicando las personas que inician procesos EIS a partir de la gestión de las maestras y maestros activos.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial, tomando como base los reportes de los/as maestros/as líderes y sus registros internos.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada, por ejemplo, los pre test.", "filas": [{"subcategoria": "Primaria (urbana)", "meta_anual": 120.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 48.0, "abril": 60.0, "mayo": 12.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 600.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 120.0, "mayo": 360.0, "junio": 0.0, "julio": 120.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 120.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 48.0, "abril": 60.0, "mayo": 12.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 600.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 360.0, "abril": 120.0, "mayo": 120.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 1440.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 456.0, "abril": 360.0, "mayo": 504.0, "junio": 0.0, "julio": 120.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (urbana)", "meta_anual": 120.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 96.0, "noviembre": 36.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 600.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 360.0, "octubre": 180.0, "noviembre": 120.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 120.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 72.0, "octubre": 36.0, "noviembre": 36.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 600.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 540.0, "octubre": 12.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 1440.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 972.0, "octubre": 324.0, "noviembre": 192.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 11, "codigo": "IND-11", "indicador": "Sensibilización al entorno del adolescente y joven", "tipo": "De proceso", "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada grupo de padres, madres y/o cuidadores con quien se logre concluir el proceso., los cuales deben orientarse prioritariamente a las unidades educativas donde se realiza la intervención en EIS, o a los padres y madres de las lideresas y líderes juveniles.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial.\nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 60.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 18.0, "junio": 0.0, "julio": 24.0, "agosto": 0.0, "septiembre": 12.0, "octubre": 6.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 72.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 24.0, "junio": 30.0, "julio": 6.0, "agosto": 19.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 132.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 42.0, "junio": 30.0, "julio": 30.0, "agosto": 19.0, "septiembre": 12.0, "octubre": 6.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 12, "codigo": "IND-12", "indicador": "N° de Unidades Educativas intervenidas", "tipo": "Promedio", "descripcion": "El valor del indicador se calcula como el promedio mensual de unidades educativas intervenidas, considerando únicamente aquellas donde maestras y maestros activos implementan procesos de EIS. \nEn este indicador se debe registrar, mes a mes, cuántas unidades educativas han sido intervenidas, excluyendo los meses de enero, diciembre y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 24.0, "meses": {"enero": 0.0, "febrero": 24.0, "marzo": 24.0, "abril": 24.0, "mayo": 18.0, "junio": 0.0, "julio": 12.0, "agosto": 24.0, "septiembre": 24.0, "octubre": 24.0, "noviembre": 24.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 36.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 60.0, "meses": {"enero": 0.0, "febrero": 24.0, "marzo": 24.0, "abril": 24.0, "mayo": 18.0, "junio": 0.0, "julio": 12.0, "agosto": 24.0, "septiembre": 24.0, "octubre": 24.0, "noviembre": 24.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 13, "codigo": "IND-13", "indicador": "N° de líderes/as formados/as en Incidencia Política.", "tipo": "De proceso", "descripcion": "El indicador reporta la cantidad de adolescentes y jóvenes capacitados/as, desagregadas según el área geográfica (urbana y rural) y el tipo de participación (participantes antiguas/os y nuevas/os). \nUna vez concluido el proceso de capacitación, y de acuerdo con los lineamientos establecidos para la gestión, se deberá reportar el número de lideresas y líderes capacitadas/os, también desagregado por área geográfica. En este sentido, el área rural se refiere principalmente a los proyectos REACH – Alianza por la Solidaridad.\nEsta información deberá registrarse una sola vez en la gestión.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 18.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 12.0, "septiembre": 6.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 8.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 10.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 60.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 60.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 60.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 82.0, "septiembre": 14.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 14, "codigo": "IND-14", "indicador": "N° de líderes/as que realizan procesos de Incidencia Política", "tipo": "De proceso", "descripcion": "El indicador debe ser reportado de manera mensual, una vez concluido el proceso de capacitación y elaborada la Estrategia de Incidencia Política. Este registro refleja la cantidad de líderes y lideresas que se encuentran ejecutando acciones de Incidencia Política, diferenciados por área geográfica (urbana y rural). \nEs importante precisar que este indicador considera únicamente a adolescentes y jóvenes que efectivamente implementan la estrategia, diferencia del número total de personas capacitadas, permitiendo así evidenciar el nivel involucramiento en Incidencia Política.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 19.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 15, "codigo": "IND-15", "indicador": "N° de Planes de Incidencia Política elaborados", "tipo": "De proceso", "descripcion": "Se debe registrar la cantidad de Estrategias de Incidencia Política desarrolladas como resultado del proceso de capacitación, por área geográfica (urbana y rural). Este indicador debe reportarse una vez al año, considerando únicamente las estrategias efectivamente elaboradas por los y las adolescentes y jóvenes, con el apoyo del equipo educativo. Asimismo, es importante asegurar que cada estrategia reportada cuente con los elementos básicos de planificación y responda a una problemática identificada.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 7.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 2.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 2.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 2.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 16, "codigo": "IND-16", "indicador": "N° de políticas públicas aprobadas", "tipo": "De proceso", "descripcion": "El valor refleja el número de iniciativas que han sido aprobadas como resultado de las acciones de Incidencia Política desarrolladas. La información debe desagregarse por área geográfica. La meta anual es de 3 políticas públicas aprobadas, de las cuales 1 corresponde al área urbana y 2 al área rural, haciendo un total de 3. En aquellas regionales que no cuentan con intervención en el área rural, como Oruro y Potosí, la meta de 3 políticas públicas aprobadas corresponde al área urbana, pueden ser políticas de alcance departamental y/o municipal. Este indicador permite evidenciar los resultados concretos de los procesos de incidencia, considerando exclusivamente aquellas políticas que cuentan con aprobación formal por parte de las instancias competentes.", "filas": [{"subcategoria": "Área urbana", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 7.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 2.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 2.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 2.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 17, "codigo": "IND-17", "indicador": "N° de lideres/as formados/as en Auditoría Social", "tipo": "De proceso", "descripcion": "El indicador reporta líderes y lideresas capacitadas en Auditoría Social en base a la Guía de Auditoría Social desagregados por área geográfica (urbana y rural). El registro se realiza una sola vez en la gestión, considerando que el área rural corresponde principalmente a proyectos REACH – Alianza por la Solidaridad.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 18.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 12.0, "septiembre": 4.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 6.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 10.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 60.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 60.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 96.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 82.0, "septiembre": 10.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 18, "codigo": "IND-18", "indicador": "N° de lideres/as que realizan procesos de Auditoría Social", "tipo": "De proceso", "descripcion": "El indicador se reporta mensualmente, luego de la capacitación y elaboración del Plan de Auditoría Social,  a líderes y lideresas que implementan acciones, desagregados por área. Considera solo a quienes ejecutan la estrategia, evidenciando su nivel de involucramiento.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 19.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 19, "codigo": "IND-19", "indicador": "N° de planes de Auditoría Social elaborados", "tipo": "De proceso", "descripcion": "Ea un indicador que anualmente reporta los Planes de Auditoría Social elaborados por adolescentes y jóvenes, desagregados por área (urbana y rural), las accionescorrespondena Auditorías a la implementación del modelo AIDA en los centros de Salud y/o a la implementación de la EIS en Unidades Educativas.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 2.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 20, "codigo": "IND-20", "indicador": "N° de planes de fortalecimiento aprobados y/o centros certificados", "tipo": "De proceso", "descripcion": "El indicador reporta el número de planes de fortalecimiento aprobados/en implementación, resultado de los procesos de Auditoría Social realizados a los servicios de salud,  educación o protección. Asimismo, puede registrarse el resultado final de las acciones realizadas que puede ser la certificación o recertificación de centros AIDA, mayor implenetación de procesos de EIS en Unidades Educatvas o procesos realizados en la atención de víctimas de violencia en DNAs, SLIMs y FELCVs, diferenciadas por área geográfica (urbana o rural).", "filas": [{"subcategoria": "Área urbana", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 2.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}], "OR": [{"correlativo": 1, "codigo": "IND-01", "indicador": "N° de Orientaciones realizadas", "tipo": "Mensual", "descripcion": "Orientación es un indicador de cumplimiento mensual. Los datos incluidos en esta sección deben registrarse de acuerdo con los resultados de las atenciones brindadas en cada mes incluyendo las atenciones en SSSR y NO SSSR.", "filas": [{"subcategoria": "", "meta_anual": 15600.0, "meses": {"enero": 16.0, "febrero": 39.0, "marzo": 62.0, "abril": 27.0, "mayo": 70.0, "junio": 8.0, "julio": 20.0, "agosto": 23.0, "septiembre": 780.0, "octubre": 16.0, "noviembre": 39.0, "diciembre": 8.0}, "observaciones": ""}]}, {"correlativo": 2, "codigo": "IND-02", "indicador": "N° de participantes en actividades informativas en sala de espera de las clínicas CIES", "tipo": "Mensual", "descripcion": "Información en sala es un indicador de cumplimiento mensua. Los datos incluidos en esta sección deben registrarse de acuerdo con el procedimiento de información en SSSR, contando con los registros de planificación y reporte correspondientes.\nEl cumplimiento de este indicador puede ser apoyado por el equipo educativo, la Red de Jóvenes, así como por el equipo médico o de enfermería, en el marco de la organización interna de cada regional.", "filas": [{"subcategoria": "", "meta_anual": 78.0, "meses": {"enero": 20.0, "febrero": 20.0, "marzo": 20.0, "abril": 20.0, "mayo": 234.0, "junio": 31.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 3, "codigo": "IND-03", "indicador": "N° de pruebas de VIH realizadas con tira reactiva", "tipo": "Mensual", "descripcion": "N° de pruebas de VIH realizadas con tira reactiva es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador es responsabilidad del equipo educativo, como parte de su rol de promoción y captación de usuarios/as para la realización de pruebas.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información que a ser registrada.", "filas": [{"subcategoria": "", "meta_anual": 156.0, "meses": {"enero": 8.0, "febrero": 16.0, "marzo": 23.0, "abril": 31.0, "mayo": 39.0, "junio": 47.0, "julio": 62.0, "agosto": 78.0, "septiembre": 16.0, "octubre": 31.0, "noviembre": 16.0, "diciembre": 39.0}, "observaciones": ""}]}, {"correlativo": 4, "codigo": "IND-04", "indicador": "N° de consultas jóvenes", "tipo": "Mensual", "descripcion": "Es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador corresponde al equipo educativo, como parte de su rol de promoción y captación de usuarios/as, incluyendo también las atenciones realizadas en campañas en comunidad.", "filas": [{"subcategoria": "Clínicas/policonsultorios", "meta_anual": 2730.0, "meses": {"enero": 0.0, "febrero": 1092.0, "marzo": 390.0, "abril": 450.0, "mayo": 234.0, "junio": 156.0, "julio": 546.0, "agosto": 468.0, "septiembre": 546.0, "octubre": 1026.0, "noviembre": 292.0, "diciembre": 585.0}, "observaciones": ""}, {"subcategoria": "Unidades Móviles", "meta_anual": 390.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 292.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 2400.0, "meses": {"enero": 0.0, "febrero": 840.0, "marzo": 300.0, "abril": 346.0, "mayo": 180.0, "junio": 120.0, "julio": 420.0, "agosto": 360.0, "septiembre": 420.0, "octubre": 789.0, "noviembre": 450.0, "diciembre": 450.0}, "observaciones": ""}]}, {"correlativo": 5, "codigo": "IND-05", "indicador": "N° de jóvenes líderes/as capacitados/as", "tipo": "De proceso", "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de la Red de Jóvenes, según los lineamientos de cada gestión. Los datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación y acompañarse de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 12.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 20.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 6.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 56.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 52.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 6, "codigo": "IND-06", "indicador": "N° jóvenes líderes/as activos/as", "tipo": "Promedio", "descripcion": "El valor del indicador se calcula como el promedio del cumplimiento mensual respecto a la meta anual, considerando el reglamento de la Red y el cumplimiento mínimo de cuatro actividades por líder/esa. Para obtener este promedio, se debe registrar mes a mes cuántos líderes y lideresas han sido activos/as. Este cálculo se realiza de manera automática, tomando en cuenta solo los 11 meses en los que las y los jóvenes asisten con mayor frecuencia a la Red (de febrero a diciembre).\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 12.0, "meses": {"enero": 0.0, "febrero": 6.0, "marzo": 12.0, "abril": 12.0, "mayo": 12.0, "junio": 16.0, "julio": 12.0, "agosto": 12.0, "septiembre": 12.0, "octubre": 12.0, "noviembre": 12.0, "diciembre": 7.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 12.0, "meses": {"enero": 0.0, "febrero": 12.0, "marzo": 12.0, "abril": 12.0, "mayo": 12.0, "junio": 12.0, "julio": 12.0, "agosto": 12.0, "septiembre": 12.0, "octubre": 12.0, "noviembre": 12.0, "diciembre": 12.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 42.0, "meses": {"enero": 0.0, "febrero": 35.0, "marzo": 40.0, "abril": 40.0, "mayo": 38.0, "junio": 43.0, "julio": 38.0, "agosto": 40.0, "septiembre": 40.0, "octubre": 37.0, "noviembre": 32.0, "diciembre": 26.0}, "observaciones": ""}]}, {"correlativo": 7, "codigo": "IND-07", "indicador": "N° de adolescentes y jóvenes informados par a par", "tipo": "Mensual", "descripcion": "Es un indicador de cumplimiento mensual. Para su registro se deben considerar todas las actividades realizadas a través de la autogestión de las lideresas y líderes, las actividades en los frontis de las clínicas y policonsultorios, así como las invitaciones realizadas por otras instituciones u organizaciones.\nEl registro corresponde al equipo educativo, a partir de la planificación y seguimiento de las actividades. \nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registgrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 3900.0, "meses": {"enero": 0.0, "febrero": 1092.0, "marzo": 390.0, "abril": 450.0, "mayo": 234.0, "junio": 156.0, "julio": 546.0, "agosto": 468.0, "septiembre": 546.0, "octubre": 1026.0, "noviembre": 292.0, "diciembre": 585.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 4800.0, "meses": {"enero": 0.0, "febrero": 840.0, "marzo": 300.0, "abril": 346.0, "mayo": 180.0, "junio": 120.0, "julio": 420.0, "agosto": 360.0, "septiembre": 420.0, "octubre": 789.0, "noviembre": 450.0, "diciembre": 450.0}, "observaciones": ""}]}, {"correlativo": 8, "codigo": "IND-08", "indicador": "N° de maestros/as capacitados/as", "tipo": "De proceso", "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de maestras y maestros, según los lineamientos de cada gestión.\nLos datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación, acompañados de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 20.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 20.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 4.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 48.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 15.0, "mayo": 33.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 9, "codigo": "IND-09", "indicador": "N° maestros/as líderes activos/as", "tipo": "Promedio", "descripcion": "En este indicador se debe registrar, mes a mes, cuántas maestras y maestros han sido activos/as, considerando su participación en las reuniones de fortalecimiento y, especialmente, en la implementación de EIS en sus unidades educativas.\nEl cálculo se realiza de manera automática, considerando solo los meses de febrero a mayo y de julio a noviembre, excluyendo diciembre, enero y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.", "filas": [{"subcategoria": "Primaria (urbana)", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 4.0, "marzo": 4.0, "abril": 4.0, "mayo": 4.0, "junio": 0.0, "julio": 4.0, "agosto": 4.0, "septiembre": 4.0, "octubre": 4.0, "noviembre": 4.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 20.0, "meses": {"enero": 0.0, "febrero": 16.0, "marzo": 20.0, "abril": 20.0, "mayo": 20.0, "junio": 0.0, "julio": 20.0, "agosto": 16.0, "septiembre": 20.0, "octubre": 20.0, "noviembre": 20.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 42.0, "meses": {"enero": 0.0, "febrero": 35.0, "marzo": 38.0, "abril": 41.0, "mayo": 41.0, "junio": 0.0, "julio": 38.0, "agosto": 38.0, "septiembre": 41.0, "octubre": 41.0, "noviembre": 42.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 10, "codigo": "IND-10", "indicador": "N° de niñas/os, adolescentes y jóvenes que INICIAN procesos de EIS en aula", "tipo": "De proceso", "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada unidad educativa, indicando las personas que inician procesos EIS a partir de la gestión de las maestras y maestros activos.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial, tomando como base los reportes de los/as maestros/as líderes y sus registros internos.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada, por ejemplo, los pre test.", "filas": [{"subcategoria": "Primaria (urbana)", "meta_anual": 78.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 31.0, "abril": 39.0, "mayo": 8.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 390.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 78.0, "mayo": 234.0, "junio": 0.0, "julio": 78.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 720.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 228.0, "abril": 180.0, "mayo": 252.0, "junio": 0.0, "julio": 60.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (urbana)", "meta_anual": 78.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 62.0, "noviembre": 23.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 390.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 234.0, "octubre": 117.0, "noviembre": 78.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 720.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 486.0, "octubre": 162.0, "noviembre": 96.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 11, "codigo": "IND-11", "indicador": "Sensibilización al entorno del adolescente y joven", "tipo": "De proceso", "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada grupo de padres, madres y/o cuidadores con quien se logre concluir el proceso., los cuales deben orientarse prioritariamente a las unidades educativas donde se realiza la intervención en EIS, o a los padres y madres de las lideresas y líderes juveniles.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial.\nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 39.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 12.0, "junio": 0.0, "julio": 16.0, "agosto": 0.0, "septiembre": 8.0, "octubre": 4.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 66.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 21.0, "junio": 15.0, "julio": 15.0, "agosto": 10.0, "septiembre": 6.0, "octubre": 3.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 12, "codigo": "IND-12", "indicador": "N° de Unidades Educativas intervenidas", "tipo": "Promedio", "descripcion": "El valor del indicador se calcula como el promedio mensual de unidades educativas intervenidas, considerando únicamente aquellas donde maestras y maestros activos implementan procesos de EIS. \nEn este indicador se debe registrar, mes a mes, cuántas unidades educativas han sido intervenidas, excluyendo los meses de enero, diciembre y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 16.0, "meses": {"enero": 0.0, "febrero": 16.0, "marzo": 16.0, "abril": 16.0, "mayo": 12.0, "junio": 0.0, "julio": 8.0, "agosto": 16.0, "septiembre": 16.0, "octubre": 16.0, "noviembre": 16.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 30.0, "meses": {"enero": 0.0, "febrero": 12.0, "marzo": 12.0, "abril": 12.0, "mayo": 9.0, "junio": 0.0, "julio": 6.0, "agosto": 12.0, "septiembre": 12.0, "octubre": 12.0, "noviembre": 12.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 13, "codigo": "IND-13", "indicador": "N° de líderes/as formados/as en Incidencia Política.", "tipo": "De proceso", "descripcion": "El indicador reporta la cantidad de adolescentes y jóvenes capacitados/as, desagregadas según el área geográfica (urbana y rural) y el tipo de participación (participantes antiguas/os y nuevas/os). \nUna vez concluido el proceso de capacitación, y de acuerdo con los lineamientos establecidos para la gestión, se deberá reportar el número de lideresas y líderes capacitadas/os, también desagregado por área geográfica. En este sentido, el área rural se refiere principalmente a los proyectos REACH – Alianza por la Solidaridad.\nEsta información deberá registrarse una sola vez en la gestión.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 12.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 8.0, "septiembre": 4.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 5.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 5.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 30.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 41.0, "septiembre": 7.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 14, "codigo": "IND-14", "indicador": "N° de líderes/as que realizan procesos de Incidencia Política", "tipo": "De proceso", "descripcion": "El indicador debe ser reportado de manera mensual, una vez concluido el proceso de capacitación y elaborada la Estrategia de Incidencia Política. Este registro refleja la cantidad de líderes y lideresas que se encuentran ejecutando acciones de Incidencia Política, diferenciados por área geográfica (urbana y rural). \nEs importante precisar que este indicador considera únicamente a adolescentes y jóvenes que efectivamente implementan la estrategia, diferencia del número total de personas capacitadas, permitiendo así evidenciar el nivel involucramiento en Incidencia Política.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 15, "codigo": "IND-15", "indicador": "N° de Planes de Incidencia Política elaborados", "tipo": "De proceso", "descripcion": "Se debe registrar la cantidad de Estrategias de Incidencia Política desarrolladas como resultado del proceso de capacitación, por área geográfica (urbana y rural). Este indicador debe reportarse una vez al año, considerando únicamente las estrategias efectivamente elaboradas por los y las adolescentes y jóvenes, con el apoyo del equipo educativo. Asimismo, es importante asegurar que cada estrategia reportada cuente con los elementos básicos de planificación y responda a una problemática identificada.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 16, "codigo": "IND-16", "indicador": "N° de políticas públicas aprobadas", "tipo": "De proceso", "descripcion": "El valor refleja el número de iniciativas que han sido aprobadas como resultado de las acciones de Incidencia Política desarrolladas. La información debe desagregarse por área geográfica. La meta anual es de 3 políticas públicas aprobadas, de las cuales 1 corresponde al área urbana y 2 al área rural, haciendo un total de 3. En aquellas regionales que no cuentan con intervención en el área rural, como Oruro y Potosí, la meta de 3 políticas públicas aprobadas corresponde al área urbana, pueden ser políticas de alcance departamental y/o municipal. Este indicador permite evidenciar los resultados concretos de los procesos de incidencia, considerando exclusivamente aquellas políticas que cuentan con aprobación formal por parte de las instancias competentes.", "filas": [{"subcategoria": "Área urbana", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 17, "codigo": "IND-17", "indicador": "N° de lideres/as formados/as en Auditoría Social", "tipo": "De proceso", "descripcion": "El indicador reporta líderes y lideresas capacitadas en Auditoría Social en base a la Guía de Auditoría Social desagregados por área geográfica (urbana y rural). El registro se realiza una sola vez en la gestión, considerando que el área rural corresponde principalmente a proyectos REACH – Alianza por la Solidaridad.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 12.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 8.0, "septiembre": 2.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 5.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 4.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 48.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 41.0, "septiembre": 5.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 18, "codigo": "IND-18", "indicador": "N° de lideres/as que realizan procesos de Auditoría Social", "tipo": "De proceso", "descripcion": "El indicador se reporta mensualmente, luego de la capacitación y elaboración del Plan de Auditoría Social,  a líderes y lideresas que implementan acciones, desagregados por área. Considera solo a quienes ejecutan la estrategia, evidenciando su nivel de involucramiento.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 19, "codigo": "IND-19", "indicador": "N° de planes de Auditoría Social elaborados", "tipo": "De proceso", "descripcion": "Ea un indicador que anualmente reporta los Planes de Auditoría Social elaborados por adolescentes y jóvenes, desagregados por área (urbana y rural), las accionescorrespondena Auditorías a la implementación del modelo AIDA en los centros de Salud y/o a la implementación de la EIS en Unidades Educativas.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 20, "codigo": "IND-20", "indicador": "N° de planes de fortalecimiento aprobados y/o centros certificados", "tipo": "De proceso", "descripcion": "El indicador reporta el número de planes de fortalecimiento aprobados/en implementación, resultado de los procesos de Auditoría Social realizados a los servicios de salud,  educación o protección. Asimismo, puede registrarse el resultado final de las acciones realizadas que puede ser la certificación o recertificación de centros AIDA, mayor implenetación de procesos de EIS en Unidades Educatvas o procesos realizados en la atención de víctimas de violencia en DNAs, SLIMs y FELCVs, diferenciadas por área geográfica (urbana o rural).", "filas": [{"subcategoria": "Área urbana", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}], "PTS": [{"correlativo": 1, "codigo": "IND-01", "indicador": "N° de Orientaciones realizadas", "tipo": "Mensual", "descripcion": "Orientación es un indicador de cumplimiento mensual. Los datos incluidos en esta sección deben registrarse de acuerdo con los resultados de las atenciones brindadas en cada mes incluyendo las atenciones en SSSR y NO SSSR.", "filas": [{"subcategoria": "", "meta_anual": 18200.0, "meses": {"enero": 18.0, "febrero": 46.0, "marzo": 73.0, "abril": 32.0, "mayo": 82.0, "junio": 9.0, "julio": 23.0, "agosto": 27.0, "septiembre": 910.0, "octubre": 18.0, "noviembre": 46.0, "diciembre": 9.0}, "observaciones": ""}]}, {"correlativo": 2, "codigo": "IND-02", "indicador": "N° de participantes en actividades informativas en sala de espera de las clínicas CIES", "tipo": "Mensual", "descripcion": "Información en sala es un indicador de cumplimiento mensua. Los datos incluidos en esta sección deben registrarse de acuerdo con el procedimiento de información en SSSR, contando con los registros de planificación y reporte correspondientes.\nEl cumplimiento de este indicador puede ser apoyado por el equipo educativo, la Red de Jóvenes, así como por el equipo médico o de enfermería, en el marco de la organización interna de cada regional.", "filas": [{"subcategoria": "", "meta_anual": 91.0, "meses": {"enero": 23.0, "febrero": 23.0, "marzo": 23.0, "abril": 23.0, "mayo": 273.0, "junio": 36.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 3, "codigo": "IND-03", "indicador": "N° de pruebas de VIH realizadas con tira reactiva", "tipo": "Mensual", "descripcion": "N° de pruebas de VIH realizadas con tira reactiva es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador es responsabilidad del equipo educativo, como parte de su rol de promoción y captación de usuarios/as para la realización de pruebas.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información que a ser registrada.", "filas": [{"subcategoria": "", "meta_anual": 182.0, "meses": {"enero": 9.0, "febrero": 18.0, "marzo": 27.0, "abril": 36.0, "mayo": 46.0, "junio": 55.0, "julio": 73.0, "agosto": 91.0, "septiembre": 18.0, "octubre": 36.0, "noviembre": 18.0, "diciembre": 46.0}, "observaciones": ""}]}, {"correlativo": 4, "codigo": "IND-04", "indicador": "N° de consultas jóvenes", "tipo": "Mensual", "descripcion": "Es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador corresponde al equipo educativo, como parte de su rol de promoción y captación de usuarios/as, incluyendo también las atenciones realizadas en campañas en comunidad.", "filas": [{"subcategoria": "Clínicas/policonsultorios", "meta_anual": 3185.0, "meses": {"enero": 0.0, "febrero": 1274.0, "marzo": 455.0, "abril": 525.0, "mayo": 273.0, "junio": 182.0, "julio": 637.0, "agosto": 546.0, "septiembre": 637.0, "octubre": 1197.0, "noviembre": 341.0, "diciembre": 682.0}, "observaciones": ""}, {"subcategoria": "Unidades Móviles", "meta_anual": 455.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 341.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 2800.0, "meses": {"enero": 0.0, "febrero": 980.0, "marzo": 350.0, "abril": 404.0, "mayo": 210.0, "junio": 140.0, "julio": 490.0, "agosto": 420.0, "septiembre": 490.0, "octubre": 920.0, "noviembre": 525.0, "diciembre": 525.0}, "observaciones": ""}]}, {"correlativo": 5, "codigo": "IND-05", "indicador": "N° de jóvenes líderes/as capacitados/as", "tipo": "De proceso", "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de la Red de Jóvenes, según los lineamientos de cada gestión. Los datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación y acompañarse de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 14.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 23.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 7.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 7.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 65.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 61.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 6, "codigo": "IND-06", "indicador": "N° jóvenes líderes/as activos/as", "tipo": "Promedio", "descripcion": "El valor del indicador se calcula como el promedio del cumplimiento mensual respecto a la meta anual, considerando el reglamento de la Red y el cumplimiento mínimo de cuatro actividades por líder/esa. Para obtener este promedio, se debe registrar mes a mes cuántos líderes y lideresas han sido activos/as. Este cálculo se realiza de manera automática, tomando en cuenta solo los 11 meses en los que las y los jóvenes asisten con mayor frecuencia a la Red (de febrero a diciembre).\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 14.0, "meses": {"enero": 0.0, "febrero": 7.0, "marzo": 14.0, "abril": 14.0, "mayo": 14.0, "junio": 18.0, "julio": 14.0, "agosto": 14.0, "septiembre": 14.0, "octubre": 14.0, "noviembre": 14.0, "diciembre": 8.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 14.0, "meses": {"enero": 0.0, "febrero": 14.0, "marzo": 14.0, "abril": 14.0, "mayo": 14.0, "junio": 14.0, "julio": 14.0, "agosto": 14.0, "septiembre": 14.0, "octubre": 14.0, "noviembre": 14.0, "diciembre": 14.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 49.0, "meses": {"enero": 0.0, "febrero": 41.0, "marzo": 46.0, "abril": 46.0, "mayo": 44.0, "junio": 50.0, "julio": 44.0, "agosto": 46.0, "septiembre": 46.0, "octubre": 43.0, "noviembre": 38.0, "diciembre": 31.0}, "observaciones": ""}]}, {"correlativo": 7, "codigo": "IND-07", "indicador": "N° de adolescentes y jóvenes informados par a par", "tipo": "Mensual", "descripcion": "Es un indicador de cumplimiento mensual. Para su registro se deben considerar todas las actividades realizadas a través de la autogestión de las lideresas y líderes, las actividades en los frontis de las clínicas y policonsultorios, así como las invitaciones realizadas por otras instituciones u organizaciones.\nEl registro corresponde al equipo educativo, a partir de la planificación y seguimiento de las actividades. \nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registgrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 4550.0, "meses": {"enero": 0.0, "febrero": 1274.0, "marzo": 455.0, "abril": 525.0, "mayo": 273.0, "junio": 182.0, "julio": 637.0, "agosto": 546.0, "septiembre": 637.0, "octubre": 1197.0, "noviembre": 341.0, "diciembre": 682.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 5600.0, "meses": {"enero": 0.0, "febrero": 980.0, "marzo": 350.0, "abril": 404.0, "mayo": 210.0, "junio": 140.0, "julio": 490.0, "agosto": 420.0, "septiembre": 490.0, "octubre": 920.0, "noviembre": 525.0, "diciembre": 525.0}, "observaciones": ""}]}, {"correlativo": 8, "codigo": "IND-08", "indicador": "N° de maestros/as capacitados/as", "tipo": "De proceso", "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de maestras y maestros, según los lineamientos de cada gestión.\nLos datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación, acompañados de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 23.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 23.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 5.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 5.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 56.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 18.0, "mayo": 38.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 9, "codigo": "IND-09", "indicador": "N° maestros/as líderes activos/as", "tipo": "Promedio", "descripcion": "En este indicador se debe registrar, mes a mes, cuántas maestras y maestros han sido activos/as, considerando su participación en las reuniones de fortalecimiento y, especialmente, en la implementación de EIS en sus unidades educativas.\nEl cálculo se realiza de manera automática, considerando solo los meses de febrero a mayo y de julio a noviembre, excluyendo diciembre, enero y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.", "filas": [{"subcategoria": "Primaria (urbana)", "meta_anual": 5.0, "meses": {"enero": 0.0, "febrero": 5.0, "marzo": 5.0, "abril": 5.0, "mayo": 5.0, "junio": 0.0, "julio": 5.0, "agosto": 5.0, "septiembre": 5.0, "octubre": 5.0, "noviembre": 5.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 23.0, "meses": {"enero": 0.0, "febrero": 18.0, "marzo": 23.0, "abril": 23.0, "mayo": 23.0, "junio": 0.0, "julio": 23.0, "agosto": 18.0, "septiembre": 23.0, "octubre": 23.0, "noviembre": 23.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 49.0, "meses": {"enero": 0.0, "febrero": 41.0, "marzo": 44.0, "abril": 48.0, "mayo": 48.0, "junio": 0.0, "julio": 44.0, "agosto": 44.0, "septiembre": 48.0, "octubre": 48.0, "noviembre": 49.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 10, "codigo": "IND-10", "indicador": "N° de niñas/os, adolescentes y jóvenes que INICIAN procesos de EIS en aula", "tipo": "De proceso", "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada unidad educativa, indicando las personas que inician procesos EIS a partir de la gestión de las maestras y maestros activos.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial, tomando como base los reportes de los/as maestros/as líderes y sus registros internos.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada, por ejemplo, los pre test.", "filas": [{"subcategoria": "Primaria (urbana)", "meta_anual": 91.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 36.0, "abril": 46.0, "mayo": 9.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 455.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 91.0, "mayo": 273.0, "junio": 0.0, "julio": 91.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 840.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 266.0, "abril": 210.0, "mayo": 294.0, "junio": 0.0, "julio": 70.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (urbana)", "meta_anual": 91.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 73.0, "noviembre": 27.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 455.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 273.0, "octubre": 136.0, "noviembre": 91.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 840.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 567.0, "octubre": 189.0, "noviembre": 112.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 11, "codigo": "IND-11", "indicador": "Sensibilización al entorno del adolescente y joven", "tipo": "De proceso", "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada grupo de padres, madres y/o cuidadores con quien se logre concluir el proceso., los cuales deben orientarse prioritariamente a las unidades educativas donde se realiza la intervención en EIS, o a los padres y madres de las lideresas y líderes juveniles.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial.\nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 46.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 14.0, "junio": 0.0, "julio": 18.0, "agosto": 0.0, "septiembre": 9.0, "octubre": 5.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 77.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 24.0, "junio": 18.0, "julio": 18.0, "agosto": 11.0, "septiembre": 7.0, "octubre": 4.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 12, "codigo": "IND-12", "indicador": "N° de Unidades Educativas intervenidas", "tipo": "Promedio", "descripcion": "El valor del indicador se calcula como el promedio mensual de unidades educativas intervenidas, considerando únicamente aquellas donde maestras y maestros activos implementan procesos de EIS. \nEn este indicador se debe registrar, mes a mes, cuántas unidades educativas han sido intervenidas, excluyendo los meses de enero, diciembre y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 18.0, "meses": {"enero": 0.0, "febrero": 18.0, "marzo": 18.0, "abril": 18.0, "mayo": 14.0, "junio": 0.0, "julio": 9.0, "agosto": 18.0, "septiembre": 18.0, "octubre": 18.0, "noviembre": 18.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 35.0, "meses": {"enero": 0.0, "febrero": 14.0, "marzo": 14.0, "abril": 14.0, "mayo": 10.0, "junio": 0.0, "julio": 7.0, "agosto": 14.0, "septiembre": 14.0, "octubre": 14.0, "noviembre": 14.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 13, "codigo": "IND-13", "indicador": "N° de líderes/as formados/as en Incidencia Política.", "tipo": "De proceso", "descripcion": "El indicador reporta la cantidad de adolescentes y jóvenes capacitados/as, desagregadas según el área geográfica (urbana y rural) y el tipo de participación (participantes antiguas/os y nuevas/os). \nUna vez concluido el proceso de capacitación, y de acuerdo con los lineamientos establecidos para la gestión, se deberá reportar el número de lideresas y líderes capacitadas/os, también desagregado por área geográfica. En este sentido, el área rural se refiere principalmente a los proyectos REACH – Alianza por la Solidaridad.\nEsta información deberá registrarse una sola vez en la gestión.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 14.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 9.0, "septiembre": 5.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 6.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 35.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 48.0, "septiembre": 8.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 14, "codigo": "IND-14", "indicador": "N° de líderes/as que realizan procesos de Incidencia Política", "tipo": "De proceso", "descripcion": "El indicador debe ser reportado de manera mensual, una vez concluido el proceso de capacitación y elaborada la Estrategia de Incidencia Política. Este registro refleja la cantidad de líderes y lideresas que se encuentran ejecutando acciones de Incidencia Política, diferenciados por área geográfica (urbana y rural). \nEs importante precisar que este indicador considera únicamente a adolescentes y jóvenes que efectivamente implementan la estrategia, diferencia del número total de personas capacitadas, permitiendo así evidenciar el nivel involucramiento en Incidencia Política.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 7.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 11.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 15, "codigo": "IND-15", "indicador": "N° de Planes de Incidencia Política elaborados", "tipo": "De proceso", "descripcion": "Se debe registrar la cantidad de Estrategias de Incidencia Política desarrolladas como resultado del proceso de capacitación, por área geográfica (urbana y rural). Este indicador debe reportarse una vez al año, considerando únicamente las estrategias efectivamente elaboradas por los y las adolescentes y jóvenes, con el apoyo del equipo educativo. Asimismo, es importante asegurar que cada estrategia reportada cuente con los elementos básicos de planificación y responda a una problemática identificada.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 3.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 16, "codigo": "IND-16", "indicador": "N° de políticas públicas aprobadas", "tipo": "De proceso", "descripcion": "El valor refleja el número de iniciativas que han sido aprobadas como resultado de las acciones de Incidencia Política desarrolladas. La información debe desagregarse por área geográfica. La meta anual es de 3 políticas públicas aprobadas, de las cuales 1 corresponde al área urbana y 2 al área rural, haciendo un total de 3. En aquellas regionales que no cuentan con intervención en el área rural, como Oruro y Potosí, la meta de 3 políticas públicas aprobadas corresponde al área urbana, pueden ser políticas de alcance departamental y/o municipal. Este indicador permite evidenciar los resultados concretos de los procesos de incidencia, considerando exclusivamente aquellas políticas que cuentan con aprobación formal por parte de las instancias competentes.", "filas": [{"subcategoria": "Área urbana", "meta_anual": 3.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 17, "codigo": "IND-17", "indicador": "N° de lideres/as formados/as en Auditoría Social", "tipo": "De proceso", "descripcion": "El indicador reporta líderes y lideresas capacitadas en Auditoría Social en base a la Guía de Auditoría Social desagregados por área geográfica (urbana y rural). El registro se realiza una sola vez en la gestión, considerando que el área rural corresponde principalmente a proyectos REACH – Alianza por la Solidaridad.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 14.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 9.0, "septiembre": 3.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 5.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 56.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 48.0, "septiembre": 6.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 18, "codigo": "IND-18", "indicador": "N° de lideres/as que realizan procesos de Auditoría Social", "tipo": "De proceso", "descripcion": "El indicador se reporta mensualmente, luego de la capacitación y elaboración del Plan de Auditoría Social,  a líderes y lideresas que implementan acciones, desagregados por área. Considera solo a quienes ejecutan la estrategia, evidenciando su nivel de involucramiento.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 7.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 11.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 19, "codigo": "IND-19", "indicador": "N° de planes de Auditoría Social elaborados", "tipo": "De proceso", "descripcion": "Ea un indicador que anualmente reporta los Planes de Auditoría Social elaborados por adolescentes y jóvenes, desagregados por área (urbana y rural), las accionescorrespondena Auditorías a la implementación del modelo AIDA en los centros de Salud y/o a la implementación de la EIS en Unidades Educativas.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 20, "codigo": "IND-20", "indicador": "N° de planes de fortalecimiento aprobados y/o centros certificados", "tipo": "De proceso", "descripcion": "El indicador reporta el número de planes de fortalecimiento aprobados/en implementación, resultado de los procesos de Auditoría Social realizados a los servicios de salud,  educación o protección. Asimismo, puede registrarse el resultado final de las acciones realizadas que puede ser la certificación o recertificación de centros AIDA, mayor implenetación de procesos de EIS en Unidades Educatvas o procesos realizados en la atención de víctimas de violencia en DNAs, SLIMs y FELCVs, diferenciadas por área geográfica (urbana o rural).", "filas": [{"subcategoria": "Área urbana", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}], "CBBA": [{"correlativo": 1, "codigo": "IND-01", "indicador": "N° de Orientaciones realizadas", "tipo": "Mensual", "descripcion": "Orientación es un indicador de cumplimiento mensual. Los datos incluidos en esta sección deben registrarse de acuerdo con los resultados de las atenciones brindadas en cada mes incluyendo las atenciones en SSSR y NO SSSR.", "filas": [{"subcategoria": "", "meta_anual": 22000.0, "meses": {"enero": 22.0, "febrero": 55.0, "marzo": 88.0, "abril": 38.0, "mayo": 99.0, "junio": 11.0, "julio": 28.0, "agosto": 33.0, "septiembre": 1100.0, "octubre": 22.0, "noviembre": 55.0, "diciembre": 11.0}, "observaciones": ""}]}, {"correlativo": 2, "codigo": "IND-02", "indicador": "N° de participantes en actividades informativas en sala de espera de las clínicas CIES", "tipo": "Mensual", "descripcion": "Información en sala es un indicador de cumplimiento mensua. Los datos incluidos en esta sección deben registrarse de acuerdo con el procedimiento de información en SSSR, contando con los registros de planificación y reporte correspondientes.\nEl cumplimiento de este indicador puede ser apoyado por el equipo educativo, la Red de Jóvenes, así como por el equipo médico o de enfermería, en el marco de la organización interna de cada regional.", "filas": [{"subcategoria": "", "meta_anual": 110.0, "meses": {"enero": 28.0, "febrero": 28.0, "marzo": 28.0, "abril": 28.0, "mayo": 330.0, "junio": 44.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 3, "codigo": "IND-03", "indicador": "N° de pruebas de VIH realizadas con tira reactiva", "tipo": "Mensual", "descripcion": "N° de pruebas de VIH realizadas con tira reactiva es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador es responsabilidad del equipo educativo, como parte de su rol de promoción y captación de usuarios/as para la realización de pruebas.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información que a ser registrada.", "filas": [{"subcategoria": "", "meta_anual": 220.0, "meses": {"enero": 11.0, "febrero": 22.0, "marzo": 33.0, "abril": 44.0, "mayo": 55.0, "junio": 66.0, "julio": 88.0, "agosto": 110.0, "septiembre": 22.0, "octubre": 44.0, "noviembre": 22.0, "diciembre": 55.0}, "observaciones": ""}]}, {"correlativo": 4, "codigo": "IND-04", "indicador": "N° de consultas jóvenes", "tipo": "Mensual", "descripcion": "Es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador corresponde al equipo educativo, como parte de su rol de promoción y captación de usuarios/as, incluyendo también las atenciones realizadas en campañas en comunidad.", "filas": [{"subcategoria": "Clínicas/policonsultorios", "meta_anual": 3850.0, "meses": {"enero": 0.0, "febrero": 1540.0, "marzo": 550.0, "abril": 635.0, "mayo": 330.0, "junio": 220.0, "julio": 770.0, "agosto": 660.0, "septiembre": 770.0, "octubre": 1447.0, "noviembre": 413.0, "diciembre": 825.0}, "observaciones": ""}, {"subcategoria": "Unidades Móviles", "meta_anual": 550.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 413.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 4400.0, "meses": {"enero": 0.0, "febrero": 1540.0, "marzo": 550.0, "abril": 635.0, "mayo": 330.0, "junio": 220.0, "julio": 770.0, "agosto": 660.0, "septiembre": 770.0, "octubre": 1447.0, "noviembre": 825.0, "diciembre": 825.0}, "observaciones": ""}]}, {"correlativo": 5, "codigo": "IND-05", "indicador": "N° de jóvenes líderes/as capacitados/as", "tipo": "De proceso", "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de la Red de Jóvenes, según los lineamientos de cada gestión. Los datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación y acompañarse de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 16.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 28.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 9.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 9.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 47.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 42.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 30.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 18.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 102.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 96.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 6, "codigo": "IND-06", "indicador": "N° jóvenes líderes/as activos/as", "tipo": "Promedio", "descripcion": "El valor del indicador se calcula como el promedio del cumplimiento mensual respecto a la meta anual, considerando el reglamento de la Red y el cumplimiento mínimo de cuatro actividades por líder/esa. Para obtener este promedio, se debe registrar mes a mes cuántos líderes y lideresas han sido activos/as. Este cálculo se realiza de manera automática, tomando en cuenta solo los 11 meses en los que las y los jóvenes asisten con mayor frecuencia a la Red (de febrero a diciembre).\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 16.0, "meses": {"enero": 0.0, "febrero": 9.0, "marzo": 16.0, "abril": 16.0, "mayo": 16.0, "junio": 22.0, "julio": 16.0, "agosto": 16.0, "septiembre": 16.0, "octubre": 16.0, "noviembre": 16.0, "diciembre": 10.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 16.0, "meses": {"enero": 0.0, "febrero": 16.0, "marzo": 16.0, "abril": 16.0, "mayo": 16.0, "junio": 16.0, "julio": 16.0, "agosto": 16.0, "septiembre": 16.0, "octubre": 16.0, "noviembre": 16.0, "diciembre": 16.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 22.0, "meses": {"enero": 0.0, "febrero": 18.0, "marzo": 18.0, "abril": 18.0, "mayo": 18.0, "junio": 18.0, "julio": 18.0, "agosto": 18.0, "septiembre": 18.0, "octubre": 18.0, "noviembre": 20.0, "diciembre": 22.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 22.0, "meses": {"enero": 0.0, "febrero": 22.0, "marzo": 22.0, "abril": 22.0, "mayo": 19.0, "junio": 22.0, "julio": 19.0, "agosto": 22.0, "septiembre": 22.0, "octubre": 16.0, "noviembre": 7.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 77.0, "meses": {"enero": 0.0, "febrero": 65.0, "marzo": 73.0, "abril": 73.0, "mayo": 69.0, "junio": 78.0, "julio": 69.0, "agosto": 73.0, "septiembre": 73.0, "octubre": 67.0, "noviembre": 59.0, "diciembre": 48.0}, "observaciones": ""}]}, {"correlativo": 7, "codigo": "IND-07", "indicador": "N° de adolescentes y jóvenes informados par a par", "tipo": "Mensual", "descripcion": "Es un indicador de cumplimiento mensual. Para su registro se deben considerar todas las actividades realizadas a través de la autogestión de las lideresas y líderes, las actividades en los frontis de las clínicas y policonsultorios, así como las invitaciones realizadas por otras instituciones u organizaciones.\nEl registro corresponde al equipo educativo, a partir de la planificación y seguimiento de las actividades. \nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registgrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 5500.0, "meses": {"enero": 0.0, "febrero": 1540.0, "marzo": 550.0, "abril": 635.0, "mayo": 330.0, "junio": 220.0, "julio": 770.0, "agosto": 660.0, "septiembre": 770.0, "octubre": 1447.0, "noviembre": 413.0, "diciembre": 825.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 3300.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 413.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 8800.0, "meses": {"enero": 0.0, "febrero": 1540.0, "marzo": 550.0, "abril": 635.0, "mayo": 330.0, "junio": 220.0, "julio": 770.0, "agosto": 660.0, "septiembre": 770.0, "octubre": 1447.0, "noviembre": 825.0, "diciembre": 825.0}, "observaciones": ""}]}, {"correlativo": 8, "codigo": "IND-08", "indicador": "N° de maestros/as capacitados/as", "tipo": "De proceso", "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de maestras y maestros, según los lineamientos de cada gestión.\nLos datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación, acompañados de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 28.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 28.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 6.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 33.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 33.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 22.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 22.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 88.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 28.0, "mayo": 61.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 9, "codigo": "IND-09", "indicador": "N° maestros/as líderes activos/as", "tipo": "Promedio", "descripcion": "En este indicador se debe registrar, mes a mes, cuántas maestras y maestros han sido activos/as, considerando su participación en las reuniones de fortalecimiento y, especialmente, en la implementación de EIS en sus unidades educativas.\nEl cálculo se realiza de manera automática, considerando solo los meses de febrero a mayo y de julio a noviembre, excluyendo diciembre, enero y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.", "filas": [{"subcategoria": "Primaria (urbana)", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 6.0, "marzo": 6.0, "abril": 6.0, "mayo": 6.0, "junio": 0.0, "julio": 6.0, "agosto": 6.0, "septiembre": 6.0, "octubre": 6.0, "noviembre": 6.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 28.0, "meses": {"enero": 0.0, "febrero": 22.0, "marzo": 28.0, "abril": 28.0, "mayo": 28.0, "junio": 0.0, "julio": 28.0, "agosto": 22.0, "septiembre": 28.0, "octubre": 28.0, "noviembre": 28.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 11.0, "meses": {"enero": 0.0, "febrero": 9.0, "marzo": 9.0, "abril": 9.0, "mayo": 9.0, "junio": 0.0, "julio": 9.0, "agosto": 9.0, "septiembre": 9.0, "octubre": 9.0, "noviembre": 11.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 33.0, "meses": {"enero": 0.0, "febrero": 28.0, "marzo": 28.0, "abril": 33.0, "mayo": 33.0, "junio": 0.0, "julio": 28.0, "agosto": 33.0, "septiembre": 33.0, "octubre": 33.0, "noviembre": 33.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 77.0, "meses": {"enero": 0.0, "febrero": 64.0, "marzo": 69.0, "abril": 75.0, "mayo": 75.0, "junio": 0.0, "julio": 69.0, "agosto": 69.0, "septiembre": 75.0, "octubre": 75.0, "noviembre": 77.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 10, "codigo": "IND-10", "indicador": "N° de niñas/os, adolescentes y jóvenes que INICIAN procesos de EIS en aula", "tipo": "De proceso", "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada unidad educativa, indicando las personas que inician procesos EIS a partir de la gestión de las maestras y maestros activos.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial, tomando como base los reportes de los/as maestros/as líderes y sus registros internos.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada, por ejemplo, los pre test.", "filas": [{"subcategoria": "Primaria (urbana)", "meta_anual": 110.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 44.0, "abril": 55.0, "mayo": 11.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 550.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 110.0, "mayo": 330.0, "junio": 0.0, "julio": 110.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 110.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 44.0, "abril": 55.0, "mayo": 11.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 550.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 330.0, "abril": 110.0, "mayo": 110.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 1320.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 418.0, "abril": 330.0, "mayo": 462.0, "junio": 0.0, "julio": 110.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (urbana)", "meta_anual": 110.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 88.0, "noviembre": 33.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 550.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 330.0, "octubre": 165.0, "noviembre": 110.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 110.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 66.0, "octubre": 33.0, "noviembre": 33.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 550.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 495.0, "octubre": 11.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 1320.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 891.0, "octubre": 297.0, "noviembre": 176.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 11, "codigo": "IND-11", "indicador": "Sensibilización al entorno del adolescente y joven", "tipo": "De proceso", "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada grupo de padres, madres y/o cuidadores con quien se logre concluir el proceso., los cuales deben orientarse prioritariamente a las unidades educativas donde se realiza la intervención en EIS, o a los padres y madres de las lideresas y líderes juveniles.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial.\nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 55.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 16.0, "junio": 0.0, "julio": 22.0, "agosto": 0.0, "septiembre": 11.0, "octubre": 6.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 66.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 22.0, "junio": 28.0, "julio": 6.0, "agosto": 18.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 121.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 38.0, "junio": 28.0, "julio": 28.0, "agosto": 18.0, "septiembre": 11.0, "octubre": 6.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 12, "codigo": "IND-12", "indicador": "N° de Unidades Educativas intervenidas", "tipo": "Promedio", "descripcion": "El valor del indicador se calcula como el promedio mensual de unidades educativas intervenidas, considerando únicamente aquellas donde maestras y maestros activos implementan procesos de EIS. \nEn este indicador se debe registrar, mes a mes, cuántas unidades educativas han sido intervenidas, excluyendo los meses de enero, diciembre y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 22.0, "meses": {"enero": 0.0, "febrero": 22.0, "marzo": 22.0, "abril": 22.0, "mayo": 16.0, "junio": 0.0, "julio": 11.0, "agosto": 22.0, "septiembre": 22.0, "octubre": 22.0, "noviembre": 22.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 33.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 55.0, "meses": {"enero": 0.0, "febrero": 22.0, "marzo": 22.0, "abril": 22.0, "mayo": 16.0, "junio": 0.0, "julio": 11.0, "agosto": 22.0, "septiembre": 22.0, "octubre": 22.0, "noviembre": 22.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 13, "codigo": "IND-13", "indicador": "N° de líderes/as formados/as en Incidencia Política.", "tipo": "De proceso", "descripcion": "El indicador reporta la cantidad de adolescentes y jóvenes capacitados/as, desagregadas según el área geográfica (urbana y rural) y el tipo de participación (participantes antiguas/os y nuevas/os). \nUna vez concluido el proceso de capacitación, y de acuerdo con los lineamientos establecidos para la gestión, se deberá reportar el número de lideresas y líderes capacitadas/os, también desagregado por área geográfica. En este sentido, el área rural se refiere principalmente a los proyectos REACH – Alianza por la Solidaridad.\nEsta información deberá registrarse una sola vez en la gestión.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 16.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 11.0, "septiembre": 6.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 8.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 9.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 9.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 55.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 55.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 55.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 75.0, "septiembre": 13.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 14, "codigo": "IND-14", "indicador": "N° de líderes/as que realizan procesos de Incidencia Política", "tipo": "De proceso", "descripcion": "El indicador debe ser reportado de manera mensual, una vez concluido el proceso de capacitación y elaborada la Estrategia de Incidencia Política. Este registro refleja la cantidad de líderes y lideresas que se encuentran ejecutando acciones de Incidencia Política, diferenciados por área geográfica (urbana y rural). \nEs importante precisar que este indicador considera únicamente a adolescentes y jóvenes que efectivamente implementan la estrategia, diferencia del número total de personas capacitadas, permitiendo así evidenciar el nivel involucramiento en Incidencia Política.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 9.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 9.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 18.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 15, "codigo": "IND-15", "indicador": "N° de Planes de Incidencia Política elaborados", "tipo": "De proceso", "descripcion": "Se debe registrar la cantidad de Estrategias de Incidencia Política desarrolladas como resultado del proceso de capacitación, por área geográfica (urbana y rural). Este indicador debe reportarse una vez al año, considerando únicamente las estrategias efectivamente elaboradas por los y las adolescentes y jóvenes, con el apoyo del equipo educativo. Asimismo, es importante asegurar que cada estrategia reportada cuente con los elementos básicos de planificación y responda a una problemática identificada.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 3.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 3.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 7.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 2.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 2.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 2.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 16, "codigo": "IND-16", "indicador": "N° de políticas públicas aprobadas", "tipo": "De proceso", "descripcion": "El valor refleja el número de iniciativas que han sido aprobadas como resultado de las acciones de Incidencia Política desarrolladas. La información debe desagregarse por área geográfica. La meta anual es de 3 políticas públicas aprobadas, de las cuales 1 corresponde al área urbana y 2 al área rural, haciendo un total de 3. En aquellas regionales que no cuentan con intervención en el área rural, como Oruro y Potosí, la meta de 3 políticas públicas aprobadas corresponde al área urbana, pueden ser políticas de alcance departamental y/o municipal. Este indicador permite evidenciar los resultados concretos de los procesos de incidencia, considerando exclusivamente aquellas políticas que cuentan con aprobación formal por parte de las instancias competentes.", "filas": [{"subcategoria": "Área urbana", "meta_anual": 3.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 3.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 7.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 2.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 2.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 2.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 17, "codigo": "IND-17", "indicador": "N° de lideres/as formados/as en Auditoría Social", "tipo": "De proceso", "descripcion": "El indicador reporta líderes y lideresas capacitadas en Auditoría Social en base a la Guía de Auditoría Social desagregados por área geográfica (urbana y rural). El registro se realiza una sola vez en la gestión, considerando que el área rural corresponde principalmente a proyectos REACH – Alianza por la Solidaridad.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 16.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 11.0, "septiembre": 3.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 6.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 9.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 9.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 55.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 55.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 88.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 75.0, "septiembre": 9.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 18, "codigo": "IND-18", "indicador": "N° de lideres/as que realizan procesos de Auditoría Social", "tipo": "De proceso", "descripcion": "El indicador se reporta mensualmente, luego de la capacitación y elaboración del Plan de Auditoría Social,  a líderes y lideresas que implementan acciones, desagregados por área. Considera solo a quienes ejecutan la estrategia, evidenciando su nivel de involucramiento.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 9.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 9.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 18.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 19, "codigo": "IND-19", "indicador": "N° de planes de Auditoría Social elaborados", "tipo": "De proceso", "descripcion": "Ea un indicador que anualmente reporta los Planes de Auditoría Social elaborados por adolescentes y jóvenes, desagregados por área (urbana y rural), las accionescorrespondena Auditorías a la implementación del modelo AIDA en los centros de Salud y/o a la implementación de la EIS en Unidades Educativas.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 2.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 20, "codigo": "IND-20", "indicador": "N° de planes de fortalecimiento aprobados y/o centros certificados", "tipo": "De proceso", "descripcion": "El indicador reporta el número de planes de fortalecimiento aprobados/en implementación, resultado de los procesos de Auditoría Social realizados a los servicios de salud,  educación o protección. Asimismo, puede registrarse el resultado final de las acciones realizadas que puede ser la certificación o recertificación de centros AIDA, mayor implenetación de procesos de EIS en Unidades Educatvas o procesos realizados en la atención de víctimas de violencia en DNAs, SLIMs y FELCVs, diferenciadas por área geográfica (urbana o rural).", "filas": [{"subcategoria": "Área urbana", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 2.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}], "SCZ": [{"correlativo": 1, "codigo": "IND-01", "indicador": "N° de Orientaciones realizadas", "tipo": "Mensual", "descripcion": "Orientación es un indicador de cumplimiento mensual. Los datos incluidos en esta sección deben registrarse de acuerdo con los resultados de las atenciones brindadas en cada mes incluyendo las atenciones en SSSR y NO SSSR.", "filas": [{"subcategoria": "", "meta_anual": 26000.0, "meses": {"enero": 26.0, "febrero": 65.0, "marzo": 104.0, "abril": 46.0, "mayo": 117.0, "junio": 13.0, "julio": 32.0, "agosto": 39.0, "septiembre": 1300.0, "octubre": 26.0, "noviembre": 65.0, "diciembre": 13.0}, "observaciones": ""}]}, {"correlativo": 2, "codigo": "IND-02", "indicador": "N° de participantes en actividades informativas en sala de espera de las clínicas CIES", "tipo": "Mensual", "descripcion": "Información en sala es un indicador de cumplimiento mensua. Los datos incluidos en esta sección deben registrarse de acuerdo con el procedimiento de información en SSSR, contando con los registros de planificación y reporte correspondientes.\nEl cumplimiento de este indicador puede ser apoyado por el equipo educativo, la Red de Jóvenes, así como por el equipo médico o de enfermería, en el marco de la organización interna de cada regional.", "filas": [{"subcategoria": "", "meta_anual": 130.0, "meses": {"enero": 32.0, "febrero": 32.0, "marzo": 32.0, "abril": 32.0, "mayo": 390.0, "junio": 52.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 3, "codigo": "IND-03", "indicador": "N° de pruebas de VIH realizadas con tira reactiva", "tipo": "Mensual", "descripcion": "N° de pruebas de VIH realizadas con tira reactiva es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador es responsabilidad del equipo educativo, como parte de su rol de promoción y captación de usuarios/as para la realización de pruebas.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información que a ser registrada.", "filas": [{"subcategoria": "", "meta_anual": 260.0, "meses": {"enero": 13.0, "febrero": 26.0, "marzo": 39.0, "abril": 52.0, "mayo": 65.0, "junio": 78.0, "julio": 104.0, "agosto": 130.0, "septiembre": 26.0, "octubre": 52.0, "noviembre": 26.0, "diciembre": 65.0}, "observaciones": ""}]}, {"correlativo": 4, "codigo": "IND-04", "indicador": "N° de consultas jóvenes", "tipo": "Mensual", "descripcion": "Es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador corresponde al equipo educativo, como parte de su rol de promoción y captación de usuarios/as, incluyendo también las atenciones realizadas en campañas en comunidad.", "filas": [{"subcategoria": "Clínicas/policonsultorios", "meta_anual": 4550.0, "meses": {"enero": 0.0, "febrero": 1820.0, "marzo": 650.0, "abril": 750.0, "mayo": 390.0, "junio": 260.0, "julio": 910.0, "agosto": 780.0, "septiembre": 910.0, "octubre": 1710.0, "noviembre": 488.0, "diciembre": 975.0}, "observaciones": ""}, {"subcategoria": "Unidades Móviles", "meta_anual": 650.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 488.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 5200.0, "meses": {"enero": 0.0, "febrero": 1820.0, "marzo": 650.0, "abril": 750.0, "mayo": 390.0, "junio": 260.0, "julio": 910.0, "agosto": 780.0, "septiembre": 910.0, "octubre": 1710.0, "noviembre": 975.0, "diciembre": 975.0}, "observaciones": ""}]}, {"correlativo": 5, "codigo": "IND-05", "indicador": "N° de jóvenes líderes/as capacitados/as", "tipo": "De proceso", "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de la Red de Jóvenes, según los lineamientos de cada gestión. Los datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación y acompañarse de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 20.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 32.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 10.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 56.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 49.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 35.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 21.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 121.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 113.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 6, "codigo": "IND-06", "indicador": "N° jóvenes líderes/as activos/as", "tipo": "Promedio", "descripcion": "El valor del indicador se calcula como el promedio del cumplimiento mensual respecto a la meta anual, considerando el reglamento de la Red y el cumplimiento mínimo de cuatro actividades por líder/esa. Para obtener este promedio, se debe registrar mes a mes cuántos líderes y lideresas han sido activos/as. Este cálculo se realiza de manera automática, tomando en cuenta solo los 11 meses en los que las y los jóvenes asisten con mayor frecuencia a la Red (de febrero a diciembre).\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 20.0, "meses": {"enero": 0.0, "febrero": 10.0, "marzo": 20.0, "abril": 20.0, "mayo": 20.0, "junio": 26.0, "julio": 20.0, "agosto": 20.0, "septiembre": 20.0, "octubre": 20.0, "noviembre": 20.0, "diciembre": 12.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 20.0, "meses": {"enero": 0.0, "febrero": 20.0, "marzo": 20.0, "abril": 20.0, "mayo": 20.0, "junio": 20.0, "julio": 20.0, "agosto": 20.0, "septiembre": 20.0, "octubre": 20.0, "noviembre": 20.0, "diciembre": 20.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 26.0, "meses": {"enero": 0.0, "febrero": 21.0, "marzo": 21.0, "abril": 21.0, "mayo": 21.0, "junio": 21.0, "julio": 21.0, "agosto": 21.0, "septiembre": 21.0, "octubre": 21.0, "noviembre": 23.0, "diciembre": 26.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 26.0, "meses": {"enero": 0.0, "febrero": 26.0, "marzo": 26.0, "abril": 26.0, "mayo": 22.0, "junio": 26.0, "julio": 22.0, "agosto": 26.0, "septiembre": 26.0, "octubre": 20.0, "noviembre": 8.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 91.0, "meses": {"enero": 0.0, "febrero": 77.0, "marzo": 86.0, "abril": 86.0, "mayo": 82.0, "junio": 92.0, "julio": 82.0, "agosto": 86.0, "septiembre": 86.0, "octubre": 79.0, "noviembre": 70.0, "diciembre": 57.0}, "observaciones": ""}]}, {"correlativo": 7, "codigo": "IND-07", "indicador": "N° de adolescentes y jóvenes informados par a par", "tipo": "Mensual", "descripcion": "Es un indicador de cumplimiento mensual. Para su registro se deben considerar todas las actividades realizadas a través de la autogestión de las lideresas y líderes, las actividades en los frontis de las clínicas y policonsultorios, así como las invitaciones realizadas por otras instituciones u organizaciones.\nEl registro corresponde al equipo educativo, a partir de la planificación y seguimiento de las actividades. \nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registgrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 6500.0, "meses": {"enero": 0.0, "febrero": 1820.0, "marzo": 650.0, "abril": 750.0, "mayo": 390.0, "junio": 260.0, "julio": 910.0, "agosto": 780.0, "septiembre": 910.0, "octubre": 1710.0, "noviembre": 488.0, "diciembre": 975.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 3900.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 488.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 10400.0, "meses": {"enero": 0.0, "febrero": 1820.0, "marzo": 650.0, "abril": 750.0, "mayo": 390.0, "junio": 260.0, "julio": 910.0, "agosto": 780.0, "septiembre": 910.0, "octubre": 1710.0, "noviembre": 975.0, "diciembre": 975.0}, "observaciones": ""}]}, {"correlativo": 8, "codigo": "IND-08", "indicador": "N° de maestros/as capacitados/as", "tipo": "De proceso", "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de maestras y maestros, según los lineamientos de cada gestión.\nLos datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación, acompañados de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 32.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 32.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 6.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 39.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 39.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 26.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 26.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 104.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 32.0, "mayo": 72.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 9, "codigo": "IND-09", "indicador": "N° maestros/as líderes activos/as", "tipo": "Promedio", "descripcion": "En este indicador se debe registrar, mes a mes, cuántas maestras y maestros han sido activos/as, considerando su participación en las reuniones de fortalecimiento y, especialmente, en la implementación de EIS en sus unidades educativas.\nEl cálculo se realiza de manera automática, considerando solo los meses de febrero a mayo y de julio a noviembre, excluyendo diciembre, enero y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.", "filas": [{"subcategoria": "Primaria (urbana)", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 6.0, "marzo": 6.0, "abril": 6.0, "mayo": 6.0, "junio": 0.0, "julio": 6.0, "agosto": 6.0, "septiembre": 6.0, "octubre": 6.0, "noviembre": 6.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 32.0, "meses": {"enero": 0.0, "febrero": 26.0, "marzo": 32.0, "abril": 32.0, "mayo": 32.0, "junio": 0.0, "julio": 32.0, "agosto": 26.0, "septiembre": 32.0, "octubre": 32.0, "noviembre": 32.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 13.0, "meses": {"enero": 0.0, "febrero": 10.0, "marzo": 10.0, "abril": 10.0, "mayo": 10.0, "junio": 0.0, "julio": 10.0, "agosto": 10.0, "septiembre": 10.0, "octubre": 10.0, "noviembre": 13.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 39.0, "meses": {"enero": 0.0, "febrero": 32.0, "marzo": 32.0, "abril": 39.0, "mayo": 39.0, "junio": 0.0, "julio": 32.0, "agosto": 39.0, "septiembre": 39.0, "octubre": 39.0, "noviembre": 39.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 91.0, "meses": {"enero": 0.0, "febrero": 75.0, "marzo": 82.0, "abril": 88.0, "mayo": 88.0, "junio": 0.0, "julio": 82.0, "agosto": 82.0, "septiembre": 88.0, "octubre": 88.0, "noviembre": 91.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 10, "codigo": "IND-10", "indicador": "N° de niñas/os, adolescentes y jóvenes que INICIAN procesos de EIS en aula", "tipo": "De proceso", "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada unidad educativa, indicando las personas que inician procesos EIS a partir de la gestión de las maestras y maestros activos.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial, tomando como base los reportes de los/as maestros/as líderes y sus registros internos.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada, por ejemplo, los pre test.", "filas": [{"subcategoria": "Primaria (urbana)", "meta_anual": 130.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 52.0, "abril": 65.0, "mayo": 13.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 650.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 130.0, "mayo": 390.0, "junio": 0.0, "julio": 130.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 130.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 52.0, "abril": 65.0, "mayo": 13.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 650.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 390.0, "abril": 130.0, "mayo": 130.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 1560.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 494.0, "abril": 390.0, "mayo": 546.0, "junio": 0.0, "julio": 130.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (urbana)", "meta_anual": 130.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 104.0, "noviembre": 39.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 650.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 390.0, "octubre": 195.0, "noviembre": 130.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 130.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 78.0, "octubre": 39.0, "noviembre": 39.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 650.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 585.0, "octubre": 13.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 1560.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 1053.0, "octubre": 351.0, "noviembre": 208.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 11, "codigo": "IND-11", "indicador": "Sensibilización al entorno del adolescente y joven", "tipo": "De proceso", "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada grupo de padres, madres y/o cuidadores con quien se logre concluir el proceso., los cuales deben orientarse prioritariamente a las unidades educativas donde se realiza la intervención en EIS, o a los padres y madres de las lideresas y líderes juveniles.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial.\nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 65.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 20.0, "junio": 0.0, "julio": 26.0, "agosto": 0.0, "septiembre": 13.0, "octubre": 6.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 78.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 26.0, "junio": 32.0, "julio": 6.0, "agosto": 21.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 143.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 46.0, "junio": 32.0, "julio": 32.0, "agosto": 21.0, "septiembre": 13.0, "octubre": 6.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 12, "codigo": "IND-12", "indicador": "N° de Unidades Educativas intervenidas", "tipo": "Promedio", "descripcion": "El valor del indicador se calcula como el promedio mensual de unidades educativas intervenidas, considerando únicamente aquellas donde maestras y maestros activos implementan procesos de EIS. \nEn este indicador se debe registrar, mes a mes, cuántas unidades educativas han sido intervenidas, excluyendo los meses de enero, diciembre y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 26.0, "meses": {"enero": 0.0, "febrero": 26.0, "marzo": 26.0, "abril": 26.0, "mayo": 20.0, "junio": 0.0, "julio": 13.0, "agosto": 26.0, "septiembre": 26.0, "octubre": 26.0, "noviembre": 26.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 39.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 65.0, "meses": {"enero": 0.0, "febrero": 26.0, "marzo": 26.0, "abril": 26.0, "mayo": 20.0, "junio": 0.0, "julio": 13.0, "agosto": 26.0, "septiembre": 26.0, "octubre": 26.0, "noviembre": 26.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 13, "codigo": "IND-13", "indicador": "N° de líderes/as formados/as en Incidencia Política.", "tipo": "De proceso", "descripcion": "El indicador reporta la cantidad de adolescentes y jóvenes capacitados/as, desagregadas según el área geográfica (urbana y rural) y el tipo de participación (participantes antiguas/os y nuevas/os). \nUna vez concluido el proceso de capacitación, y de acuerdo con los lineamientos establecidos para la gestión, se deberá reportar el número de lideresas y líderes capacitadas/os, también desagregado por área geográfica. En este sentido, el área rural se refiere principalmente a los proyectos REACH – Alianza por la Solidaridad.\nEsta información deberá registrarse una sola vez en la gestión.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 20.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 13.0, "septiembre": 6.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 9.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 9.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 10.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 65.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 65.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 65.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 88.0, "septiembre": 16.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 14, "codigo": "IND-14", "indicador": "N° de líderes/as que realizan procesos de Incidencia Política", "tipo": "De proceso", "descripcion": "El indicador debe ser reportado de manera mensual, una vez concluido el proceso de capacitación y elaborada la Estrategia de Incidencia Política. Este registro refleja la cantidad de líderes y lideresas que se encuentran ejecutando acciones de Incidencia Política, diferenciados por área geográfica (urbana y rural). \nEs importante precisar que este indicador considera únicamente a adolescentes y jóvenes que efectivamente implementan la estrategia, diferencia del número total de personas capacitadas, permitiendo así evidenciar el nivel involucramiento en Incidencia Política.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 21.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 15, "codigo": "IND-15", "indicador": "N° de Planes de Incidencia Política elaborados", "tipo": "De proceso", "descripcion": "Se debe registrar la cantidad de Estrategias de Incidencia Política desarrolladas como resultado del proceso de capacitación, por área geográfica (urbana y rural). Este indicador debe reportarse una vez al año, considerando únicamente las estrategias efectivamente elaboradas por los y las adolescentes y jóvenes, con el apoyo del equipo educativo. Asimismo, es importante asegurar que cada estrategia reportada cuente con los elementos básicos de planificación y responda a una problemática identificada.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 3.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 3.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 3.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 16, "codigo": "IND-16", "indicador": "N° de políticas públicas aprobadas", "tipo": "De proceso", "descripcion": "El valor refleja el número de iniciativas que han sido aprobadas como resultado de las acciones de Incidencia Política desarrolladas. La información debe desagregarse por área geográfica. La meta anual es de 3 políticas públicas aprobadas, de las cuales 1 corresponde al área urbana y 2 al área rural, haciendo un total de 3. En aquellas regionales que no cuentan con intervención en el área rural, como Oruro y Potosí, la meta de 3 políticas públicas aprobadas corresponde al área urbana, pueden ser políticas de alcance departamental y/o municipal. Este indicador permite evidenciar los resultados concretos de los procesos de incidencia, considerando exclusivamente aquellas políticas que cuentan con aprobación formal por parte de las instancias competentes.", "filas": [{"subcategoria": "Área urbana", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 3.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 3.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 3.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 17, "codigo": "IND-17", "indicador": "N° de lideres/as formados/as en Auditoría Social", "tipo": "De proceso", "descripcion": "El indicador reporta líderes y lideresas capacitadas en Auditoría Social en base a la Guía de Auditoría Social desagregados por área geográfica (urbana y rural). El registro se realiza una sola vez en la gestión, considerando que el área rural corresponde principalmente a proyectos REACH – Alianza por la Solidaridad.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 20.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 13.0, "septiembre": 4.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 9.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 6.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 10.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 65.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 65.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 104.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 88.0, "septiembre": 10.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 18, "codigo": "IND-18", "indicador": "N° de lideres/as que realizan procesos de Auditoría Social", "tipo": "De proceso", "descripcion": "El indicador se reporta mensualmente, luego de la capacitación y elaboración del Plan de Auditoría Social,  a líderes y lideresas que implementan acciones, desagregados por área. Considera solo a quienes ejecutan la estrategia, evidenciando su nivel de involucramiento.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 21.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 19, "codigo": "IND-19", "indicador": "N° de planes de Auditoría Social elaborados", "tipo": "De proceso", "descripcion": "Ea un indicador que anualmente reporta los Planes de Auditoría Social elaborados por adolescentes y jóvenes, desagregados por área (urbana y rural), las accionescorrespondena Auditorías a la implementación del modelo AIDA en los centros de Salud y/o a la implementación de la EIS en Unidades Educativas.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 3.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 3.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 20, "codigo": "IND-20", "indicador": "N° de planes de fortalecimiento aprobados y/o centros certificados", "tipo": "De proceso", "descripcion": "El indicador reporta el número de planes de fortalecimiento aprobados/en implementación, resultado de los procesos de Auditoría Social realizados a los servicios de salud,  educación o protección. Asimismo, puede registrarse el resultado final de las acciones realizadas que puede ser la certificación o recertificación de centros AIDA, mayor implenetación de procesos de EIS en Unidades Educatvas o procesos realizados en la atención de víctimas de violencia en DNAs, SLIMs y FELCVs, diferenciadas por área geográfica (urbana o rural).", "filas": [{"subcategoria": "Área urbana", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 3.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 3.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}], "EA": [{"correlativo": 1, "codigo": "IND-01", "indicador": "N° de Orientaciones realizadas", "tipo": "Mensual", "descripcion": "Orientación es un indicador de cumplimiento mensual. Los datos incluidos en esta sección deben registrarse de acuerdo con los resultados de las atenciones brindadas en cada mes incluyendo las atenciones en SSSR y NO SSSR.", "filas": [{"subcategoria": "", "meta_anual": 20000.0, "meses": {"enero": 20.0, "febrero": 50.0, "marzo": 80.0, "abril": 35.0, "mayo": 90.0, "junio": 10.0, "julio": 25.0, "agosto": 30.0, "septiembre": 1000.0, "octubre": 20.0, "noviembre": 50.0, "diciembre": 10.0}, "observaciones": ""}]}, {"correlativo": 2, "codigo": "IND-02", "indicador": "N° de participantes en actividades informativas en sala de espera de las clínicas CIES", "tipo": "Mensual", "descripcion": "Información en sala es un indicador de cumplimiento mensua. Los datos incluidos en esta sección deben registrarse de acuerdo con el procedimiento de información en SSSR, contando con los registros de planificación y reporte correspondientes.\nEl cumplimiento de este indicador puede ser apoyado por el equipo educativo, la Red de Jóvenes, así como por el equipo médico o de enfermería, en el marco de la organización interna de cada regional.", "filas": [{"subcategoria": "", "meta_anual": 100.0, "meses": {"enero": 25.0, "febrero": 25.0, "marzo": 25.0, "abril": 25.0, "mayo": 300.0, "junio": 40.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 3, "codigo": "IND-03", "indicador": "N° de pruebas de VIH realizadas con tira reactiva", "tipo": "Mensual", "descripcion": "N° de pruebas de VIH realizadas con tira reactiva es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador es responsabilidad del equipo educativo, como parte de su rol de promoción y captación de usuarios/as para la realización de pruebas.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información que a ser registrada.", "filas": [{"subcategoria": "", "meta_anual": 200.0, "meses": {"enero": 10.0, "febrero": 20.0, "marzo": 30.0, "abril": 40.0, "mayo": 50.0, "junio": 60.0, "julio": 80.0, "agosto": 100.0, "septiembre": 20.0, "octubre": 40.0, "noviembre": 20.0, "diciembre": 50.0}, "observaciones": ""}]}, {"correlativo": 4, "codigo": "IND-04", "indicador": "N° de consultas jóvenes", "tipo": "Mensual", "descripcion": "Es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador corresponde al equipo educativo, como parte de su rol de promoción y captación de usuarios/as, incluyendo también las atenciones realizadas en campañas en comunidad.", "filas": [{"subcategoria": "Clínicas/policonsultorios", "meta_anual": 3500.0, "meses": {"enero": 0.0, "febrero": 1400.0, "marzo": 500.0, "abril": 577.0, "mayo": 300.0, "junio": 200.0, "julio": 700.0, "agosto": 600.0, "septiembre": 700.0, "octubre": 1315.0, "noviembre": 375.0, "diciembre": 750.0}, "observaciones": ""}, {"subcategoria": "Unidades Móviles", "meta_anual": 500.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 375.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 4000.0, "meses": {"enero": 0.0, "febrero": 1400.0, "marzo": 500.0, "abril": 577.0, "mayo": 300.0, "junio": 200.0, "julio": 700.0, "agosto": 600.0, "septiembre": 700.0, "octubre": 1315.0, "noviembre": 750.0, "diciembre": 750.0}, "observaciones": ""}]}, {"correlativo": 5, "codigo": "IND-05", "indicador": "N° de jóvenes líderes/as capacitados/as", "tipo": "De proceso", "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de la Red de Jóvenes, según los lineamientos de cada gestión. Los datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación y acompañarse de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 15.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 25.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 8.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 43.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 38.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 27.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 16.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 93.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 87.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 6, "codigo": "IND-06", "indicador": "N° jóvenes líderes/as activos/as", "tipo": "Promedio", "descripcion": "El valor del indicador se calcula como el promedio del cumplimiento mensual respecto a la meta anual, considerando el reglamento de la Red y el cumplimiento mínimo de cuatro actividades por líder/esa. Para obtener este promedio, se debe registrar mes a mes cuántos líderes y lideresas han sido activos/as. Este cálculo se realiza de manera automática, tomando en cuenta solo los 11 meses en los que las y los jóvenes asisten con mayor frecuencia a la Red (de febrero a diciembre).\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 15.0, "meses": {"enero": 0.0, "febrero": 8.0, "marzo": 15.0, "abril": 15.0, "mayo": 15.0, "junio": 20.0, "julio": 15.0, "agosto": 15.0, "septiembre": 15.0, "octubre": 15.0, "noviembre": 15.0, "diciembre": 9.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 15.0, "meses": {"enero": 0.0, "febrero": 15.0, "marzo": 15.0, "abril": 15.0, "mayo": 15.0, "junio": 15.0, "julio": 15.0, "agosto": 15.0, "septiembre": 15.0, "octubre": 15.0, "noviembre": 15.0, "diciembre": 15.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 20.0, "meses": {"enero": 0.0, "febrero": 16.0, "marzo": 16.0, "abril": 16.0, "mayo": 16.0, "junio": 16.0, "julio": 16.0, "agosto": 16.0, "septiembre": 16.0, "octubre": 16.0, "noviembre": 18.0, "diciembre": 20.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 20.0, "meses": {"enero": 0.0, "febrero": 20.0, "marzo": 20.0, "abril": 20.0, "mayo": 17.0, "junio": 20.0, "julio": 17.0, "agosto": 20.0, "septiembre": 20.0, "octubre": 15.0, "noviembre": 6.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 70.0, "meses": {"enero": 0.0, "febrero": 59.0, "marzo": 66.0, "abril": 66.0, "mayo": 63.0, "junio": 71.0, "julio": 63.0, "agosto": 66.0, "septiembre": 66.0, "octubre": 61.0, "noviembre": 54.0, "diciembre": 44.0}, "observaciones": ""}]}, {"correlativo": 7, "codigo": "IND-07", "indicador": "N° de adolescentes y jóvenes informados par a par", "tipo": "Mensual", "descripcion": "Es un indicador de cumplimiento mensual. Para su registro se deben considerar todas las actividades realizadas a través de la autogestión de las lideresas y líderes, las actividades en los frontis de las clínicas y policonsultorios, así como las invitaciones realizadas por otras instituciones u organizaciones.\nEl registro corresponde al equipo educativo, a partir de la planificación y seguimiento de las actividades. \nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registgrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 5000.0, "meses": {"enero": 0.0, "febrero": 1400.0, "marzo": 500.0, "abril": 577.0, "mayo": 300.0, "junio": 200.0, "julio": 700.0, "agosto": 600.0, "septiembre": 700.0, "octubre": 1315.0, "noviembre": 375.0, "diciembre": 750.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 3000.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 375.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 8000.0, "meses": {"enero": 0.0, "febrero": 1400.0, "marzo": 500.0, "abril": 577.0, "mayo": 300.0, "junio": 200.0, "julio": 700.0, "agosto": 600.0, "septiembre": 700.0, "octubre": 1315.0, "noviembre": 750.0, "diciembre": 750.0}, "observaciones": ""}]}, {"correlativo": 8, "codigo": "IND-08", "indicador": "N° de maestros/as capacitados/as", "tipo": "De proceso", "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de maestras y maestros, según los lineamientos de cada gestión.\nLos datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación, acompañados de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 25.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 25.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 5.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 5.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 30.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 30.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 20.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 20.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 80.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 25.0, "mayo": 55.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 9, "codigo": "IND-09", "indicador": "N° maestros/as líderes activos/as", "tipo": "Promedio", "descripcion": "En este indicador se debe registrar, mes a mes, cuántas maestras y maestros han sido activos/as, considerando su participación en las reuniones de fortalecimiento y, especialmente, en la implementación de EIS en sus unidades educativas.\nEl cálculo se realiza de manera automática, considerando solo los meses de febrero a mayo y de julio a noviembre, excluyendo diciembre, enero y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.", "filas": [{"subcategoria": "Primaria (urbana)", "meta_anual": 5.0, "meses": {"enero": 0.0, "febrero": 5.0, "marzo": 5.0, "abril": 5.0, "mayo": 5.0, "junio": 0.0, "julio": 5.0, "agosto": 5.0, "septiembre": 5.0, "octubre": 5.0, "noviembre": 5.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 25.0, "meses": {"enero": 0.0, "febrero": 20.0, "marzo": 25.0, "abril": 25.0, "mayo": 25.0, "junio": 0.0, "julio": 25.0, "agosto": 20.0, "septiembre": 25.0, "octubre": 25.0, "noviembre": 25.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 8.0, "marzo": 8.0, "abril": 8.0, "mayo": 8.0, "junio": 0.0, "julio": 8.0, "agosto": 8.0, "septiembre": 8.0, "octubre": 8.0, "noviembre": 10.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 30.0, "meses": {"enero": 0.0, "febrero": 25.0, "marzo": 25.0, "abril": 30.0, "mayo": 30.0, "junio": 0.0, "julio": 25.0, "agosto": 30.0, "septiembre": 30.0, "octubre": 30.0, "noviembre": 30.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 70.0, "meses": {"enero": 0.0, "febrero": 58.0, "marzo": 63.0, "abril": 68.0, "mayo": 68.0, "junio": 0.0, "julio": 63.0, "agosto": 63.0, "septiembre": 68.0, "octubre": 68.0, "noviembre": 70.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 10, "codigo": "IND-10", "indicador": "N° de niñas/os, adolescentes y jóvenes que INICIAN procesos de EIS en aula", "tipo": "De proceso", "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada unidad educativa, indicando las personas que inician procesos EIS a partir de la gestión de las maestras y maestros activos.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial, tomando como base los reportes de los/as maestros/as líderes y sus registros internos.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada, por ejemplo, los pre test.", "filas": [{"subcategoria": "Primaria (urbana)", "meta_anual": 100.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 40.0, "abril": 50.0, "mayo": 10.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 500.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 100.0, "mayo": 300.0, "junio": 0.0, "julio": 100.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 100.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 40.0, "abril": 50.0, "mayo": 10.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 500.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 300.0, "abril": 100.0, "mayo": 100.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 1200.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 380.0, "abril": 300.0, "mayo": 420.0, "junio": 0.0, "julio": 100.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (urbana)", "meta_anual": 100.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 80.0, "noviembre": 30.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 500.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 300.0, "octubre": 150.0, "noviembre": 100.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 100.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 60.0, "octubre": 30.0, "noviembre": 30.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 500.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 450.0, "octubre": 10.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 1200.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 810.0, "octubre": 270.0, "noviembre": 160.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 11, "codigo": "IND-11", "indicador": "Sensibilización al entorno del adolescente y joven", "tipo": "De proceso", "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada grupo de padres, madres y/o cuidadores con quien se logre concluir el proceso., los cuales deben orientarse prioritariamente a las unidades educativas donde se realiza la intervención en EIS, o a los padres y madres de las lideresas y líderes juveniles.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial.\nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 50.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 15.0, "junio": 0.0, "julio": 20.0, "agosto": 0.0, "septiembre": 10.0, "octubre": 5.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 60.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 20.0, "junio": 25.0, "julio": 5.0, "agosto": 16.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 110.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 35.0, "junio": 25.0, "julio": 25.0, "agosto": 16.0, "septiembre": 10.0, "octubre": 5.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 12, "codigo": "IND-12", "indicador": "N° de Unidades Educativas intervenidas", "tipo": "Promedio", "descripcion": "El valor del indicador se calcula como el promedio mensual de unidades educativas intervenidas, considerando únicamente aquellas donde maestras y maestros activos implementan procesos de EIS. \nEn este indicador se debe registrar, mes a mes, cuántas unidades educativas han sido intervenidas, excluyendo los meses de enero, diciembre y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 20.0, "meses": {"enero": 0.0, "febrero": 20.0, "marzo": 20.0, "abril": 20.0, "mayo": 15.0, "junio": 0.0, "julio": 10.0, "agosto": 20.0, "septiembre": 20.0, "octubre": 20.0, "noviembre": 20.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 30.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 50.0, "meses": {"enero": 0.0, "febrero": 20.0, "marzo": 20.0, "abril": 20.0, "mayo": 15.0, "junio": 0.0, "julio": 10.0, "agosto": 20.0, "septiembre": 20.0, "octubre": 20.0, "noviembre": 20.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 13, "codigo": "IND-13", "indicador": "N° de líderes/as formados/as en Incidencia Política.", "tipo": "De proceso", "descripcion": "El indicador reporta la cantidad de adolescentes y jóvenes capacitados/as, desagregadas según el área geográfica (urbana y rural) y el tipo de participación (participantes antiguas/os y nuevas/os). \nUna vez concluido el proceso de capacitación, y de acuerdo con los lineamientos establecidos para la gestión, se deberá reportar el número de lideresas y líderes capacitadas/os, también desagregado por área geográfica. En este sentido, el área rural se refiere principalmente a los proyectos REACH – Alianza por la Solidaridad.\nEsta información deberá registrarse una sola vez en la gestión.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 15.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 10.0, "septiembre": 5.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 7.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 7.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 8.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 50.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 50.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 50.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 68.0, "septiembre": 12.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 14, "codigo": "IND-14", "indicador": "N° de líderes/as que realizan procesos de Incidencia Política", "tipo": "De proceso", "descripcion": "El indicador debe ser reportado de manera mensual, una vez concluido el proceso de capacitación y elaborada la Estrategia de Incidencia Política. Este registro refleja la cantidad de líderes y lideresas que se encuentran ejecutando acciones de Incidencia Política, diferenciados por área geográfica (urbana y rural). \nEs importante precisar que este indicador considera únicamente a adolescentes y jóvenes que efectivamente implementan la estrategia, diferencia del número total de personas capacitadas, permitiendo así evidenciar el nivel involucramiento en Incidencia Política.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 16.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 15, "codigo": "IND-15", "indicador": "N° de Planes de Incidencia Política elaborados", "tipo": "De proceso", "descripcion": "Se debe registrar la cantidad de Estrategias de Incidencia Política desarrolladas como resultado del proceso de capacitación, por área geográfica (urbana y rural). Este indicador debe reportarse una vez al año, considerando únicamente las estrategias efectivamente elaboradas por los y las adolescentes y jóvenes, con el apoyo del equipo educativo. Asimismo, es importante asegurar que cada estrategia reportada cuente con los elementos básicos de planificación y responda a una problemática identificada.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 3.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 3.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 2.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 2.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 2.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 16, "codigo": "IND-16", "indicador": "N° de políticas públicas aprobadas", "tipo": "De proceso", "descripcion": "El valor refleja el número de iniciativas que han sido aprobadas como resultado de las acciones de Incidencia Política desarrolladas. La información debe desagregarse por área geográfica. La meta anual es de 3 políticas públicas aprobadas, de las cuales 1 corresponde al área urbana y 2 al área rural, haciendo un total de 3. En aquellas regionales que no cuentan con intervención en el área rural, como Oruro y Potosí, la meta de 3 políticas públicas aprobadas corresponde al área urbana, pueden ser políticas de alcance departamental y/o municipal. Este indicador permite evidenciar los resultados concretos de los procesos de incidencia, considerando exclusivamente aquellas políticas que cuentan con aprobación formal por parte de las instancias competentes.", "filas": [{"subcategoria": "Área urbana", "meta_anual": 3.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 3.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 2.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 2.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 2.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 17, "codigo": "IND-17", "indicador": "N° de lideres/as formados/as en Auditoría Social", "tipo": "De proceso", "descripcion": "El indicador reporta líderes y lideresas capacitadas en Auditoría Social en base a la Guía de Auditoría Social desagregados por área geográfica (urbana y rural). El registro se realiza una sola vez en la gestión, considerando que el área rural corresponde principalmente a proyectos REACH – Alianza por la Solidaridad.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 15.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 10.0, "septiembre": 3.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 7.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 5.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 8.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 50.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 50.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 80.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 68.0, "septiembre": 8.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 18, "codigo": "IND-18", "indicador": "N° de lideres/as que realizan procesos de Auditoría Social", "tipo": "De proceso", "descripcion": "El indicador se reporta mensualmente, luego de la capacitación y elaboración del Plan de Auditoría Social,  a líderes y lideresas que implementan acciones, desagregados por área. Considera solo a quienes ejecutan la estrategia, evidenciando su nivel de involucramiento.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 16.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 19, "codigo": "IND-19", "indicador": "N° de planes de Auditoría Social elaborados", "tipo": "De proceso", "descripcion": "Ea un indicador que anualmente reporta los Planes de Auditoría Social elaborados por adolescentes y jóvenes, desagregados por área (urbana y rural), las accionescorrespondena Auditorías a la implementación del modelo AIDA en los centros de Salud y/o a la implementación de la EIS en Unidades Educativas.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 2.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 20, "codigo": "IND-20", "indicador": "N° de planes de fortalecimiento aprobados y/o centros certificados", "tipo": "De proceso", "descripcion": "El indicador reporta el número de planes de fortalecimiento aprobados/en implementación, resultado de los procesos de Auditoría Social realizados a los servicios de salud,  educación o protección. Asimismo, puede registrarse el resultado final de las acciones realizadas que puede ser la certificación o recertificación de centros AIDA, mayor implenetación de procesos de EIS en Unidades Educatvas o procesos realizados en la atención de víctimas de violencia en DNAs, SLIMs y FELCVs, diferenciadas por área geográfica (urbana o rural).", "filas": [{"subcategoria": "Área urbana", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 2.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}], "SU": [{"correlativo": 1, "codigo": "IND-01", "indicador": "N° de Orientaciones realizadas", "tipo": "Mensual", "descripcion": "Orientación es un indicador de cumplimiento mensual. Los datos incluidos en esta sección deben registrarse de acuerdo con los resultados de las atenciones brindadas en cada mes incluyendo las atenciones en SSSR y NO SSSR.", "filas": [{"subcategoria": "", "meta_anual": 16000.0, "meses": {"enero": 16.0, "febrero": 40.0, "marzo": 64.0, "abril": 28.0, "mayo": 72.0, "junio": 8.0, "julio": 20.0, "agosto": 24.0, "septiembre": 800.0, "octubre": 16.0, "noviembre": 40.0, "diciembre": 8.0}, "observaciones": ""}]}, {"correlativo": 2, "codigo": "IND-02", "indicador": "N° de participantes en actividades informativas en sala de espera de las clínicas CIES", "tipo": "Mensual", "descripcion": "Información en sala es un indicador de cumplimiento mensua. Los datos incluidos en esta sección deben registrarse de acuerdo con el procedimiento de información en SSSR, contando con los registros de planificación y reporte correspondientes.\nEl cumplimiento de este indicador puede ser apoyado por el equipo educativo, la Red de Jóvenes, así como por el equipo médico o de enfermería, en el marco de la organización interna de cada regional.", "filas": [{"subcategoria": "", "meta_anual": 80.0, "meses": {"enero": 20.0, "febrero": 20.0, "marzo": 20.0, "abril": 20.0, "mayo": 240.0, "junio": 32.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 3, "codigo": "IND-03", "indicador": "N° de pruebas de VIH realizadas con tira reactiva", "tipo": "Mensual", "descripcion": "N° de pruebas de VIH realizadas con tira reactiva es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador es responsabilidad del equipo educativo, como parte de su rol de promoción y captación de usuarios/as para la realización de pruebas.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información que a ser registrada.", "filas": [{"subcategoria": "", "meta_anual": 160.0, "meses": {"enero": 8.0, "febrero": 16.0, "marzo": 24.0, "abril": 32.0, "mayo": 40.0, "junio": 48.0, "julio": 64.0, "agosto": 80.0, "septiembre": 16.0, "octubre": 32.0, "noviembre": 16.0, "diciembre": 40.0}, "observaciones": ""}]}, {"correlativo": 4, "codigo": "IND-04", "indicador": "N° de consultas jóvenes", "tipo": "Mensual", "descripcion": "Es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador corresponde al equipo educativo, como parte de su rol de promoción y captación de usuarios/as, incluyendo también las atenciones realizadas en campañas en comunidad.", "filas": [{"subcategoria": "Clínicas/policonsultorios", "meta_anual": 2800.0, "meses": {"enero": 0.0, "febrero": 1120.0, "marzo": 400.0, "abril": 462.0, "mayo": 240.0, "junio": 160.0, "julio": 560.0, "agosto": 480.0, "septiembre": 560.0, "octubre": 1052.0, "noviembre": 300.0, "diciembre": 600.0}, "observaciones": ""}, {"subcategoria": "Unidades Móviles", "meta_anual": 400.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 300.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 3200.0, "meses": {"enero": 0.0, "febrero": 1120.0, "marzo": 400.0, "abril": 462.0, "mayo": 240.0, "junio": 160.0, "julio": 560.0, "agosto": 480.0, "septiembre": 560.0, "octubre": 1052.0, "noviembre": 600.0, "diciembre": 600.0}, "observaciones": ""}]}, {"correlativo": 5, "codigo": "IND-05", "indicador": "N° de jóvenes líderes/as capacitados/as", "tipo": "De proceso", "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de la Red de Jóvenes, según los lineamientos de cada gestión. Los datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación y acompañarse de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 12.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 20.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 6.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 34.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 30.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 22.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 13.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 74.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 70.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 6, "codigo": "IND-06", "indicador": "N° jóvenes líderes/as activos/as", "tipo": "Promedio", "descripcion": "El valor del indicador se calcula como el promedio del cumplimiento mensual respecto a la meta anual, considerando el reglamento de la Red y el cumplimiento mínimo de cuatro actividades por líder/esa. Para obtener este promedio, se debe registrar mes a mes cuántos líderes y lideresas han sido activos/as. Este cálculo se realiza de manera automática, tomando en cuenta solo los 11 meses en los que las y los jóvenes asisten con mayor frecuencia a la Red (de febrero a diciembre).\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 12.0, "meses": {"enero": 0.0, "febrero": 6.0, "marzo": 12.0, "abril": 12.0, "mayo": 12.0, "junio": 16.0, "julio": 12.0, "agosto": 12.0, "septiembre": 12.0, "octubre": 12.0, "noviembre": 12.0, "diciembre": 7.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 12.0, "meses": {"enero": 0.0, "febrero": 12.0, "marzo": 12.0, "abril": 12.0, "mayo": 12.0, "junio": 12.0, "julio": 12.0, "agosto": 12.0, "septiembre": 12.0, "octubre": 12.0, "noviembre": 12.0, "diciembre": 12.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 16.0, "meses": {"enero": 0.0, "febrero": 13.0, "marzo": 13.0, "abril": 13.0, "mayo": 13.0, "junio": 13.0, "julio": 13.0, "agosto": 13.0, "septiembre": 13.0, "octubre": 13.0, "noviembre": 14.0, "diciembre": 16.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 16.0, "meses": {"enero": 0.0, "febrero": 16.0, "marzo": 16.0, "abril": 16.0, "mayo": 14.0, "junio": 16.0, "julio": 14.0, "agosto": 16.0, "septiembre": 16.0, "octubre": 12.0, "noviembre": 5.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 56.0, "meses": {"enero": 0.0, "febrero": 47.0, "marzo": 53.0, "abril": 53.0, "mayo": 50.0, "junio": 57.0, "julio": 50.0, "agosto": 53.0, "septiembre": 53.0, "octubre": 49.0, "noviembre": 43.0, "diciembre": 35.0}, "observaciones": ""}]}, {"correlativo": 7, "codigo": "IND-07", "indicador": "N° de adolescentes y jóvenes informados par a par", "tipo": "Mensual", "descripcion": "Es un indicador de cumplimiento mensual. Para su registro se deben considerar todas las actividades realizadas a través de la autogestión de las lideresas y líderes, las actividades en los frontis de las clínicas y policonsultorios, así como las invitaciones realizadas por otras instituciones u organizaciones.\nEl registro corresponde al equipo educativo, a partir de la planificación y seguimiento de las actividades. \nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registgrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 4000.0, "meses": {"enero": 0.0, "febrero": 1120.0, "marzo": 400.0, "abril": 462.0, "mayo": 240.0, "junio": 160.0, "julio": 560.0, "agosto": 480.0, "septiembre": 560.0, "octubre": 1052.0, "noviembre": 300.0, "diciembre": 600.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 2400.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 300.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 6400.0, "meses": {"enero": 0.0, "febrero": 1120.0, "marzo": 400.0, "abril": 462.0, "mayo": 240.0, "junio": 160.0, "julio": 560.0, "agosto": 480.0, "septiembre": 560.0, "octubre": 1052.0, "noviembre": 600.0, "diciembre": 600.0}, "observaciones": ""}]}, {"correlativo": 8, "codigo": "IND-08", "indicador": "N° de maestros/as capacitados/as", "tipo": "De proceso", "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de maestras y maestros, según los lineamientos de cada gestión.\nLos datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación, acompañados de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 20.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 20.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 4.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 24.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 24.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 16.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 16.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 64.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 20.0, "mayo": 44.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 9, "codigo": "IND-09", "indicador": "N° maestros/as líderes activos/as", "tipo": "Promedio", "descripcion": "En este indicador se debe registrar, mes a mes, cuántas maestras y maestros han sido activos/as, considerando su participación en las reuniones de fortalecimiento y, especialmente, en la implementación de EIS en sus unidades educativas.\nEl cálculo se realiza de manera automática, considerando solo los meses de febrero a mayo y de julio a noviembre, excluyendo diciembre, enero y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.", "filas": [{"subcategoria": "Primaria (urbana)", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 4.0, "marzo": 4.0, "abril": 4.0, "mayo": 4.0, "junio": 0.0, "julio": 4.0, "agosto": 4.0, "septiembre": 4.0, "octubre": 4.0, "noviembre": 4.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 20.0, "meses": {"enero": 0.0, "febrero": 16.0, "marzo": 20.0, "abril": 20.0, "mayo": 20.0, "junio": 0.0, "julio": 20.0, "agosto": 16.0, "septiembre": 20.0, "octubre": 20.0, "noviembre": 20.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 6.0, "marzo": 6.0, "abril": 6.0, "mayo": 6.0, "junio": 0.0, "julio": 6.0, "agosto": 6.0, "septiembre": 6.0, "octubre": 6.0, "noviembre": 8.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 24.0, "meses": {"enero": 0.0, "febrero": 20.0, "marzo": 20.0, "abril": 24.0, "mayo": 24.0, "junio": 0.0, "julio": 20.0, "agosto": 24.0, "septiembre": 24.0, "octubre": 24.0, "noviembre": 24.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 56.0, "meses": {"enero": 0.0, "febrero": 46.0, "marzo": 50.0, "abril": 54.0, "mayo": 54.0, "junio": 0.0, "julio": 50.0, "agosto": 50.0, "septiembre": 54.0, "octubre": 54.0, "noviembre": 56.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 10, "codigo": "IND-10", "indicador": "N° de niñas/os, adolescentes y jóvenes que INICIAN procesos de EIS en aula", "tipo": "De proceso", "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada unidad educativa, indicando las personas que inician procesos EIS a partir de la gestión de las maestras y maestros activos.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial, tomando como base los reportes de los/as maestros/as líderes y sus registros internos.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada, por ejemplo, los pre test.", "filas": [{"subcategoria": "Primaria (urbana)", "meta_anual": 80.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 32.0, "abril": 40.0, "mayo": 8.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 400.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 80.0, "mayo": 240.0, "junio": 0.0, "julio": 80.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 80.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 32.0, "abril": 40.0, "mayo": 8.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 400.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 240.0, "abril": 80.0, "mayo": 80.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 960.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 304.0, "abril": 240.0, "mayo": 336.0, "junio": 0.0, "julio": 80.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (urbana)", "meta_anual": 80.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 64.0, "noviembre": 24.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 400.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 240.0, "octubre": 120.0, "noviembre": 80.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 80.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 48.0, "octubre": 24.0, "noviembre": 24.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 400.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 360.0, "octubre": 8.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 960.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 648.0, "octubre": 216.0, "noviembre": 128.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 11, "codigo": "IND-11", "indicador": "Sensibilización al entorno del adolescente y joven", "tipo": "De proceso", "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada grupo de padres, madres y/o cuidadores con quien se logre concluir el proceso., los cuales deben orientarse prioritariamente a las unidades educativas donde se realiza la intervención en EIS, o a los padres y madres de las lideresas y líderes juveniles.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial.\nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 40.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 12.0, "junio": 0.0, "julio": 16.0, "agosto": 0.0, "septiembre": 8.0, "octubre": 4.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 48.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 16.0, "junio": 20.0, "julio": 4.0, "agosto": 13.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 88.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 28.0, "junio": 20.0, "julio": 20.0, "agosto": 13.0, "septiembre": 8.0, "octubre": 4.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 12, "codigo": "IND-12", "indicador": "N° de Unidades Educativas intervenidas", "tipo": "Promedio", "descripcion": "El valor del indicador se calcula como el promedio mensual de unidades educativas intervenidas, considerando únicamente aquellas donde maestras y maestros activos implementan procesos de EIS. \nEn este indicador se debe registrar, mes a mes, cuántas unidades educativas han sido intervenidas, excluyendo los meses de enero, diciembre y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 16.0, "meses": {"enero": 0.0, "febrero": 16.0, "marzo": 16.0, "abril": 16.0, "mayo": 12.0, "junio": 0.0, "julio": 8.0, "agosto": 16.0, "septiembre": 16.0, "octubre": 16.0, "noviembre": 16.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 24.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 40.0, "meses": {"enero": 0.0, "febrero": 16.0, "marzo": 16.0, "abril": 16.0, "mayo": 12.0, "junio": 0.0, "julio": 8.0, "agosto": 16.0, "septiembre": 16.0, "octubre": 16.0, "noviembre": 16.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 13, "codigo": "IND-13", "indicador": "N° de líderes/as formados/as en Incidencia Política.", "tipo": "De proceso", "descripcion": "El indicador reporta la cantidad de adolescentes y jóvenes capacitados/as, desagregadas según el área geográfica (urbana y rural) y el tipo de participación (participantes antiguas/os y nuevas/os). \nUna vez concluido el proceso de capacitación, y de acuerdo con los lineamientos establecidos para la gestión, se deberá reportar el número de lideresas y líderes capacitadas/os, también desagregado por área geográfica. En este sentido, el área rural se refiere principalmente a los proyectos REACH – Alianza por la Solidaridad.\nEsta información deberá registrarse una sola vez en la gestión.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 12.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 8.0, "septiembre": 4.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 6.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 6.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 40.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 40.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 40.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 54.0, "septiembre": 10.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 14, "codigo": "IND-14", "indicador": "N° de líderes/as que realizan procesos de Incidencia Política", "tipo": "De proceso", "descripcion": "El indicador debe ser reportado de manera mensual, una vez concluido el proceso de capacitación y elaborada la Estrategia de Incidencia Política. Este registro refleja la cantidad de líderes y lideresas que se encuentran ejecutando acciones de Incidencia Política, diferenciados por área geográfica (urbana y rural). \nEs importante precisar que este indicador considera únicamente a adolescentes y jóvenes que efectivamente implementan la estrategia, diferencia del número total de personas capacitadas, permitiendo así evidenciar el nivel involucramiento en Incidencia Política.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 13.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 15, "codigo": "IND-15", "indicador": "N° de Planes de Incidencia Política elaborados", "tipo": "De proceso", "descripcion": "Se debe registrar la cantidad de Estrategias de Incidencia Política desarrolladas como resultado del proceso de capacitación, por área geográfica (urbana y rural). Este indicador debe reportarse una vez al año, considerando únicamente las estrategias efectivamente elaboradas por los y las adolescentes y jóvenes, con el apoyo del equipo educativo. Asimismo, es importante asegurar que cada estrategia reportada cuente con los elementos básicos de planificación y responda a una problemática identificada.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 5.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 2.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 2.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 2.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 16, "codigo": "IND-16", "indicador": "N° de políticas públicas aprobadas", "tipo": "De proceso", "descripcion": "El valor refleja el número de iniciativas que han sido aprobadas como resultado de las acciones de Incidencia Política desarrolladas. La información debe desagregarse por área geográfica. La meta anual es de 3 políticas públicas aprobadas, de las cuales 1 corresponde al área urbana y 2 al área rural, haciendo un total de 3. En aquellas regionales que no cuentan con intervención en el área rural, como Oruro y Potosí, la meta de 3 políticas públicas aprobadas corresponde al área urbana, pueden ser políticas de alcance departamental y/o municipal. Este indicador permite evidenciar los resultados concretos de los procesos de incidencia, considerando exclusivamente aquellas políticas que cuentan con aprobación formal por parte de las instancias competentes.", "filas": [{"subcategoria": "Área urbana", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 5.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 2.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 2.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 2.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 17, "codigo": "IND-17", "indicador": "N° de lideres/as formados/as en Auditoría Social", "tipo": "De proceso", "descripcion": "El indicador reporta líderes y lideresas capacitadas en Auditoría Social en base a la Guía de Auditoría Social desagregados por área geográfica (urbana y rural). El registro se realiza una sola vez en la gestión, considerando que el área rural corresponde principalmente a proyectos REACH – Alianza por la Solidaridad.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 12.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 8.0, "septiembre": 2.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 4.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 6.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 40.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 40.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 64.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 54.0, "septiembre": 6.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 18, "codigo": "IND-18", "indicador": "N° de lideres/as que realizan procesos de Auditoría Social", "tipo": "De proceso", "descripcion": "El indicador se reporta mensualmente, luego de la capacitación y elaboración del Plan de Auditoría Social,  a líderes y lideresas que implementan acciones, desagregados por área. Considera solo a quienes ejecutan la estrategia, evidenciando su nivel de involucramiento.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 13.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 19, "codigo": "IND-19", "indicador": "N° de planes de Auditoría Social elaborados", "tipo": "De proceso", "descripcion": "Ea un indicador que anualmente reporta los Planes de Auditoría Social elaborados por adolescentes y jóvenes, desagregados por área (urbana y rural), las accionescorrespondena Auditorías a la implementación del modelo AIDA en los centros de Salud y/o a la implementación de la EIS en Unidades Educativas.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 2.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 20, "codigo": "IND-20", "indicador": "N° de planes de fortalecimiento aprobados y/o centros certificados", "tipo": "De proceso", "descripcion": "El indicador reporta el número de planes de fortalecimiento aprobados/en implementación, resultado de los procesos de Auditoría Social realizados a los servicios de salud,  educación o protección. Asimismo, puede registrarse el resultado final de las acciones realizadas que puede ser la certificación o recertificación de centros AIDA, mayor implenetación de procesos de EIS en Unidades Educatvas o procesos realizados en la atención de víctimas de violencia en DNAs, SLIMs y FELCVs, diferenciadas por área geográfica (urbana o rural).", "filas": [{"subcategoria": "Área urbana", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 2.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}], "TJA": [{"correlativo": 1, "codigo": "IND-01", "indicador": "N° de Orientaciones realizadas", "tipo": "Mensual", "descripcion": "Orientación es un indicador de cumplimiento mensual. Los datos incluidos en esta sección deben registrarse de acuerdo con los resultados de las atenciones brindadas en cada mes incluyendo las atenciones en SSSR y NO SSSR.", "filas": [{"subcategoria": "", "meta_anual": 13000.0, "meses": {"enero": 13.0, "febrero": 32.0, "marzo": 52.0, "abril": 23.0, "mayo": 58.0, "junio": 6.0, "julio": 16.0, "agosto": 20.0, "septiembre": 650.0, "octubre": 13.0, "noviembre": 32.0, "diciembre": 6.0}, "observaciones": ""}]}, {"correlativo": 2, "codigo": "IND-02", "indicador": "N° de participantes en actividades informativas en sala de espera de las clínicas CIES", "tipo": "Mensual", "descripcion": "Información en sala es un indicador de cumplimiento mensua. Los datos incluidos en esta sección deben registrarse de acuerdo con el procedimiento de información en SSSR, contando con los registros de planificación y reporte correspondientes.\nEl cumplimiento de este indicador puede ser apoyado por el equipo educativo, la Red de Jóvenes, así como por el equipo médico o de enfermería, en el marco de la organización interna de cada regional.", "filas": [{"subcategoria": "", "meta_anual": 65.0, "meses": {"enero": 16.0, "febrero": 16.0, "marzo": 16.0, "abril": 16.0, "mayo": 195.0, "junio": 26.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 3, "codigo": "IND-03", "indicador": "N° de pruebas de VIH realizadas con tira reactiva", "tipo": "Mensual", "descripcion": "N° de pruebas de VIH realizadas con tira reactiva es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador es responsabilidad del equipo educativo, como parte de su rol de promoción y captación de usuarios/as para la realización de pruebas.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información que a ser registrada.", "filas": [{"subcategoria": "", "meta_anual": 130.0, "meses": {"enero": 6.0, "febrero": 13.0, "marzo": 20.0, "abril": 26.0, "mayo": 32.0, "junio": 39.0, "julio": 52.0, "agosto": 65.0, "septiembre": 13.0, "octubre": 26.0, "noviembre": 13.0, "diciembre": 32.0}, "observaciones": ""}]}, {"correlativo": 4, "codigo": "IND-04", "indicador": "N° de consultas jóvenes", "tipo": "Mensual", "descripcion": "Es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador corresponde al equipo educativo, como parte de su rol de promoción y captación de usuarios/as, incluyendo también las atenciones realizadas en campañas en comunidad.", "filas": [{"subcategoria": "Clínicas/policonsultorios", "meta_anual": 2275.0, "meses": {"enero": 0.0, "febrero": 910.0, "marzo": 325.0, "abril": 375.0, "mayo": 195.0, "junio": 130.0, "julio": 455.0, "agosto": 390.0, "septiembre": 455.0, "octubre": 855.0, "noviembre": 244.0, "diciembre": 488.0}, "observaciones": ""}, {"subcategoria": "Unidades Móviles", "meta_anual": 325.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 244.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 2600.0, "meses": {"enero": 0.0, "febrero": 910.0, "marzo": 325.0, "abril": 375.0, "mayo": 195.0, "junio": 130.0, "julio": 455.0, "agosto": 390.0, "septiembre": 455.0, "octubre": 855.0, "noviembre": 488.0, "diciembre": 488.0}, "observaciones": ""}]}, {"correlativo": 5, "codigo": "IND-05", "indicador": "N° de jóvenes líderes/as capacitados/as", "tipo": "De proceso", "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de la Red de Jóvenes, según los lineamientos de cada gestión. Los datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación y acompañarse de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 16.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 5.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 5.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 28.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 25.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 18.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 10.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 60.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 57.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 6, "codigo": "IND-06", "indicador": "N° jóvenes líderes/as activos/as", "tipo": "Promedio", "descripcion": "El valor del indicador se calcula como el promedio del cumplimiento mensual respecto a la meta anual, considerando el reglamento de la Red y el cumplimiento mínimo de cuatro actividades por líder/esa. Para obtener este promedio, se debe registrar mes a mes cuántos líderes y lideresas han sido activos/as. Este cálculo se realiza de manera automática, tomando en cuenta solo los 11 meses en los que las y los jóvenes asisten con mayor frecuencia a la Red (de febrero a diciembre).\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 5.0, "marzo": 10.0, "abril": 10.0, "mayo": 10.0, "junio": 13.0, "julio": 10.0, "agosto": 10.0, "septiembre": 10.0, "octubre": 10.0, "noviembre": 10.0, "diciembre": 6.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 10.0, "marzo": 10.0, "abril": 10.0, "mayo": 10.0, "junio": 10.0, "julio": 10.0, "agosto": 10.0, "septiembre": 10.0, "octubre": 10.0, "noviembre": 10.0, "diciembre": 10.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 13.0, "meses": {"enero": 0.0, "febrero": 10.0, "marzo": 10.0, "abril": 10.0, "mayo": 10.0, "junio": 10.0, "julio": 10.0, "agosto": 10.0, "septiembre": 10.0, "octubre": 10.0, "noviembre": 12.0, "diciembre": 13.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 13.0, "meses": {"enero": 0.0, "febrero": 13.0, "marzo": 13.0, "abril": 13.0, "mayo": 11.0, "junio": 13.0, "julio": 11.0, "agosto": 13.0, "septiembre": 13.0, "octubre": 10.0, "noviembre": 4.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 46.0, "meses": {"enero": 0.0, "febrero": 38.0, "marzo": 43.0, "abril": 43.0, "mayo": 41.0, "junio": 46.0, "julio": 41.0, "agosto": 43.0, "septiembre": 43.0, "octubre": 40.0, "noviembre": 35.0, "diciembre": 29.0}, "observaciones": ""}]}, {"correlativo": 7, "codigo": "IND-07", "indicador": "N° de adolescentes y jóvenes informados par a par", "tipo": "Mensual", "descripcion": "Es un indicador de cumplimiento mensual. Para su registro se deben considerar todas las actividades realizadas a través de la autogestión de las lideresas y líderes, las actividades en los frontis de las clínicas y policonsultorios, así como las invitaciones realizadas por otras instituciones u organizaciones.\nEl registro corresponde al equipo educativo, a partir de la planificación y seguimiento de las actividades. \nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registgrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 3250.0, "meses": {"enero": 0.0, "febrero": 910.0, "marzo": 325.0, "abril": 375.0, "mayo": 195.0, "junio": 130.0, "julio": 455.0, "agosto": 390.0, "septiembre": 455.0, "octubre": 855.0, "noviembre": 244.0, "diciembre": 488.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 1950.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 244.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 5200.0, "meses": {"enero": 0.0, "febrero": 910.0, "marzo": 325.0, "abril": 375.0, "mayo": 195.0, "junio": 130.0, "julio": 455.0, "agosto": 390.0, "septiembre": 455.0, "octubre": 855.0, "noviembre": 488.0, "diciembre": 488.0}, "observaciones": ""}]}, {"correlativo": 8, "codigo": "IND-08", "indicador": "N° de maestros/as capacitados/as", "tipo": "De proceso", "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de maestras y maestros, según los lineamientos de cada gestión.\nLos datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación, acompañados de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 16.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 16.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 3.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 3.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 20.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 20.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 13.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 13.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 52.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 16.0, "mayo": 36.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 9, "codigo": "IND-09", "indicador": "N° maestros/as líderes activos/as", "tipo": "Promedio", "descripcion": "En este indicador se debe registrar, mes a mes, cuántas maestras y maestros han sido activos/as, considerando su participación en las reuniones de fortalecimiento y, especialmente, en la implementación de EIS en sus unidades educativas.\nEl cálculo se realiza de manera automática, considerando solo los meses de febrero a mayo y de julio a noviembre, excluyendo diciembre, enero y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.", "filas": [{"subcategoria": "Primaria (urbana)", "meta_anual": 3.0, "meses": {"enero": 0.0, "febrero": 3.0, "marzo": 3.0, "abril": 3.0, "mayo": 3.0, "junio": 0.0, "julio": 3.0, "agosto": 3.0, "septiembre": 3.0, "octubre": 3.0, "noviembre": 3.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 16.0, "meses": {"enero": 0.0, "febrero": 13.0, "marzo": 16.0, "abril": 16.0, "mayo": 16.0, "junio": 0.0, "julio": 16.0, "agosto": 13.0, "septiembre": 16.0, "octubre": 16.0, "noviembre": 16.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 6.0, "meses": {"enero": 0.0, "febrero": 5.0, "marzo": 5.0, "abril": 5.0, "mayo": 5.0, "junio": 0.0, "julio": 5.0, "agosto": 5.0, "septiembre": 5.0, "octubre": 5.0, "noviembre": 6.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 20.0, "meses": {"enero": 0.0, "febrero": 16.0, "marzo": 16.0, "abril": 20.0, "mayo": 20.0, "junio": 0.0, "julio": 16.0, "agosto": 20.0, "septiembre": 20.0, "octubre": 20.0, "noviembre": 20.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 46.0, "meses": {"enero": 0.0, "febrero": 38.0, "marzo": 41.0, "abril": 44.0, "mayo": 44.0, "junio": 0.0, "julio": 41.0, "agosto": 41.0, "septiembre": 44.0, "octubre": 44.0, "noviembre": 46.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 10, "codigo": "IND-10", "indicador": "N° de niñas/os, adolescentes y jóvenes que INICIAN procesos de EIS en aula", "tipo": "De proceso", "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada unidad educativa, indicando las personas que inician procesos EIS a partir de la gestión de las maestras y maestros activos.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial, tomando como base los reportes de los/as maestros/as líderes y sus registros internos.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada, por ejemplo, los pre test.", "filas": [{"subcategoria": "Primaria (urbana)", "meta_anual": 65.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 26.0, "abril": 32.0, "mayo": 6.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 325.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 65.0, "mayo": 195.0, "junio": 0.0, "julio": 65.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 65.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 26.0, "abril": 32.0, "mayo": 6.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 325.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 195.0, "abril": 65.0, "mayo": 65.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 780.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 247.0, "abril": 195.0, "mayo": 273.0, "junio": 0.0, "julio": 65.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (urbana)", "meta_anual": 65.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 52.0, "noviembre": 20.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 325.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 195.0, "octubre": 98.0, "noviembre": 65.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 65.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 39.0, "octubre": 20.0, "noviembre": 20.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 325.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 292.0, "octubre": 6.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 780.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 526.0, "octubre": 176.0, "noviembre": 104.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 11, "codigo": "IND-11", "indicador": "Sensibilización al entorno del adolescente y joven", "tipo": "De proceso", "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada grupo de padres, madres y/o cuidadores con quien se logre concluir el proceso., los cuales deben orientarse prioritariamente a las unidades educativas donde se realiza la intervención en EIS, o a los padres y madres de las lideresas y líderes juveniles.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial.\nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 32.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 10.0, "junio": 0.0, "julio": 13.0, "agosto": 0.0, "septiembre": 6.0, "octubre": 3.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 39.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 13.0, "junio": 16.0, "julio": 3.0, "agosto": 10.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 72.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 23.0, "junio": 16.0, "julio": 16.0, "agosto": 10.0, "septiembre": 6.0, "octubre": 3.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 12, "codigo": "IND-12", "indicador": "N° de Unidades Educativas intervenidas", "tipo": "Promedio", "descripcion": "El valor del indicador se calcula como el promedio mensual de unidades educativas intervenidas, considerando únicamente aquellas donde maestras y maestros activos implementan procesos de EIS. \nEn este indicador se debe registrar, mes a mes, cuántas unidades educativas han sido intervenidas, excluyendo los meses de enero, diciembre y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 13.0, "meses": {"enero": 0.0, "febrero": 13.0, "marzo": 13.0, "abril": 13.0, "mayo": 10.0, "junio": 0.0, "julio": 6.0, "agosto": 13.0, "septiembre": 13.0, "octubre": 13.0, "noviembre": 13.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 20.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 32.0, "meses": {"enero": 0.0, "febrero": 13.0, "marzo": 13.0, "abril": 13.0, "mayo": 10.0, "junio": 0.0, "julio": 6.0, "agosto": 13.0, "septiembre": 13.0, "octubre": 13.0, "noviembre": 13.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 13, "codigo": "IND-13", "indicador": "N° de líderes/as formados/as en Incidencia Política.", "tipo": "De proceso", "descripcion": "El indicador reporta la cantidad de adolescentes y jóvenes capacitados/as, desagregadas según el área geográfica (urbana y rural) y el tipo de participación (participantes antiguas/os y nuevas/os). \nUna vez concluido el proceso de capacitación, y de acuerdo con los lineamientos establecidos para la gestión, se deberá reportar el número de lideresas y líderes capacitadas/os, también desagregado por área geográfica. En este sentido, el área rural se refiere principalmente a los proyectos REACH – Alianza por la Solidaridad.\nEsta información deberá registrarse una sola vez en la gestión.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 6.0, "septiembre": 3.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 5.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 5.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 5.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 5.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 32.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 32.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 32.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 44.0, "septiembre": 8.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 14, "codigo": "IND-14", "indicador": "N° de líderes/as que realizan procesos de Incidencia Política", "tipo": "De proceso", "descripcion": "El indicador debe ser reportado de manera mensual, una vez concluido el proceso de capacitación y elaborada la Estrategia de Incidencia Política. Este registro refleja la cantidad de líderes y lideresas que se encuentran ejecutando acciones de Incidencia Política, diferenciados por área geográfica (urbana y rural). \nEs importante precisar que este indicador considera únicamente a adolescentes y jóvenes que efectivamente implementan la estrategia, diferencia del número total de personas capacitadas, permitiendo así evidenciar el nivel involucramiento en Incidencia Política.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 5.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 5.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 15, "codigo": "IND-15", "indicador": "N° de Planes de Incidencia Política elaborados", "tipo": "De proceso", "descripcion": "Se debe registrar la cantidad de Estrategias de Incidencia Política desarrolladas como resultado del proceso de capacitación, por área geográfica (urbana y rural). Este indicador debe reportarse una vez al año, considerando únicamente las estrategias efectivamente elaboradas por los y las adolescentes y jóvenes, con el apoyo del equipo educativo. Asimismo, es importante asegurar que cada estrategia reportada cuente con los elementos básicos de planificación y responda a una problemática identificada.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 16, "codigo": "IND-16", "indicador": "N° de políticas públicas aprobadas", "tipo": "De proceso", "descripcion": "El valor refleja el número de iniciativas que han sido aprobadas como resultado de las acciones de Incidencia Política desarrolladas. La información debe desagregarse por área geográfica. La meta anual es de 3 políticas públicas aprobadas, de las cuales 1 corresponde al área urbana y 2 al área rural, haciendo un total de 3. En aquellas regionales que no cuentan con intervención en el área rural, como Oruro y Potosí, la meta de 3 políticas públicas aprobadas corresponde al área urbana, pueden ser políticas de alcance departamental y/o municipal. Este indicador permite evidenciar los resultados concretos de los procesos de incidencia, considerando exclusivamente aquellas políticas que cuentan con aprobación formal por parte de las instancias competentes.", "filas": [{"subcategoria": "Área urbana", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 17, "codigo": "IND-17", "indicador": "N° de lideres/as formados/as en Auditoría Social", "tipo": "De proceso", "descripcion": "El indicador reporta líderes y lideresas capacitadas en Auditoría Social en base a la Guía de Auditoría Social desagregados por área geográfica (urbana y rural). El registro se realiza una sola vez en la gestión, considerando que el área rural corresponde principalmente a proyectos REACH – Alianza por la Solidaridad.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 6.0, "septiembre": 2.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 5.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 3.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 5.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 5.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 32.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 32.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 52.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 44.0, "septiembre": 5.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 18, "codigo": "IND-18", "indicador": "N° de lideres/as que realizan procesos de Auditoría Social", "tipo": "De proceso", "descripcion": "El indicador se reporta mensualmente, luego de la capacitación y elaboración del Plan de Auditoría Social,  a líderes y lideresas que implementan acciones, desagregados por área. Considera solo a quienes ejecutan la estrategia, evidenciando su nivel de involucramiento.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 5.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 5.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 19, "codigo": "IND-19", "indicador": "N° de planes de Auditoría Social elaborados", "tipo": "De proceso", "descripcion": "Ea un indicador que anualmente reporta los Planes de Auditoría Social elaborados por adolescentes y jóvenes, desagregados por área (urbana y rural), las accionescorrespondena Auditorías a la implementación del modelo AIDA en los centros de Salud y/o a la implementación de la EIS en Unidades Educativas.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 20, "codigo": "IND-20", "indicador": "N° de planes de fortalecimiento aprobados y/o centros certificados", "tipo": "De proceso", "descripcion": "El indicador reporta el número de planes de fortalecimiento aprobados/en implementación, resultado de los procesos de Auditoría Social realizados a los servicios de salud,  educación o protección. Asimismo, puede registrarse el resultado final de las acciones realizadas que puede ser la certificación o recertificación de centros AIDA, mayor implenetación de procesos de EIS en Unidades Educatvas o procesos realizados en la atención de víctimas de violencia en DNAs, SLIMs y FELCVs, diferenciadas por área geográfica (urbana o rural).", "filas": [{"subcategoria": "Área urbana", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}], "BENI": [{"correlativo": 1, "codigo": "IND-01", "indicador": "N° de Orientaciones realizadas", "tipo": "Mensual", "descripcion": "Orientación es un indicador de cumplimiento mensual. Los datos incluidos en esta sección deben registrarse de acuerdo con los resultados de las atenciones brindadas en cada mes incluyendo las atenciones en SSSR y NO SSSR.", "filas": [{"subcategoria": "", "meta_anual": 10000.0, "meses": {"enero": 10.0, "febrero": 25.0, "marzo": 40.0, "abril": 18.0, "mayo": 45.0, "junio": 5.0, "julio": 12.0, "agosto": 15.0, "septiembre": 500.0, "octubre": 10.0, "noviembre": 25.0, "diciembre": 5.0}, "observaciones": ""}]}, {"correlativo": 2, "codigo": "IND-02", "indicador": "N° de participantes en actividades informativas en sala de espera de las clínicas CIES", "tipo": "Mensual", "descripcion": "Información en sala es un indicador de cumplimiento mensua. Los datos incluidos en esta sección deben registrarse de acuerdo con el procedimiento de información en SSSR, contando con los registros de planificación y reporte correspondientes.\nEl cumplimiento de este indicador puede ser apoyado por el equipo educativo, la Red de Jóvenes, así como por el equipo médico o de enfermería, en el marco de la organización interna de cada regional.", "filas": [{"subcategoria": "", "meta_anual": 50.0, "meses": {"enero": 12.0, "febrero": 12.0, "marzo": 12.0, "abril": 12.0, "mayo": 150.0, "junio": 20.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 3, "codigo": "IND-03", "indicador": "N° de pruebas de VIH realizadas con tira reactiva", "tipo": "Mensual", "descripcion": "N° de pruebas de VIH realizadas con tira reactiva es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador es responsabilidad del equipo educativo, como parte de su rol de promoción y captación de usuarios/as para la realización de pruebas.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información que a ser registrada.", "filas": [{"subcategoria": "", "meta_anual": 100.0, "meses": {"enero": 5.0, "febrero": 10.0, "marzo": 15.0, "abril": 20.0, "mayo": 25.0, "junio": 30.0, "julio": 40.0, "agosto": 50.0, "septiembre": 10.0, "octubre": 20.0, "noviembre": 10.0, "diciembre": 25.0}, "observaciones": ""}]}, {"correlativo": 4, "codigo": "IND-04", "indicador": "N° de consultas jóvenes", "tipo": "Mensual", "descripcion": "Es un indicador de cumplimiento mensual y constituye una meta compartida con el área médica. El reporte de este indicador corresponde al equipo educativo, como parte de su rol de promoción y captación de usuarios/as, incluyendo también las atenciones realizadas en campañas en comunidad.", "filas": [{"subcategoria": "Clínicas/policonsultorios", "meta_anual": 1750.0, "meses": {"enero": 0.0, "febrero": 700.0, "marzo": 250.0, "abril": 288.0, "mayo": 150.0, "junio": 100.0, "julio": 350.0, "agosto": 300.0, "septiembre": 350.0, "octubre": 658.0, "noviembre": 188.0, "diciembre": 375.0}, "observaciones": ""}, {"subcategoria": "Unidades Móviles", "meta_anual": 250.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 188.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 2000.0, "meses": {"enero": 0.0, "febrero": 700.0, "marzo": 250.0, "abril": 288.0, "mayo": 150.0, "junio": 100.0, "julio": 350.0, "agosto": 300.0, "septiembre": 350.0, "octubre": 658.0, "noviembre": 375.0, "diciembre": 375.0}, "observaciones": ""}]}, {"correlativo": 5, "codigo": "IND-05", "indicador": "N° de jóvenes líderes/as capacitados/as", "tipo": "De proceso", "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de la Red de Jóvenes, según los lineamientos de cada gestión. Los datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación y acompañarse de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 12.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 4.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 22.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 19.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 14.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 8.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 46.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 44.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 6, "codigo": "IND-06", "indicador": "N° jóvenes líderes/as activos/as", "tipo": "Promedio", "descripcion": "El valor del indicador se calcula como el promedio del cumplimiento mensual respecto a la meta anual, considerando el reglamento de la Red y el cumplimiento mínimo de cuatro actividades por líder/esa. Para obtener este promedio, se debe registrar mes a mes cuántos líderes y lideresas han sido activos/as. Este cálculo se realiza de manera automática, tomando en cuenta solo los 11 meses en los que las y los jóvenes asisten con mayor frecuencia a la Red (de febrero a diciembre).\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 4.0, "marzo": 8.0, "abril": 8.0, "mayo": 8.0, "junio": 10.0, "julio": 8.0, "agosto": 8.0, "septiembre": 8.0, "octubre": 8.0, "noviembre": 8.0, "diciembre": 4.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 8.0, "marzo": 8.0, "abril": 8.0, "mayo": 8.0, "junio": 8.0, "julio": 8.0, "agosto": 8.0, "septiembre": 8.0, "octubre": 8.0, "noviembre": 8.0, "diciembre": 8.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 8.0, "marzo": 8.0, "abril": 8.0, "mayo": 8.0, "junio": 8.0, "julio": 8.0, "agosto": 8.0, "septiembre": 8.0, "octubre": 8.0, "noviembre": 9.0, "diciembre": 10.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 10.0, "marzo": 10.0, "abril": 10.0, "mayo": 8.0, "junio": 10.0, "julio": 8.0, "agosto": 10.0, "septiembre": 10.0, "octubre": 8.0, "noviembre": 3.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 35.0, "meses": {"enero": 0.0, "febrero": 30.0, "marzo": 33.0, "abril": 33.0, "mayo": 32.0, "junio": 36.0, "julio": 32.0, "agosto": 33.0, "septiembre": 33.0, "octubre": 30.0, "noviembre": 27.0, "diciembre": 22.0}, "observaciones": ""}]}, {"correlativo": 7, "codigo": "IND-07", "indicador": "N° de adolescentes y jóvenes informados par a par", "tipo": "Mensual", "descripcion": "Es un indicador de cumplimiento mensual. Para su registro se deben considerar todas las actividades realizadas a través de la autogestión de las lideresas y líderes, las actividades en los frontis de las clínicas y policonsultorios, así como las invitaciones realizadas por otras instituciones u organizaciones.\nEl registro corresponde al equipo educativo, a partir de la planificación y seguimiento de las actividades. \nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registgrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 2500.0, "meses": {"enero": 0.0, "febrero": 700.0, "marzo": 250.0, "abril": 288.0, "mayo": 150.0, "junio": 100.0, "julio": 350.0, "agosto": 300.0, "septiembre": 350.0, "octubre": 658.0, "noviembre": 188.0, "diciembre": 375.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 1500.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 188.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 4000.0, "meses": {"enero": 0.0, "febrero": 700.0, "marzo": 250.0, "abril": 288.0, "mayo": 150.0, "junio": 100.0, "julio": 350.0, "agosto": 300.0, "septiembre": 350.0, "octubre": 658.0, "noviembre": 375.0, "diciembre": 375.0}, "observaciones": ""}]}, {"correlativo": 8, "codigo": "IND-08", "indicador": "N° de maestros/as capacitados/as", "tipo": "De proceso", "descripcion": "Es un indicador de proceso y solo debe reportarse una vez que se haya concluido el proceso de capacitación de maestras y maestros, según los lineamientos de cada gestión.\nLos datos de los proyectos del área rural deben ser proporcionados por cada educador/a a cargo de la capacitación, acompañados de los registros y respaldos del proceso concluido.\nEl cumplimiento de la meta se calcula automáticamente, registrándose los datos del proceso concluido en el mes correspondiente a su finalización. No se debe incluir datos del inicio del proceso y tampoco de las sesiones de fortalecimiento, esto se debe incluir en el informe mensual.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 12.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 12.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 2.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 15.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 15.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 10.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 40.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 12.0, "mayo": 28.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 9, "codigo": "IND-09", "indicador": "N° maestros/as líderes activos/as", "tipo": "Promedio", "descripcion": "En este indicador se debe registrar, mes a mes, cuántas maestras y maestros han sido activos/as, considerando su participación en las reuniones de fortalecimiento y, especialmente, en la implementación de EIS en sus unidades educativas.\nEl cálculo se realiza de manera automática, considerando solo los meses de febrero a mayo y de julio a noviembre, excluyendo diciembre, enero y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.", "filas": [{"subcategoria": "Primaria (urbana)", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 2.0, "marzo": 2.0, "abril": 2.0, "mayo": 2.0, "junio": 0.0, "julio": 2.0, "agosto": 2.0, "septiembre": 2.0, "octubre": 2.0, "noviembre": 2.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 12.0, "meses": {"enero": 0.0, "febrero": 10.0, "marzo": 12.0, "abril": 12.0, "mayo": 12.0, "junio": 0.0, "julio": 12.0, "agosto": 10.0, "septiembre": 12.0, "octubre": 12.0, "noviembre": 12.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 5.0, "meses": {"enero": 0.0, "febrero": 4.0, "marzo": 4.0, "abril": 4.0, "mayo": 4.0, "junio": 0.0, "julio": 4.0, "agosto": 4.0, "septiembre": 4.0, "octubre": 4.0, "noviembre": 5.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 15.0, "meses": {"enero": 0.0, "febrero": 12.0, "marzo": 12.0, "abril": 15.0, "mayo": 15.0, "junio": 0.0, "julio": 12.0, "agosto": 15.0, "septiembre": 15.0, "octubre": 15.0, "noviembre": 15.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 35.0, "meses": {"enero": 0.0, "febrero": 29.0, "marzo": 32.0, "abril": 34.0, "mayo": 34.0, "junio": 0.0, "julio": 32.0, "agosto": 32.0, "septiembre": 34.0, "octubre": 34.0, "noviembre": 35.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 10, "codigo": "IND-10", "indicador": "N° de niñas/os, adolescentes y jóvenes que INICIAN procesos de EIS en aula", "tipo": "De proceso", "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada unidad educativa, indicando las personas que inician procesos EIS a partir de la gestión de las maestras y maestros activos.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial, tomando como base los reportes de los/as maestros/as líderes y sus registros internos.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada, por ejemplo, los pre test.", "filas": [{"subcategoria": "Primaria (urbana)", "meta_anual": 50.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 20.0, "abril": 25.0, "mayo": 5.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 250.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 50.0, "mayo": 150.0, "junio": 0.0, "julio": 50.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 50.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 20.0, "abril": 25.0, "mayo": 5.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 250.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 150.0, "abril": 50.0, "mayo": 50.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 600.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 190.0, "abril": 150.0, "mayo": 210.0, "junio": 0.0, "julio": 50.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (urbana)", "meta_anual": 50.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 40.0, "noviembre": 15.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (urbana)", "meta_anual": 250.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 150.0, "octubre": 75.0, "noviembre": 50.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Primaria (rural)", "meta_anual": 50.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 30.0, "octubre": 15.0, "noviembre": 15.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Secundaria (rural)", "meta_anual": 250.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 225.0, "octubre": 5.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 600.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 405.0, "octubre": 135.0, "noviembre": 80.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 11, "codigo": "IND-11", "indicador": "Sensibilización al entorno del adolescente y joven", "tipo": "De proceso", "descripcion": "Es un indicador de proceso. Debe registrarse una sola vez por cada grupo de padres, madres y/o cuidadores con quien se logre concluir el proceso., los cuales deben orientarse prioritariamente a las unidades educativas donde se realiza la intervención en EIS, o a los padres y madres de las lideresas y líderes juveniles.\nEn el área rural, los datos deben ser reportados por cada educador/a al/la responsable educativo, quien realiza el registro oficial.\nLos datos registrados deben contar con los respaldos y planificaciones correspondientes que validen la información registrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 25.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 8.0, "junio": 0.0, "julio": 10.0, "agosto": 0.0, "septiembre": 5.0, "octubre": 2.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 30.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 10.0, "junio": 12.0, "julio": 2.0, "agosto": 8.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 55.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 18.0, "junio": 12.0, "julio": 12.0, "agosto": 8.0, "septiembre": 5.0, "octubre": 2.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 12, "codigo": "IND-12", "indicador": "N° de Unidades Educativas intervenidas", "tipo": "Promedio", "descripcion": "El valor del indicador se calcula como el promedio mensual de unidades educativas intervenidas, considerando únicamente aquellas donde maestras y maestros activos implementan procesos de EIS. \nEn este indicador se debe registrar, mes a mes, cuántas unidades educativas han sido intervenidas, excluyendo los meses de enero, diciembre y junio.\nEn el área rural, los educadores/as deben enviar el reporte al/la responsable educativo para que se realice el registro correspondiente.\nLos datos registrados deben contar con los respaldos correspondientes que validen la información registrada.", "filas": [{"subcategoria": "Área Urbana", "meta_anual": 10.0, "meses": {"enero": 0.0, "febrero": 10.0, "marzo": 10.0, "abril": 10.0, "mayo": 8.0, "junio": 0.0, "julio": 5.0, "agosto": 10.0, "septiembre": 10.0, "octubre": 10.0, "noviembre": 10.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural", "meta_anual": 15.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 25.0, "meses": {"enero": 0.0, "febrero": 10.0, "marzo": 10.0, "abril": 10.0, "mayo": 8.0, "junio": 0.0, "julio": 5.0, "agosto": 10.0, "septiembre": 10.0, "octubre": 10.0, "noviembre": 10.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 13, "codigo": "IND-13", "indicador": "N° de líderes/as formados/as en Incidencia Política.", "tipo": "De proceso", "descripcion": "El indicador reporta la cantidad de adolescentes y jóvenes capacitados/as, desagregadas según el área geográfica (urbana y rural) y el tipo de participación (participantes antiguas/os y nuevas/os). \nUna vez concluido el proceso de capacitación, y de acuerdo con los lineamientos establecidos para la gestión, se deberá reportar el número de lideresas y líderes capacitadas/os, también desagregado por área geográfica. En este sentido, el área rural se refiere principalmente a los proyectos REACH – Alianza por la Solidaridad.\nEsta información deberá registrarse una sola vez en la gestión.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 5.0, "septiembre": 2.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 4.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 4.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 25.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 25.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 25.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 34.0, "septiembre": 6.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 14, "codigo": "IND-14", "indicador": "N° de líderes/as que realizan procesos de Incidencia Política", "tipo": "De proceso", "descripcion": "El indicador debe ser reportado de manera mensual, una vez concluido el proceso de capacitación y elaborada la Estrategia de Incidencia Política. Este registro refleja la cantidad de líderes y lideresas que se encuentran ejecutando acciones de Incidencia Política, diferenciados por área geográfica (urbana y rural). \nEs importante precisar que este indicador considera únicamente a adolescentes y jóvenes que efectivamente implementan la estrategia, diferencia del número total de personas capacitadas, permitiendo así evidenciar el nivel involucramiento en Incidencia Política.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 15, "codigo": "IND-15", "indicador": "N° de Planes de Incidencia Política elaborados", "tipo": "De proceso", "descripcion": "Se debe registrar la cantidad de Estrategias de Incidencia Política desarrolladas como resultado del proceso de capacitación, por área geográfica (urbana y rural). Este indicador debe reportarse una vez al año, considerando únicamente las estrategias efectivamente elaboradas por los y las adolescentes y jóvenes, con el apoyo del equipo educativo. Asimismo, es importante asegurar que cada estrategia reportada cuente con los elementos básicos de planificación y responda a una problemática identificada.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 3.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 16, "codigo": "IND-16", "indicador": "N° de políticas públicas aprobadas", "tipo": "De proceso", "descripcion": "El valor refleja el número de iniciativas que han sido aprobadas como resultado de las acciones de Incidencia Política desarrolladas. La información debe desagregarse por área geográfica. La meta anual es de 3 políticas públicas aprobadas, de las cuales 1 corresponde al área urbana y 2 al área rural, haciendo un total de 3. En aquellas regionales que no cuentan con intervención en el área rural, como Oruro y Potosí, la meta de 3 políticas públicas aprobadas corresponde al área urbana, pueden ser políticas de alcance departamental y/o municipal. Este indicador permite evidenciar los resultados concretos de los procesos de incidencia, considerando exclusivamente aquellas políticas que cuentan con aprobación formal por parte de las instancias competentes.", "filas": [{"subcategoria": "Área urbana", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 2.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 3.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 1.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 1.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 1.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 17, "codigo": "IND-17", "indicador": "N° de lideres/as formados/as en Auditoría Social", "tipo": "De proceso", "descripcion": "El indicador reporta líderes y lideresas capacitadas en Auditoría Social en base a la Guía de Auditoría Social desagregados por área geográfica (urbana y rural). El registro se realiza una sola vez en la gestión, considerando que el área rural corresponde principalmente a proyectos REACH – Alianza por la Solidaridad.", "filas": [{"subcategoria": "Área Urbana (nuevos)", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 5.0, "septiembre": 2.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Urbana (Antiguos)", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 2.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (nuevos)", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 4.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área Rural (Antiguos)", "meta_anual": 25.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 25.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 40.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 34.0, "septiembre": 4.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 18, "codigo": "IND-18", "indicador": "N° de lideres/as que realizan procesos de Auditoría Social", "tipo": "De proceso", "descripcion": "El indicador se reporta mensualmente, luego de la capacitación y elaboración del Plan de Auditoría Social,  a líderes y lideresas que implementan acciones, desagregados por área. Considera solo a quienes ejecutan la estrategia, evidenciando su nivel de involucramiento.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 4.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 8.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 19, "codigo": "IND-19", "indicador": "N° de planes de Auditoría Social elaborados", "tipo": "De proceso", "descripcion": "Ea un indicador que anualmente reporta los Planes de Auditoría Social elaborados por adolescentes y jóvenes, desagregados por área (urbana y rural), las accionescorrespondena Auditorías a la implementación del modelo AIDA en los centros de Salud y/o a la implementación de la EIS en Unidades Educativas.", "filas": [{"subcategoria": "Area urbana", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}, {"correlativo": 20, "codigo": "IND-20", "indicador": "N° de planes de fortalecimiento aprobados y/o centros certificados", "tipo": "De proceso", "descripcion": "El indicador reporta el número de planes de fortalecimiento aprobados/en implementación, resultado de los procesos de Auditoría Social realizados a los servicios de salud,  educación o protección. Asimismo, puede registrarse el resultado final de las acciones realizadas que puede ser la certificación o recertificación de centros AIDA, mayor implenetación de procesos de EIS en Unidades Educatvas o procesos realizados en la atención de víctimas de violencia en DNAs, SLIMs y FELCVs, diferenciadas por área geográfica (urbana o rural).", "filas": [{"subcategoria": "Área urbana", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "Área rural", "meta_anual": 0.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 0.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}, {"subcategoria": "TOTAL", "meta_anual": 1.0, "meses": {"enero": 0.0, "febrero": 0.0, "marzo": 0.0, "abril": 0.0, "mayo": 0.0, "junio": 0.0, "julio": 1.0, "agosto": 0.0, "septiembre": 0.0, "octubre": 0.0, "noviembre": 0.0, "diciembre": 0.0}, "observaciones": ""}]}]};
+
+let currentTableroRegion = "Nacional";
+let currentTableroFiltroTipo = "todos";
+let currentTableroBusqueda = "";
+
+// Inicialización de la base multi-regional en el almacén central
+function getTableroRegionalDB() {
+  const db = getDB();
+  if (!db.incidenciaInscripciones || !Array.isArray(db.incidenciaInscripciones)) {
+    db.incidenciaInscripciones = JSON.parse(JSON.stringify(INITIAL_DATA.incidenciaInscripciones));
+    updated = true;
+  }
+
+  if (!db.tableroPorRegional2026 || Object.keys(db.tableroPorRegional2026).length === 0) {
+    db.tableroPorRegional2026 = JSON.parse(JSON.stringify(INITIAL_TABLERO_REGIONALES_2026));
+    saveDB(db);
+  }
+  return db.tableroPorRegional2026;
+}
+
+// Obtiene los 20 indicadores para la región activa (o consolida Nacional en tiempo real)
+function getDatosRegionActiva(region) {
+  const regDB = getTableroRegionalDB();
+  if (region !== "Nacional" && regDB[region]) {
+    return regDB[region];
+  }
+
+  // Consolidación de Bolivia sumando las 9 regionales
+  const baseLP = regDB["LP"] || INITIAL_TABLERO_REGIONALES_2026["LP"];
+  const codigos = ["LP", "OR", "PTS", "CBBA", "SCZ", "EA", "SU", "TJA", "BENI"];
+  const meses = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+
+  return baseLP.map((indBase, indIdx) => {
+    const indConsolidado = JSON.parse(JSON.stringify(indBase));
+
+    indConsolidado.filas = indBase.filas.map((filaBase, filaIdx) => {
+      let sumaMeta = 0;
+      const sumaMeses = {};
+      meses.forEach(m => sumaMeses[m] = 0);
+
+      codigos.forEach(cod => {
+        const rInds = regDB[cod];
+        if (rInds && rInds[indIdx] && rInds[indIdx].filas && rInds[indIdx].filas[filaIdx]) {
+          const f = rInds[indIdx].filas[filaIdx];
+          sumaMeta += (Number(f.meta_anual) || 0);
+          meses.forEach(m => {
+            sumaMeses[m] += (Number(f.meses[m]) || 0);
+          });
+        }
+      });
+
+      const calc = calcularLogroFila(indBase.tipo, indBase.correlativo, sumaMeses, sumaMeta);
+
+      return {
+        subcategoria: filaBase.subcategoria,
+        meta_anual: Math.round(sumaMeta),
+        meses: sumaMeses,
+        logro_actual: calc.logro,
+        pct_cumplimiento: calc.pct,
+        observaciones: filaBase.observaciones || ""
+      };
+    });
+
+    return indConsolidado;
+  });
+}
+
+// Algoritmo normativo oficial de cálculo SGC
+function calcularLogroFila(tipo, correlativo, meses, metaAnual) {
+  const m = meses || {};
+  const mesesList = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  let logro = 0;
+  let formulaTxt = "";
+
+  if (tipo === "Mensual" || tipo === "De proceso") {
+    logro = mesesList.reduce((acc, k) => acc + (Number(m[k]) || 0), 0);
+    formulaTxt = tipo === "Mensual" ? "Suma Ene-Dic" : "Acumulado Proceso";
+  } else if (tipo === "Promedio") {
+    if (correlativo === 6) {
+      // Indicador 6: Jóvenes líderes activos (Excluye Enero, divide entre 11)
+      const meses11 = ["febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+      const sum11 = meses11.reduce((acc, k) => acc + (Number(m[k]) || 0), 0);
+      logro = Math.round((sum11 / 11) * 10) / 10;
+      formulaTxt = "Promedio Feb-Dic (11m)";
+    } else if (correlativo === 9 || correlativo === 12) {
+      // Indicadores 9 y 12: Docentes activos y U.E. intervenidas (Excluye Ene, Jun, Dic, divide entre 9)
+      const meses9 = ["febrero","marzo","abril","mayo","julio","agosto","septiembre","octubre","noviembre"];
+      const sum9 = meses9.reduce((acc, k) => acc + (Number(m[k]) || 0), 0);
+      logro = Math.round((sum9 / 9) * 10) / 10;
+      formulaTxt = "Promedio Escolar (9m)";
+    } else {
+      const sumTotal = mesesList.reduce((acc, k) => acc + (Number(m[k]) || 0), 0);
+      logro = Math.round((sumTotal / 12) * 10) / 10;
+      formulaTxt = "Promedio Anual (12m)";
+    }
+  } else {
+    logro = mesesList.reduce((acc, k) => acc + (Number(m[k]) || 0), 0);
+    formulaTxt = "Suma Directa";
+  }
+
+  const metaNum = Number(metaAnual) || 0;
+  const pct = metaNum > 0 ? Math.round((logro / metaNum) * 1000) / 10 : 0;
+  return { logro, pct, formulaTxt };
+}
+
+// Determina si el usuario logueado tiene facultades de Responsable Nacional o Dirección
+function isUserNational(user) {
+  if (!user) return true;
+  const roles = extractRolesList(user.roles || user.rol);
+  if (roles.some(r => {
+    const lr = r.toLowerCase();
+    return lr.includes("nacional") || lr.includes("director") || lr.includes("gerente") || lr.includes("administrador") || lr.includes("gerencia");
+  })) return true;
+  return user.regional === "Nacional";
+}
+
+// Mapeo amigable de códigos y ciudades de Bolivia
+const NOMBRES_REGIONALES = {
+  "LP": { ciudad: "La Paz", desc: "Sede de Gobierno y Red Central CIES" },
+  "OR": { ciudad: "Oruro", desc: "Regional Altiplano Central (Enfoque Urbano)" },
+  "PTS": { ciudad: "Potosí", desc: "Regional Altiplano Sur (Enfoque Urbano y Centros Mineros)" },
+  "CBBA": { ciudad: "Cochabamba", desc: "Regional Valles (Área Urbana y Rural Cercado)" },
+  "SCZ": { ciudad: "Santa Cruz", desc: "Regional Oriente (Metropolitana y Provincias)" },
+  "EA": { ciudad: "El Alto", desc: "Regional El Alto (Distritos Urbanos y Rincón Juvenil)" },
+  "SU": { ciudad: "Sucre", desc: "Regional Chuquisaca (Capital y Red de Servicios)" },
+  "TJA": { ciudad: "Tarija", desc: "Regional Sur (Valles de Tarija e Incidencia)" },
+  "BENI": { ciudad: "Beni", desc: "Regional Amazonía (Trinidad, Riberalta y Unidades Móviles)" },
+  "Nacional": { ciudad: "Consolidado Nacional (Bolivia)", desc: "Supervisión institucional que agrupa y consolida los 20 indicadores oficiales de desempeño de las 9 oficinas regionales del país." }
+};
+
+// =========================================================================
+// TABLERO DE MANDO EJECUTIVO - GERENCIA NACIONAL (GENERAL NIVEL BOLIVIA)
+// =========================================================================
+
+let currentGNModoVista = "bolivia"; // 'bolivia' | 'regional_aislada'
+let currentGNRegionalAislada = "LP"; // Regional seleccionada en auditoría aislada
+let currentGNSubtab = "meses"; // 'meses' | 'informes'
+let adminForceGerenteView = false;
+let gnDeptExpanded = { "LP": true }; // La Paz expandida por defecto
+
+// Alterna la visibilidad de las metas desglosadas de una regional en la tabla departamental
+function toggleGNDeptDesglose(regKey) {
+  gnDeptExpanded[regKey] = !gnDeptExpanded[regKey];
+  const isExp = !!gnDeptExpanded[regKey];
+  const rows = document.querySelectorAll(`.gn-dept-subrow-${regKey}`);
+  const btnIcon = document.getElementById(`gn-dept-icon-${regKey}`);
+  const btnTxt = document.getElementById(`gn-dept-txt-${regKey}`);
+
+  rows.forEach(r => {
+    if (isExp) r.classList.remove("hidden");
+    else r.classList.add("hidden");
+  });
+
+  if (btnIcon) btnIcon.textContent = isExp ? "▲" : "▼";
+  if (btnTxt) btnTxt.textContent = isExp ? "Ocultar" : "Desglosar";
+}
+
+// Expande o colapsa simultáneamente las 9 sedes regionales
+function toggleAllGNDeptDesglose() {
+  const codigos = ["LP", "OR", "PTS", "CBBA", "SCZ", "EA", "SU", "TJA", "BENI"];
+  const anyCollapsed = codigos.some(c => !gnDeptExpanded[c]);
+  const newState = anyCollapsed;
+
+  codigos.forEach(c => {
+    gnDeptExpanded[c] = newState;
+    const rows = document.querySelectorAll(`.gn-dept-subrow-${c}`);
+    const btnIcon = document.getElementById(`gn-dept-icon-${c}`);
+    const btnTxt = document.getElementById(`gn-dept-txt-${c}`);
+
+    rows.forEach(r => {
+      if (newState) r.classList.remove("hidden");
+      else r.classList.add("hidden");
+    });
+
+    if (btnIcon) btnIcon.textContent = newState ? "▲" : "▼";
+    if (btnTxt) btnTxt.textContent = newState ? "Ocultar" : "Desglosar";
+  });
+
+  const mainIcon = document.getElementById("icon-toggle-all-dept");
+  const mainTxt = document.getElementById("text-toggle-all-dept");
+  if (mainIcon) mainIcon.textContent = newState ? "▲" : "▼";
+  if (mainTxt) mainTxt.textContent = newState ? "Colapsar Todas las Regiones" : "Expandir Todas las Regiones";
+}
+
+function isUserGerenteNacional(user) {
+  if (!user) return false;
+  const roles = extractRolesList(user.roles || user.rol);
+  return roles.some(r => {
+    const lr = r.toLowerCase();
+    return lr.includes("gerente nacional") || lr === "gerencia" || lr.includes("gerente nacional de proyectos");
+  });
+}
+
+// Alternador de vista ejecutiva para administradores
+function toggleAdminGerenteView() {
+  adminForceGerenteView = !adminForceGerenteView;
+  updateDashboardKPIs();
+  renderTableroOficial();
+}
+
+// Conmutador de modo en el panel de Gerencia Nacional
+function setGNModoVista(modo) {
+  currentGNModoVista = modo;
+  const btnBolivia = document.getElementById("gn-btn-modo-bolivia");
+  const btnAislado = document.getElementById("gn-btn-modo-aislado");
+  const secBolivia = document.getElementById("gn-seccion-bolivia");
+  const secAislada = document.getElementById("gn-seccion-aislada");
+
+  if (modo === "bolivia") {
+    if (btnBolivia) btnBolivia.className = "px-3 py-1.5 rounded-lg bg-blue-900 text-white shadow-xs transition-all flex items-center gap-1.5 cursor-pointer";
+    if (btnAislado) btnAislado.className = "px-3 py-1.5 rounded-lg text-slate-700 hover:text-slate-900 transition-all flex items-center gap-1.5 cursor-pointer";
+    if (secBolivia) secBolivia.classList.remove("hidden");
+    if (secAislada) secAislada.classList.add("hidden");
+  } else {
+    if (btnBolivia) btnBolivia.className = "px-3 py-1.5 rounded-lg text-slate-700 hover:text-slate-900 transition-all flex items-center gap-1.5 cursor-pointer";
+    if (btnAislado) btnAislado.className = "px-3 py-1.5 rounded-lg bg-blue-900 text-white shadow-xs transition-all flex items-center gap-1.5 cursor-pointer";
+    if (secBolivia) secBolivia.classList.add("hidden");
+    if (secAislada) secAislada.classList.remove("hidden");
+  }
+
+  renderGerenteNacionalDashboard();
+}
+
+// Cambio de regional activa en la vista aislada del Gerente Nacional
+function cambiarGNRegionAislada(nuevaRegion) {
+  currentGNRegionalAislada = nuevaRegion;
+  setGNModoVista("regional_aislada");
+}
+
+// Conmutador de subpestañas en modo aislado (Meses vs Informes)
+function setGNSubtab(subtab) {
+  currentGNSubtab = subtab;
+  const btnMeses = document.getElementById("gn-subtab-meses-btn");
+  const btnInf = document.getElementById("gn-subtab-informes-btn");
+  const secMeses = document.getElementById("gn-subseccion-meses");
+  const secInf = document.getElementById("gn-subseccion-informes");
+
+  if (subtab === "meses") {
+    if (btnMeses) btnMeses.className = "px-4 py-2 rounded-xl bg-blue-900 text-white text-xs font-bold shadow-xs transition-all flex items-center gap-1.5 cursor-pointer";
+    if (btnInf) btnInf.className = "px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer";
+    if (secMeses) secMeses.classList.remove("hidden");
+    if (secInf) secInf.classList.add("hidden");
+  } else {
+    if (btnMeses) btnMeses.className = "px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer";
+    if (btnInf) btnInf.className = "px-4 py-2 rounded-xl bg-blue-900 text-white text-xs font-bold shadow-xs transition-all flex items-center gap-1.5 cursor-pointer";
+    if (secMeses) secMeses.classList.add("hidden");
+    if (secInf) secInf.classList.remove("hidden");
+  }
+
+  renderGNAislada();
+}
+
+// Render principal de Gerencia Nacional
+function renderGerenteNacionalDashboard() {
+  if (currentGNModoVista === "bolivia") {
+    renderGNBoliviaDesglosado();
+  } else {
+    renderGNAislada();
+  }
+}
+
+// =========================================================================
+// MODO 1: RENDER CONSOLIDADO NIVEL BOLIVIA (TODAS LAS METAS DESGLOSADAS)
+// =========================================================================
+function renderGNBoliviaDesglosado() {
+  const regDB = getTableroRegionalDB();
+  const indsBolivia = getDatosRegionActiva("Nacional");
+
+  // 1. Sumatoria General Nivel Bolivia (de las filas de TOTAL)
+  let totalMetaBolivia = 0;
+  let totalLogroBolivia = 0;
+
+  indsBolivia.forEach(ind => {
+    const fTotal = ind.filas.find(f => f.subcategoria.includes("TOTAL")) || ind.filas[0];
+    if (fTotal) {
+      totalMetaBolivia += (Number(fTotal.meta_anual) || 0);
+      totalLogroBolivia += fTotal.logro_actual;
+    }
+  });
+
+  const pctRedondeado = totalMetaBolivia > 0 ? Math.round((totalLogroBolivia / totalMetaBolivia) * 100) : 0;
+  const pctGeneralBolivia = totalMetaBolivia > 0 ? Math.round((totalLogroBolivia / totalMetaBolivia) * 1000) / 10 : 0;
+
+  // 2. Renderizar KPIs Macro
+  const elMetaBolivia = document.getElementById("gn-meta-bolivia");
+  const elLogroBolivia = document.getElementById("gn-logro-bolivia");
+  const elPctBolivia = document.getElementById("gn-pct-bolivia");
+  const elBarPctBolivia = document.getElementById("gn-bar-pct-bolivia");
+  const elBadgeCumplimiento = document.getElementById("gn-badge-cumplimiento");
+
+  if (elMetaBolivia) elMetaBolivia.textContent = Math.round(totalMetaBolivia).toLocaleString();
+  if (elLogroBolivia) elLogroBolivia.textContent = Math.round(totalLogroBolivia).toLocaleString();
+  if (elPctBolivia) elPctBolivia.textContent = `${pctGeneralBolivia}%`;
+  if (elBarPctBolivia) elBarPctBolivia.style.width = `${Math.min(pctRedondeado, 100)}%`;
+  if (elBadgeCumplimiento) {
+    elBadgeCumplimiento.textContent = `${pctGeneralBolivia}% Avance País`;
+    elBadgeCumplimiento.className = `px-3.5 py-1 rounded-full text-xs font-black font-mono ${pctRedondeado >= 90 ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' : (pctRedondeado >= 70 ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30' : 'bg-rose-500/20 text-rose-300 border border-rose-500/30')}`;
+  }
+
+  // 3. Renderizar Tabla de Metas Desglosadas a Nivel Bolivia (73 filas)
+  const tbodyBolivia = document.getElementById("table-gerente-nacional-body");
+  if (tbodyBolivia) {
+    let htmlBolivia = "";
+
+    indsBolivia.forEach(ind => {
+      const tieneSubfilas = ind.filas.length > 1;
+
+      ind.filas.forEach((fila, fIdx) => {
+        const isTotal = fila.subcategoria.includes("TOTAL");
+        const calc = calcularLogroFila(ind.tipo, ind.correlativo, fila.meses, fila.meta_anual);
+
+        let badgeColor = "bg-rose-100 text-rose-800 border-rose-200";
+        let barColor = "bg-rose-500";
+        if (calc.pct >= 90) {
+          badgeColor = "bg-emerald-100 text-emerald-800 border-emerald-200";
+          barColor = "bg-emerald-500";
+        } else if (calc.pct >= 70) {
+          badgeColor = "bg-amber-100 text-amber-800 border-amber-200";
+          barColor = "bg-amber-500";
+        }
+
+        if (isTotal) {
+          htmlBolivia += `
+            <tr class="bg-blue-50/70 hover:bg-blue-100/70 transition-colors border-t border-b-2 border-blue-200 font-bold">
+              <td class="py-2.5 px-4 text-center font-mono text-xs font-black text-blue-900">${ind.codigo}</td>
+              <td class="py-2.5 px-5">
+                <div class="flex items-center gap-2">
+                  <span class="text-blue-950 font-black">${fila.subcategoria} &bull; ${ind.indicador}</span>
+                  <span class="text-[10px] bg-blue-200/80 text-blue-900 px-2 py-0.5 rounded-full font-mono font-bold">TOTAL</span>
+                </div>
+              </td>
+              <td class="py-2.5 px-5 text-right font-black text-blue-950 text-xs">${Number(fila.meta_anual).toLocaleString()}</td>
+              <td class="py-2.5 px-5 text-right font-black text-blue-700 text-xs">${calc.logro.toLocaleString()}</td>
+              <td class="py-2.5 px-5 text-right">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-black border ${badgeColor}">${calc.pct}%</span>
+              </td>
+              <td class="py-2.5 px-5">
+                <div class="w-full bg-slate-200 rounded-full h-2 overflow-hidden shadow-2xs">
+                  <div class="${barColor} h-2 rounded-full" style="width: ${Math.min(calc.pct, 100)}%"></div>
+                </div>
+              </td>
+            </tr>
+          `;
+        } else {
+          htmlBolivia += `
+            <tr class="hover:bg-slate-50 transition-colors border-b border-slate-100 text-slate-700">
+              <td class="py-2 px-4 text-center font-mono text-[11px] text-slate-400">${ind.codigo}-${fIdx + 1}</td>
+              <td class="py-2 px-5">
+                <div class="flex items-center gap-2 ${tieneSubfilas ? 'pl-4' : ''}">
+                  ${tieneSubfilas ? '<span class="text-slate-400">&rdsh;</span>' : ''}
+                  <span class="${tieneSubfilas ? 'font-medium text-slate-800' : 'font-bold text-slate-900'}">
+                    ${tieneSubfilas ? fila.subcategoria : ind.indicador}
+                  </span>
+                  ${!tieneSubfilas ? `<span class="text-[10px] text-slate-400 font-mono">(${ind.tipo})</span>` : ''}
+                </div>
+              </td>
+              <td class="py-2 px-5 text-right font-medium text-slate-800">${Number(fila.meta_anual).toLocaleString()}</td>
+              <td class="py-2 px-5 text-right font-bold text-slate-900">${calc.logro.toLocaleString()}</td>
+              <td class="py-2 px-5 text-right">
+                <span class="px-2 py-0.5 rounded-full text-[11px] font-bold border ${badgeColor}">${calc.pct}%</span>
+              </td>
+              <td class="py-2 px-5">
+                <div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+                  <div class="${barColor} h-1.5 rounded-full" style="width: ${Math.min(calc.pct, 100)}%"></div>
+                </div>
+              </td>
+            </tr>
+          `;
+        }
+      });
+    });
+
+    tbodyBolivia.innerHTML = htmlBolivia;
+  }
+
+  // 4. Tabla Comparativa de Departamentos con Acordeón de Metas Desglosadas
+  const tbodyDept = document.getElementById("table-gerente-departamental-body");
+  if (tbodyDept) {
+    const codigosRegionales = ["LP", "OR", "PTS", "CBBA", "SCZ", "EA", "SU", "TJA", "BENI"];
+    let htmlDept = "";
+
+    const getBadgeStyle = (p) => p >= 90 ? "bg-emerald-100 text-emerald-800 border-emerald-200" : (p >= 70 ? "bg-amber-100 text-amber-800 border-amber-200" : "bg-rose-100 text-rose-800 border-rose-200");
+    const getBarStyle = (p) => p >= 90 ? "bg-emerald-500" : (p >= 70 ? "bg-amber-500" : "bg-rose-500");
+
+    codigosRegionales.forEach(regKey => {
+      const regMetaInfo = NOMBRES_REGIONALES[regKey] || { ciudad: regKey };
+      const indsReg = regDB[regKey] || [];
+      const isExp = !!gnDeptExpanded[regKey];
+      let regMetaSum = 0;
+      let regLogroSum = 0;
+
+      indsReg.forEach(ind => {
+        const fTot = ind.filas.find(f => f.subcategoria.includes("TOTAL")) || ind.filas[0];
+        if (fTot) {
+          const calc = calcularLogroFila(ind.tipo, ind.correlativo, fTot.meses, fTot.meta_anual);
+          regMetaSum += (Number(fTot.meta_anual) || 0);
+          regLogroSum += calc.logro;
+        }
+      });
+
+      const regPct = regMetaSum > 0 ? Math.round((regLogroSum / regMetaSum) * 1000) / 10 : 0;
+      const barCol = getBarStyle(regPct);
+      const badgeCol = getBadgeStyle(regPct);
+
+      // Fila Principal del Departamento
+      htmlDept += `
+        <tr class="bg-slate-50/90 hover:bg-slate-100/90 transition-colors border-t-2 border-slate-200">
+          <td class="py-3 px-3 text-center">
+            <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-900 font-mono font-black text-xs border border-blue-200">${regKey}</span>
+          </td>
+          <td class="py-3 px-4">
+            <div class="flex items-center gap-2">
+              <button type="button" onclick="toggleGNDeptDesglose('${regKey}')" class="text-slate-500 hover:text-blue-900 p-1 rounded hover:bg-slate-200/80 transition-colors flex items-center gap-1 font-bold text-xs cursor-pointer" title="Desplegar u ocultar metas desglosadas">
+                <span id="gn-dept-icon-${regKey}">${isExp ? '▲' : '▼'}</span>
+                <span id="gn-dept-txt-${regKey}" class="text-[11px] underline">${isExp ? 'Ocultar' : 'Desglosar'}</span>
+              </button>
+              <span class="font-black text-slate-900 text-sm">${regMetaInfo.ciudad}</span>
+              <span class="text-[10px] font-mono font-bold text-blue-700 bg-blue-50 px-1.5 py-0.2 rounded border border-blue-200">Sede Regional</span>
+            </div>
+            <span class="text-[10px] text-slate-500 block pl-6 mt-0.5">${regMetaInfo.desc || ''}</span>
+          </td>
+          <td class="py-3 px-3 text-right font-black text-slate-900 text-xs">${Math.round(regMetaSum).toLocaleString()}</td>
+          <td class="py-3 px-3 text-right font-black text-blue-700 text-xs">${Math.round(regLogroSum).toLocaleString()}</td>
+          <td class="py-3 px-3 text-right">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-black border ${badgeCol}">${regPct}%</span>
+          </td>
+          <td class="py-3 px-4">
+            <div class="w-full bg-slate-200 rounded-full h-2 overflow-hidden shadow-2xs">
+              <div class="${barCol} h-2 rounded-full transition-all duration-300" style="width: ${Math.min(regPct, 100)}%"></div>
+            </div>
+          </td>
+          <td class="py-3 px-3 text-center">
+            <button type="button" onclick="cambiarGNRegionAislada('${regKey}')" class="px-2.5 py-1 bg-blue-900 hover:bg-blue-950 text-white text-[11px] font-bold rounded-lg transition-colors cursor-pointer flex items-center justify-center gap-1 mx-auto shadow-2xs">
+              <span>🔍</span> Auditar
+            </button>
+          </td>
+        </tr>
+      `;
+
+      // Subfilas Desglosadas (Acordeón)
+      const indLideres = indsReg.find(i => i.correlativo === 1);
+      if (indLideres && indLideres.filas) {
+        let urbMeta = 0, urbLogro = 0;
+        let rurMeta = 0, rurLogro = 0;
+
+        indLideres.filas.forEach(f => {
+          const subLower = (f.subcategoria || '').toLowerCase();
+          const calcF = calcularLogroFila(indLideres.tipo, 1, f.meses, f.meta_anual);
+          if (subLower.includes("urbana")) {
+            urbMeta += (Number(f.meta_anual) || 0);
+            urbLogro += calcF.logro;
+          } else if (subLower.includes("rural")) {
+            rurMeta += (Number(f.meta_anual) || 0);
+            rurLogro += calcF.logro;
+          }
+        });
+
+        const urbPct = urbMeta > 0 ? Math.round((urbLogro / urbMeta) * 1000) / 10 : 0;
+        const rurPct = rurMeta > 0 ? Math.round((rurLogro / rurMeta) * 1000) / 10 : 0;
+
+        indLideres.filas.forEach((f, fIdx) => {
+          const isTot = (f.subcategoria || '').includes("TOTAL");
+          const calcF = calcularLogroFila(indLideres.tipo, 1, f.meses, f.meta_anual);
+          const bStyle = getBadgeStyle(calcF.pct);
+          const barStyle = getBarStyle(calcF.pct);
+
+          if (isTot) {
+            // Subtotal urbano
+            htmlDept += `
+              <tr class="gn-dept-subrow-${regKey} ${isExp ? '' : 'hidden'} bg-amber-50/50 border-b border-amber-100 text-slate-800 font-bold text-xs">
+                <td class="py-1.5 px-3 text-center text-amber-700 font-mono text-[10px]">🏙️</td>
+                <td class="py-1.5 px-4 pl-8 text-amber-900 font-black">
+                  SUBTOTAL LÍDERES URBANOS • ${regMetaInfo.ciudad}
+                </td>
+                <td class="py-1.5 px-3 text-right text-slate-900">${Math.round(urbMeta).toLocaleString()}</td>
+                <td class="py-1.5 px-3 text-right text-amber-900">${Math.round(urbLogro).toLocaleString()}</td>
+                <td class="py-1.5 px-3 text-right">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold border ${getBadgeStyle(urbPct)}">${urbPct}%</span>
+                </td>
+                <td class="py-1.5 px-4">
+                  <div class="w-full bg-amber-200/60 rounded-full h-1.5 overflow-hidden">
+                    <div class="bg-amber-600 h-1.5 rounded-full" style="width: ${Math.min(urbPct, 100)}%"></div>
+                  </div>
+                </td>
+                <td class="py-1.5 px-3 text-center text-[10px] text-amber-800 font-semibold">Urbano Sede</td>
+              </tr>
+            `;
+
+            // Subtotal rural
+            htmlDept += `
+              <tr class="gn-dept-subrow-${regKey} ${isExp ? '' : 'hidden'} bg-emerald-50/50 border-b border-emerald-100 text-slate-800 font-bold text-xs">
+                <td class="py-1.5 px-3 text-center text-emerald-700 font-mono text-[10px]">🌾</td>
+                <td class="py-1.5 px-4 pl-8 text-emerald-900 font-black">
+                  SUBTOTAL LÍDERES RURALES • ${regMetaInfo.ciudad}
+                </td>
+                <td class="py-1.5 px-3 text-right text-slate-900">${Math.round(rurMeta).toLocaleString()}</td>
+                <td class="py-1.5 px-3 text-right text-emerald-900">${Math.round(rurLogro).toLocaleString()}</td>
+                <td class="py-1.5 px-3 text-right">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold border ${getBadgeStyle(rurPct)}">${rurPct}%</span>
+                </td>
+                <td class="py-1.5 px-4">
+                  <div class="w-full bg-emerald-200/60 rounded-full h-1.5 overflow-hidden">
+                    <div class="bg-emerald-600 h-1.5 rounded-full" style="width: ${Math.min(rurPct, 100)}%"></div>
+                  </div>
+                </td>
+                <td class="py-1.5 px-3 text-center text-[10px] text-emerald-800 font-semibold">Rural Sede</td>
+              </tr>
+            `;
+
+            // Total Líderes Activos
+            htmlDept += `
+              <tr class="gn-dept-subrow-${regKey} ${isExp ? '' : 'hidden'} bg-blue-100/60 border-b-2 border-blue-200 font-black text-xs text-blue-950">
+                <td class="py-2 px-3 text-center font-mono text-[10px] text-blue-800">⭐</td>
+                <td class="py-2 px-4 pl-6 text-blue-950">
+                  TOTAL LÍDERES ACTIVOS • ${regMetaInfo.ciudad}
+                </td>
+                <td class="py-2 px-3 text-right font-black">${Number(f.meta_anual).toLocaleString()}</td>
+                <td class="py-2 px-3 text-right font-black text-blue-800">${calcF.logro.toLocaleString()}</td>
+                <td class="py-2 px-3 text-right">
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-black border ${bStyle}">${calcF.pct}%</span>
+                </td>
+                <td class="py-2 px-4">
+                  <div class="w-full bg-blue-200 rounded-full h-2 overflow-hidden shadow-2xs">
+                    <div class="${barStyle} h-2 rounded-full" style="width: ${Math.min(calcF.pct, 100)}%"></div>
+                  </div>
+                </td>
+                <td class="py-2 px-3 text-center text-[10px] text-blue-900 font-black">Meta Ind 1</td>
+              </tr>
+            `;
+          } else {
+            htmlDept += `
+              <tr class="gn-dept-subrow-${regKey} ${isExp ? '' : 'hidden'} bg-white hover:bg-slate-50 transition-colors border-b border-slate-100 text-slate-700 text-xs">
+                <td class="py-1.5 px-3 text-center font-mono text-[10px] text-slate-400">IND-01</td>
+                <td class="py-1.5 px-4 pl-10 text-slate-800 flex items-center gap-1.5">
+                  <span class="text-slate-400">&rdsh;</span>
+                  <span>Líderes activos: ${f.subcategoria}</span>
+                </td>
+                <td class="py-1.5 px-3 text-right font-medium text-slate-800">${Number(f.meta_anual).toLocaleString()}</td>
+                <td class="py-1.5 px-3 text-right font-bold text-slate-900">${calcF.logro.toLocaleString()}</td>
+                <td class="py-1.5 px-3 text-right">
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold border ${bStyle}">${calcF.pct}%</span>
+                </td>
+                <td class="py-1.5 px-4">
+                  <div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+                    <div class="${barStyle} h-1.5 rounded-full" style="width: ${Math.min(calcF.pct, 100)}%"></div>
+                  </div>
+                </td>
+                <td class="py-1.5 px-3 text-center text-[10px] text-slate-400 font-mono">Submeta</td>
+              </tr>
+            `;
+          }
+        });
+      }
+
+      // Desglose de los demás indicadores clave
+      indsReg.forEach(ind => {
+        if (ind.correlativo === 1) return;
+        const fTot = ind.filas.find(f => (f.subcategoria || '').includes("TOTAL")) || ind.filas[0];
+        if (!fTot) return;
+        const calcF = calcularLogroFila(ind.tipo, ind.correlativo, fTot.meses, fTot.meta_anual);
+        const bStyle = getBadgeStyle(calcF.pct);
+        const barStyle = getBarStyle(calcF.pct);
+
+        htmlDept += `
+          <tr class="gn-dept-subrow-${regKey} ${isExp ? '' : 'hidden'} bg-slate-50/40 hover:bg-slate-100/60 transition-colors border-b border-slate-100 text-slate-600 text-xs">
+            <td class="py-1 px-3 text-center font-mono text-[10px] text-slate-400">${ind.codigo}</td>
+            <td class="py-1 px-4 pl-8 text-slate-700 flex items-center gap-1.5">
+              <span class="text-slate-400">&bull;</span>
+              <span class="truncate max-w-md font-medium" title="${ind.indicador}">${ind.indicador}</span>
+            </td>
+            <td class="py-1 px-3 text-right font-mono text-[11px] text-slate-700">${Number(fTot.meta_anual).toLocaleString()}</td>
+            <td class="py-1 px-3 text-right font-mono text-[11px] font-bold text-slate-800">${calcF.logro.toLocaleString()}</td>
+            <td class="py-1 px-3 text-right">
+              <span class="px-1.5 py-0.2 rounded text-[10px] font-bold border ${bStyle}">${calcF.pct}%</span>
+            </td>
+            <td class="py-1 px-4">
+              <div class="w-full bg-slate-100 rounded-full h-1 overflow-hidden">
+                <div class="${barStyle} h-1 rounded-full" style="width: ${Math.min(calcF.pct, 100)}%"></div>
+              </div>
+            </td>
+            <td class="py-1 px-3 text-center text-[10px] text-slate-400">${ind.tipo}</td>
+          </tr>
+        `;
+      });
+    });
+
+    // Fila Total Bolivia
+    htmlDept += `
+      <tr class="bg-blue-900 text-white font-black border-t-2 border-blue-950">
+        <td class="py-3.5 px-3 text-center font-mono text-xs">BOL</td>
+        <td class="py-3.5 px-4 text-xs uppercase tracking-wider">TOTAL GENERAL NIVEL BOLIVIA</td>
+        <td class="py-3.5 px-3 text-right text-xs">${Math.round(totalMetaBolivia).toLocaleString()}</td>
+        <td class="py-3.5 px-3 text-right text-xs text-emerald-300">${Math.round(totalLogroBolivia).toLocaleString()}</td>
+        <td class="py-3.5 px-3 text-right text-xs">
+          <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">${pctGeneralBolivia}%</span>
+        </td>
+        <td colspan="2" class="py-3.5 px-4">
+          <div class="w-full bg-white/20 rounded-full h-2.5 overflow-hidden">
+            <div class="bg-emerald-400 h-2.5 rounded-full" style="width: ${Math.min(pctRedondeado, 100)}%"></div>
+          </div>
+        </td>
+      </tr>
+    `;
+
+    tbodyDept.innerHTML = htmlDept;
+  }
+}
+
+// =========================================================================
+// MODO 2: RENDER AUDITORÍA AISLADA POR REGIONAL (MES A MES E INFORMES)
+// =========================================================================
+function renderGNAislada() {
+  const regDB = getTableroRegionalDB();
+  const db = getDB();
+  const codigosRegionales = ["LP", "OR", "PTS", "CBBA", "SCZ", "EA", "SU", "TJA", "BENI"];
+  const regKey = currentGNRegionalAislada || "LP";
+  const regMetaInfo = NOMBRES_REGIONALES[regKey] || { ciudad: regKey, desc: "" };
+  const indsReg = regDB[regKey] || [];
+
+  // 1. Renderizar pastillas de las 9 regionales
+  const pillsContainer = document.getElementById("gn-pills-regiones-aisladas");
+  if (pillsContainer) {
+    pillsContainer.innerHTML = codigosRegionales.map(c => {
+      const meta = NOMBRES_REGIONALES[c] || { ciudad: c };
+      const isActive = (c === regKey);
+      return `
+        <button type="button" onclick="cambiarGNRegionAislada('${c}')" class="px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+          isActive 
+            ? 'bg-blue-900 text-white shadow-xs border border-blue-950 ring-2 ring-blue-400/30' 
+            : 'bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200'
+        }">
+          <span>${isActive ? '📍' : '🏢'}</span>
+          <span>${meta.ciudad}</span>
+          <span class="text-[10px] font-mono px-1 rounded ${isActive ? 'bg-blue-800 text-blue-200' : 'bg-slate-200 text-slate-600'}">${c}</span>
+        </button>
+      `;
+    }).join("");
+  }
+
+  // 2. Ficha Ejecutiva
+  let sumMeta = 0;
+  let sumLogro = 0;
+
+  indsReg.forEach(ind => {
+    const fTot = ind.filas.find(f => f.subcategoria.includes("TOTAL")) || ind.filas[0];
+    if (fTot) {
+      const calc = calcularLogroFila(ind.tipo, ind.correlativo, fTot.meses, fTot.meta_anual);
+      sumMeta += (Number(fTot.meta_anual) || 0);
+      sumLogro += calc.logro;
+    }
+  });
+
+  const pctAislada = sumMeta > 0 ? Math.round((sumLogro / sumMeta) * 1000) / 10 : 0;
+  const informesRegional = (db.informes || []).filter(inf => inf.regional === regKey);
+
+  const elTit = document.getElementById("gn-aislada-titulo");
+  const elDesc = document.getElementById("gn-aislada-desc");
+  const elMeta = document.getElementById("gn-aislada-meta");
+  const elLogro = document.getElementById("gn-aislada-logro");
+  const elPct = document.getElementById("gn-aislada-pct");
+  const elInfCount = document.getElementById("gn-aislada-informes-count");
+
+  if (elTit) elTit.textContent = `Regional ${regMetaInfo.ciudad} (${regKey})`;
+  if (elDesc) elDesc.textContent = regMetaInfo.desc || "Supervisión focalizada de indicadores e informes de la regional.";
+  if (elMeta) elMeta.textContent = Math.round(sumMeta).toLocaleString();
+  if (elLogro) elLogro.textContent = Math.round(sumLogro).toLocaleString();
+  if (elPct) elPct.textContent = `${pctAislada}%`;
+  if (elInfCount) elInfCount.textContent = informesRegional.length;
+
+  // 3. Renderizar Subsección Activa
+  if (currentGNSubtab === "meses") {
+    const tbodyMeses = document.getElementById("table-gn-aislada-meses-body");
+    if (tbodyMeses) {
+      let htmlMeses = "";
+      const mesesKeys = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+
+      indsReg.forEach(ind => {
+        ind.filas.forEach((fila, fIdx) => {
+          const isTotal = fila.subcategoria.includes("TOTAL");
+          const calc = calcularLogroFila(ind.tipo, ind.correlativo, fila.meses, fila.meta_anual);
+          const m = fila.meses || {};
+
+          let rowBg = isTotal ? "bg-blue-50/70 font-bold text-blue-950 border-t border-b border-blue-200" : "hover:bg-slate-50 transition-colors border-b border-slate-100 text-slate-700";
+
+          htmlMeses += `
+            <tr class="${rowBg}">
+              <td class="py-2 px-3 text-center font-mono text-[10px] text-slate-500">${isTotal ? ind.codigo : `${ind.codigo}-${fIdx + 1}`}</td>
+              <td class="py-2 px-4 text-xs">
+                <span class="${isTotal ? 'font-black text-blue-900' : 'text-slate-800 font-medium'}">${fila.subcategoria || ind.indicador}</span>
+              </td>
+              <td class="py-2 px-2 text-right font-bold text-slate-900">${Number(fila.meta_anual).toLocaleString()}</td>
+              ${mesesKeys.map(k => `
+                <td class="py-2 px-1 text-center font-mono text-[11px] ${m[k] ? 'text-slate-900 font-bold' : 'text-slate-300'}">${m[k] || 0}</td>
+              `).join("")}
+              <td class="py-2 px-2 text-right font-black bg-blue-50/80 text-blue-900">${calc.logro.toLocaleString()}</td>
+              <td class="py-2 px-2 text-right font-bold ${calc.pct >= 90 ? 'text-emerald-700' : (calc.pct >= 70 ? 'text-amber-700' : 'text-rose-700')}">${calc.pct}%</td>
+            </tr>
+          `;
+        });
+      });
+
+      tbodyMeses.innerHTML = htmlMeses;
+    }
+  } else {
+    const containerInf = document.getElementById("gn-aislada-informes-grid");
+    if (containerInf) {
+      if (informesRegional.length === 0) {
+        containerInf.innerHTML = `
+          <div class="col-span-full py-12 text-center text-slate-400 bg-slate-50 rounded-xl border border-dashed border-slate-300">
+            <span class="text-3xl block mb-2">📑</span>
+            <p class="text-sm font-semibold text-slate-600">No se encontraron informes radicados para ${regMetaInfo.ciudad}.</p>
+            <p class="text-xs text-slate-400 mt-1">Los informes cargados en el módulo de Informes se clasificarán automáticamente aquí.</p>
+          </div>
+        `;
+      } else {
+        containerInf.innerHTML = informesRegional.map(inf => `
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs hover:border-blue-400 transition-all flex flex-col justify-between space-y-3">
+            <div>
+              <div class="flex items-center justify-between gap-2 pb-2 border-b border-slate-100">
+                <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800">${inf.codigo}</span>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${inf.estado === 'Aprobado' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">${inf.estado}</span>
+              </div>
+              <h5 class="font-bold text-slate-900 text-xs mt-2 leading-snug">${inf.titulo}</h5>
+              <p class="text-[11px] text-slate-500 mt-1">Autor: <span class="font-semibold text-slate-700">${inf.autor}</span> • Período: <span class="font-semibold text-slate-700">${inf.periodo}</span></p>
+              <p class="text-xs text-slate-600 mt-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100 italic leading-relaxed">"${inf.resumen || 'Sin resumen registrado.'}"</p>
+            </div>
+
+            <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+              <span class="text-slate-400 text-[10px] font-mono">📎 ${inf.archivo || 'documento.xlsx'} (${inf.peso || '1.2 MB'})</span>
+              <button type="button" onclick="showToast('Abriendo informe técnico: ${inf.codigo}', 'info')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-900 text-white font-bold rounded-lg text-[11px] transition-colors cursor-pointer">
+                Auditar Informe
+              </button>
+            </div>
+          </div>
+        `).join("");
+      }
+    }
+  }
+}
+
 function updateDashboardKPIs() {
   const db = getDB();
+  const user = getCurrentUser();
+  const isGN = isUserGerenteNacional(user) || (adminForceGerenteView && (user && (user.rol === "Administrador" || (user.roles && user.roles.includes("Administrador")))));
 
+  const standardView = document.getElementById("dashboard-standard-view");
+  const gerenteView = document.getElementById("dashboard-gerente-nacional-view");
+
+  if (isGN) {
+    if (standardView) standardView.classList.add("hidden");
+    if (gerenteView) gerenteView.classList.remove("hidden");
+
+    const adminToggleSlot = document.getElementById("gn-admin-toggle-slot");
+    if (adminToggleSlot) {
+      if (user && (user.rol === "Administrador" || (user.roles && user.roles.includes("Administrador")))) {
+        adminToggleSlot.innerHTML = `
+          <button type="button" onclick="toggleAdminGerenteView()" class="px-2.5 py-1.5 bg-blue-100 hover:bg-blue-200 text-blue-900 text-xs font-bold rounded-lg transition-colors cursor-pointer flex items-center gap-1">
+            <span>🔄</span> Ver Vista Operativa SGC
+          </button>
+        `;
+      } else {
+        adminToggleSlot.innerHTML = "";
+      }
+    }
+
+    renderGerenteNacionalDashboard();
+    return;
+  }
+
+  if (standardView) standardView.classList.remove("hidden");
+  if (gerenteView) gerenteView.classList.add("hidden");
+  const isNational = isUserNational(user);
+
+  // Si es usuario regional, forzar su región institucional
+  if (!isNational && user && user.regional && user.regional !== "Nacional") {
+    currentTableroRegion = user.regional;
+  } else if (!sessionStorage.getItem("CIES_TABLERO_REGION")) {
+    currentTableroRegion = "Nacional";
+  } else {
+    currentTableroRegion = sessionStorage.getItem("CIES_TABLERO_REGION");
+  }
+
+  const regMeta = NOMBRES_REGIONALES[currentTableroRegion] || { ciudad: currentTableroRegion, desc: "" };
+
+  // 1. Renderizar controles de región en cabecera
+  const regControls = document.getElementById("tablero-region-controls");
+  if (regControls) {
+    if (isNational) {
+      regControls.innerHTML = `
+        <label for="select-tablero-region" class="text-xs font-bold text-slate-700 hidden sm:inline">Ciudad / Sede:</label>
+        <select id="select-tablero-region" onchange="cambiarRegionTablero(this.value)" class="text-xs px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg font-bold text-slate-800 shadow-2xs focus:ring-2 focus:ring-blue-500 cursor-pointer">
+          <option value="Nacional" ${currentTableroRegion === 'Nacional' ? 'selected' : ''}>🌐 Nacional (Consolidado País)</option>
+          <option value="LP" ${currentTableroRegion === 'LP' ? 'selected' : ''}>📍 La Paz (Sede Central)</option>
+          <option value="OR" ${currentTableroRegion === 'OR' ? 'selected' : ''}>📍 Oruro (Regional Oruro)</option>
+          <option value="PTS" ${currentTableroRegion === 'PTS' ? 'selected' : ''}>📍 Potosí (Regional Potosí)</option>
+          <option value="CBBA" ${currentTableroRegion === 'CBBA' ? 'selected' : ''}>📍 Cochabamba (Regional Valles)</option>
+          <option value="SCZ" ${currentTableroRegion === 'SCZ' ? 'selected' : ''}>📍 Santa Cruz (Regional Oriente)</option>
+          <option value="EA" ${currentTableroRegion === 'EA' ? 'selected' : ''}>📍 El Alto (Distritos Urbanos)</option>
+          <option value="SU" ${currentTableroRegion === 'SU' ? 'selected' : ''}>📍 Sucre (Regional Chuquisaca)</option>
+          <option value="TJA" ${currentTableroRegion === 'TJA' ? 'selected' : ''}>📍 Tarija (Regional Sur)</option>
+          <option value="BENI" ${currentTableroRegion === 'BENI' ? 'selected' : ''}>📍 Beni (Trinidad / Riberalta)</option>
+        </select>
+      `;
+    } else {
+      regControls.innerHTML = `
+        <div class="flex items-center gap-1.5 px-3 py-1 bg-blue-50 border border-blue-200 rounded-lg text-blue-900 text-xs font-bold">
+          <span>📍</span>
+          <span>Región Asignada: <strong>${regMeta.ciudad}</strong></span>
+        </div>
+      `;
+    }
+  }
+
+  // 2. Banner de Contexto Regional y Pastillas Rápidas
+  const bannerBadge = document.getElementById("tablero-banner-region-badge");
+  const bannerTit = document.getElementById("tablero-banner-region-titulo");
+  const bannerDesc = document.getElementById("tablero-banner-region-desc");
+  const quickPills = document.getElementById("tablero-quick-regions");
+
+  if (bannerBadge) bannerBadge.textContent = currentTableroRegion;
+  if (bannerTit) bannerTit.textContent = regMeta.ciudad;
+  if (bannerDesc) bannerDesc.textContent = regMeta.desc;
+
+  if (quickPills) {
+    if (isNational) {
+      const codigos = ["Nacional", "LP", "OR", "PTS", "CBBA", "SCZ", "EA", "SU", "TJA", "BENI"];
+      quickPills.innerHTML = codigos.map(c => `
+        <button type="button" onclick="cambiarRegionTablero('${c}')" class="px-2 py-0.5 rounded text-[11px] font-bold transition-all cursor-pointer ${
+          c === currentTableroRegion 
+            ? 'bg-blue-600 text-white shadow-xs font-black ring-1 ring-white/50' 
+            : 'bg-white/10 hover:bg-white/20 text-slate-300'
+        }">
+          ${c === 'Nacional' ? '🌐 Nacional' : c}
+        </button>
+      `).join("");
+    } else {
+      quickPills.innerHTML = `
+        <span class="text-xs text-blue-200 font-medium">Jurisdicción territorial: <strong>${regMeta.ciudad}</strong></span>
+      `;
+    }
+  }
+
+  // 3. Tarjetas KPI según la región activa
+  const indsActivos = getDatosRegionActiva(currentTableroRegion);
   const elPart = document.getElementById("kpi-participantes");
   const elAct = document.getElementById("kpi-actividades");
   const elOri = document.getElementById("kpi-orientadores");
   const elVih = document.getElementById("kpi-vih");
   const elDoc = document.getElementById("kpi-archivos");
 
-  if (elPart) elPart.innerText = db.participantes.length;
-  if (elAct) elAct.innerText = db.actividades.length;
-  if (elOri) elOri.innerText = db.orientadores.length;
-  
-  const meses = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  const partFiltrados = currentTableroRegion === "Nacional" ? db.participantes : db.participantes.filter(p => p.regional === currentTableroRegion || (currentTableroRegion === "LP" && (!p.regional || p.regional === "LP")));
+  const actFiltradas = currentTableroRegion === "Nacional" ? db.actividades : db.actividades.filter(a => a.regional === currentTableroRegion || (currentTableroRegion === "LP" && (!a.regional || a.regional === "LP")));
+  const oriFiltrados = currentTableroRegion === "Nacional" ? db.orientadores : db.orientadores.filter(o => o.regional === currentTableroRegion);
 
-  // Total de pruebas de VIH registradas en el tablero
-  const vihItem = db.tableroMetas2026.find(i => i.codigo === "IND-02");
-  if (elVih && vihItem) {
-    const totalVih = meses.reduce((sum, m) => sum + (vihItem[m] || 0), 0);
-    elVih.innerText = totalVih;
+  if (elPart) elPart.innerText = partFiltrados.length;
+  if (elAct) elAct.innerText = actFiltradas.length;
+  if (elOri) elOri.innerText = oriFiltrados.length;
+
+  const indVih = indsActivos.find(i => i.correlativo === 3);
+  if (elVih && indVih) {
+    const fila = indVih.filas[0];
+    const calcVih = calcularLogroFila("Mensual", 3, fila.meses, fila.meta_anual);
+    elVih.innerText = calcVih.logro;
   }
+
   if (elDoc) elDoc.innerText = db.digitalizacion.length;
 
-  // -------------------------------------------------------------
-  // EFICACIA FORMATIVA: SEGUIMIENTO A DOCENTES
-  // -------------------------------------------------------------
-  const docCapItem = db.tableroMetas2026.find(i => i.codigo === "IND-05A");
-  const docActItem = db.tableroMetas2026.find(i => i.codigo === "IND-05B");
-  const totalDocCap = docCapItem ? meses.reduce((sum, m) => sum + (docCapItem[m] || 0), 0) : 0;
-  const totalDocAct = docActItem ? meses.reduce((sum, m) => sum + (docActItem[m] || 0), 0) : 0;
+  // Cumplimiento Global Ponderado
+  let sumaPct = 0;
+  let conteoMetas = 0;
+  indsActivos.forEach(ind => {
+    const fTotal = ind.filas.find(f => f.subcategoria.includes("TOTAL")) || ind.filas[0];
+    if (fTotal && fTotal.meta_anual > 0) {
+      const calc = calcularLogroFila(ind.tipo, ind.correlativo, fTotal.meses, fTotal.meta_anual);
+      sumaPct += calc.pct;
+      conteoMetas++;
+    }
+  });
+  const pctGlobal = conteoMetas > 0 ? Math.round(sumaPct / conteoMetas) : 0;
+  const elGlobal = document.getElementById("kpi-cumplimiento-global");
+  const elEstado = document.getElementById("kpi-cumplimiento-estado");
+  if (elGlobal) elGlobal.innerText = `${pctGlobal}%`;
+  if (elEstado) {
+    if (pctGlobal >= 90) {
+      elEstado.className = "text-[10px] bg-emerald-400 text-emerald-950 px-2 py-0.5 rounded font-black";
+      elEstado.innerText = "Excelente";
+    } else if (pctGlobal >= 70) {
+      elEstado.className = "text-[10px] bg-amber-400 text-amber-950 px-2 py-0.5 rounded font-black";
+      elEstado.innerText = "Aceptable";
+    } else {
+      elEstado.className = "text-[10px] bg-rose-400 text-rose-950 px-2 py-0.5 rounded font-black";
+      elEstado.innerText = "En alerta";
+    }
+  }
 
+  // 4. Widgets de Eficacia Formativa (Docentes y Estudiantes)
+  const indDocCap = indsActivos.find(i => i.correlativo === 8);
+  const indDocAct = indsActivos.find(i => i.correlativo === 9);
+  let totalDocCap = 0;
+  let totalDocAct = 0;
+  if (indDocCap) {
+    const fTot = indDocCap.filas.find(f => f.subcategoria.includes("TOTAL")) || indDocCap.filas[0];
+    totalDocCap = calcularLogroFila("De proceso", 8, fTot.meses, fTot.meta_anual).logro;
+  }
+  if (indDocAct) {
+    const fTot = indDocAct.filas.find(f => f.subcategoria.includes("TOTAL")) || indDocAct.filas[0];
+    totalDocAct = calcularLogroFila("Promedio", 9, fTot.meses, fTot.meta_anual).logro;
+  }
   const elDocCap = document.getElementById("kpi-docentes-capacitados");
   const elDocAct = document.getElementById("kpi-docentes-activos");
   const elDocTasa = document.getElementById("kpi-docentes-tasa");
   if (elDocCap) elDocCap.innerText = totalDocCap;
-  if (elDocAct) elDocAct.innerText = totalDocAct;
+  if (elDocAct) elDocAct.innerText = Math.round(totalDocAct);
   if (elDocTasa) {
     const tasa = totalDocCap > 0 ? Math.round((totalDocAct / totalDocCap) * 100) : 0;
-    elDocTasa.innerText = `${tasa}% Activos en Aula`;
+    elDocTasa.innerText = `${tasa}% Activos`;
   }
 
-  // -------------------------------------------------------------
-  // EFICACIA FORMATIVA: SEGUIMIENTO A ESTUDIANTES Y JÓVENES
-  // -------------------------------------------------------------
-  const estIniItem = db.tableroMetas2026.find(i => i.codigo === "IND-07A");
-  const estCulItem = db.tableroMetas2026.find(i => i.codigo === "IND-07B");
-  const totalEstIni = estIniItem ? meses.reduce((sum, m) => sum + (estIniItem[m] || 0), 0) : 0;
-  const totalEstCul = estCulItem ? meses.reduce((sum, m) => sum + (estCulItem[m] || 0), 0) : 0;
-
+  // Estudiantes que Inician (Ind. 10A) y Culminan (Ind. 10B)
+  const indEst = indsActivos.find(i => i.correlativo === 10);
+  let totalEstIni = 0;
+  let totalEstCul = 0;
+  if (indEst && indEst.filas) {
+    const filaIniTot = indEst.filas.find(f => f.subcategoria.includes("TOTAL") && indEst.filas.indexOf(f) < 5) || indEst.filas[4];
+    const filaCulTot = indEst.filas.find(f => f.subcategoria.includes("TOTAL") && indEst.filas.indexOf(f) >= 5) || indEst.filas[indEst.filas.length - 1];
+    if (filaIniTot) totalEstIni = calcularLogroFila("De proceso", 10, filaIniTot.meses, filaIniTot.meta_anual).logro;
+    if (filaCulTot) totalEstCul = calcularLogroFila("De proceso", 10, filaCulTot.meses, filaCulTot.meta_anual).logro;
+  }
   const elEstIni = document.getElementById("kpi-estudiantes-iniciados");
   const elEstCul = document.getElementById("kpi-estudiantes-culminados");
   const elEstTasa = document.getElementById("kpi-estudiantes-tasa");
@@ -2240,63 +3685,498 @@ function updateDashboardKPIs() {
     elEstTasa.innerText = `${tasaEst}% Culminados`;
   }
 
-  // Actividades recientes
+  // Actividades recientes de la región activa
   const recentContainer = document.getElementById("dashboard-recent-activities");
   if (recentContainer) {
-    recentContainer.innerHTML = db.actividades.slice(0, 3).map(act => `
-      <div class="flex items-center justify-between p-3 bg-white rounded-lg border border-slate-100 shadow-sm">
-        <div>
-          <p class="font-medium text-slate-800 text-sm">${act.titulo}</p>
-          <p class="text-xs text-slate-500">${act.fecha} • Área: <span class="font-semibold text-slate-700">${act.area}</span> • ${act.unidadEducativa}</p>
+    const acts = (currentTableroRegion === "Nacional" 
+      ? db.actividades 
+      : db.actividades.filter(a => a.regional === currentTableroRegion || (currentTableroRegion === "LP" && (!a.regional || a.regional === "LP")))).slice(0, 3);
+
+    if (acts.length === 0) {
+      recentContainer.innerHTML = `
+        <div class="p-3 text-center text-xs text-slate-400 bg-slate-50 rounded-lg border border-dashed border-slate-200">
+          No hay planillas recientes registradas en ${regMeta.ciudad}.
         </div>
-        <span class="px-2.5 py-1 text-xs rounded-full font-medium ${
-          act.estado === 'Finalizado' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'
-        }">${act.estado}</span>
-      </div>
-    `).join("");
+      `;
+    } else {
+      recentContainer.innerHTML = acts.map(act => `
+        <div class="flex items-center justify-between p-3 bg-white rounded-lg border border-slate-100 shadow-2xs">
+          <div>
+            <p class="font-bold text-slate-800 text-xs">${act.titulo}</p>
+            <p class="text-[11px] text-slate-500">${act.fecha} &bull; Regional: <span class="font-semibold text-blue-700">${act.regional || 'LP'}</span> &bull; ${act.unidadEducativa || 'Sede'}</p>
+          </div>
+          <span class="px-2.5 py-0.5 text-[10px] rounded-full font-bold ${
+            act.estado === 'Finalizado' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'
+          }">${act.estado}</span>
+        </div>
+      `).join("");
+    }
   }
+
+  // Renderizar la tabla operativa de indicadores
+  renderTableroOficial();
 }
 
+// Renderiza la matriz oficial completa de los 20 indicadores SGC con la cuadrícula Mes a Mes
 function renderTableroOficial() {
-  const db = getDB();
   const tbody = document.getElementById("table-tablero-oficial");
   if (!tbody) return;
 
-  const meses = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  const inds = getDatosRegionActiva(currentTableroRegion);
+  const busqueda = (currentTableroBusqueda || "").toLowerCase();
 
-  tbody.innerHTML = db.tableroMetas2026.map(item => {
-    const logroActual = meses.reduce((sum, m) => sum + (item[m] || 0), 0);
-    const pct = item.metaAnual > 0 ? Math.round((logroActual / item.metaAnual) * 100) : 0;
-    
-    // Color según porcentaje
-    let badgeColor = "bg-rose-100 text-rose-800";
-    let barColor = "bg-rose-500";
-    if (pct >= 70 && pct < 90) {
-      badgeColor = "bg-amber-100 text-amber-800";
-      barColor = "bg-amber-500";
-    } else if (pct >= 90) {
-      badgeColor = "bg-emerald-100 text-emerald-800";
-      barColor = "bg-emerald-500";
-    }
+  // Filtrado por tipo de cumplimiento y por término de búsqueda
+  const filtrados = inds.filter(ind => {
+    const cumpleTipo = (currentTableroFiltroTipo === "todos" || ind.tipo === currentTableroFiltroTipo);
+    const cumpleBusq = !busqueda || 
+      ind.indicador.toLowerCase().includes(busqueda) || 
+      ind.codigo.toLowerCase().includes(busqueda) ||
+      ind.tipo.toLowerCase().includes(busqueda);
+    return cumpleTipo && cumpleBusq;
+  });
 
-    return `
-      <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-        <td class="py-3 px-4 font-mono text-xs text-blue-700 font-semibold">${item.codigo}</td>
-        <td class="py-3 px-4 font-medium text-slate-900">${item.indicador}</td>
-        <td class="py-3 px-4 text-slate-700 font-semibold text-right">${item.metaAnual}</td>
-        <td class="py-3 px-4 text-blue-700 font-bold text-right">${logroActual}</td>
-        <td class="py-3 px-4 text-right">
-          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold ${badgeColor}">${pct}%</span>
-        </td>
-        <td class="py-3 px-4 w-36">
-          <div class="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
-            <div class="${barColor} h-2 rounded-full" style="width: ${Math.min(pct, 100)}%"></div>
-          </div>
+  // Contador de indicadores
+  const elConteo = document.getElementById("tablero-conteo-indicadores");
+  if (elConteo) elConteo.textContent = `${filtrados.length} de 20`;
+
+  if (filtrados.length === 0) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="20" class="py-12 text-center text-slate-400">
+          <p class="text-sm font-semibold">No se encontraron indicadores para el filtro aplicado.</p>
+          <button type="button" onclick="filtrarTipoTablero('todos')" class="mt-2 text-xs text-blue-600 underline">Ver todos los indicadores</button>
         </td>
       </tr>
     `;
-  }).join("");
+    return;
+  }
+
+  const mesesKeys = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+
+  function renderMesCelda(val, indCorrelativo, mesKey, isExcludedRow = false) {
+    let isExcluded = false;
+    if (indCorrelativo === 6 && mesKey === "enero") isExcluded = true;
+    if ((indCorrelativo === 9 || indCorrelativo === 12) && (mesKey === "enero" || mesKey === "junio" || mesKey === "diciembre")) isExcluded = true;
+
+    if (isExcluded) {
+      return `<td class="py-2 px-1 text-center font-mono text-[11px] bg-slate-200/50 text-slate-400 select-none border-r border-slate-100" title="Mes no computable según norma técnica SGC">&mdash;</td>`;
+    }
+
+    const numVal = Number(val) || 0;
+    const txtVal = numVal > 0 ? numVal.toLocaleString() : `<span class="text-slate-300">0</span>`;
+    return `<td class="py-2 px-1 text-center font-mono text-[11px] text-slate-700 border-r border-slate-100 ${numVal > 0 ? 'font-bold' : ''}">${txtVal}</td>`;
+  }
+
+  let htmlRows = "";
+
+  filtrados.forEach(ind => {
+    const tieneSubfilas = ind.filas.length > 1;
+
+    let tipoBadge = "";
+    if (ind.tipo === "Mensual") {
+      tipoBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-200 text-slate-800 border border-slate-300">Mensual</span>`;
+    } else if (ind.tipo === "De proceso") {
+      tipoBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-sky-100 text-sky-800 border border-sky-300">De Proceso</span>`;
+    } else if (ind.tipo === "Promedio") {
+      tipoBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-300">Promedio</span>`;
+    }
+
+    if (!tieneSubfilas) {
+      const fila = ind.filas[0];
+      const calc = calcularLogroFila(ind.tipo, ind.correlativo, fila.meses, fila.meta_anual);
+      let pctBadge = calc.pct >= 90 ? "bg-emerald-100 text-emerald-800 border-emerald-200" : (calc.pct >= 70 ? "bg-amber-100 text-amber-800 border-amber-200" : "bg-rose-100 text-rose-800 border-rose-200");
+
+      let metaMensualTxt = "-";
+      if (ind.tipo === "Mensual") {
+        metaMensualTxt = fila.meta_anual > 0 ? (Math.round((fila.meta_anual / 12) * 10) / 10).toLocaleString() : "0";
+      } else if (ind.tipo === "De proceso") {
+        metaMensualTxt = "Meta Proceso";
+      } else if (ind.tipo === "Promedio") {
+        metaMensualTxt = ind.correlativo === 6 ? "Prom / 11m" : "Prom / 9m";
+      }
+
+      htmlRows += `
+        <tr class="hover:bg-blue-50/40 transition-colors border-b border-slate-200">
+          <td class="py-2.5 px-2 text-center font-mono font-black text-slate-500 text-[11px] sticky left-0 bg-white z-10 border-r border-slate-100">${ind.correlativo}</td>
+          <td class="py-2.5 px-2.5 text-center">${tipoBadge}</td>
+          <td class="py-2.5 px-3 sticky left-10 bg-white z-10 border-r border-slate-100 min-w-[260px]">
+            <div class="flex items-center gap-1.5">
+              <span class="font-bold text-slate-900">${ind.indicador}</span>
+            </div>
+            <div class="text-[10px] text-slate-400 mt-0.5 font-mono">${ind.codigo} &bull; ${calc.formulaTxt}</div>
+          </td>
+          <td class="py-2.5 px-2.5 text-right font-black text-slate-900 border-r border-slate-100">${Number(fila.meta_anual).toLocaleString()}</td>
+          <td class="py-2.5 px-2.5 text-right text-slate-500 font-mono text-[11px] border-r border-slate-100">${metaMensualTxt}</td>
+          ${mesesKeys.map(k => renderMesCelda(fila.meses[k], ind.correlativo, k)).join("")}
+          <td class="py-2.5 px-3 text-right font-black text-blue-900 bg-blue-50/80 border-r border-slate-100 text-xs">${calc.logro.toLocaleString()}</td>
+          <td class="py-2.5 px-2.5 text-right border-r border-slate-100">
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-black border ${pctBadge}">${calc.pct}%</span>
+          </td>
+          <td class="py-2.5 px-2.5 text-center">
+            <div class="flex items-center justify-center gap-1">
+              <button type="button" onclick="abrirEditarLogroMes(${ind.correlativo}, 0)" class="p-1 text-slate-500 hover:text-emerald-700 hover:bg-emerald-50 rounded transition-colors cursor-pointer" title="Registrar o editar valores del mes">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+              </button>
+              <button type="button" onclick="verFichaTecnicaIndicador(${ind.correlativo})" class="p-1 text-slate-500 hover:text-indigo-700 hover:bg-indigo-50 rounded transition-colors cursor-pointer" title="Ver ficha técnica SGC (ISO 9001)">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+      `;
+    } else {
+      // Indicador con subcategorías
+      const filaTot = ind.filas.find(f => f.subcategoria.includes("TOTAL")) || ind.filas[ind.filas.length - 1];
+      const subfilas = ind.filas.filter(f => !f.subcategoria.includes("TOTAL"));
+
+      // 1. Subfilas individuales
+      subfilas.forEach((subFila, sIdx) => {
+        const subCalc = calcularLogroFila(ind.tipo, ind.correlativo, subFila.meses, subFila.meta_anual);
+        let subPctBadge = subCalc.pct >= 90 ? "bg-emerald-100 text-emerald-800" : (subCalc.pct >= 70 ? "bg-amber-100 text-amber-800" : "bg-rose-100 text-rose-800");
+
+        htmlRows += `
+          <tr class="bg-slate-50/40 hover:bg-slate-100/50 text-slate-700 border-b border-slate-100 text-[11px]">
+            <td class="py-1.5 px-2 text-center text-slate-400 font-mono text-[10px] sticky left-0 bg-slate-50/80 z-10 border-r border-slate-100">${sIdx === 0 ? ind.correlativo : ''}</td>
+            <td class="py-1.5 px-2.5 text-center text-slate-400 font-mono text-[10px]">${ind.codigo}-${sIdx + 1}</td>
+            <td class="py-1.5 px-3 sticky left-10 bg-slate-50/80 z-10 border-r border-slate-100 min-w-[260px] pl-6 text-slate-800 flex items-center gap-1.5">
+              <span class="text-slate-400">&rdsh;</span>
+              <span class="truncate max-w-sm" title="${subFila.subcategoria}">${subFila.subcategoria}</span>
+            </td>
+            <td class="py-1.5 px-2.5 text-right font-medium text-slate-800 border-r border-slate-100">${Number(subFila.meta_anual).toLocaleString()}</td>
+            <td class="py-1.5 px-2.5 text-right text-slate-400 font-mono text-[10px] border-r border-slate-100">-</td>
+            ${mesesKeys.map(k => renderMesCelda(subFila.meses[k], ind.correlativo, k)).join("")}
+            <td class="py-1.5 px-3 text-right font-bold text-slate-900 bg-slate-100/70 border-r border-slate-100">${subCalc.logro.toLocaleString()}</td>
+            <td class="py-1.5 px-2.5 text-right border-r border-slate-100">
+              <span class="px-1.5 py-0.2 rounded text-[10px] font-bold ${subPctBadge}">${subCalc.pct}%</span>
+            </td>
+            <td class="py-1.5 px-2.5 text-center">
+              <button type="button" onclick="abrirEditarLogroMes(${ind.correlativo}, ${sIdx})" class="text-[10px] text-blue-600 hover:underline font-semibold cursor-pointer">
+                Editar
+              </button>
+            </td>
+          </tr>
+        `;
+      });
+
+      // 2. Fila TOTAL del indicador
+      const totCalc = calcularLogroFila(ind.tipo, ind.correlativo, filaTot.meses, filaTot.meta_anual);
+      let totPctBadge = totCalc.pct >= 90 ? "bg-emerald-100 text-emerald-800 border-emerald-200" : (totCalc.pct >= 70 ? "bg-amber-100 text-amber-800 border-amber-200" : "bg-rose-100 text-rose-800 border-rose-200");
+
+      let metaMensualTxt = "-";
+      if (ind.tipo === "Mensual") {
+        metaMensualTxt = filaTot.meta_anual > 0 ? (Math.round((filaTot.meta_anual / 12) * 10) / 10).toLocaleString() : "0";
+      } else if (ind.tipo === "De proceso") {
+        metaMensualTxt = "Meta Proceso";
+      } else if (ind.tipo === "Promedio") {
+        metaMensualTxt = ind.correlativo === 6 ? "Prom / 11m" : "Prom / 9m";
+      }
+
+      htmlRows += `
+        <tr class="bg-blue-50/70 hover:bg-blue-100/70 border-t border-b-2 border-blue-200 font-bold text-xs">
+          <td class="py-2 px-2 text-center font-mono font-black text-blue-900 sticky left-0 bg-blue-50/90 z-10 border-r border-slate-200">${ind.correlativo}</td>
+          <td class="py-2 px-2.5 text-center">${tipoBadge}</td>
+          <td class="py-2 px-3 sticky left-10 bg-blue-50/90 z-10 border-r border-slate-200 min-w-[260px]">
+            <div class="flex items-center gap-1.5">
+              <span class="font-black text-blue-950">${ind.indicador}</span>
+              <span class="text-[10px] bg-blue-200 text-blue-900 px-1.5 py-0.2 rounded font-black font-mono">TOTAL</span>
+            </div>
+            <div class="text-[10px] text-blue-600/80 font-mono">${ind.codigo} &bull; ${totCalc.formulaTxt}</div>
+          </td>
+          <td class="py-2 px-2.5 text-right font-black text-blue-950 border-r border-slate-200">${Number(filaTot.meta_anual).toLocaleString()}</td>
+          <td class="py-2 px-2.5 text-right text-blue-800 font-mono text-[11px] border-r border-slate-200">${metaMensualTxt}</td>
+          ${mesesKeys.map(k => renderMesCelda(filaTot.meses[k], ind.correlativo, k)).join("")}
+          <td class="py-2 px-3 text-right font-black text-blue-950 bg-blue-100/80 border-r border-slate-200 text-xs">${totCalc.logro.toLocaleString()}</td>
+          <td class="py-2 px-2.5 text-right border-r border-slate-200">
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-black border ${totPctBadge}">${totCalc.pct}%</span>
+          </td>
+          <td class="py-2 px-2.5 text-center">
+            <div class="flex items-center justify-center gap-1">
+              <button type="button" onclick="verFichaTecnicaIndicador(${ind.correlativo})" class="p-1 text-blue-800 hover:text-blue-950 hover:bg-blue-200/50 rounded transition-colors cursor-pointer" title="Ver ficha técnica SGC (ISO 9001)">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+      `;
+    }
+  });
+
+  tbody.innerHTML = htmlRows;
 }
+
+// Cambio reactivo de región / ciudad
+function cambiarRegionTablero(nuevaRegion) {
+  currentTableroRegion = nuevaRegion;
+  sessionStorage.setItem("CIES_TABLERO_REGION", nuevaRegion);
+  updateDashboardKPIs();
+  renderTableroOficial();
+  const regMeta = NOMBRES_REGIONALES[nuevaRegion] || { ciudad: nuevaRegion };
+  showToast(`Tablero actualizado: ${regMeta.ciudad}`, "info");
+}
+
+// Filtro por tipo de cumplimiento
+function filtrarTipoTablero(tipo) {
+  currentTableroFiltroTipo = tipo;
+  ["todos", "mensual", "proceso", "promedio"].forEach(t => {
+    const btn = document.getElementById(`tab-tipo-${t}`);
+    if (btn) {
+      btn.className = "px-2.5 py-1 rounded-lg hover:text-slate-900 transition-all flex items-center gap-1";
+    }
+  });
+  const idMap = {
+    "todos": "tab-tipo-todos",
+    "Mensual": "tab-tipo-mensual",
+    "De proceso": "tab-tipo-proceso",
+    "Promedio": "tab-tipo-promedio"
+  };
+  const activeBtn = document.getElementById(idMap[tipo] || "tab-tipo-todos");
+  if (activeBtn) {
+    activeBtn.className = "px-2.5 py-1 rounded-lg bg-white text-slate-900 shadow-2xs font-bold transition-all flex items-center gap-1";
+  }
+  renderTableroOficial();
+}
+
+// Búsqueda reactiva de indicadores
+function filtrarBusquedaTablero(busqueda) {
+  currentTableroBusqueda = busqueda;
+  renderTableroOficial();
+}
+
+// Visor de Ficha Técnica Oficial SGC (ISO 9001:2015)
+function verFichaTecnicaIndicador(correlativo) {
+  const indInfo = CATALOGO_INDICADORES_SGC_2026.find(i => i.correlativo === correlativo);
+  if (!indInfo) return;
+
+  const elCod = document.getElementById("modal-ficha-codigo");
+  const elTit = document.getElementById("modal-ficha-titulo");
+  const elTipo = document.getElementById("modal-ficha-tipo");
+  const elMet = document.getElementById("modal-ficha-metodologia");
+  const elDesc = document.getElementById("modal-ficha-descripcion");
+  const elMeses = document.getElementById("modal-ficha-meses-regla");
+  const elDesag = document.getElementById("modal-ficha-desagregacion");
+
+  if (elCod) elCod.textContent = indInfo.codigo;
+  if (elTit) elTit.textContent = indInfo.indicador;
+  if (elTipo) elTipo.textContent = indInfo.tipo;
+  if (elDesc) elDesc.textContent = indInfo.descripcion;
+
+  if (elMet) {
+    if (indInfo.tipo === "Mensual") elMet.textContent = "Suma acumulativa simple de Enero a Diciembre.";
+    else if (indInfo.tipo === "De proceso") elMet.textContent = "Conteo directo por ciclo completado con registro de línea base y salida.";
+    else elMet.textContent = `Promedio aritmético mensualizado (divisor normativo: ${indInfo.divisorPromedio} meses).`;
+  }
+
+  if (elMeses) {
+    if (indInfo.mesesExcluidos.length === 0) {
+      elMeses.innerHTML = "<strong>12 meses computables:</strong> Se evalúa la ejecución continua de Enero a Diciembre sin exclusión.";
+    } else {
+      elMeses.innerHTML = `<strong>Meses excluidos por receso o ciclo escolar:</strong> <span class="font-bold underline">${indInfo.mesesExcluidos.join(", ")}</span>. Divisor normativo: ${indInfo.divisorPromedio} meses.`;
+    }
+  }
+
+  if (elDesag) {
+    elDesag.textContent = "Desagregado por sede regional (9 oficinas del país), área geográfica (Urbana / Rural) y condición de usuario (Nuevos / Antiguos).";
+  }
+
+  openModal("modal-ficha-tecnica-indicador");
+}
+
+// Visor horizontal de 12 meses
+function abrirModalVerMeses(correlativo, subIdx = 0) {
+  const inds = getDatosRegionActiva(currentTableroRegion);
+  const ind = inds.find(i => i.correlativo === correlativo);
+  if (!ind) return;
+
+  const fila = ind.filas[subIdx] || ind.filas[0];
+  const calc = calcularLogroFila(ind.tipo, ind.correlativo, fila.meses, fila.meta_anual);
+  const regMeta = NOMBRES_REGIONALES[currentTableroRegion] || { ciudad: currentTableroRegion };
+
+  const elCod = document.getElementById("modal-meses-codigo");
+  const elTit = document.getElementById("modal-meses-titulo");
+  const elSub = document.getElementById("modal-meses-subtitulo");
+  const elForm = document.getElementById("modal-meses-formula");
+  const elPct = document.getElementById("modal-meses-pct");
+  const elBody = document.getElementById("modal-meses-table-body");
+
+  if (elCod) elCod.textContent = ind.codigo;
+  if (elTit) elTit.textContent = ind.indicador + (fila.subcategoria ? ` (${fila.subcategoria})` : "");
+  if (elSub) elSub.textContent = `Región: ${regMeta.ciudad} &bull; Meta Anual POA: ${Number(fila.meta_anual).toLocaleString()}`;
+  if (elForm) elForm.textContent = calc.formulaTxt;
+  if (elPct) {
+    elPct.textContent = `${calc.pct}%`;
+    elPct.className = `font-bold ml-1 px-2.5 py-0.5 rounded-full ${calc.pct >= 90 ? 'bg-emerald-100 text-emerald-800' : (calc.pct >= 70 ? 'bg-amber-100 text-amber-800' : 'bg-rose-100 text-rose-800')}`;
+  }
+
+  if (elBody) {
+    const m = fila.meses || {};
+    const mesesKeys = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+    elBody.innerHTML = `
+      <tr>
+        ${mesesKeys.map(k => `<td class="py-2.5 px-2 font-bold">${m[k] !== undefined ? m[k] : 0}</td>`).join("")}
+        <td class="py-2.5 px-3 bg-blue-50 font-black text-blue-800">${calc.logro.toLocaleString()}</td>
+      </tr>
+    `;
+  }
+
+  openModal("modal-ver-meses-indicador");
+}
+
+// Editor de Logros Mensuales para la región activa
+function abrirEditarLogroMes(correlativo, subIdx = 0) {
+  if (currentTableroRegion === "Nacional") {
+    showToast("Para registrar logros, seleccione una ciudad o región específica.", "warning");
+    return;
+  }
+
+  const regDB = getTableroRegionalDB();
+  const regionInds = regDB[currentTableroRegion];
+  if (!regionInds) return;
+
+  const ind = regionInds.find(i => i.correlativo === correlativo);
+  if (!ind) return;
+
+  const fila = ind.filas[subIdx] || ind.filas[0];
+  const regMeta = NOMBRES_REGIONALES[currentTableroRegion] || { ciudad: currentTableroRegion };
+
+  document.getElementById("edit-ind-correlativo").value = correlativo;
+  document.getElementById("edit-ind-subidx").value = subIdx;
+
+  document.getElementById("modal-edit-titulo").textContent = ind.indicador;
+  document.getElementById("modal-edit-subtitulo").textContent = `Regional: ${regMeta.ciudad} &bull; Subcategoría: ${fila.subcategoria || 'General'}`;
+  document.getElementById("edit-meta-anual-badge").textContent = Number(fila.meta_anual).toLocaleString();
+  document.getElementById("edit-val-obs").value = fila.observaciones || "";
+
+  const mesesKeys = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  const m = fila.meses || {};
+  mesesKeys.forEach(k => {
+    const input = document.getElementById(`edit-val-${k}`);
+    if (input) input.value = m[k] !== undefined ? m[k] : 0;
+  });
+
+  // Resaltar meses excluidos según normativa
+  mesesKeys.forEach(k => {
+    const lbl = document.getElementById(`lbl-mes-${k}`);
+    if (lbl) {
+      if ((correlativo === 6 && k === "enero") || ((correlativo === 9 || correlativo === 12) && (k === "enero" || k === "junio" || k === "diciembre"))) {
+        lbl.innerHTML = `${k.charAt(0).toUpperCase() + k.slice(1)} <span class="text-[9px] text-amber-600 font-bold">(Excluido)</span>`;
+      } else {
+        lbl.textContent = k.charAt(0).toUpperCase() + k.slice(1);
+      }
+    }
+  });
+
+  recalcularLogroModal();
+  openModal("modal-editar-logro-mes");
+}
+
+// Recalcula en tiempo real dentro del modal de edición
+function recalcularLogroModal() {
+  const correlativo = parseInt(document.getElementById("edit-ind-correlativo").value);
+  const indInfo = CATALOGO_INDICADORES_SGC_2026.find(i => i.correlativo === correlativo);
+  if (!indInfo) return;
+
+  const mesesKeys = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  const m = {};
+  mesesKeys.forEach(k => {
+    const input = document.getElementById(`edit-val-${k}`);
+    m[k] = input ? (parseFloat(input.value) || 0) : 0;
+  });
+
+  const regDB = getTableroRegionalDB();
+  const regionInds = regDB[currentTableroRegion] || [];
+  const ind = regionInds.find(i => i.correlativo === correlativo);
+  const subIdx = parseInt(document.getElementById("edit-ind-subidx").value) || 0;
+  const fila = ind ? (ind.filas[subIdx] || ind.filas[0]) : { meta_anual: 0 };
+
+  const calc = calcularLogroFila(indInfo.tipo, correlativo, m, fila.meta_anual);
+
+  const elLogro = document.getElementById("edit-logro-calculado");
+  const elPct = document.getElementById("edit-pct-calculado");
+  if (elLogro) elLogro.textContent = calc.logro.toLocaleString();
+  if (elPct) {
+    elPct.textContent = `${calc.pct}%`;
+    elPct.className = `text-xs font-bold px-2 py-0.5 rounded-full ${calc.pct >= 90 ? 'bg-emerald-100 text-emerald-800' : (calc.pct >= 70 ? 'bg-amber-100 text-amber-800' : 'bg-rose-100 text-rose-800')}`;
+  }
+}
+
+// Guarda los valores editados en la base de datos de la regional activa
+function guardarLogroMesesForm(e) {
+  e.preventDefault();
+  const correlativo = parseInt(document.getElementById("edit-ind-correlativo").value);
+  const subIdx = parseInt(document.getElementById("edit-ind-subidx").value) || 0;
+
+  const db = getDB();
+  if (!db.tableroPorRegional2026 || !db.tableroPorRegional2026[currentTableroRegion]) {
+    showToast("Error al acceder a la base regional", "error");
+    return;
+  }
+
+  const ind = db.tableroPorRegional2026[currentTableroRegion].find(i => i.correlativo === correlativo);
+  if (!ind || !ind.filas[subIdx]) {
+    showToast("No se encontró el registro a actualizar", "error");
+    return;
+  }
+
+  const mesesKeys = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  mesesKeys.forEach(k => {
+    const input = document.getElementById(`edit-val-${k}`);
+    ind.filas[subIdx].meses[k] = input ? (parseFloat(input.value) || 0) : 0;
+  });
+
+  ind.filas[subIdx].observaciones = document.getElementById("edit-val-obs").value;
+
+  // Si el indicador tiene fila de TOTAL y se editó una subfila, recalcular la fila TOTAL
+  if (ind.filas.length > 1) {
+    const filaTot = ind.filas.find(f => f.subcategoria.includes("TOTAL"));
+    if (filaTot) {
+      const subfilas = ind.filas.filter(f => !f.subcategoria.includes("TOTAL"));
+      mesesKeys.forEach(k => {
+        filaTot.meses[k] = subfilas.reduce((acc, sf) => acc + (Number(sf.meses[k]) || 0), 0);
+      });
+      const calcTot = calcularLogroFila(ind.tipo, ind.correlativo, filaTot.meses, filaTot.meta_anual);
+      filaTot.logro_actual = calcTot.logro;
+      filaTot.pct_cumplimiento = calcTot.pct;
+    }
+  }
+
+  saveDB(db);
+  closeModal("modal-editar-logro-mes");
+  updateDashboardKPIs();
+  renderTableroOficial();
+  showToast("Logros mensuales actualizados y guardados en SGC", "success");
+}
+
+// Exportación oficial a Excel de la matriz completa de 20 indicadores
+function exportarTableroExcel() {
+  const regMeta = NOMBRES_REGIONALES[currentTableroRegion] || { ciudad: currentTableroRegion };
+  const inds = getDatosRegionActiva(currentTableroRegion);
+
+  let csv = "\uFEFF"; // UTF-8 BOM
+  csv += `TABLERO DE MONITOREO PROGRAMÁTICO CIES 2026 - REGIONAL: ${regMeta.ciudad.toUpperCase()}\r\n`;
+  csv += `Código SGC: SGC-Visional-MAM-6 o11 | Vigencia: 2026\r\n\r\n`;
+  csv += `#;Código;Tipo SGC;Indicador Institucional;Subcategoría;Meta Anual;Ene;Feb;Mar;Abr;May;Jun;Jul;Ago;Sep;Oct;Nov;Dic;Logro Actual;% Cumplimiento;Observaciones\r\n`;
+
+  inds.forEach(ind => {
+    ind.filas.forEach((f, idx) => {
+      const calc = calcularLogroFila(ind.tipo, ind.correlativo, f.meses, f.meta_anual);
+      const m = f.meses || {};
+      const subcat = f.subcategoria || "General";
+      const obs = (f.observaciones || "").replace(/;/g, ",");
+
+      csv += `${ind.correlativo};${ind.codigo};${ind.tipo};"${ind.indicador}";"${subcat}";${Number(f.meta_anual)};${m.enero || 0};${m.febrero || 0};${m.marzo || 0};${m.abril || 0};${m.mayo || 0};${m.junio || 0};${m.julio || 0};${m.agosto || 0};${m.septiembre || 0};${m.octubre || 0};${m.noviembre || 0};${m.diciembre || 0};${calc.logro};${calc.pct}%;"${obs}"\r\n`;
+    });
+  });
+
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.setAttribute("download", `Tablero_Monitoreo_CIES_${currentTableroRegion}_2026.csv`);
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  showToast("Matriz oficial exportada a Excel (.csv)", "success");
+}
+
 
 // -------------------------------------------------------------
 // PANEL 2: PARTICIPANTES (Campos SGC-Apoyo-ABS-3-pp3)
@@ -6824,72 +8704,6 @@ function renderFaseEjecucion() {
   const loc = window.location.href.split('#')[0].split('?')[0];
   const baseUrl = loc.substring(0, loc.lastIndexOf('/') + 1);
 
-  // 2.0 Auto-Registro de Asistencia Móvil con Firma Touch (asistencia.html)
-  const asistUrl = `${baseUrl}asistencia.html?actId=${act.id}&tallerId=${taller.id}`;
-  const inputAsistLink = document.getElementById("ws-asist-link-input");
-  if (inputAsistLink) inputAsistLink.value = asistUrl;
-
-  const asistList = (db.asistenciasTalleres || []).filter(a => a.actividadId === act.id && a.tallerId === taller.id);
-  const totalAsist = asistList.length;
-  const totalFirmados = asistList.filter(a => a.firmaDataUrl).length;
-  const aforoTaller = taller.participantes || act.participantesCount || 25;
-
-  const statAsistTotal = document.getElementById("ws-stat-asist-total");
-  const statAsistFirmados = document.getElementById("ws-stat-asist-firmados");
-  const statAsistAforo = document.getElementById("ws-stat-asist-aforo");
-  const conteoAsistBadge = document.getElementById("ws-conteo-asistencias-taller");
-
-  if (statAsistTotal) statAsistTotal.textContent = totalAsist;
-  if (statAsistFirmados) statAsistFirmados.textContent = totalFirmados;
-  if (statAsistAforo) statAsistAforo.textContent = aforoTaller;
-  if (conteoAsistBadge) conteoAsistBadge.textContent = `${totalAsist} registrado${totalAsist === 1 ? '' : 's'}`;
-
-  const tbodyAsist = document.getElementById("ws-tabla-asistencias-taller-body");
-  if (tbodyAsist) {
-    if (asistList.length === 0) {
-      tbodyAsist.innerHTML = `
-        <tr>
-          <td colspan="6" class="text-center py-6 text-slate-400">
-            <p class="font-medium text-xs text-slate-600 mb-1">Aún no hay estudiantes que hayan marcado asistencia en este taller.</p>
-            <p class="text-[11px] text-slate-400 mb-2">Proyecta el código QR o comparte el enlace móvil con los asistentes para iniciar el check-in.</p>
-            <button type="button" onclick="abrirModalQrAsistenciaWs()" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-lg shadow-2xs cursor-pointer inline-flex items-center gap-1.5">
-              <span>🔳 Proyectar Código QR en Pizarra</span>
-            </button>
-          </td>
-        </tr>
-      `;
-    } else {
-      tbodyAsist.innerHTML = asistList.map((a, idx) => `
-        <tr class="hover:bg-emerald-50/50 transition-colors">
-          <td class="py-2.5 px-3 font-bold text-slate-400 text-xs">${idx + 1}</td>
-          <td class="py-2.5 px-3">
-            <div class="font-bold text-slate-900">${escapeHtml(a.nombre || a.nombres)}</div>
-            <div class="text-[10px] text-slate-400 font-mono">CI: ${escapeHtml(a.ci || '-')}</div>
-          </td>
-          <td class="py-2.5 px-3">
-            <div class="font-medium text-slate-800">${escapeHtml(a.rol || 'Participante')}</div>
-            <div class="text-[10px] text-slate-400 truncate max-w-[150px]">${escapeHtml(a.institucion || a.procedencia || '-')}</div>
-          </td>
-          <td class="py-2.5 px-3 text-center font-mono text-[11px] font-bold text-emerald-800">
-            ${escapeHtml(a.horaExacta || (a.fechaHora ? a.fechaHora.split(' ')[1] : '-'))}
-          </td>
-          <td class="py-2.5 px-3 text-center">
-            ${a.firmaDataUrl ? `
-              <button type="button" onclick="verFirmaModal('${escapeHtml(a.firmaDataUrl)}', '${escapeHtml(a.nombre || a.nombres)}', '${escapeHtml(a.ci || '-')}')" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-teal-50 hover:bg-teal-100 text-teal-800 border border-teal-200 text-[10px] font-bold transition-colors cursor-pointer shadow-2xs" title="Ver trazo de firma digital">
-                <span>✓ Firma Touch</span>
-              </button>
-            ` : '<span class="text-slate-400 text-[10px]">Sin firma</span>'}
-          </td>
-          <td class="py-2.5 px-2 text-right whitespace-nowrap">
-            <button type="button" onclick="eliminarAsistenciaTallerWs(${a.id})" class="p-1 text-rose-500 hover:text-rose-700 hover:bg-rose-50 rounded transition-colors cursor-pointer" title="Eliminar registro de asistencia">
-              <svg class="w-4 h-4 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-            </button>
-          </td>
-        </tr>
-      `).join("");
-    }
-  }
-
   // 2.1 Enlace de Pre-registro público
   const publicUrl = `${baseUrl}preregistro.html?actId=${act.id}&tallerId=${taller.id}`;
   const inputLink = document.getElementById("ws-prereg-link-input");
@@ -6991,47 +8805,8 @@ function renderFaseEjecucion() {
   const preLinkInput = document.getElementById("ws-ejec-pre-link");
   if (preLinkInput) preLinkInput.value = preTestLink;
 
-  // 2.4 Resumen del Modo Scanner de Credenciales QR (Opción B)
+  // 2.4 Control Oficial de Asistencia: Carnets con QR & Escáner Educador
   renderModoScannerResumen();
-
-  // 2.5 Resumen del Modo Dual de Firmas Físicas (Opción C)
-  renderModoDualResumen();
-
-  // 2.6 Preservar la pestaña de modalidad activa (Móvil, Scanner QR o Dual)
-  if (typeof modoAsistenciaWsActual !== "undefined" && modoAsistenciaWsActual) {
-    const btnMovil = document.getElementById("tab-modo-asist-movil");
-    const btnScanner = document.getElementById("tab-modo-asist-scanner");
-    const btnDual = document.getElementById("tab-modo-asist-dual");
-    const secMovil = document.getElementById("sec-modo-asist-movil");
-    const secScanner = document.getElementById("sec-modo-asist-scanner");
-    const secDual = document.getElementById("sec-modo-asist-dual");
-
-    const activeCls = (color) => `p-3 rounded-xl border-2 transition-all text-left flex items-start gap-3 bg-${color}-50 border-${color}-500 text-${color}-950 shadow-2xs cursor-pointer`;
-    const inactiveCls = "p-3 rounded-xl border-2 transition-all text-left flex items-start gap-3 bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 cursor-pointer";
-
-    if (modoAsistenciaWsActual === "scanner") {
-      if (btnScanner) btnScanner.className = activeCls("violet");
-      if (btnMovil) btnMovil.className = inactiveCls;
-      if (btnDual) btnDual.className = inactiveCls;
-      if (secScanner) secScanner.classList.remove("hidden");
-      if (secMovil) secMovil.classList.add("hidden");
-      if (secDual) secDual.classList.add("hidden");
-    } else if (modoAsistenciaWsActual === "dual") {
-      if (btnDual) btnDual.className = activeCls("indigo");
-      if (btnMovil) btnMovil.className = inactiveCls;
-      if (btnScanner) btnScanner.className = inactiveCls;
-      if (secDual) secDual.classList.remove("hidden");
-      if (secMovil) secMovil.classList.add("hidden");
-      if (secScanner) secScanner.classList.add("hidden");
-    } else {
-      if (btnMovil) btnMovil.className = activeCls("emerald");
-      if (btnScanner) btnScanner.className = inactiveCls;
-      if (btnDual) btnDual.className = inactiveCls;
-      if (secMovil) secMovil.classList.remove("hidden");
-      if (secScanner) secScanner.classList.add("hidden");
-      if (secDual) secDual.classList.add("hidden");
-    }
-  }
 }
 
 function guardarFaseEjecucion(e) {
@@ -7300,7 +9075,7 @@ function traspasarPreregistrosDesdeWs() {
 // OPCIÓN C: DIGITALIZACIÓN ASISTIDA & VISOR DUAL DE FIRMAS FÍSICAS (SGC-Apoyo-ABS-3-pp3)
 // -------------------------------------------------------------
 
-let modoAsistenciaWsActual = 'movil';
+let modoAsistenciaWsActual = 'scanner';
 let visorDualZoom = 1.0;
 let visorDualParticipantes = [];
 let visorDualFiltro = "";
@@ -7392,45 +9167,8 @@ function reproducirBeepError() {
 }
 
 function cambiarModoAsistenciaWs(modo) {
-  modoAsistenciaWsActual = modo;
-  const btnMovil = document.getElementById("tab-modo-asist-movil");
-  const btnScanner = document.getElementById("tab-modo-asist-scanner");
-  const btnDual = document.getElementById("tab-modo-asist-dual");
-
-  const secMovil = document.getElementById("sec-modo-asist-movil");
-  const secScanner = document.getElementById("sec-modo-asist-scanner");
-  const secDual = document.getElementById("sec-modo-asist-dual");
-
-  const activeCls = (color) => `p-3 rounded-xl border-2 transition-all text-left flex items-start gap-3 bg-${color}-50 border-${color}-500 text-${color}-950 shadow-2xs cursor-pointer`;
-  const inactiveCls = "p-3 rounded-xl border-2 transition-all text-left flex items-start gap-3 bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 cursor-pointer";
-
-  if (modo === "movil") {
-    if (btnMovil) btnMovil.className = activeCls("emerald");
-    if (btnScanner) btnScanner.className = inactiveCls;
-    if (btnDual) btnDual.className = inactiveCls;
-
-    if (secMovil) secMovil.classList.remove("hidden");
-    if (secScanner) secScanner.classList.add("hidden");
-    if (secDual) secDual.classList.add("hidden");
-  } else if (modo === "scanner") {
-    if (btnScanner) btnScanner.className = activeCls("violet");
-    if (btnMovil) btnMovil.className = inactiveCls;
-    if (btnDual) btnDual.className = inactiveCls;
-
-    if (secScanner) secScanner.classList.remove("hidden");
-    if (secMovil) secMovil.classList.add("hidden");
-    if (secDual) secDual.classList.add("hidden");
-    renderModoScannerResumen();
-  } else {
-    if (btnDual) btnDual.className = activeCls("indigo");
-    if (btnMovil) btnMovil.className = inactiveCls;
-    if (btnScanner) btnScanner.className = inactiveCls;
-
-    if (secDual) secDual.classList.remove("hidden");
-    if (secMovil) secMovil.classList.add("hidden");
-    if (secScanner) secScanner.classList.add("hidden");
-    renderModoDualResumen();
-  }
+  modoAsistenciaWsActual = 'scanner';
+  renderModoScannerResumen();
 }
 
 function renderModoScannerResumen() {
@@ -7722,7 +9460,10 @@ function descargarCredencialesQrPDF() {
   exportarDocumentoPDF(html, `Credenciales_Asistencia_QR_${cleanTit}.pdf`);
 }
 
+let scannerContextMode = "actividad";
+
 function abrirModalEscanerQrEducador() {
+  scannerContextMode = "actividad";
   if (!currentWorkspaceActId) return;
   const db = getDB();
   const act = db.actividades.find(a => a.id === currentWorkspaceActId);
@@ -7837,6 +9578,10 @@ function escanearFrameVideo() {
 }
 
 function procesarLecturaQrEducador(codigoLeido) {
+  if (scannerContextMode === "incidencia") {
+    procesarLecturaQrIncidencia(codigoLeido);
+    return;
+  }
   if (!codigoLeido || !currentWorkspaceActId || !currentWorkspaceTallerId) return;
 
   const db = getDB();
@@ -9990,42 +11735,712 @@ function renderWorkspacePaso4() { renderProcesoResumen(); }
 function renderWorkspacePaso5() { renderProcesoCierre(); }
 
 // -------------------------------------------------------------
-// PANEL 4: ORIENTADORES SSSR (Con Tamizaje Ley 348 y Pruebas VIH)
+// PANEL 4: ORIENTADORES SSSR (Formulario Estructurado por Secciones)
 // -------------------------------------------------------------
-function renderOrientadores(search = "") {
+const ORIENTACION_PROCESOS_POR_TEMA = {
+  "Planificación Familiar": [
+    "Implante Subdérmico (Jadelle / Implanon)",
+    "DIU (T de Cobre / Hormonal)",
+    "Inyectable Trimestral / Mensual",
+    "Píldora Anticonceptiva Oral (ACO)",
+    "Anticoncepción de Emergencia (PAE)",
+    "Preservativo Masculino / Femenino",
+    "Ligadura de Trompas / Vasectomía (AQV)",
+    "Métodos Naturales / MELA"
+  ],
+  "Sexualidad": [
+    "Educación Integral en Sexualidad (EIS)",
+    "Identidad y Diversidad Sexual",
+    "Proyecto de Vida y Toma de Decisiones",
+    "Salud Sexual en Adolescencia",
+    "Disfunciones y Placer Sexual"
+  ],
+  "Salud Hombres": [
+    "Salud Prostática y Urológica",
+    "Vasectomía y Paternidad Responsable",
+    "Prevención ITS en Hombres",
+    "Salud Mental y Masculinidades"
+  ],
+  "Atención Aborto": [
+    "Interrupción Legal del Embarazo (ILE - Sentencia 0206/2014)",
+    "Atención Post Aborto (APA / AMEU)",
+    "Consejería Pre y Post ILE",
+    "Anticoncepción Post Evento Obstétrico (APEO)"
+  ],
+  "No SSH": [
+    "Orientación Psicológica General",
+    "Nutrición y Bienestar",
+    "Derivación a Medicina General",
+    "Información Administrativa / Otros Servicios"
+  ],
+  "Ginecobstetricia y Pediatría": [
+    "Control Prenatal y Embarazo",
+    "Control Ginecológico / PAP / IVAA",
+    "Salud Materno Infantil (SMI)",
+    "Control Pediátrico y Crecimiento",
+    "Climaterio y Menopausia"
+  ],
+  "ITS/VIH": [
+    "Consejería Pre-Prueba Rápida VIH (Ley 3729)",
+    "Consejería Post-Prueba VIH",
+    "Prevención y Manejo de ITS",
+    "Entrega de Preservativos y PrEP/PEP",
+    "Derivación a CDVIR / Tratamiento"
+  ],
+  "Violencia": [
+    "Tamizaje de Violencia (Ley 348)",
+    "Contención Emocional en Crisis",
+    "Activación de Ruta Crítica / SLIM / FELCV",
+    "Violencia Sexual y Profilaxis Post Exposición",
+    "Violencia Psicológica / Física / Económica"
+  ]
+};
+
+function actualizarProcesoOrientacion(selectedProceso = "") {
+  const temaSel = document.getElementById("ori-tema");
+  const procesoSel = document.getElementById("ori-proceso");
+  if (!temaSel || !procesoSel) return;
+
+  const tema = temaSel.value;
+  const opciones = ORIENTACION_PROCESOS_POR_TEMA[tema] || [];
+
+  if (!tema || opciones.length === 0) {
+    procesoSel.innerHTML = `<option value="">Seleccione primero un tema...</option>`;
+    procesoSel.value = "";
+    return;
+  }
+
+  procesoSel.innerHTML = `<option value="">Seleccionar proceso...</option>` +
+    opciones.map(op => `<option value="${op}">${op}</option>`).join("");
+
+  if (selectedProceso && opciones.includes(selectedProceso)) {
+    procesoSel.value = selectedProceso;
+  }
+}
+
+function toggleCostoOrientacion() {
+  const conCostoEl = document.getElementById("ori-con-costo");
+  const proyectoEl = document.getElementById("ori-proyecto");
+  const wrapperEl = document.getElementById("ori-proyecto-wrapper");
+  if (!conCostoEl || !proyectoEl) return;
+
+  const esConCosto = conCostoEl.checked;
+  proyectoEl.disabled = esConCosto;
+  if (esConCosto) {
+    proyectoEl.value = "";
+    if (wrapperEl) wrapperEl.classList.add("opacity-50");
+  } else {
+    if (wrapperEl) wrapperEl.classList.remove("opacity-50");
+  }
+}
+
+function getFilteredOrientadores(search = "") {
   const db = getDB();
+  const term = (search || "").trim().toLowerCase();
+  if (!term) return db.orientadores;
+
+  return db.orientadores.filter(o => {
+    const txt = `${o.orientador || ""} ${o.regional || ""} ${o.participante || ""} ${o.ci || ""} ${o.expedienteClinico || ""} ${o.tema || o.tipoConsulta || ""} ${o.proceso || ""} ${o.proyecto || ""}`.toLowerCase();
+    return txt.includes(term);
+  });
+}
+
+async function buildOrientacionesWorkbook(ExcelJSLib, registros, search = "") {
+  const wb = new ExcelJSLib.Workbook();
+  wb.creator = "Sistema Educativo Institucional CIES";
+  wb.created = new Date();
+  wb.modified = new Date();
+
+  const DATA_START_ROW = 6;
+  const MAX_FORMULA_ROW = Math.max(500, DATA_START_ROW + registros.length + 50);
+  const SHEET_DATA_NAME = "Registro de Orientaciones";
+  const dataRef = (col) => `'${SHEET_DATA_NAME}'!$${col}$${DATA_START_ROW}:$${col}$${MAX_FORMULA_ROW}`;
+
+  // =====================================================================
+  // HOJA 1: RESUMEN INTERACTIVO (KPIs + Tablas con fórmulas dinámicas)
+  // =====================================================================
+  const wsSum = wb.addWorksheet("Resumen Interactivo", {
+    views: [{ showGridLines: false }],
+    properties: { tabColor: { argb: "FF1D4ED8" } },
+    pageSetup: { orientation: "landscape", fitToPage: true, fitToWidth: 1, fitToHeight: 1 }
+  });
+
+  wsSum.columns = [
+    { width: 38 }, // A
+    { width: 16 }, // B
+    { width: 16 }, // C
+    { width: 16 }, // D
+    { width: 16 }, // E
+    { width: 4 },  // F (espaciador)
+    { width: 34 }, // G
+    { width: 16 }, // H
+    { width: 16 }  // I
+  ];
+
+  // Banner principal
+  wsSum.mergeCells("A1:I1");
+  const sumTitle = wsSum.getCell("A1");
+  sumTitle.value = "CIES SALUD SEXUAL Y REPRODUCTIVA — TABLERO DE ORIENTACIÓN (SGC-Misional-E-4)";
+  sumTitle.font = { name: "Calibri", size: 14, bold: true, color: { argb: "FFFFFFFF" } };
+  sumTitle.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FF0F172A" } };
+  sumTitle.alignment = { vertical: "middle", horizontal: "left", indent: 1 };
+  wsSum.getRow(1).height = 30;
+
+  wsSum.mergeCells("A2:I2");
+  const sumSub = wsSum.getCell("A2");
+  const fechaGen = new Date().toLocaleString("es-BO");
+  const filtroTxt = search ? `Filtro aplicado: "${search}"` : "Filtro aplicado: Todos los registros";
+  sumSub.value = `Generado el ${fechaGen}  |  ${filtroTxt}  |  Interactivo: edita o añade filas en '${SHEET_DATA_NAME}' para recalcular automáticamente.`;
+  sumSub.font = { name: "Calibri", size: 10, italic: true, color: { argb: "FFDBEAFE" } };
+  sumSub.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FF1E3A8A" } };
+  sumSub.alignment = { vertical: "middle", horizontal: "left", indent: 1 };
+  wsSum.getRow(2).height = 20;
+
+  const thinBorder = {
+    top: { style: "thin", color: { argb: "FFE2E8F0" } },
+    left: { style: "thin", color: { argb: "FFE2E8F0" } },
+    bottom: { style: "thin", color: { argb: "FFE2E8F0" } },
+    right: { style: "thin", color: { argb: "FFE2E8F0" } }
+  };
+
+  // Tarjetas KPI (Filas 4-5)
+  const kpiCards = [
+    { range: "A4:B4", valRange: "A5:B5", firstCell: "A", label: "TOTAL ORIENTACIONES", formula: `COUNTA(${dataRef("E")})`, fmt: "#,##0", bg: "FF1D4ED8", light: "FFEFF6FF", text: "FF1E3A8A" },
+    { range: "C4:D4", valRange: "C5:D5", firstCell: "C", label: "ATENCIONES SIN COSTO", formula: `COUNTIF(${dataRef("Q")},"Sin costo")`, fmt: "#,##0", bg: "FF059669", light: "FFECFDF5", text: "FF065F46" },
+    { range: "E4:G4", valRange: "E5:G5", firstCell: "E", label: "ATENCIONES CON COSTO", formula: `COUNTIF(${dataRef("Q")},"Con costo")`, fmt: "#,##0", bg: "FFD97706", light: "FFFFFBEB", text: "FF92400E" },
+    { range: "H4:I4", valRange: "H5:I5", firstCell: "H", label: "EDAD PROMEDIO (AÑOS)", formula: `IFERROR(AVERAGE(${dataRef("H")}),0)`, fmt: "0.0", bg: "FF6D28D9", light: "FFF5F3FF", text: "FF4C1D95" }
+  ];
+  wsSum.getRow(4).height = 20;
+  wsSum.getRow(5).height = 28;
+  kpiCards.forEach(card => {
+    wsSum.mergeCells(card.range);
+    wsSum.mergeCells(card.valRange);
+    const lblCell = wsSum.getCell(`${card.firstCell}4`);
+    lblCell.value = card.label;
+    lblCell.font = { name: "Calibri", size: 9, bold: true, color: { argb: "FFFFFFFF" } };
+    lblCell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: card.bg } };
+    lblCell.alignment = { vertical: "middle", horizontal: "center" };
+
+    const valCell = wsSum.getCell(`${card.firstCell}5`);
+    valCell.value = { formula: card.formula };
+    valCell.numFmt = card.fmt;
+    valCell.font = { name: "Calibri", size: 16, bold: true, color: { argb: card.text } };
+    valCell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: card.light } };
+    valCell.alignment = { vertical: "middle", horizontal: "center" };
+    valCell.border = thinBorder;
+  });
+
+  // Helper para renderizar tablas analíticas con fórmulas
+  const writeSummaryHeader = (rowIdx, colStart, colEnd, title, headers, headerColor) => {
+    wsSum.mergeCells(rowIdx, colStart, rowIdx, colEnd);
+    const secCell = wsSum.getCell(rowIdx, colStart);
+    secCell.value = title;
+    secCell.font = { name: "Calibri", size: 11, bold: true, color: { argb: "FFFFFFFF" } };
+    secCell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: headerColor } };
+    secCell.alignment = { vertical: "middle", horizontal: "left", indent: 1 };
+    wsSum.getRow(rowIdx).height = 22;
+
+    const hRow = wsSum.getRow(rowIdx + 1);
+    hRow.height = 20;
+    headers.forEach((h, idx) => {
+      const c = hRow.getCell(colStart + idx);
+      c.value = h;
+      c.font = { name: "Calibri", size: 10, bold: true, color: { argb: "FF1E293B" } };
+      c.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFE2E8F0" } };
+      c.alignment = { vertical: "middle", horizontal: idx === 0 ? "left" : "center", indent: idx === 0 ? 1 : 0 };
+      c.border = thinBorder;
+    });
+  };
+
+  // Tabla 1: Resumen por Regional (Fila 7..12, Cols A:E)
+  const regionales = ["Clínica La Paz", "Clínica Oruro", "UMOSAS Santa Cruz"];
+  writeSummaryHeader(7, 1, 5, "1. DESGLOSE POR REGIONAL", ["Regional", "Sesiones", "% Part.", "Sin Costo", "Con Costo"], "FF1E40AF");
+  const regTotalRow = 9 + regionales.length;
+  regionales.forEach((reg, idx) => {
+    const r = 9 + idx;
+    const row = wsSum.getRow(r);
+    row.height = 19;
+    const bg = idx % 2 === 0 ? "FFFFFFFF" : "FFF8FAFC";
+    row.getCell(1).value = reg;
+    row.getCell(2).value = { formula: `COUNTIF(${dataRef("B")},A${r})` };
+    row.getCell(3).value = { formula: `IF($B$${regTotalRow}>0,B${r}/$B$${regTotalRow},0)` };
+    row.getCell(4).value = { formula: `COUNTIFS(${dataRef("B")},A${r},${dataRef("Q")},"Sin costo")` };
+    row.getCell(5).value = { formula: `COUNTIFS(${dataRef("B")},A${r},${dataRef("Q")},"Con costo")` };
+
+    [1, 2, 3, 4, 5].forEach((cIdx) => {
+      const cell = row.getCell(cIdx);
+      cell.font = { name: "Calibri", size: 10, bold: cIdx === 1, color: { argb: "FF0F172A" } };
+      cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: bg } };
+      cell.border = thinBorder;
+      cell.alignment = { vertical: "middle", horizontal: cIdx === 1 ? "left" : "center", indent: cIdx === 1 ? 1 : 0 };
+      if (cIdx === 3) cell.numFmt = "0.0%";
+      else if (cIdx > 1) cell.numFmt = "#,##0";
+    });
+  });
+  const rRegTot = wsSum.getRow(regTotalRow);
+  rRegTot.height = 20;
+  rRegTot.getCell(1).value = "TOTAL GENERAL";
+  rRegTot.getCell(2).value = { formula: `SUM(B9:B${regTotalRow - 1})` };
+  rRegTot.getCell(3).value = { formula: `SUM(C9:C${regTotalRow - 1})` };
+  rRegTot.getCell(4).value = { formula: `SUM(D9:D${regTotalRow - 1})` };
+  rRegTot.getCell(5).value = { formula: `SUM(E9:E${regTotalRow - 1})` };
+  [1, 2, 3, 4, 5].forEach((cIdx) => {
+    const cell = rRegTot.getCell(cIdx);
+    cell.font = { name: "Calibri", size: 10, bold: true, color: { argb: "FF0F172A" } };
+    cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFDBEAFE" } };
+    cell.border = thinBorder;
+    cell.alignment = { vertical: "middle", horizontal: cIdx === 1 ? "left" : "center", indent: cIdx === 1 ? 1 : 0 };
+    if (cIdx === 3) cell.numFmt = "0.0%";
+    else if (cIdx > 1) cell.numFmt = "#,##0";
+  });
+
+  // Tabla 2 (Derecha, Cols G:I): Tipo de Sesión y Tipo de Usuario
+  writeSummaryHeader(7, 7, 9, "2. TIPO DE SESIÓN Y USUARIO", ["Categoría", "Cantidad", "% Part."], "FF0F766E");
+  const sesionItems = [
+    { label: "Sesión: Individual", col: "O", val: "Individual" },
+    { label: "Sesión: Pareja", col: "O", val: "Pareja" },
+    { label: "Usuario: Nuevo", col: "P", val: "Nuevo" },
+    { label: "Usuario: Continuo", col: "P", val: "Continuo" }
+  ];
+  sesionItems.forEach((it, idx) => {
+    const r = 9 + idx;
+    const row = wsSum.getRow(r);
+    const bg = idx % 2 === 0 ? "FFFFFFFF" : "FFF8FAFC";
+    row.getCell(7).value = it.label;
+    row.getCell(8).value = { formula: `COUNTIF(${dataRef(it.col)},"${it.val}")` };
+    row.getCell(9).value = { formula: `IF($A$5>0,H${r}/$A$5,0)` };
+    [7, 8, 9].forEach((cIdx) => {
+      const cell = row.getCell(cIdx);
+      cell.font = { name: "Calibri", size: 10, bold: cIdx === 7, color: { argb: "FF0F172A" } };
+      cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: bg } };
+      cell.border = thinBorder;
+      cell.alignment = { vertical: "middle", horizontal: cIdx === 7 ? "left" : "center", indent: cIdx === 7 ? 1 : 0 };
+      if (cIdx === 9) cell.numFmt = "0.0%";
+      else if (cIdx === 8) cell.numFmt = "#,##0";
+    });
+  });
+
+  // Tabla 3: Resumen por Tema de Orientación (Fila 14.., Cols A:E)
+  const temas = [
+    "Planificación Familiar",
+    "Sexualidad",
+    "Salud Hombres",
+    "Atención Aborto",
+    "No SSH",
+    "Ginecobstetricia y Pediatría",
+    "ITS/VIH",
+    "Violencia"
+  ];
+  writeSummaryHeader(14, 1, 5, "3. DESGLOSE POR TEMA DE ORIENTACIÓN", ["Tema", "Sesiones", "% Part.", "Nuevos", "Continuos"], "FF9D174D");
+  const temaStartRow = 16;
+  const temaTotalRow = temaStartRow + temas.length;
+  temas.forEach((tema, idx) => {
+    const r = temaStartRow + idx;
+    const row = wsSum.getRow(r);
+    row.height = 19;
+    const bg = idx % 2 === 0 ? "FFFFFFFF" : "FFF8FAFC";
+    row.getCell(1).value = tema;
+    row.getCell(2).value = { formula: `COUNTIF(${dataRef("S")},A${r})` };
+    row.getCell(3).value = { formula: `IF($B$${temaTotalRow}>0,B${r}/$B$${temaTotalRow},0)` };
+    row.getCell(4).value = { formula: `COUNTIFS(${dataRef("S")},A${r},${dataRef("P")},"Nuevo")` };
+    row.getCell(5).value = { formula: `COUNTIFS(${dataRef("S")},A${r},${dataRef("P")},"Continuo")` };
+    [1, 2, 3, 4, 5].forEach((cIdx) => {
+      const cell = row.getCell(cIdx);
+      cell.font = { name: "Calibri", size: 10, bold: cIdx === 1, color: { argb: "FF0F172A" } };
+      cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: bg } };
+      cell.border = thinBorder;
+      cell.alignment = { vertical: "middle", horizontal: cIdx === 1 ? "left" : "center", indent: cIdx === 1 ? 1 : 0 };
+      if (cIdx === 3) cell.numFmt = "0.0%";
+      else if (cIdx > 1) cell.numFmt = "#,##0";
+    });
+  });
+  const rTemaTot = wsSum.getRow(temaTotalRow);
+  rTemaTot.height = 20;
+  rTemaTot.getCell(1).value = "TOTAL TEMAS";
+  rTemaTot.getCell(2).value = { formula: `SUM(B${temaStartRow}:B${temaTotalRow - 1})` };
+  rTemaTot.getCell(3).value = { formula: `SUM(C${temaStartRow}:C${temaTotalRow - 1})` };
+  rTemaTot.getCell(4).value = { formula: `SUM(D${temaStartRow}:D${temaTotalRow - 1})` };
+  rTemaTot.getCell(5).value = { formula: `SUM(E${temaStartRow}:E${temaTotalRow - 1})` };
+  [1, 2, 3, 4, 5].forEach((cIdx) => {
+    const cell = rTemaTot.getCell(cIdx);
+    cell.font = { name: "Calibri", size: 10, bold: true, color: { argb: "FF0F172A" } };
+    cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFFCE7F3" } };
+    cell.border = thinBorder;
+    cell.alignment = { vertical: "middle", horizontal: cIdx === 1 ? "left" : "center", indent: cIdx === 1 ? 1 : 0 };
+    if (cIdx === 3) cell.numFmt = "0.0%";
+    else if (cIdx > 1) cell.numFmt = "#,##0";
+  });
+
+  // Tabla 4 (Derecha, Cols G:I, Fila 14..): Proyectos / Campañas (Sin Costo)
+  const proyectos = [
+    "Proyecto Jóvenes Sin Límites 2026",
+    "Campaña Nacional Prevención VIH / ITS",
+    "Programa Ruta Segura (Ley 348)",
+    "Convenio Unidades Educativas - EIS",
+    "Feria Comunitaria de Salud Sexual y Reproductiva"
+  ];
+  writeSummaryHeader(14, 7, 9, "4. PROYECTOS / CAMPAÑAS (SIN COSTO)", ["Proyecto / Campaña", "Sesiones", "% Sin Costo"], "FFB45309");
+  const proyStartRow = 16;
+  const proyTotalRow = proyStartRow + proyectos.length;
+  proyectos.forEach((proy, idx) => {
+    const r = proyStartRow + idx;
+    const row = wsSum.getRow(r);
+    const bg = idx % 2 === 0 ? "FFFFFFFF" : "FFF8FAFC";
+    row.getCell(7).value = proy;
+    row.getCell(8).value = { formula: `COUNTIF(${dataRef("R")},G${r})` };
+    row.getCell(9).value = { formula: `IF($C$5>0,H${r}/$C$5,0)` };
+    [7, 8, 9].forEach((cIdx) => {
+      const cell = row.getCell(cIdx);
+      cell.font = { name: "Calibri", size: 10, bold: cIdx === 7, color: { argb: "FF0F172A" } };
+      cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: bg } };
+      cell.border = thinBorder;
+      cell.alignment = { vertical: "middle", horizontal: cIdx === 7 ? "left" : "center", indent: cIdx === 7 ? 1 : 0 };
+      if (cIdx === 9) cell.numFmt = "0.0%";
+      else if (cIdx === 8) cell.numFmt = "#,##0";
+    });
+  });
+  const rProyTot = wsSum.getRow(proyTotalRow);
+  rProyTot.height = 20;
+  rProyTot.getCell(7).value = "TOTAL EN PROYECTOS";
+  rProyTot.getCell(8).value = { formula: `SUM(H${proyStartRow}:H${proyTotalRow - 1})` };
+  rProyTot.getCell(9).value = { formula: `SUM(I${proyStartRow}:I${proyTotalRow - 1})` };
+  [7, 8, 9].forEach((cIdx) => {
+    const cell = rProyTot.getCell(cIdx);
+    cell.font = { name: "Calibri", size: 10, bold: true, color: { argb: "FF0F172A" } };
+    cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFFEF3C7" } };
+    cell.border = thinBorder;
+    cell.alignment = { vertical: "middle", horizontal: cIdx === 7 ? "left" : "center", indent: cIdx === 7 ? 1 : 0 };
+    if (cIdx === 9) cell.numFmt = "0.0%";
+    else if (cIdx === 8) cell.numFmt = "#,##0";
+  });
+
+  // =====================================================================
+  // HOJA 2: REGISTRO DE ORIENTACIONES (Tabla interactiva + Dropdowns)
+  // =====================================================================
+  const wsData = wb.addWorksheet(SHEET_DATA_NAME, {
+    views: [{ state: "frozen", xSplit: 0, ySplit: 5 }],
+    properties: { tabColor: { argb: "FF059669" } },
+    pageSetup: { orientation: "landscape", fitToPage: true, fitToWidth: 1, fitToHeight: 0 }
+  });
+
+  const colDefs = [
+    { name: "ID", width: 14 },
+    { name: "Regional", width: 21 },
+    { name: "Fecha", width: 13 },
+    { name: "Orientador/a", width: 22 },
+    { name: "Nombre Completo", width: 28 },
+    { name: "CI", width: 14 },
+    { name: "Celular", width: 13 },
+    { name: "Edad", width: 9 },
+    { name: "Expediente Clínico", width: 19 },
+    { name: "Sexo", width: 14 },
+    { name: "Identidad de Género", width: 20 },
+    { name: "Orientación Sexual", width: 19 },
+    { name: "Estado Civil", width: 24 },
+    { name: "Instrucción", width: 16 },
+    { name: "Tipo de Sesión", width: 16 },
+    { name: "Tipo de Usuario", width: 16 },
+    { name: "Modalidad de Costo", width: 19 },
+    { name: "Proyecto / Campaña", width: 34 },
+    { name: "Tema", width: 26 },
+    { name: "Proceso", width: 34 },
+    { name: "Observaciones", width: 42 }
+  ];
+  wsData.columns = colDefs.map(c => ({ width: c.width }));
+
+  // Banner superior filas 1-2
+  wsData.mergeCells("A1:U1");
+  const dTitle = wsData.getCell("A1");
+  dTitle.value = "CIES — REGISTRO DETALLADO DE ORIENTACIONES SSSR (SGC-Misional-E-4)";
+  dTitle.font = { name: "Calibri", size: 13, bold: true, color: { argb: "FFFFFFFF" } };
+  dTitle.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FF0F172A" } };
+  dTitle.alignment = { vertical: "middle", horizontal: "left", indent: 1 };
+  wsData.getRow(1).height = 28;
+
+  wsData.mergeCells("A2:U2");
+  const dSub = wsData.getCell("A2");
+  dSub.value = `${filtroTxt}  |  Registros exportados: ${registros.length}  |  Usa los filtros en la fila 5 o las listas desplegables en las celdas para interactuar.`;
+  dSub.font = { name: "Calibri", size: 10, italic: true, color: { argb: "FFE2E8F0" } };
+  dSub.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FF334155" } };
+  dSub.alignment = { vertical: "middle", horizontal: "left", indent: 1 };
+  wsData.getRow(2).height = 19;
+  wsData.getRow(3).height = 8;
+
+  // Fila 4: Agrupación por los 5 Subtítulos del formulario
+  const sectionGroups = [
+    { start: 1, end: 4, label: "1. ORIENTACIÓN", color: "FF1E40AF" },
+    { start: 5, end: 14, label: "2. DATOS PERSONALES", color: "FF3730A3" },
+    { start: 15, end: 16, label: "3. DATOS DE LA SESIÓN", color: "FF0F766E" },
+    { start: 17, end: 18, label: "4. COSTOS", color: "FFB45309" },
+    { start: 19, end: 21, label: "5. TEMAS", color: "FF9D174D" }
+  ];
+  wsData.getRow(4).height = 22;
+  sectionGroups.forEach(grp => {
+    wsData.mergeCells(4, grp.start, 4, grp.end);
+    const cell = wsData.getCell(4, grp.start);
+    cell.value = grp.label;
+    cell.font = { name: "Calibri", size: 10, bold: true, color: { argb: "FFFFFFFF" } };
+    cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: grp.color } };
+    cell.alignment = { vertical: "middle", horizontal: "center" };
+    cell.border = {
+      left: { style: "medium", color: { argb: "FFFFFFFF" } },
+      right: { style: "medium", color: { argb: "FFFFFFFF" } }
+    };
+  });
+
+  // Filas de datos para la Tabla oficial de Excel
+  const rowsData = registros.map(o => [
+    o.id ?? "",
+    o.regional || "",
+    o.fecha || "",
+    o.orientador || "",
+    o.participante || "",
+    o.ci || "",
+    o.celular || "",
+    o.edad ? Number(o.edad) : "",
+    o.expedienteClinico || "",
+    o.sexo || "",
+    o.identidadGenero || "",
+    o.orientacionSexual || "",
+    o.estadoCivil || "",
+    o.instruccion || "",
+    o.tipoSesion || "",
+    o.tipoUsuario || "",
+    o.conCosto ? "Con costo" : "Sin costo",
+    o.conCosto ? "N/A" : (o.proyecto || "Sin proyecto asignado"),
+    o.tema || o.tipoConsulta || "",
+    o.proceso || o.codigoTema || "",
+    o.notas || ""
+  ]);
+
+  wsData.getRow(5).height = 24;
+  wsData.addTable({
+    name: "TablaOrientaciones",
+    ref: "A5",
+    headerRow: true,
+    totalsRow: false,
+    style: {
+      theme: "TableStyleMedium2",
+      showRowStripes: true
+    },
+    columns: colDefs.map(c => ({ name: c.name, filterButton: true })),
+    rows: rowsData
+  });
+
+  // Estilo de encabezados fila 5
+  const headerRow = wsData.getRow(5);
+  for (let c = 1; c <= 21; c++) {
+    const hc = headerRow.getCell(c);
+    hc.font = { name: "Calibri", size: 10, bold: true, color: { argb: "FFFFFFFF" } };
+    hc.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FF1E293B" } };
+    hc.alignment = { vertical: "middle", horizontal: "center", wrapText: true };
+  }
+
+  // Estilo por fila de datos + badges visuales en Costo y Tema
+  const centeredCols = new Set([1, 3, 6, 7, 8, 9, 10, 15, 16, 17]);
+  registros.forEach((o, idx) => {
+    const rIdx = DATA_START_ROW + idx;
+    const row = wsData.getRow(rIdx);
+    row.height = 24;
+    const zebraBg = idx % 2 === 0 ? "FFFFFFFF" : "FFF8FAFC";
+
+    for (let c = 1; c <= 21; c++) {
+      const cell = row.getCell(c);
+      cell.font = { name: "Calibri", size: 10, color: { argb: "FF0F172A" } };
+      cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: zebraBg } };
+      cell.border = thinBorder;
+      cell.alignment = {
+        vertical: "middle",
+        horizontal: centeredCols.has(c) ? "center" : "left",
+        wrapText: c === 18 || c === 20 || c === 21
+      };
+    }
+
+    // Badge visual: Modalidad de Costo (Col 17)
+    const costoCell = row.getCell(17);
+    if (o.conCosto) {
+      costoCell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFFEF3C7" } };
+      costoCell.font = { name: "Calibri", size: 10, bold: true, color: { argb: "FF92400E" } };
+    } else {
+      costoCell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFD1FAE5" } };
+      costoCell.font = { name: "Calibri", size: 10, bold: true, color: { argb: "FF065F46" } };
+    }
+
+    // Badge visual: Tema (Col 19)
+    const temaCell = row.getCell(19);
+    const temaVal = o.tema || o.tipoConsulta || "";
+    if (temaVal === "Violencia") {
+      temaCell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFFFE4E6" } };
+      temaCell.font = { name: "Calibri", size: 10, bold: true, color: { argb: "FF9F1239" } };
+    } else if (temaVal === "ITS/VIH") {
+      temaCell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFE0F2FE" } };
+      temaCell.font = { name: "Calibri", size: 10, bold: true, color: { argb: "FF075985" } };
+    } else if (temaVal === "Planificación Familiar") {
+      temaCell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFECFDF5" } };
+      temaCell.font = { name: "Calibri", size: 10, bold: true, color: { argb: "FF065F46" } };
+    }
+  });
+
+  // Validaciones de datos interactivas (listas desplegables en Excel hasta la fila MAX_FORMULA_ROW)
+  const addListValidation = (colLetter, options) => {
+    wsData.dataValidations.add(`${colLetter}${DATA_START_ROW}:${colLetter}${MAX_FORMULA_ROW}`, {
+      type: "list",
+      allowBlank: true,
+      formulae: [`"${options.join(",")}"`],
+      showErrorMessage: true,
+      errorStyle: "warning",
+      errorTitle: "Valor sugerido",
+      error: "Selecciona una opción válida de la lista oficial CIES."
+    });
+  };
+
+  addListValidation("B", ["Clínica La Paz", "Clínica Oruro", "UMOSAS Santa Cruz"]);
+  addListValidation("J", ["Femenino", "Masculino", "No responde"]);
+  addListValidation("K", ["Femenino", "Masculino", "Fem a Masc", "Masc a Fem", "Otro"]);
+  addListValidation("O", ["Individual", "Pareja"]);
+  addListValidation("P", ["Nuevo", "Continuo"]);
+  addListValidation("Q", ["Con costo", "Sin costo"]);
+  addListValidation("S", temas);
+
+  return wb;
+}
+
+async function exportarOrientacionesExcel() {
+  const searchInput = document.getElementById("search-orientadores");
+  const search = searchInput ? searchInput.value.trim() : "";
+  const registros = getFilteredOrientadores(search);
+
+  if (registros.length === 0) {
+    showToast("No hay registros de orientación para exportar", "warning");
+    return;
+  }
+
+  const fechaArchivo = new Date().toISOString().split("T")[0];
+
+  // Si ExcelJS está disponible, generamos un archivo .xlsx estilizado e interactivo
+  if (typeof window !== "undefined" && window.ExcelJS) {
+    try {
+      const wb = await buildOrientacionesWorkbook(window.ExcelJS, registros, search);
+      const buffer = await wb.xlsx.writeBuffer();
+      const blob = new Blob([buffer], {
+        type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      });
+      const link = document.createElement("a");
+      const filename = search
+        ? `Orientaciones_SSSR_Filtrado_${fechaArchivo}.xlsx`
+        : `Orientaciones_SSSR_Todos_${fechaArchivo}.xlsx`;
+      link.setAttribute("href", URL.createObjectURL(blob));
+      link.setAttribute("download", filename);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      showToast(`Excel interactivo generado (${registros.length} registro(s))`, "success");
+      return;
+    } catch (err) {
+      console.error("Error generando ExcelJS:", err);
+      showToast("Error al generar .xlsx, exportando respaldo CSV...", "warning");
+    }
+  }
+
+  // Respaldo CSV UTF-8 si ExcelJS no estuviera cargado
+  const esc = (val) => `"${String(val ?? "").replace(/"/g, '""')}"`;
+  let csvContent = "\ufeff";
+  const headers = [
+    "ID", "Regional", "Fecha", "Orientador/a", "Nombre Completo", "CI", "Celular",
+    "Edad", "Expediente Clínico", "Sexo", "Identidad de Género", "Orientación Sexual",
+    "Estado Civil", "Instrucción", "Tipo de Sesión", "Tipo de Usuario",
+    "Modalidad de Costo", "Proyecto / Campaña", "Tema", "Proceso", "Observaciones"
+  ];
+  csvContent += headers.map(esc).join(",") + "\n";
+  registros.forEach(o => {
+    const fila = [
+      o.id, o.regional || "", o.fecha || "", o.orientador || "", o.participante || "",
+      o.ci || "", o.celular || "", o.edad || "", o.expedienteClinico || "", o.sexo || "",
+      o.identidadGenero || "", o.orientacionSexual || "", o.estadoCivil || "",
+      o.instruccion || "", o.tipoSesion || "", o.tipoUsuario || "",
+      o.conCosto ? "Con costo" : "Sin costo",
+      o.conCosto ? "N/A" : (o.proyecto || "Sin proyecto asignado"),
+      o.tema || o.tipoConsulta || "", o.proceso || o.codigoTema || "", o.notas || ""
+    ];
+    csvContent += fila.map(esc).join(",") + "\n";
+  });
+
+  const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+  const link = document.createElement("a");
+  const filename = search
+    ? `Orientaciones_SSSR_Filtrado_${fechaArchivo}.csv`
+    : `Orientaciones_SSSR_Todos_${fechaArchivo}.csv`;
+  link.setAttribute("href", URL.createObjectURL(blob));
+  link.setAttribute("download", filename);
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  showToast(`Se exportaron ${registros.length} registro(s) en CSV`, "success");
+}
+
+function renderOrientadores(search = "") {
   const tbody = document.getElementById("table-orientadores");
   if (!tbody) return;
 
-  const filtered = db.orientadores.filter(o => {
-    const txt = `${o.orientador} ${o.participante} ${o.tipoConsulta} ${o.codigoTema}`.toLowerCase();
-    return txt.includes(search.toLowerCase());
-  });
+  const filtered = getFilteredOrientadores(search);
 
-  tbody.innerHTML = filtered.map(o => `
-    <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-      <td class="py-3 px-4 font-medium text-slate-900">${o.orientador}</td>
+  const exportLabel = document.getElementById("btn-export-ori-label");
+  if (exportLabel) {
+    exportLabel.innerText = search.trim()
+      ? `Exportar búsqueda (${filtered.length})`
+      : `Exportar a Excel (${filtered.length})`;
+  }
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="6" class="py-8 text-center text-xs text-slate-400">
+          No se encontraron sesiones de orientación registradas.
+        </td>
+      </tr>
+    `;
+    return;
+  }
+
+  tbody.innerHTML = filtered.map(o => {
+    const temaDisplay = o.tema || o.tipoConsulta || "Sin tema";
+    const procesoDisplay = o.proceso || o.codigoTema || "-";
+    const costoHtml = o.conCosto
+      ? `<span class="px-2 py-0.5 text-[11px] rounded-full font-semibold bg-amber-100 text-amber-800">Con costo</span>`
+      : `<span class="px-2 py-0.5 text-[11px] rounded-full font-semibold bg-emerald-100 text-emerald-800">Sin costo</span>
+         <div class="text-[11px] text-slate-500 mt-1 max-w-[180px] truncate" title="${o.proyecto || 'Sin proyecto asignado'}">${o.proyecto || "Sin proyecto asignado"}</div>`;
+
+    return `
+    <tr onclick="verDetalleOrientador(${o.id})" class="border-b border-slate-100 hover:bg-blue-50/50 transition-colors cursor-pointer">
+      <td class="py-3 px-4">
+        <div class="font-semibold text-slate-900 text-xs">${o.regional || "-"}</div>
+        <div class="text-[11px] text-slate-500">${o.fecha || "-"}</div>
+      </td>
       <td class="py-3 px-4 text-slate-800">
-        <div>${o.participante}</div>
-        <div class="text-[11px] text-slate-400">${o.area} • <span class="font-semibold text-slate-600">${o.tipoUsuario}</span></div>
+        <div class="font-medium text-slate-900">${o.participante || "-"}</div>
+        <div class="text-[11px] text-slate-500">
+          CI: <span class="font-mono">${o.ci || "-"}</span> • ${o.edad ? `${o.edad} años` : "-"} • Exp: <span class="font-mono">${o.expedienteClinico || "-"}</span>
+        </div>
+        <div class="text-[10px] text-slate-400">
+          ${o.sexo || "-"} • ${o.identidadGenero || "-"} • ${o.celular || "-"}
+        </div>
       </td>
       <td class="py-3 px-4">
-        <span class="px-2 py-0.5 text-xs bg-blue-50 text-blue-700 font-semibold rounded">${o.codigoTema}</span>
-        <span class="text-xs text-slate-700 ml-1">${o.tipoConsulta}</span>
+        <span class="px-2 py-0.5 text-[11px] bg-slate-100 text-slate-700 rounded font-semibold">${o.tipoSesion || "Sin especificar"}</span>
+        <div class="text-[11px] text-slate-500 mt-1">Usuario: <span class="font-semibold text-slate-700">${o.tipoUsuario || "-"}</span></div>
       </td>
-      <td class="py-3 px-4 text-xs font-medium text-slate-700">${o.pruebaVIH}</td>
+      <td class="py-3 px-4">${costoHtml}</td>
       <td class="py-3 px-4">
-        <span class="px-2 py-0.5 text-[11px] rounded-full font-semibold ${
-          o.tamizajeViolencia.includes('Positivo') ? 'bg-rose-100 text-rose-800 animate-pulse' : 'bg-slate-100 text-slate-700'
-        }">${o.tamizajeViolencia}</span>
+        <span class="px-2 py-0.5 text-xs bg-blue-50 text-blue-700 font-semibold rounded">${temaDisplay}</span>
+        <div class="text-[11px] text-slate-600 mt-1 max-w-[200px] truncate" title="${procesoDisplay}">${procesoDisplay}</div>
       </td>
-      <td class="py-3 px-4 text-slate-500 text-xs">${o.fecha}</td>
-      <td class="py-3 px-4 text-right space-x-2">
-        <button onclick="editOrientador(${o.id})" class="text-blue-600 hover:text-blue-800 text-xs font-semibold py-1 px-2 rounded hover:bg-blue-50">Editar</button>
-        <button onclick="deleteOrientador(${o.id})" class="text-rose-600 hover:text-rose-800 text-xs font-semibold py-1 px-2 rounded hover:bg-rose-50">Eliminar</button>
+      <td class="py-3 px-4 text-right space-x-2 whitespace-nowrap" onclick="event.stopPropagation()">
+        <button onclick="event.stopPropagation(); editOrientador(${o.id})" class="text-blue-600 hover:text-blue-800 text-xs font-semibold py-1 px-2 rounded hover:bg-blue-50">Editar</button>
+        <button onclick="event.stopPropagation(); deleteOrientador(${o.id})" class="text-rose-600 hover:text-rose-800 text-xs font-semibold py-1 px-2 rounded hover:bg-rose-50">Eliminar</button>
       </td>
     </tr>
-  `).join("");
+  `;
+  }).join("");
 }
 
 function openModalOrientador(item = null) {
@@ -10036,20 +12451,33 @@ function openModalOrientador(item = null) {
   if (item) {
     document.getElementById("modal-ori-title").innerText = "Editar Sesión de Orientación SSSR";
     document.getElementById("ori-id").value = item.id;
-    document.getElementById("ori-orientador").value = item.orientador;
-    document.getElementById("ori-participante").value = item.participante;
-    document.getElementById("ori-area").value = item.area;
-    document.getElementById("ori-usuario-tipo").value = item.tipoUsuario;
-    document.getElementById("ori-tema").value = item.codigoTema;
-    document.getElementById("ori-vih").value = item.pruebaVIH;
-    document.getElementById("ori-violencia").value = item.tamizajeViolencia;
-    document.getElementById("ori-modalidad").value = item.modalidad;
-    document.getElementById("ori-fecha").value = item.fecha;
-    document.getElementById("ori-notas").value = item.notas;
+    document.getElementById("ori-regional").value = item.regional || "Clínica La Paz";
+    document.getElementById("ori-fecha").value = item.fecha || "";
+    document.getElementById("ori-participante").value = item.participante || "";
+    document.getElementById("ori-ci").value = item.ci || "";
+    document.getElementById("ori-celular").value = item.celular || "";
+    document.getElementById("ori-edad").value = item.edad || "";
+    document.getElementById("ori-expediente").value = item.expedienteClinico || "";
+    document.getElementById("ori-sexo").value = item.sexo || "";
+    document.getElementById("ori-identidad-genero").value = item.identidadGenero || "";
+    document.getElementById("ori-orientacion-sexual").value = item.orientacionSexual || "";
+    document.getElementById("ori-estado-civil").value = item.estadoCivil || "";
+    document.getElementById("ori-instruccion").value = item.instruccion || "";
+    document.getElementById("ori-tipo-sesion").value = item.tipoSesion || "";
+    document.getElementById("ori-usuario-tipo").value = item.tipoUsuario || "";
+    document.getElementById("ori-con-costo").checked = Boolean(item.conCosto);
+    document.getElementById("ori-proyecto").value = item.proyecto || "";
+    toggleCostoOrientacion();
+    document.getElementById("ori-tema").value = item.tema || "";
+    actualizarProcesoOrientacion(item.proceso || "");
+    document.getElementById("ori-notas").value = item.notas || "";
   } else {
-    document.getElementById("modal-ori-title").innerText = "Nueva Sesión de Orientación SSSR (SGC-Misional-E-4)";
+    document.getElementById("modal-ori-title").innerText = "Crear Nueva Orientación";
     document.getElementById("ori-id").value = "";
     document.getElementById("ori-fecha").value = new Date().toISOString().split("T")[0];
+    document.getElementById("ori-con-costo").checked = false;
+    toggleCostoOrientacion();
+    actualizarProcesoOrientacion("");
   }
   modal.classList.remove("hidden");
 }
@@ -10058,22 +12486,30 @@ function saveOrientador(e) {
   e.preventDefault();
   const db = getDB();
   const idVal = document.getElementById("ori-id").value;
-
-  const temaSel = document.getElementById("ori-tema");
-  const temaText = temaSel.options[temaSel.selectedIndex].text;
+  const currUser = typeof getCurrentUser === "function" ? getCurrentUser() : null;
+  const conCosto = document.getElementById("ori-con-costo").checked;
 
   const item = {
     id: idVal ? parseInt(idVal) : Date.now(),
-    orientador: document.getElementById("ori-orientador").value.trim(),
-    participante: document.getElementById("ori-participante").value.trim(),
-    area: document.getElementById("ori-area").value,
-    tipoUsuario: document.getElementById("ori-usuario-tipo").value,
-    codigoTema: temaSel.value,
-    tipoConsulta: temaText,
-    pruebaVIH: document.getElementById("ori-vih").value,
-    tamizajeViolencia: document.getElementById("ori-violencia").value,
-    modalidad: document.getElementById("ori-modalidad").value,
+    orientador: (currUser && currUser.nombre) ? currUser.nombre : "Orientador/a en Turno",
+    regional: document.getElementById("ori-regional").value,
     fecha: document.getElementById("ori-fecha").value,
+    participante: document.getElementById("ori-participante").value.trim(),
+    ci: document.getElementById("ori-ci").value.trim(),
+    celular: document.getElementById("ori-celular").value.trim(),
+    edad: document.getElementById("ori-edad").value ? parseInt(document.getElementById("ori-edad").value, 10) : "",
+    expedienteClinico: document.getElementById("ori-expediente").value.trim(),
+    sexo: document.getElementById("ori-sexo").value,
+    identidadGenero: document.getElementById("ori-identidad-genero").value,
+    orientacionSexual: document.getElementById("ori-orientacion-sexual").value,
+    estadoCivil: document.getElementById("ori-estado-civil").value,
+    instruccion: document.getElementById("ori-instruccion").value,
+    tipoSesion: document.getElementById("ori-tipo-sesion").value,
+    tipoUsuario: document.getElementById("ori-usuario-tipo").value,
+    conCosto,
+    proyecto: conCosto ? "" : document.getElementById("ori-proyecto").value,
+    tema: document.getElementById("ori-tema").value,
+    proceso: document.getElementById("ori-proceso").value,
     notas: document.getElementById("ori-notas").value.trim()
   };
 
@@ -10088,6 +12524,114 @@ function saveOrientador(e) {
 
   saveDB(db);
   closeModal("modal-orientador");
+}
+
+function verDetalleOrientador(id) {
+  const db = getDB();
+  const item = db.orientadores.find(o => o.id === id);
+  if (!item) return;
+
+  const modal = document.getElementById("modal-orientador-detalle");
+  const body = document.getElementById("det-ori-body");
+  const sub = document.getElementById("det-ori-subtitulo");
+  const btnEditar = document.getElementById("det-ori-btn-editar");
+  if (!modal || !body) return;
+
+  if (sub) {
+    sub.innerText = `${item.regional || "Sin regional"} • ${item.fecha || "Sin fecha"} • Registrado por: ${item.orientador || "Orientador/a"}`;
+  }
+
+  const field = (label, val, mono = false) => `
+    <div class="bg-white p-2.5 rounded-lg border border-slate-200">
+      <span class="block text-[10px] font-semibold text-slate-400 uppercase tracking-wider">${label}</span>
+      <span class="block text-xs font-semibold text-slate-800 mt-0.5 ${mono ? "font-mono" : ""}">${val || "-"}</span>
+    </div>
+  `;
+
+  const costoBadge = item.conCosto
+    ? `<span class="px-2.5 py-1 text-xs rounded-full font-bold bg-amber-100 text-amber-800">Con costo (Arancel regular)</span>`
+    : `<span class="px-2.5 py-1 text-xs rounded-full font-bold bg-emerald-100 text-emerald-800">Sin costo (Vinculado a proyecto / campaña)</span>`;
+
+  body.innerHTML = `
+    <!-- 1. Orientación -->
+    <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-2.5">
+      <div class="flex items-center gap-2 border-b border-slate-200 pb-2">
+        <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold">1</span>
+        <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Orientación</h4>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+        ${field("Regional", item.regional)}
+        ${field("Fecha", item.fecha)}
+        ${field("Orientador/a", item.orientador)}
+      </div>
+    </div>
+
+    <!-- 2. Datos Personales -->
+    <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-2.5">
+      <div class="flex items-center gap-2 border-b border-slate-200 pb-2">
+        <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold">2</span>
+        <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Datos Personales</h4>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+        <div class="sm:col-span-2">${field("Nombre Completo", item.participante)}</div>
+        ${field("CI (Cédula de Identidad)", item.ci, true)}
+        ${field("Celular", item.celular, true)}
+        ${field("Edad", item.edad ? `${item.edad} años` : "-")}
+        ${field("Expediente Clínico", item.expedienteClinico, true)}
+        ${field("Sexo", item.sexo)}
+        ${field("Identidad de Género", item.identidadGenero)}
+        ${field("Orientación Sexual", item.orientacionSexual)}
+        ${field("Estado Civil", item.estadoCivil)}
+        <div class="sm:col-span-2">${field("Instrucción", item.instruccion)}</div>
+      </div>
+    </div>
+
+    <!-- 3. Datos de la Sesión -->
+    <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-2.5">
+      <div class="flex items-center gap-2 border-b border-slate-200 pb-2">
+        <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold">3</span>
+        <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Datos de la Sesión</h4>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+        ${field("Tipo de la Sesión", item.tipoSesion || "(Vacío)")}
+        ${field("Tipo de Usuario", item.tipoUsuario || "(Vacío)")}
+      </div>
+    </div>
+
+    <!-- 4. Costos -->
+    <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-2.5">
+      <div class="flex items-center gap-2 border-b border-slate-200 pb-2">
+        <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold">4</span>
+        <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Costos</h4>
+      </div>
+      <div class="flex flex-wrap items-center justify-between gap-2 bg-white p-3 rounded-lg border border-slate-200">
+        <div>${costoBadge}</div>
+        ${!item.conCosto ? `<div class="text-xs font-semibold text-slate-700">Proyecto: <span class="text-blue-700">${item.proyecto || "Sin proyecto asignado"}</span></div>` : ""}
+      </div>
+    </div>
+
+    <!-- 5. Temas -->
+    <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-2.5">
+      <div class="flex items-center gap-2 border-b border-slate-200 pb-2">
+        <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold">5</span>
+        <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Temas</h4>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+        ${field("Tema", item.tema || item.tipoConsulta || "(Vacío)")}
+        ${field("Proceso", item.proceso || item.codigoTema || "-")}
+      </div>
+      ${field("Observaciones", item.notas || "Sin observaciones registradas.")}
+    </div>
+  `;
+
+  if (btnEditar) {
+    btnEditar.onclick = () => {
+      closeModal("modal-orientador-detalle");
+      editOrientador(item.id);
+    };
+  }
+
+  modal.classList.remove("hidden");
 }
 
 function editOrientador(id) {
@@ -10109,6 +12653,7 @@ function deleteOrientador(id) {
 // PANEL 5: INCIDENCIA Y AUDITORÍA SOCIAL
 // -------------------------------------------------------------
 function renderIncidencia(search = "") {
+  renderIncidenciaInscripciones();
   const db = getDB();
   const tbody = document.getElementById("table-incidencia");
   if (!tbody) return;
@@ -10197,6 +12742,1367 @@ function deleteIncidencia(id) {
     saveDB(db);
     showToast("Registro eliminado", "warning");
   }
+}
+
+// -------------------------------------------------------------
+// PANEL 5B: MÓDULO DE INSCRIPCIÓN POR PASOS (INCIDENCIA POLÍTICA)
+// Paso 1: Participantes -> Paso 2: Taller
+// -------------------------------------------------------------
+let incWsDraft = {
+  id: null,
+  codigo: "NUEVO",
+  paso: 1,
+  participantes: [],
+  financiadores: [],
+  taller: null,
+  arbolProblemas: {
+    problemaCentral: "",
+    efectos: [],
+    causas: []
+  },
+  conclusion: {
+    resumen: "",
+    acuerdos: "",
+    estadoCierre: "Concluido",
+    fechaCierre: "",
+    documentos: []
+  },
+  asistenciasQR: []
+};
+
+function renderIncidenciaInscripciones() {
+  const db = getDB();
+  const tbody = document.getElementById("table-incidencia-inscripciones");
+  const countBadge = document.getElementById("inc-inscripciones-count");
+  if (!tbody) return;
+
+  const list = db.incidenciaInscripciones || [];
+  if (countBadge) countBadge.innerText = `${list.length} registro${list.length === 1 ? "" : "s"}`;
+
+  if (list.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="7" class="py-6 px-4 text-center text-xs text-slate-400">No hay inscripciones registradas. Haz clic en "Nueva Inscripción (2 Pasos)" para comenzar.</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = list.map(item => {
+    const t = item.taller || {};
+    const count = (item.participantes || []).length;
+    const docsCount = (item.conclusion && item.conclusion.documentos) ? item.conclusion.documentos.length : 0;
+    const estadoCierre = (item.conclusion && item.conclusion.estadoCierre) || item.estado || "Registrado";
+    return `
+      <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+        <td class="py-3 px-4 font-mono text-xs font-bold text-blue-700">${item.codigo || `INC-${item.id}`}</td>
+        <td class="py-3 px-4">
+          <div class="font-semibold text-slate-900">${t.titulo || "Sin título de taller"}</div>
+          <div class="text-[11px] text-slate-500">${t.tipoSGC || "Incidencia Política"} • ${t.facilitador || "-"}</div>
+        </td>
+        <td class="py-3 px-4">
+          <span class="px-2 py-0.5 text-xs bg-indigo-100 text-indigo-800 rounded-full font-bold">${count} participante${count === 1 ? "" : "s"}</span>
+          <span class="ml-1 px-2 py-0.5 text-[10px] bg-slate-100 text-slate-700 rounded-full font-semibold">📄 ${docsCount} doc${docsCount === 1 ? "" : "s"}</span>
+        </td>
+        <td class="py-3 px-4 text-xs">
+          <span class="px-2 py-0.5 bg-teal-100 text-teal-800 rounded font-bold">${t.regional || "-"}</span>
+          <span class="ml-1 text-slate-600">${t.area || "-"}</span>
+        </td>
+        <td class="py-3 px-4 text-xs text-slate-600">
+          <div class="font-mono">${t.fecha || "-"}</div>
+          <div class="text-[11px] text-slate-400">${t.horas || 0} hrs • ${t.modalidad || "Presencial"}</div>
+        </td>
+        <td class="py-3 px-4">
+          <span class="px-2 py-0.5 text-xs bg-emerald-100 text-emerald-800 rounded font-semibold">${estadoCierre}</span>
+        </td>
+        <td class="py-3 px-4 text-right space-x-1.5 whitespace-nowrap">
+          <button onclick="verLideresIncidencia(${item.id})" class="text-indigo-700 hover:text-indigo-900 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-xs font-bold py-1 px-2.5 rounded cursor-pointer">👥 Ver Líderes</button>
+          <button onclick="abrirInscripcionIncidencia(${item.id})" class="text-blue-600 hover:text-blue-800 text-xs font-semibold py-1 px-2 rounded hover:bg-blue-50 cursor-pointer">Abrir Pasos</button>
+          <button onclick="eliminarInscripcionIncidencia(${item.id})" class="text-rose-600 hover:text-rose-800 text-xs font-semibold py-1 px-2 rounded hover:bg-rose-50 cursor-pointer">Eliminar</button>
+        </td>
+      </tr>
+    `;
+  }).join("");
+}
+
+function mostrarSidebarIncidencia(mostrar) {
+  const navGlobal = document.getElementById("sidebar-nav-global");
+  const navActividad = document.getElementById("sidebar-nav-actividad");
+  const navIncidencia = document.getElementById("sidebar-nav-incidencia");
+  if (mostrar) {
+    if (navGlobal) navGlobal.classList.add("hidden");
+    if (navActividad) navActividad.classList.add("hidden");
+    if (navIncidencia) navIncidencia.classList.remove("hidden");
+  } else {
+    if (navIncidencia) navIncidencia.classList.add("hidden");
+    if (navGlobal) navGlobal.classList.remove("hidden");
+  }
+}
+
+function actualizarSidebarIncidenciaInfo() {
+  const sbCod = document.getElementById("sb-inc-codigo");
+  const sbTit = document.getElementById("sb-inc-titulo");
+  const sbReg = document.getElementById("sb-inc-regional");
+  const sbEst = document.getElementById("sb-inc-estado");
+  if (sbCod) sbCod.innerText = incWsDraft.codigo || "NUEVO";
+  if (sbTit) {
+    sbTit.innerText = (incWsDraft.taller && incWsDraft.taller.titulo)
+      ? incWsDraft.taller.titulo
+      : "Inscripción a Taller de Incidencia Política";
+  }
+  if (sbReg) sbReg.innerText = (incWsDraft.taller && incWsDraft.taller.regional) ? incWsDraft.taller.regional : "LP";
+  if (sbEst) sbEst.innerText = incWsDraft.id ? "En Edición" : "Nueva Inscripción";
+}
+
+function abrirNuevaInscripcionIncidencia() {
+  const user = typeof getCurrentUser === "function" ? getCurrentUser() : null;
+  incWsDraft = {
+    id: null,
+    codigo: "NUEVO",
+    paso: 1,
+    participantes: [],
+    financiadores: [],
+    taller: {
+      titulo: "",
+      tipoSGC: "Formación en Incidencia Política (Ind. 13)",
+      fecha: new Date().toISOString().split("T")[0],
+      horas: 3,
+      modalidad: "Presencial",
+      ambito: "Municipal",
+      regional: (user && user.regional && user.regional !== "Nacional") ? user.regional : "LP",
+      area: "Urbana",
+      lugar: "",
+      facilitador: user ? user.nombre : "",
+      normativa: "",
+      objetivo: "",
+      materialDistribuido: "",
+      refManana: false,
+      almuerzo: false,
+      refTarde: false,
+      cena: false
+    },
+    arbolProblemas: {
+      problemaCentral: "",
+      efectos: [],
+      causas: []
+    },
+    conclusion: {
+      resumen: "",
+      acuerdos: "",
+      estadoCierre: "Concluido",
+      fechaCierre: new Date().toISOString().split("T")[0],
+      documentos: []
+    },
+    asistenciasQR: []
+  };
+  mostrarSidebarIncidencia(true);
+  navigateTo("incidencia-inscripcion");
+}
+
+function abrirInscripcionIncidencia(id) {
+  const db = getDB();
+  const item = (db.incidenciaInscripciones || []).find(x => x.id === id);
+  if (!item) return;
+
+  incWsDraft = {
+    id: item.id,
+    codigo: item.codigo || `INC-${item.id}`,
+    paso: 1,
+    participantes: JSON.parse(JSON.stringify(item.participantes || [])),
+    financiadores: JSON.parse(JSON.stringify(item.financiadores || [])),
+    taller: JSON.parse(JSON.stringify(item.taller || {})),
+    arbolProblemas: JSON.parse(JSON.stringify(item.arbolProblemas || { problemaCentral: "", efectos: [], causas: [] })),
+    conclusion: JSON.parse(JSON.stringify(item.conclusion || {
+      resumen: "",
+      acuerdos: "",
+      estadoCierre: "Concluido",
+      fechaCierre: new Date().toISOString().split("T")[0],
+      documentos: []
+    })),
+    asistenciasQR: JSON.parse(JSON.stringify(item.asistenciasQR || []))
+  };
+  mostrarSidebarIncidencia(true);
+  navigateTo("incidencia-inscripcion");
+}
+
+function cerrarInscripcionIncidencia() {
+  mostrarSidebarIncidencia(false);
+  navigateTo("incidencia");
+}
+
+function renderIncidenciaInscripcionWorkspace() {
+  const codigoBadge = document.getElementById("inc-ws-badge-codigo");
+  const tituloEl = document.getElementById("inc-ws-titulo");
+  if (codigoBadge) codigoBadge.innerText = incWsDraft.codigo || "NUEVO";
+  if (tituloEl) {
+    tituloEl.innerText = (incWsDraft.taller && incWsDraft.taller.titulo)
+      ? incWsDraft.taller.titulo
+      : "Inscripción a Taller de Incidencia Política";
+  }
+
+  mostrarSidebarIncidencia(true);
+  actualizarSidebarIncidenciaInfo();
+  poblarSelectorPadronIncidencia();
+  cargarDatosFormularioTallerIncidencia();
+  cargarDatosConclusionIncidencia();
+  cargarDatosArbolProblemasIncidencia();
+  renderParticipantesIncidenciaStep();
+  renderFinanciadoresIncidenciaStep();
+  cambiarSubTabParticipantesIncidencia('voluntarios');
+  renderAsistenciaQRIncidencia();
+  irAPasoIncidencia(incWsDraft.paso || 1, true);
+}
+
+function poblarSelectorPadronIncidencia() {
+  const select = document.getElementById("inc-part-import-select");
+  if (!select) return;
+  const db = getDB();
+  const opts = (db.participantes || []).map(p =>
+    `<option value="${p.id}">${p.nombres} ${p.apellidos} (${p.ci}) - ${p.regional}</option>`
+  ).join("");
+  select.innerHTML = `<option value="">-- Importar del padrón CIES --</option>${opts}`;
+}
+
+function actualizarRangoEtarioIncidencia() {
+  const edadInput = document.getElementById("inc-part-edad");
+  const rangoSel = document.getElementById("inc-part-rango");
+  if (!edadInput || !rangoSel) return;
+  const edad = parseInt(edadInput.value, 10);
+  if (isNaN(edad)) return;
+  if (edad <= 14) rangoSel.value = "10 a 14";
+  else if (edad <= 19) rangoSel.value = "15 a 19";
+  else if (edad <= 24) rangoSel.value = "20 a 24";
+  else rangoSel.value = "> 24";
+}
+
+function agregarParticipanteIncidencia(e) {
+  e.preventDefault();
+  const ci = document.getElementById("inc-part-ci").value.trim();
+  if (incWsDraft.participantes.some(p => p.ci.toLowerCase() === ci.toLowerCase())) {
+    showToast(`El participante con CI ${ci} ya está inscrito en esta lista.`, "warning");
+    return;
+  }
+
+  const edad = parseInt(document.getElementById("inc-part-edad").value, 10) || 18;
+  const nuevo = {
+    id: Date.now(),
+    nombres: document.getElementById("inc-part-nombres").value.trim(),
+    apellidos: document.getElementById("inc-part-apellidos").value.trim(),
+    ci,
+    edad,
+    rangoEdad: document.getElementById("inc-part-rango").value,
+    genero: document.getElementById("inc-part-genero").value,
+    cargoOcupacion: document.getElementById("inc-part-cargo").value.trim(),
+    telefono: document.getElementById("inc-part-telefono").value.trim(),
+    procedencia: document.getElementById("inc-part-procedencia").value.trim(),
+    regional: document.getElementById("inc-part-regional").value,
+    area: document.getElementById("inc-part-area").value
+  };
+
+  incWsDraft.participantes.push(nuevo);
+
+  const syncPadron = document.getElementById("inc-part-sync-padron");
+  if (syncPadron && syncPadron.checked) {
+    const db = getDB();
+    const existeEnPadron = (db.participantes || []).some(p => (p.ci || "").toLowerCase() === ci.toLowerCase());
+    if (!existeEnPadron) {
+      db.participantes.unshift({
+        id: nuevo.id,
+        nombres: nuevo.nombres,
+        apellidos: nuevo.apellidos,
+        ci: nuevo.ci,
+        edad: nuevo.edad,
+        rangoEdad: nuevo.rangoEdad,
+        genero: nuevo.genero,
+        cargoOcupacion: nuevo.cargoOcupacion,
+        procedencia: nuevo.procedencia,
+        regional: nuevo.regional,
+        telefono: nuevo.telefono,
+        fechaRegistro: new Date().toISOString().split("T")[0],
+        estadoFormacion: "Iniciado",
+        activoEnAula: true
+      });
+      saveDB(db);
+      poblarSelectorPadronIncidencia();
+    }
+  }
+
+  document.getElementById("form-inc-participante").reset();
+  renderParticipantesIncidenciaStep();
+  showToast(`Participante ${nuevo.nombres} ${nuevo.apellidos} agregado al Paso 1`, "success");
+}
+
+function importarParticipantePadronIncidencia() {
+  const select = document.getElementById("inc-part-import-select");
+  if (!select || !select.value) {
+    showToast("Selecciona un participante del padrón CIES para importar.", "warning");
+    return;
+  }
+  const db = getDB();
+  const found = (db.participantes || []).find(p => p.id === parseInt(select.value, 10));
+  if (!found) return;
+
+  if (incWsDraft.participantes.some(p => (p.ci || "").toLowerCase() === (found.ci || "").toLowerCase())) {
+    showToast(`${found.nombres} ${found.apellidos} ya está en la lista de inscritos.`, "warning");
+    return;
+  }
+
+  incWsDraft.participantes.push({
+    id: found.id,
+    nombres: found.nombres,
+    apellidos: found.apellidos,
+    ci: found.ci,
+    edad: found.edad,
+    rangoEdad: found.rangoEdad,
+    genero: found.genero,
+    cargoOcupacion: found.cargoOcupacion || "Líder Juvenil",
+    telefono: found.telefono || "",
+    procedencia: found.procedencia || "",
+    regional: found.regional || "LP",
+    area: found.area || "Urbana"
+  });
+
+  select.value = "";
+  renderParticipantesIncidenciaStep();
+  showToast(`${found.nombres} ${found.apellidos} importado/a correctamente.`, "success");
+}
+
+function quitarParticipanteIncidencia(idx) {
+  incWsDraft.participantes.splice(idx, 1);
+  renderParticipantesIncidenciaStep();
+}
+
+function renderParticipantesIncidenciaStep() {
+  const tbody = document.getElementById("table-inc-ws-participantes");
+  const badgeCount = document.getElementById("inc-ws-badge-count");
+  const resumenEl = document.getElementById("inc-ws-part-resumen");
+  const paso2Info = document.getElementById("inc-ws-paso2-part-info");
+  const pillSub1 = document.getElementById("inc-ws-pill-sub-1");
+  const volTabBadge = document.getElementById("inc-part-tab-vol-badge");
+
+  const list = incWsDraft.participantes || [];
+  const finList = incWsDraft.financiadores || [];
+  const totalGeneral = list.length + finList.length;
+  const urbanas = list.filter(p => (p.area || "Urbana") === "Urbana").length;
+  const rurales = list.filter(p => p.area === "Rural").length;
+
+  if (volTabBadge) volTabBadge.innerText = String(list.length);
+  if (badgeCount) badgeCount.innerText = `${totalGeneral} participante${totalGeneral === 1 ? "" : "s"}`;
+  if (resumenEl) resumenEl.innerText = `${list.length} voluntarios (${urbanas} Urbana / ${rurales} Rural)`;
+  if (paso2Info) paso2Info.innerText = `${list.length} voluntario(s) y ${finList.length} financiador(es) externo(s) inscritos en el Paso 1`;
+  if (pillSub1) pillSub1.innerText = totalGeneral > 0 ? `${list.length} volunt. • ${finList.length} financ.` : "Voluntarios y financiadores";
+
+  const sbCount = document.getElementById("sb-inc-count");
+  const sbSub1 = document.getElementById("sb-inc-sub-1");
+  if (sbCount) sbCount.innerText = `${totalGeneral} participante${totalGeneral === 1 ? "" : "s"}`;
+  if (sbSub1) sbSub1.innerText = `${list.length} volunt. • ${finList.length} financ.`;
+
+  if (!tbody) return;
+  if (list.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="7" class="py-6 px-4 text-center text-slate-400">Aún no agregaste participantes. Usa el formulario superior o importa desde el padrón CIES.</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = list.map((p, idx) => `
+    <tr class="border-b border-slate-100 hover:bg-slate-50">
+      <td class="py-2.5 px-4 font-mono text-slate-400">${idx + 1}</td>
+      <td class="py-2.5 px-4">
+        <div class="font-bold text-slate-900">${p.nombres} ${p.apellidos}</div>
+        <div class="text-[11px] text-slate-500">${p.procedencia || "-"}</div>
+      </td>
+      <td class="py-2.5 px-4 font-mono">${p.ci}</td>
+      <td class="py-2.5 px-4">
+        <div>${p.edad} años (${p.rangoEdad})</div>
+        <div class="text-[11px] text-slate-500">${p.genero}</div>
+      </td>
+      <td class="py-2.5 px-4 text-slate-700">${p.cargoOcupacion || "-"}</td>
+      <td class="py-2.5 px-4">
+        <span class="px-1.5 py-0.5 rounded bg-teal-100 text-teal-800 font-bold text-[10px]">${p.regional}</span>
+        <span class="ml-1 text-slate-600">${p.area || "Urbana"}</span>
+      </td>
+      <td class="py-2.5 px-4 text-right">
+        <button type="button" onclick="quitarParticipanteIncidencia(${idx})" class="text-rose-600 hover:text-rose-800 font-semibold px-2 py-1 rounded hover:bg-rose-50 cursor-pointer">Quitar</button>
+      </td>
+    </tr>
+  `).join("");
+}
+
+function cambiarSubTabParticipantesIncidencia(tab) {
+  const panelVol = document.getElementById("inc-part-panel-voluntarios");
+  const panelFin = document.getElementById("inc-part-panel-financiadores");
+  const btnVol = document.getElementById("inc-part-tab-voluntarios");
+  const btnFin = document.getElementById("inc-part-tab-financiadores");
+  const badgeVol = document.getElementById("inc-part-tab-vol-badge");
+  const badgeFin = document.getElementById("inc-part-tab-fin-badge");
+
+  const isVol = tab === "voluntarios";
+  if (panelVol) panelVol.classList.toggle("hidden", !isVol);
+  if (panelFin) panelFin.classList.toggle("hidden", isVol);
+
+  if (btnVol) {
+    btnVol.className = isVol
+      ? "flex items-center justify-between px-4 py-2.5 rounded-lg text-xs font-bold border-2 border-blue-500 bg-blue-50 text-blue-900 cursor-pointer transition-all"
+      : "flex items-center justify-between px-4 py-2.5 rounded-lg text-xs font-bold border border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100 cursor-pointer transition-all";
+  }
+  if (badgeVol) {
+    badgeVol.className = isVol
+      ? "px-2 py-0.5 rounded-full bg-blue-600 text-white font-mono text-[10px]"
+      : "px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 font-mono text-[10px]";
+  }
+  if (btnFin) {
+    btnFin.className = !isVol
+      ? "flex items-center justify-between px-4 py-2.5 rounded-lg text-xs font-bold border-2 border-emerald-500 bg-emerald-50 text-emerald-900 cursor-pointer transition-all"
+      : "flex items-center justify-between px-4 py-2.5 rounded-lg text-xs font-bold border border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100 cursor-pointer transition-all";
+  }
+  if (badgeFin) {
+    badgeFin.className = !isVol
+      ? "px-2 py-0.5 rounded-full bg-emerald-600 text-white font-mono text-[10px]"
+      : "px-2 py-0.5 rounded-full bg-slate-200 text-slate-700 font-mono text-[10px]";
+  }
+}
+
+function agregarFinanciadorIncidencia(e) {
+  e.preventDefault();
+  if (!incWsDraft.financiadores) incWsDraft.financiadores = [];
+
+  const nuevo = {
+    id: Date.now(),
+    nombre: document.getElementById("inc-fin-nombre").value.trim(),
+    municipio: document.getElementById("inc-fin-municipio").value.trim(),
+    organizacion: document.getElementById("inc-fin-organizacion").value.trim(),
+    cargo: document.getElementById("inc-fin-cargo").value.trim(),
+    edad: parseInt(document.getElementById("inc-fin-edad").value, 10) || 18,
+    telefono: document.getElementById("inc-fin-telefono").value.trim(),
+    sexo: document.getElementById("inc-fin-sexo").value
+  };
+
+  incWsDraft.financiadores.push(nuevo);
+  document.getElementById("form-inc-financiador").reset();
+  renderFinanciadoresIncidenciaStep();
+  renderParticipantesIncidenciaStep();
+  showToast(`Financiador externo "${nuevo.nombre}" agregado correctamente.`, "success");
+}
+
+function quitarFinanciadorIncidencia(idx) {
+  if (!incWsDraft.financiadores) return;
+  incWsDraft.financiadores.splice(idx, 1);
+  renderFinanciadoresIncidenciaStep();
+  renderParticipantesIncidenciaStep();
+}
+
+function renderFinanciadoresIncidenciaStep() {
+  const tbody = document.getElementById("table-inc-ws-financiadores");
+  const resumen = document.getElementById("inc-ws-fin-resumen");
+  const badgeFin = document.getElementById("inc-part-tab-fin-badge");
+  const list = incWsDraft.financiadores || [];
+
+  if (badgeFin) badgeFin.innerText = String(list.length);
+  if (resumen) resumen.innerText = `${list.length} financiador${list.length === 1 ? "" : "es"} registrado${list.length === 1 ? "" : "s"}`;
+
+  if (!tbody) return;
+  if (list.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="7" class="py-6 px-4 text-center text-slate-400">No hay financiadores externos registrados aún.</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = list.map((f, idx) => `
+    <tr class="border-b border-slate-100 hover:bg-emerald-50/30">
+      <td class="py-2.5 px-4 font-mono text-slate-400">${idx + 1}</td>
+      <td class="py-2.5 px-4 font-bold text-slate-900">${f.nombre}</td>
+      <td class="py-2.5 px-4">
+        <div class="font-semibold text-slate-800">${f.organizacion}</div>
+        <div class="text-[11px] text-slate-500">${f.cargo}</div>
+      </td>
+      <td class="py-2.5 px-4 text-slate-700">${f.municipio}</td>
+      <td class="py-2.5 px-4">
+        <div>${f.edad} años</div>
+        <div class="text-[11px] text-slate-500">${f.sexo}</div>
+      </td>
+      <td class="py-2.5 px-4 font-mono text-slate-700">${f.telefono}</td>
+      <td class="py-2.5 px-4 text-right">
+        <button type="button" onclick="quitarFinanciadorIncidencia(${idx})" class="text-rose-600 hover:text-rose-800 font-semibold px-2 py-1 rounded hover:bg-rose-50 cursor-pointer">Quitar</button>
+      </td>
+    </tr>
+  `).join("");
+}
+
+function irAPasoIncidencia(paso, skipValidation = false) {
+  const totalPart = (incWsDraft.participantes || []).length + (incWsDraft.financiadores || []).length;
+  if (paso >= 2 && !skipValidation && totalPart === 0) {
+    showToast("Inscribe al menos un participante voluntario o financiador externo en el Paso 1 antes de continuar.", "warning");
+    return;
+  }
+
+  // Preservar datos si salimos del Paso 2 o Paso 4
+  if (incWsDraft.paso === 2 && paso !== 2) {
+    capturarDatosPlanificacionDraft();
+  }
+  if (incWsDraft.paso === 4 && paso !== 4) {
+    capturarDatosConclusionDraft();
+  }
+
+  incWsDraft.paso = paso;
+  const p1 = document.getElementById("inc-ws-paso-1");
+  const p2 = document.getElementById("inc-ws-paso-2");
+  const p3 = document.getElementById("inc-ws-paso-3");
+  const p4 = document.getElementById("inc-ws-paso-4");
+  const pArbol = document.getElementById("inc-ws-tab-arbol");
+  const badgePaso = document.getElementById("inc-ws-badge-paso");
+
+  if (badgePaso) badgePaso.innerText = `Paso ${paso} de 4`;
+  if (p1) p1.classList.toggle("hidden", paso !== 1);
+  if (p2) p2.classList.toggle("hidden", paso !== 2);
+  if (p3) p3.classList.toggle("hidden", paso !== 3);
+  if (p4) p4.classList.toggle("hidden", paso !== 4);
+  if (pArbol) pArbol.classList.add("hidden");
+
+  [1, 2, 3, 4].forEach(n => {
+    const pill = document.getElementById(`inc-ws-pill-${n}`);
+    const pNum = document.getElementById(`inc-ws-pill-num-${n}`);
+    const sbBtn = document.getElementById(`sb-inc-btn-paso-${n}`);
+    const sbNum = document.getElementById(`sb-inc-num-${n}`);
+    const sbSub = document.getElementById(`sb-inc-sub-${n}`);
+
+    const isActive = n === paso;
+    const isDone = n < paso;
+
+    if (pill && pNum) {
+      if (isActive) {
+        pill.className = "flex items-center gap-2.5 p-2.5 rounded-xl border-2 border-blue-500 bg-blue-50 text-blue-900 text-left transition-all cursor-pointer";
+        pNum.className = "w-7 h-7 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center shrink-0";
+        pNum.innerText = String(n);
+      } else if (isDone) {
+        pill.className = "flex items-center gap-2.5 p-2.5 rounded-xl border border-emerald-300 bg-emerald-50 text-emerald-900 text-left transition-all cursor-pointer";
+        pNum.className = "w-7 h-7 rounded-lg bg-emerald-600 text-white font-bold text-xs flex items-center justify-center shrink-0";
+        pNum.innerText = "✓";
+      } else {
+        pill.className = "flex items-center gap-2.5 p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100 text-left transition-all cursor-pointer";
+        pNum.className = "w-7 h-7 rounded-lg bg-slate-300 text-slate-700 font-bold text-xs flex items-center justify-center shrink-0";
+        pNum.innerText = String(n);
+      }
+    }
+
+    if (sbBtn && sbNum) {
+      if (isActive) {
+        sbBtn.className = "w-full flex items-center gap-2.5 p-2.5 rounded-xl text-left transition-all border cursor-pointer bg-blue-600/20 border-blue-500 text-white shadow-2xs";
+        sbNum.className = "w-6 h-6 rounded-lg bg-blue-600 text-white font-bold text-xs flex items-center justify-center shrink-0";
+        sbNum.innerText = String(n);
+        if (sbSub) sbSub.className = "text-[10px] text-blue-300 block truncate";
+      } else if (isDone) {
+        sbBtn.className = "w-full flex items-center gap-2.5 p-2.5 rounded-xl text-left transition-all border cursor-pointer bg-emerald-900/30 border-emerald-600/60 text-emerald-200 hover:bg-emerald-900/40";
+        sbNum.className = "w-6 h-6 rounded-lg bg-emerald-600 text-white font-bold text-xs flex items-center justify-center shrink-0";
+        sbNum.innerText = "✓";
+        if (sbSub) sbSub.className = "text-[10px] text-emerald-300 block truncate";
+      } else {
+        sbBtn.className = "w-full flex items-center gap-2.5 p-2.5 rounded-xl text-left transition-all border cursor-pointer bg-slate-800/60 hover:bg-slate-800 border-slate-700/50 text-slate-300";
+        sbNum.className = "w-6 h-6 rounded-lg bg-slate-700 text-slate-300 font-bold text-xs flex items-center justify-center shrink-0";
+        sbNum.innerText = String(n);
+        if (sbSub) sbSub.className = "text-[10px] text-slate-400 block truncate";
+      }
+    }
+  });
+
+  if (paso === 3) {
+    renderAsistenciaQRIncidencia();
+  }
+
+  // Desactivar resaltado de pestaña libre Árbol de Problemas
+  const pillArbol = document.getElementById("inc-ws-pill-arbol");
+  const sbBtnArbol = document.getElementById("sb-inc-btn-arbol");
+  if (pillArbol) pillArbol.className = "flex items-center gap-2.5 p-2.5 rounded-xl border border-amber-200 bg-amber-50/60 text-amber-900 hover:bg-amber-100/70 text-left transition-all cursor-pointer";
+  if (sbBtnArbol) sbBtnArbol.className = "w-full flex items-center gap-2.5 p-2.5 rounded-xl text-left transition-all border cursor-pointer bg-slate-800/60 hover:bg-slate-800 border-slate-700/50 text-slate-300";
+}
+
+function abrirTabArbolProblemas() {
+  if (incWsDraft.paso === 2) capturarDatosPlanificacionDraft();
+  if (incWsDraft.paso === 4) capturarDatosConclusionDraft();
+
+  const p1 = document.getElementById("inc-ws-paso-1");
+  const p2 = document.getElementById("inc-ws-paso-2");
+  const p3 = document.getElementById("inc-ws-paso-3");
+  const p4 = document.getElementById("inc-ws-paso-4");
+  const pArbol = document.getElementById("inc-ws-tab-arbol");
+  const badgePaso = document.getElementById("inc-ws-badge-paso");
+
+  if (p1) p1.classList.add("hidden");
+  if (p2) p2.classList.add("hidden");
+  if (p3) p3.classList.add("hidden");
+  if (p4) p4.classList.add("hidden");
+  if (pArbol) pArbol.classList.remove("hidden");
+  if (badgePaso) badgePaso.innerText = "Pestaña: Árbol de Problemas";
+
+  // Resaltar pestaña Árbol de Problemas en barra superior y barra lateral izquierda
+  const pillArbol = document.getElementById("inc-ws-pill-arbol");
+  const sbBtnArbol = document.getElementById("sb-inc-btn-arbol");
+  if (pillArbol) pillArbol.className = "flex items-center gap-2.5 p-2.5 rounded-xl border-2 border-amber-500 bg-amber-50 text-amber-950 text-left transition-all cursor-pointer shadow-2xs";
+  if (sbBtnArbol) sbBtnArbol.className = "w-full flex items-center gap-2.5 p-2.5 rounded-xl text-left transition-all border cursor-pointer bg-amber-600/20 border-amber-500 text-white shadow-2xs";
+
+  // Quitar estado activo visual de pasos 1..4 mientras se consulta la pestaña libre
+  [1, 2, 3, 4].forEach(n => {
+    const pill = document.getElementById(`inc-ws-pill-${n}`);
+    const pNum = document.getElementById(`inc-ws-pill-num-${n}`);
+    const sbBtn = document.getElementById(`sb-inc-btn-paso-${n}`);
+    const sbNum = document.getElementById(`sb-inc-num-${n}`);
+    if (pill && pNum) {
+      pill.className = "flex items-center gap-2.5 p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100 text-left transition-all cursor-pointer";
+      pNum.className = "w-7 h-7 rounded-lg bg-slate-300 text-slate-700 font-bold text-xs flex items-center justify-center shrink-0";
+      pNum.innerText = String(n);
+    }
+    if (sbBtn && sbNum) {
+      sbBtn.className = "w-full flex items-center gap-2.5 p-2.5 rounded-xl text-left transition-all border cursor-pointer bg-slate-800/60 hover:bg-slate-800 border-slate-700/50 text-slate-300";
+      sbNum.className = "w-6 h-6 rounded-lg bg-slate-700 text-slate-300 font-bold text-xs flex items-center justify-center shrink-0";
+      sbNum.innerText = String(n);
+    }
+  });
+
+  renderArbolProblemasIncidencia();
+}
+
+function cargarDatosFormularioTallerIncidencia() {
+  const t = incWsDraft.taller || {};
+  const setVal = (id, val) => { const el = document.getElementById(id); if (el) el.value = val ?? ""; };
+  const setChk = (id, val) => { const el = document.getElementById(id); if (el) el.checked = !!val; };
+
+  setVal("inc-taller-titulo", t.titulo || "");
+  setVal("inc-taller-tipo-sgc", t.tipoSGC || "Formación en Incidencia Política (Ind. 13)");
+  setVal("inc-taller-fecha", t.fecha || new Date().toISOString().split("T")[0]);
+  setVal("inc-taller-horas", t.horas || 3);
+  setVal("inc-taller-modalidad", t.modalidad || "Presencial");
+  setVal("inc-taller-ambito", t.ambito || "Municipal");
+  setVal("inc-taller-regional", t.regional || "LP");
+  setVal("inc-taller-area", t.area || "Urbana");
+  setVal("inc-taller-lugar", t.lugar || "");
+  setVal("inc-taller-facilitador", t.facilitador || "");
+  setVal("inc-taller-normativa", t.normativa || "");
+  setVal("inc-taller-objetivo", t.objetivo || "");
+  setVal("inc-taller-material", t.materialDistribuido || "");
+  setChk("inc-taller-rm", t.refManana);
+  setChk("inc-taller-al", t.almuerzo);
+  setChk("inc-taller-rt", t.refTarde);
+  setChk("inc-taller-ce", t.cena);
+}
+
+function capturarDatosPlanificacionDraft() {
+  incWsDraft.taller = {
+    titulo: (document.getElementById("inc-taller-titulo")?.value || "").trim(),
+    tipoSGC: document.getElementById("inc-taller-tipo-sgc")?.value || "Formación en Incidencia Política (Ind. 13)",
+    fecha: document.getElementById("inc-taller-fecha")?.value || new Date().toISOString().split("T")[0],
+    horas: parseInt(document.getElementById("inc-taller-horas")?.value, 10) || 3,
+    modalidad: document.getElementById("inc-taller-modalidad")?.value || "Presencial",
+    ambito: document.getElementById("inc-taller-ambito")?.value || "Municipal",
+    regional: document.getElementById("inc-taller-regional")?.value || "LP",
+    area: document.getElementById("inc-taller-area")?.value || "Urbana",
+    lugar: (document.getElementById("inc-taller-lugar")?.value || "").trim(),
+    facilitador: (document.getElementById("inc-taller-facilitador")?.value || "").trim(),
+    normativa: (document.getElementById("inc-taller-normativa")?.value || "").trim(),
+    objetivo: (document.getElementById("inc-taller-objetivo")?.value || "").trim(),
+    materialDistribuido: (document.getElementById("inc-taller-material")?.value || "").trim(),
+    refManana: !!document.getElementById("inc-taller-rm")?.checked,
+    almuerzo: !!document.getElementById("inc-taller-al")?.checked,
+    refTarde: !!document.getElementById("inc-taller-rt")?.checked,
+    cena: !!document.getElementById("inc-taller-ce")?.checked
+  };
+  actualizarSidebarIncidenciaInfo();
+}
+
+function guardarInscripcionTallerIncidencia(e) {
+  e.preventDefault();
+  if (!incWsDraft.participantes || incWsDraft.participantes.length === 0) {
+    showToast("Debes tener al menos un participante inscrito en el Paso 1.", "warning");
+    irAPasoIncidencia(1, true);
+    return;
+  }
+  capturarDatosPlanificacionDraft();
+  irAPasoIncidencia(3, true);
+}
+
+// --- PASO 3: ASISTENCIA CON ESCÁNER QR (BASADO EN OPCIÓN B DE ACTIVIDADES) ---
+function abrirModalEscanerQrIncidencia() {
+  scannerContextMode = "incidencia";
+  const t = incWsDraft.taller || {};
+  const subEl = document.getElementById("modal-scanner-subtitulo");
+  if (subEl) {
+    subEl.textContent = `${t.regional || 'LP'} • ${t.titulo || 'Taller de Incidencia Política'} • ${t.fecha || ''}`;
+  }
+  const resBox = document.getElementById("scanner-resultado-box");
+  if (resBox) resBox.classList.add("hidden");
+
+  scannerPausado = false;
+  openModal("modal-escaner-qr-educador");
+  iniciarCamaraEscanerEducador();
+}
+
+function descargarCredencialesQrIncidenciaPDF() {
+  const participantes = incWsDraft.participantes || [];
+  if (participantes.length === 0) {
+    showToast("Inscribe participantes en el Paso 1 para generar sus carnets QR.", "warning");
+    return;
+  }
+  const t = incWsDraft.taller || {};
+  const fakeAct = {
+    titulo: t.titulo || "Taller de Incidencia Política",
+    regional: t.regional || "LP",
+    unidadEducativa: t.lugar || "CIES"
+  };
+  const fakeTaller = {
+    titulo: t.titulo || "Taller de Incidencia Política",
+    fecha: t.fecha || new Date().toISOString().split("T")[0],
+    lugar: t.lugar || "CIES"
+  };
+  const nomina = participantes.map(p => ({
+    id: p.id,
+    nombre: `${p.nombres} ${p.apellidos}`.trim(),
+    ci: p.ci,
+    rol: p.cargoOcupacion || "Líder Juvenil",
+    procedencia: p.procedencia || ""
+  }));
+
+  const html = generarHtmlCredencialesQrParticipantes(fakeAct, fakeTaller, nomina);
+  const cleanTit = (fakeAct.titulo || "Incidencia").replace(/[^a-zA-Z0-9]/g, '_');
+  exportarDocumentoPDF(html, `Credenciales_QR_Incidencia_${cleanTit}.pdf`);
+}
+
+function procesarLecturaQrIncidencia(codigoLeido) {
+  if (!codigoLeido) return;
+  const participantes = incWsDraft.participantes || [];
+  const str = String(codigoLeido).trim().toLowerCase();
+
+  let part = null;
+  if (str.startsWith("cies-part:")) {
+    const segments = str.split(":");
+    const pId = parseInt(segments[1], 10);
+    const pCi = (segments[2] || "").trim().toLowerCase();
+    part = participantes.find(p => p.id === pId) || participantes.find(p => (p.ci || "").toLowerCase().includes(pCi));
+  }
+  if (!part) {
+    part = participantes.find(p => {
+      const ciClean = (p.ci || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+      const strClean = str.replace(/[^a-z0-9]/g, "");
+      return ciClean && (strClean.includes(ciClean) || ciClean.includes(strClean));
+    });
+  }
+  if (!part) {
+    part = participantes.find(p => str.includes(`${p.nombres} ${p.apellidos}`.toLowerCase().trim()));
+  }
+
+  if (!part) {
+    if (typeof reproducirBeepError === "function") reproducirBeepError();
+    showToast(`No se encontró un participante inscrito con el código: "${codigoLeido}"`, "warning");
+    return;
+  }
+
+  if (!incWsDraft.asistenciasQR) incWsDraft.asistenciasQR = [];
+  const yaRegistrado = incWsDraft.asistenciasQR.some(a =>
+    a.participanteId === part.id || ((a.ci || "").trim().toLowerCase() === (part.ci || "").trim().toLowerCase())
+  );
+  const horaActual = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const nombreFull = `${part.nombres} ${part.apellidos}`.trim();
+  const partObjBanner = { nombre: nombreFull, ci: part.ci, rol: part.cargoOcupacion || "Líder Juvenil" };
+
+  if (yaRegistrado) {
+    if (typeof reproducirBeepAtencion === "function") reproducirBeepAtencion();
+    if (typeof mostrarBannerResultadoEscaner === "function") mostrarBannerResultadoEscaner(partObjBanner, "ya_registrado", horaActual);
+    showToast(`"${nombreFull}" ya tiene asistencia QR registrada.`, "info");
+    return;
+  }
+
+  const t = incWsDraft.taller || {};
+  incWsDraft.asistenciasQR.unshift({
+    participanteId: part.id,
+    nombre: nombreFull,
+    ci: part.ci,
+    horaExacta: horaActual,
+    metodo: "Escaner QR Credencial",
+    qrCodigo: `CIES-PART:${part.id}:${part.ci}`,
+    refManana: !!t.refManana,
+    almuerzo: !!t.almuerzo,
+    refTarde: t.refTarde !== undefined ? !!t.refTarde : true,
+    cena: !!t.cena
+  });
+
+  if (typeof reproducirBeepConfirmacion === "function") reproducirBeepConfirmacion();
+  if (typeof mostrarBannerResultadoEscaner === "function") mostrarBannerResultadoEscaner(partObjBanner, "exito", horaActual);
+  showToast(`¡Check-in QR exitoso! ${nombreFull} (${horaActual})`, "success");
+  renderAsistenciaQRIncidencia();
+}
+
+function procesarInputScannerManualIncidencia() {
+  const input = document.getElementById("inc-scanner-manual-input");
+  if (!input || !input.value.trim()) {
+    showToast("Ingresa un CI o escanea con lector USB.", "warning");
+    return;
+  }
+  procesarLecturaQrIncidencia(input.value.trim());
+  input.value = "";
+}
+
+function simularEscaneoQrIncidencia(partId) {
+  const p = (incWsDraft.participantes || []).find(x => x.id === partId);
+  if (!p) return;
+  procesarLecturaQrIncidencia(`CIES-PART:${p.id}:${p.ci}`);
+}
+
+function simularEscaneoRafagaIncidencia() {
+  const participantes = incWsDraft.participantes || [];
+  if (participantes.length === 0) {
+    showToast("No hay participantes inscritos en el Paso 1.", "warning");
+    return;
+  }
+  let nuevos = 0;
+  participantes.forEach(p => {
+    const ya = (incWsDraft.asistenciasQR || []).some(a => a.participanteId === p.id || (a.ci || "").toLowerCase() === (p.ci || "").toLowerCase());
+    if (!ya) {
+      simularEscaneoQrIncidencia(p.id);
+      nuevos++;
+    }
+  });
+  if (nuevos === 0) showToast("Todos los participantes ya registraron su asistencia QR.", "info");
+}
+
+function quitarAsistenciaQrIncidencia(partId) {
+  incWsDraft.asistenciasQR = (incWsDraft.asistenciasQR || []).filter(a => a.participanteId !== partId);
+  renderAsistenciaQRIncidencia();
+}
+
+function renderAsistenciaQRIncidencia() {
+  const participantes = incWsDraft.participantes || [];
+  const asistList = incWsDraft.asistenciasQR || [];
+
+  const totalEsc = asistList.length;
+  const totalRef = asistList.filter(a => a.refManana || a.almuerzo || a.refTarde || a.cena).length;
+  const ultimo = asistList[0];
+
+  const setText = (id, txt) => { const el = document.getElementById(id); if (el) el.textContent = txt; };
+  setText("inc-stat-scan-total", totalEsc);
+  setText("inc-stat-scan-aforo", participantes.length);
+  setText("inc-stat-scan-refrigerios", totalRef);
+  setText("inc-stat-scan-ultimo", ultimo ? `${ultimo.nombre} (${ultimo.horaExacta || ''})` : "Ninguno aún");
+  setText("inc-conteo-scan-badge", `${totalEsc} escaneado${totalEsc === 1 ? '' : 's'}`);
+  setText("sb-inc-sub-3", `${totalEsc} de ${participantes.length} escaneados`);
+
+  const pillsContainer = document.getElementById("inc-scanner-pills-simulacion");
+  if (pillsContainer) {
+    pillsContainer.innerHTML = participantes.map(p => {
+      const nombre = `${p.nombres} ${p.apellidos}`.trim();
+      const yaEsta = asistList.some(a => a.participanteId === p.id || (a.ci || "").toLowerCase() === (p.ci || "").toLowerCase());
+      return `
+        <button type="button" onclick="simularEscaneoQrIncidencia(${p.id})"
+          class="px-2.5 py-1 rounded-lg text-[10px] font-bold border transition-all cursor-pointer flex items-center gap-1.5 shadow-2xs ${yaEsta ? 'bg-emerald-100 text-emerald-950 border-emerald-400 font-black' : 'bg-white hover:bg-violet-50 hover:border-violet-300 text-slate-700 border-slate-300'}">
+          <span>${yaEsta ? '✓' : '🪪'}</span>
+          <span>${nombre.split(' ').slice(0, 2).join(' ')}</span>
+          <span class="font-mono text-[9px] text-slate-400">(${(p.ci || '').split(' ')[0]})</span>
+        </button>
+      `;
+    }).join("");
+  }
+
+  const tbody = document.getElementById("inc-tabla-scan-body");
+  if (!tbody) return;
+  if (participantes.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="6" class="py-6 text-center text-slate-400">Inscribe participantes en el Paso 1 para habilitar el control QR.</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = participantes.map((p, idx) => {
+    const nombre = `${p.nombres} ${p.apellidos}`.trim();
+    const match = asistList.find(a => a.participanteId === p.id || (a.ci || "").toLowerCase() === (p.ci || "").toLowerCase());
+    const codCarnet = `CIES-INC-${String(idx + 1).padStart(3, '0')}`;
+    return `
+      <tr class="border-b border-slate-100 hover:bg-violet-50/40 ${match ? 'bg-violet-50/20' : ''}">
+        <td class="py-2.5 px-3 font-bold text-slate-400">${idx + 1}</td>
+        <td class="py-2.5 px-3">
+          <div class="font-bold text-slate-900">${nombre}</div>
+          <div class="text-[10px] text-slate-400 font-mono">CI: ${p.ci || '-'}</div>
+        </td>
+        <td class="py-2.5 px-3 font-mono text-[10px]">
+          <span class="px-1.5 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200 font-bold">${codCarnet}</span>
+        </td>
+        <td class="py-2.5 px-3 text-center">
+          ${match ? `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-violet-100 text-violet-800 border border-violet-200">✓ ${match.horaExacta || 'OK'}</span>` : `<span class="text-slate-400 text-[10px]">--:--</span>`}
+        </td>
+        <td class="py-2.5 px-3 text-center">
+          ${match ? `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">✓ Asignado</span>` : `<span class="text-slate-300 text-[10px]">-</span>`}
+        </td>
+        <td class="py-2.5 px-3 text-right">
+          ${match
+            ? `<button type="button" onclick="quitarAsistenciaQrIncidencia(${p.id})" class="text-rose-600 hover:text-rose-800 font-semibold text-[11px] cursor-pointer">Quitar</button>`
+            : `<button type="button" onclick="simularEscaneoQrIncidencia(${p.id})" class="text-violet-700 hover:text-violet-900 font-bold text-[11px] cursor-pointer">Escanear QR</button>`}
+        </td>
+      </tr>
+    `;
+  }).join("");
+}
+
+// --- PASO 4: CONCLUSIÓN Y ESPACIO DOCUMENTAL ---
+function cargarDatosConclusionIncidencia() {
+  if (!incWsDraft.conclusion) {
+    incWsDraft.conclusion = {
+      resumen: "",
+      acuerdos: "",
+      estadoCierre: "Concluido",
+      fechaCierre: new Date().toISOString().split("T")[0],
+      documentos: []
+    };
+  }
+  const c = incWsDraft.conclusion;
+  const setVal = (id, val) => { const el = document.getElementById(id); if (el) el.value = val ?? ""; };
+  setVal("inc-conc-resumen", c.resumen || "");
+  setVal("inc-conc-acuerdos", c.acuerdos || "");
+  setVal("inc-conc-estado", c.estadoCierre || "Concluido");
+  setVal("inc-conc-fecha", c.fechaCierre || new Date().toISOString().split("T")[0]);
+  renderDocumentosConclusionIncidencia();
+}
+
+function capturarDatosConclusionDraft() {
+  if (!incWsDraft.conclusion) incWsDraft.conclusion = { documentos: [] };
+  const docs = incWsDraft.conclusion.documentos || [];
+  incWsDraft.conclusion = {
+    resumen: (document.getElementById("inc-conc-resumen")?.value || "").trim(),
+    acuerdos: (document.getElementById("inc-conc-acuerdos")?.value || "").trim(),
+    estadoCierre: document.getElementById("inc-conc-estado")?.value || "Concluido",
+    fechaCierre: document.getElementById("inc-conc-fecha")?.value || new Date().toISOString().split("T")[0],
+    documentos: docs
+  };
+}
+
+function autocompletarNombreDocConclusion() {
+  const fileInput = document.getElementById("inc-conc-doc-file");
+  const nameInput = document.getElementById("inc-conc-doc-nombre");
+  if (fileInput && fileInput.files && fileInput.files[0] && nameInput && !nameInput.value.trim()) {
+    nameInput.value = fileInput.files[0].name;
+  }
+}
+
+function agregarDocumentoConclusionIncidencia() {
+  const tipo = document.getElementById("inc-conc-doc-tipo")?.value || "Otro Respaldo Documental";
+  const fileInput = document.getElementById("inc-conc-doc-file");
+  const nameInput = document.getElementById("inc-conc-doc-nombre");
+
+  let nombre = (nameInput?.value || "").trim();
+  let peso = "450 KB";
+
+  if (fileInput && fileInput.files && fileInput.files[0]) {
+    const f = fileInput.files[0];
+    if (!nombre) nombre = f.name;
+    const kb = Math.max(1, Math.round(f.size / 1024));
+    peso = kb >= 1024 ? `${(kb / 1024).toFixed(1)} MB` : `${kb} KB`;
+  }
+
+  if (!nombre) {
+    showToast("Ingresa un nombre o selecciona un archivo para adjuntar.", "warning");
+    return;
+  }
+
+  if (!incWsDraft.conclusion) incWsDraft.conclusion = { resumen: "", acuerdos: "", estadoCierre: "Concluido", fechaCierre: "", documentos: [] };
+  if (!incWsDraft.conclusion.documentos) incWsDraft.conclusion.documentos = [];
+
+  incWsDraft.conclusion.documentos.push({
+    id: Date.now(),
+    nombre,
+    tipo,
+    peso,
+    fecha: new Date().toISOString().split("T")[0]
+  });
+
+  if (fileInput) fileInput.value = "";
+  if (nameInput) nameInput.value = "";
+  renderDocumentosConclusionIncidencia();
+  showToast(`Documento "${nombre}" adjuntado al espacio documental.`, "success");
+}
+
+function quitarDocumentoConclusionIncidencia(idx) {
+  if (!incWsDraft.conclusion || !incWsDraft.conclusion.documentos) return;
+  incWsDraft.conclusion.documentos.splice(idx, 1);
+  renderDocumentosConclusionIncidencia();
+}
+
+function renderDocumentosConclusionIncidencia() {
+  const docs = (incWsDraft.conclusion && incWsDraft.conclusion.documentos) ? incWsDraft.conclusion.documentos : [];
+  const countBadge = document.getElementById("inc-conc-docs-count");
+  const sbSub3 = document.getElementById("sb-inc-sub-3");
+  const tbody = document.getElementById("inc-conc-docs-list");
+
+  if (countBadge) countBadge.innerText = `${docs.length} documento${docs.length === 1 ? "" : "s"}`;
+  const sbSub4 = document.getElementById("sb-inc-sub-4");
+  if (sbSub4) sbSub4.innerText = docs.length > 0 ? `${docs.length} doc(s) adjuntos` : "Cierre y espacio documental";
+
+  if (!tbody) return;
+  if (docs.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="5" class="py-5 px-3 text-center text-slate-400">Aún no se adjuntaron documentos en el espacio documental de este taller.</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = docs.map((d, idx) => `
+    <tr class="border-b border-slate-100 hover:bg-slate-50">
+      <td class="py-2.5 px-3 font-semibold text-slate-900">📄 ${d.nombre}</td>
+      <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded bg-blue-50 text-blue-800 border border-blue-200 text-[10px] font-bold">${d.tipo}</span></td>
+      <td class="py-2.5 px-3 font-mono text-slate-500">${d.peso || "-"}</td>
+      <td class="py-2.5 px-3 font-mono text-slate-500">${d.fecha || "-"}</td>
+      <td class="py-2.5 px-3 text-right">
+        <button type="button" onclick="quitarDocumentoConclusionIncidencia(${idx})" class="text-rose-600 hover:text-rose-800 font-semibold px-2 py-1 rounded hover:bg-rose-50 cursor-pointer">Quitar</button>
+      </td>
+    </tr>
+  `).join("");
+}
+
+// --- PASO 3: ÁRBOL DE PROBLEMAS ---
+function cargarDatosArbolProblemasIncidencia() {
+  if (!incWsDraft.arbolProblemas) {
+    incWsDraft.arbolProblemas = { problemaCentral: "", efectos: [], causas: [] };
+  }
+  const probEl = document.getElementById("inc-arbol-problema");
+  if (probEl) probEl.value = incWsDraft.arbolProblemas.problemaCentral || "";
+  renderArbolProblemasIncidencia();
+}
+
+function actualizarProblemaCentralArbol() {
+  if (!incWsDraft.arbolProblemas) {
+    incWsDraft.arbolProblemas = { problemaCentral: "", efectos: [], causas: [] };
+  }
+  const probEl = document.getElementById("inc-arbol-problema");
+  incWsDraft.arbolProblemas.problemaCentral = probEl ? probEl.value : "";
+  renderArbolVisualPreview();
+}
+
+function agregarEfectoArbol() {
+  const input = document.getElementById("inc-arbol-nuevo-efecto");
+  if (!input) return;
+  const txt = input.value.trim();
+  if (!txt) {
+    showToast("Escribe un efecto o consecuencia antes de agregar.", "warning");
+    return;
+  }
+  if (!incWsDraft.arbolProblemas) incWsDraft.arbolProblemas = { problemaCentral: "", efectos: [], causas: [] };
+  incWsDraft.arbolProblemas.efectos.push(txt);
+  input.value = "";
+  renderArbolProblemasIncidencia();
+}
+
+function eliminarEfectoArbol(idx) {
+  if (!incWsDraft.arbolProblemas) return;
+  incWsDraft.arbolProblemas.efectos.splice(idx, 1);
+  renderArbolProblemasIncidencia();
+}
+
+function agregarCausaArbol() {
+  const input = document.getElementById("inc-arbol-nueva-causa");
+  const tipoSel = document.getElementById("inc-arbol-tipo-causa");
+  if (!input) return;
+  const txt = input.value.trim();
+  if (!txt) {
+    showToast("Escribe una causa antes de agregar.", "warning");
+    return;
+  }
+  if (!incWsDraft.arbolProblemas) incWsDraft.arbolProblemas = { problemaCentral: "", efectos: [], causas: [] };
+  incWsDraft.arbolProblemas.causas.push({
+    texto: txt,
+    tipo: tipoSel ? tipoSel.value : "Causa Directa"
+  });
+  input.value = "";
+  renderArbolProblemasIncidencia();
+}
+
+function eliminarCausaArbol(idx) {
+  if (!incWsDraft.arbolProblemas) return;
+  incWsDraft.arbolProblemas.causas.splice(idx, 1);
+  renderArbolProblemasIncidencia();
+}
+
+function renderArbolProblemasIncidencia() {
+  const arbol = incWsDraft.arbolProblemas || { problemaCentral: "", efectos: [], causas: [] };
+  const efectos = arbol.efectos || [];
+  const causas = arbol.causas || [];
+
+  const efCount = document.getElementById("inc-arbol-efectos-count");
+  const caCount = document.getElementById("inc-arbol-causas-count");
+  const sbSubArbol = document.getElementById("sb-inc-sub-arbol");
+  if (efCount) efCount.innerText = `${efectos.length} efecto${efectos.length === 1 ? "" : "s"}`;
+  if (caCount) caCount.innerText = `${causas.length} causa${causas.length === 1 ? "" : "s"}`;
+  if (sbSubArbol) sbSubArbol.innerText = `${causas.length} causas • ${efectos.length} efectos`;
+
+  const efList = document.getElementById("inc-arbol-efectos-list");
+  if (efList) {
+    efList.innerHTML = efectos.length === 0
+      ? `<li class="text-[11px] text-rose-400 italic py-2">Sin efectos registrados aún.</li>`
+      : efectos.map((ef, idx) => `
+          <li class="flex items-center justify-between gap-2 p-2 rounded-lg bg-white border border-rose-200 text-xs text-slate-800">
+            <span><strong class="text-rose-700 mr-1">E${idx + 1}:</strong> ${ef}</span>
+            <button type="button" onclick="eliminarEfectoArbol(${idx})" class="text-rose-500 hover:text-rose-700 font-bold px-1.5 cursor-pointer">&times;</button>
+          </li>
+        `).join("");
+  }
+
+  const caList = document.getElementById("inc-arbol-causas-list");
+  if (caList) {
+    caList.innerHTML = causas.length === 0
+      ? `<li class="text-[11px] text-emerald-500 italic py-2">Sin causas registradas aún.</li>`
+      : causas.map((c, idx) => `
+          <li class="flex items-center justify-between gap-2 p-2 rounded-lg bg-white border border-emerald-200 text-xs text-slate-800">
+            <div>
+              <span class="px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold mr-1">${c.tipo || "Causa"}</span>
+              <span>${c.texto}</span>
+            </div>
+            <button type="button" onclick="eliminarCausaArbol(${idx})" class="text-rose-500 hover:text-rose-700 font-bold px-1.5 cursor-pointer">&times;</button>
+          </li>
+        `).join("");
+  }
+
+  renderArbolVisualPreview();
+}
+
+function renderArbolVisualPreview() {
+  const container = document.getElementById("inc-arbol-visual-preview");
+  if (!container) return;
+  const arbol = incWsDraft.arbolProblemas || { problemaCentral: "", efectos: [], causas: [] };
+  const prob = (arbol.problemaCentral || "").trim() || "Define el Problema Central en el campo superior...";
+  const efectos = arbol.efectos || [];
+  const causas = arbol.causas || [];
+
+  container.innerHTML = `
+    <div class="space-y-3">
+      <div>
+        <div class="text-[10px] font-bold uppercase text-rose-700 mb-1.5 text-center">Efectos / Consecuencias (Copa)</div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+          ${efectos.length > 0 ? efectos.map((e, i) => `
+            <div class="p-2.5 rounded-lg bg-rose-50 border border-rose-200 text-xs text-rose-950 font-medium shadow-2xs text-center">
+              <span class="text-[10px] font-bold text-rose-600 block mb-0.5">Efecto ${i + 1}</span>
+              ${e}
+            </div>
+          `).join("") : `<div class="col-span-full text-center text-[11px] text-slate-400 py-2 border border-dashed border-rose-200 rounded-lg">Agrega efectos arriba</div>`}
+        </div>
+      </div>
+
+      <div class="flex justify-center text-slate-400 text-xs font-bold">&uarr;</div>
+
+      <div class="max-w-2xl mx-auto p-3.5 rounded-xl bg-blue-600 text-white text-center shadow-sm">
+        <span class="text-[10px] uppercase tracking-wider font-bold text-blue-100 block mb-1">Problema Central (Tronco)</span>
+        <p class="text-sm font-bold leading-snug">${prob}</p>
+      </div>
+
+      <div class="flex justify-center text-slate-400 text-xs font-bold">&uarr;</div>
+
+      <div>
+        <div class="text-[10px] font-bold uppercase text-emerald-700 mb-1.5 text-center">Causas (Raíces)</div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+          ${causas.length > 0 ? causas.map((c, i) => `
+            <div class="p-2.5 rounded-lg bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 font-medium shadow-2xs text-center">
+              <span class="text-[10px] font-bold text-emerald-700 block mb-0.5">${c.tipo || "Causa"} #${i + 1}</span>
+              ${c.texto}
+            </div>
+          `).join("") : `<div class="col-span-full text-center text-[11px] text-slate-400 py-2 border border-dashed border-emerald-200 rounded-lg">Agrega causas arriba</div>`}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function guardarProcesoCompletoIncidencia(requireArbol = false, requireConclusion = false) {
+  const totalPart = (incWsDraft.participantes || []).length + (incWsDraft.financiadores || []).length;
+  if (totalPart === 0) {
+    showToast("Debes registrar al menos un participante voluntario o financiador externo en el Paso 1.", "warning");
+    irAPasoIncidencia(1, true);
+    return;
+  }
+
+  capturarDatosPlanificacionDraft();
+  if (!incWsDraft.taller || !incWsDraft.taller.titulo) {
+    showToast("Completa los datos obligatorios de Planificación en el Paso 2.", "warning");
+    irAPasoIncidencia(2, true);
+    return;
+  }
+
+  capturarDatosConclusionDraft();
+  const conclusion = incWsDraft.conclusion || { resumen: "", acuerdos: "", estadoCierre: "Concluido", fechaCierre: "", documentos: [] };
+  if (requireConclusion && !(conclusion.resumen || "").trim()) {
+    showToast("Ingresa la conclusión general del taller en el Paso 3 antes de guardar.", "warning");
+    return;
+  }
+
+  const arbol = incWsDraft.arbolProblemas || { problemaCentral: "", efectos: [], causas: [] };
+  if (requireArbol && !(arbol.problemaCentral || "").trim()) {
+    showToast("Ingresa el Problema Central en el Árbol de Problemas antes de guardar.", "warning");
+    return;
+  }
+
+  const db = getDB();
+  if (!db.incidenciaInscripciones) db.incidenciaInscripciones = [];
+
+  // Sincronizar documentos al repositorio central de Digitalización SGC si está marcado
+  const syncDig = document.getElementById("inc-conc-sync-dig");
+  if (syncDig && syncDig.checked && Array.isArray(conclusion.documentos) && conclusion.documentos.length > 0) {
+    if (!db.digitalizacion) db.digitalizacion = [];
+    const user = typeof getCurrentUser === "function" ? getCurrentUser() : null;
+    conclusion.documentos.forEach(doc => {
+      const yaExiste = db.digitalizacion.some(d => d.nombre === doc.nombre && d.modulo === "Incidencia Política");
+      if (!yaExiste) {
+        db.digitalizacion.unshift({
+          id: doc.id || Date.now(),
+          nombre: doc.nombre,
+          tipo: doc.tipo,
+          peso: doc.peso || "450 KB",
+          subidoPor: user ? user.nombre : "Equipo Incidencia",
+          fecha: doc.fecha || new Date().toISOString().split("T")[0],
+          modulo: "Incidencia Política",
+          estadoValidacion: "Pendiente",
+          validadoPor: "",
+          fechaValidacion: "",
+          observacionValidacion: `Respaldo de taller de incidencia (${incWsDraft.taller.titulo})`
+        });
+      }
+    });
+  }
+
+  if (incWsDraft.id) {
+    const idx = db.incidenciaInscripciones.findIndex(x => x.id === incWsDraft.id);
+    if (idx !== -1) {
+      db.incidenciaInscripciones[idx].participantes = incWsDraft.participantes;
+      db.incidenciaInscripciones[idx].financiadores = incWsDraft.financiadores || [];
+      db.incidenciaInscripciones[idx].taller = incWsDraft.taller;
+      db.incidenciaInscripciones[idx].arbolProblemas = arbol;
+      db.incidenciaInscripciones[idx].conclusion = conclusion;
+      db.incidenciaInscripciones[idx].asistenciasQR = incWsDraft.asistenciasQR || [];
+      db.incidenciaInscripciones[idx].estado = conclusion.estadoCierre || "Concluido";
+    }
+    showToast("Taller de Incidencia Política y espacio documental actualizados.", "success");
+  } else {
+    const nextNum = db.incidenciaInscripciones.length + 1;
+    db.incidenciaInscripciones.unshift({
+      id: Date.now(),
+      codigo: `INC-${String(nextNum).padStart(2, "0")}`,
+      estado: conclusion.estadoCierre || "Concluido",
+      participantes: incWsDraft.participantes,
+      financiadores: incWsDraft.financiadores || [],
+      taller: incWsDraft.taller,
+      arbolProblemas: arbol,
+      conclusion,
+      asistenciasQR: incWsDraft.asistenciasQR || []
+    });
+    showToast("Taller de Incidencia Política guardado y concluido correctamente.", "success");
+  }
+
+  saveDB(db);
+  mostrarSidebarIncidencia(false);
+  navigateTo("incidencia");
+}
+
+let currentModalLideresIncId = null;
+
+function verLideresIncidencia(id) {
+  const db = getDB();
+  const item = (db.incidenciaInscripciones || []).find(x => x.id === id);
+  if (!item) return;
+
+  currentModalLideresIncId = id;
+  const t = item.taller || {};
+  const partList = item.participantes || [];
+  const finList = item.financiadores || [];
+  const qrList = item.asistenciasQR || [];
+
+  const setText = (elId, txt) => { const el = document.getElementById(elId); if (el) el.textContent = txt; };
+  setText("modal-lideres-codigo", item.codigo || `INC-${item.id}`);
+  setText("modal-lideres-regional", t.regional || "LP");
+  setText("modal-lideres-fecha", t.fecha || "-");
+  setText("modal-lideres-titulo", t.titulo || "Líderes Juveniles Participantes");
+
+  const urbanas = partList.filter(p => (p.area || "Urbana") === "Urbana").length;
+  const rurales = partList.filter(p => p.area === "Rural").length;
+  const conQr = partList.filter(p => qrList.some(q => q.participanteId === p.id || (q.ci || "").toLowerCase() === (p.ci || "").toLowerCase())).length;
+
+  setText("modal-lideres-kpi-total", partList.length);
+  setText("modal-lideres-kpi-qr", conQr);
+  setText("modal-lideres-kpi-area", `${urbanas} / ${rurales}`);
+  setText("modal-lideres-kpi-fin", finList.length);
+
+  const searchEl = document.getElementById("modal-lideres-inc-search");
+  if (searchEl) searchEl.value = "";
+
+  const btnEditar = document.getElementById("modal-lideres-btn-editar");
+  if (btnEditar) {
+    btnEditar.onclick = () => {
+      closeModal("modal-ver-lideres-incidencia");
+      abrirInscripcionIncidencia(id);
+    };
+  }
+
+  // Financiadores externos
+  const finSec = document.getElementById("modal-lideres-fin-section");
+  const finTbody = document.getElementById("modal-lideres-fin-tbody");
+  if (finSec && finTbody) {
+    if (finList.length > 0) {
+      finSec.classList.remove("hidden");
+      finTbody.innerHTML = finList.map(f => `
+        <tr class="border-b border-emerald-100">
+          <td class="py-2 px-3 font-bold text-slate-900">${f.nombre}</td>
+          <td class="py-2 px-3">${f.organizacion} <span class="text-slate-400">(${f.cargo})</span></td>
+          <td class="py-2 px-3">${f.municipio}</td>
+          <td class="py-2 px-3 font-mono">${f.telefono || "-"}</td>
+        </tr>
+      `).join("");
+    } else {
+      finSec.classList.add("hidden");
+    }
+  }
+
+  renderTablaModalLideresIncidencia("");
+  openModal("modal-ver-lideres-incidencia");
+}
+
+function renderTablaModalLideresIncidencia(search = "") {
+  const db = getDB();
+  const item = (db.incidenciaInscripciones || []).find(x => x.id === currentModalLideresIncId);
+  const tbody = document.getElementById("modal-lideres-inc-tbody");
+  const infoEl = document.getElementById("modal-lideres-filtro-info");
+  if (!tbody || !item) return;
+
+  const partList = item.participantes || [];
+  const qrList = item.asistenciasQR || [];
+  const q = search.trim().toLowerCase();
+
+  const filtered = partList.filter(p => {
+    if (!q) return true;
+    const txt = `${p.nombres} ${p.apellidos} ${p.ci} ${p.cargoOcupacion} ${p.procedencia} ${p.regional}`.toLowerCase();
+    return txt.includes(q);
+  });
+
+  if (infoEl) infoEl.textContent = `Mostrando ${filtered.length} de ${partList.length} líder(es)`;
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="7" class="py-6 px-3 text-center text-slate-400">No se encontraron líderes juveniles para esta búsqueda.</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = filtered.map((p, idx) => {
+    const qrMatch = qrList.find(a => a.participanteId === p.id || (a.ci || "").toLowerCase() === (p.ci || "").toLowerCase());
+    return `
+      <tr class="border-b border-slate-100 hover:bg-slate-50">
+        <td class="py-2.5 px-3 font-mono text-slate-400">${idx + 1}</td>
+        <td class="py-2.5 px-3">
+          <div class="font-bold text-slate-900">${p.nombres} ${p.apellidos}</div>
+          <div class="text-[10px] text-slate-400">${p.telefono ? `Tel: ${p.telefono}` : ""}</div>
+        </td>
+        <td class="py-2.5 px-3 font-mono">${p.ci || "-"}</td>
+        <td class="py-2.5 px-3">
+          <div>${p.edad || "-"} años (${p.rangoEdad || "-"})</div>
+          <div class="text-[10px] text-slate-500">${p.genero || "-"}</div>
+        </td>
+        <td class="py-2.5 px-3 font-medium text-slate-800">${p.cargoOcupacion || "Líder Juvenil"}</td>
+        <td class="py-2.5 px-3">
+          <div class="text-slate-700">${p.procedencia || "-"}</div>
+          <div class="text-[10px] text-slate-500"><span class="font-bold text-teal-700">${p.regional || "-"}</span> • ${p.area || "Urbana"}</div>
+        </td>
+        <td class="py-2.5 px-3 text-center">
+          ${qrMatch
+            ? `<span class="px-2 py-0.5 rounded-full bg-violet-100 text-violet-800 border border-violet-200 font-bold text-[10px]">✓ QR ${qrMatch.horaExacta || "OK"}</span>`
+            : `<span class="px-2 py-0.5 rounded-full bg-slate-100 text-slate-500 text-[10px] font-medium">Inscrito</span>`}
+        </td>
+      </tr>
+    `;
+  }).join("");
+}
+
+function eliminarInscripcionIncidencia(id) {
+  if (!confirm("¿Deseas eliminar esta inscripción y taller de incidencia política?")) return;
+  const db = getDB();
+  db.incidenciaInscripciones = (db.incidenciaInscripciones || []).filter(x => x.id !== id);
+  saveDB(db);
+  renderIncidenciaInscripciones();
+  showToast("Inscripción de incidencia eliminada.", "warning");
 }
 
 // -------------------------------------------------------------

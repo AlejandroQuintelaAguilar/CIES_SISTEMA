@@ -166,7 +166,7 @@ Implementación integral de la pantalla institucional de acceso y registro (Mód
     8. `Responsable del Programa`
     9. `Investigadora Educadora`
     10. `Asistente Educador`
-    11. `Orientador`
+    11. `Orientador` (Módulo autorizado exclusivo: *Orientación SSSR & Violencia*)
 - 🔑 **Cuentas Preconfiguradas para Pruebas Rápidas (11 Roles Oficiales, Clave `cies2026` o `admin`):**
   1. `admin@cies.org.bo` (`@admin`) — **Administrador** (La Paz)
   2. `director@cies.org.bo` (`@rvargas`) — **Director ejecutivo CIES** (Nacional)
